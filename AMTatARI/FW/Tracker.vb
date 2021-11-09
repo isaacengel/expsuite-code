@@ -528,6 +528,18 @@ Module Tracker
                             'mtsData(0).sngE = eul(1)
                             'mtsData(0).sngR = eul(2)
 
+                            ' GUI
+                            frmMain.labelTrackingYesNo.Text = "Yes"
+                            frmMain.labelTrackingYesNo.ForeColor = Color.Green
+                            frmMain.labelNcams.Text = TStr(Val(varArgs(8)))
+                            frmMain.labelX.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
+                            frmMain.labelY.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
+                            frmMain.labelZ.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
+                            frmMain.labelYaw.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
+                            frmMain.labelPitch.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
+                            frmMain.labelRoll.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
+                            frmMain.labelNcams.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
+
                         Else
                             ' Tracking lost. Assign wrong values to indicate so
                             mtsData(0).sngX = 999
@@ -537,6 +549,18 @@ Module Tracker
                             mtsData(0).sngE = 999
                             mtsData(0).sngR = 999
                             mtsData(0).blnValid = True
+
+                            ' GUI
+                            frmMain.labelTrackingYesNo.Text = "No"
+                            frmMain.labelTrackingYesNo.ForeColor = Color.Red
+                            frmMain.labelNcams.Text = TStr(Val(varArgs(8)))
+                            frmMain.labelX.Text = "-"
+                            frmMain.labelY.Text = "-"
+                            frmMain.labelZ.Text = "-"
+                            frmMain.labelYaw.Text = "-"
+                            frmMain.labelPitch.Text = "-"
+                            frmMain.labelRoll.Text = "-"
+                            frmMain.labelNcams.Text = "-"
                         End If
 
                         ' Calibrate

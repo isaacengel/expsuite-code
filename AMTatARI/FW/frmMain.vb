@@ -1627,7 +1627,8 @@ SubEnd:
         cmdItemStimulateSelected.Enabled = Not gblnExperiment And gblnOutputStable And dgvItemList.Enabled  'And Not gblnRemoteClientConnected
         cmdContinueExp.Enabled = gblnOutputStable And dgvItemList.Enabled And Not gblnExperiment  'And Not gblnRemoteClientConnected
         cmdStartExp.Enabled = gblnOutputStable And dgvItemList.Enabled And Not gblnExperiment  'And Not gblnRemoteClientConnected
-        cmdCalibrateOptitrackSelected.Enabled = Not gblnExperiment And gblnOutputStable
+        cmdInitButton.Enabled = Not gblnExperiment And gblnOutputStable
+
         szX = "Start Experiment"
         If glExperimentStartItem >= 0 And glExperimentEndItem >= 0 Then
             If glExperimentEndItem > glExperimentStartItem Then
@@ -1674,7 +1675,7 @@ SubEnd:
         cmdResultExecute.Enabled = True
 
         cmdTTShow.Visible = glTTMode = 1 Or (glTTMode = 2 And glTTLPT > 0) Or glTTMode = 3
-        lblTTShow.Visible = cmdTTShow.Visible
+        lblTTShow.Visible = False ' cmdTTShow.Visible ' don't show the TT label in this version
         'cmdTTShow.Enabled = gblnOutputStable And gblnTTUse And (glTTLPT > 0)
         cmdTTShow.Enabled = gblnTTUse And cmdTTShow.Visible ' (glTTMode = 1 Or (glTTMode = 2 And glTTLPT > 0))
         ' cursor
@@ -2632,12 +2633,6 @@ SubEnd:
         Return ""
 
     End Function
-
-    Private Sub cmdCalibrateOptitrackSelected_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCalibrateOptitrackSelected.Click
-        Dim szErr As String
-        szErr = CalibrateOptitrack()
-        If Len(szErr) <> 0 Then MsgBox(szErr, MsgBoxStyle.Critical, "Calibrate Optitrack")
-    End Sub
 
     Private Function CalibrateOptitrack() As String
 
@@ -5648,6 +5643,13 @@ SubError:
 
     Private Sub ctxtmnuItemPaste_Click(sender As Object, e As EventArgs) Handles ctxtmnuItemPaste.Click
         PasteFromClipboard
+    End Sub
+
+    Private Sub cmdInitButton_Click(sender As Object, e As EventArgs) Handles cmdInitButton.Click
+        Dim szErr As String
+        szErr = CalibrateOptitrack()
+        If Len(szErr) <> 0 Then MsgBox(szErr, MsgBoxStyle.Critical, "Calibrate Optitrack")
+        Turntable.SetAngle(0)
     End Sub
 
     'Private Sub dgvItemList_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dgvItemList.KeyPress

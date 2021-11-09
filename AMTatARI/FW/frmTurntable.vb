@@ -43,18 +43,21 @@ Friend Class frmTurntable
                         lblTrueAzi.Text = TStr(Math.Round(gsngTTActualAngle, 1)) & "°"
                     End If
                     frmMain.lblTTShow.Text = TStr(Math.Round(gsngTTAngle, 1)) & "°" & "    Turntable:"
+                    frmMain.labelTTaz.Text = TStr(Math.Round(gsngTTAngle, 1))
                 Case 2
                     If Me.Visible = True Then
                         lblCurrentAzi.Text = TStr((360 + sngX - gsngTTOffset) Mod 360) & "°"
                         lblTrueAzi.Text = TStr(sngX) & "°"
                     End If
                     frmMain.lblTTShow.Text = TStr((360 + sngX - gsngTTOffset) Mod 360) & "°" & "    Turntable:"
+                    frmMain.labelTTaz.Text = TStr((360 + sngX - gsngTTOffset) Mod 360)
                 Case 3
                     If Me.Visible = True Then
                         lblCurrentAzi.Text = TStr(Math.Round((360 + gsngTTAngle) Mod 360, 1)) & "°"
                         lblTrueAzi.Text = TStr(Math.Round((360 + gsngTTActualAngle) Mod 360, 1)) & "°"
                     End If
                     frmMain.lblTTShow.Text = TStr(Math.Round((360 + gsngTTAngle) Mod 360, 1)) & "°" & "    Turntable:"
+                    frmMain.labelTTaz.Text = TStr(Math.Round((360 + gsngTTAngle) Mod 360, 1))
             End Select
 
         End If
@@ -397,22 +400,22 @@ SkipRotation:
 
     Private Sub cmdSetForced_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdSetForced.Click
 
-        If Not IsNumeric(txtReqPos.Text) Then MsgBox("Input a valid numeric value from 0° to 360°", _
+        If Not IsNumeric(txtReqPos.Text) Then MsgBox("Input a valid numeric value from 0° to 360°",
                                 MsgBoxStyle.Critical, "Set angle") : Return
         Dim sngX As Double = Val(txtReqPos.Text)
         If sngX >= 0 And sngX <= 360 Then
             Select Case glTTMode
                 Case 1 'Four Audio
 
-                    If MsgBox("Do you want to set the current position to " & txtReqPos.Text & "°?" & vbCrLf & vbCrLf &  "The offset will be saved in the application's options file!", MsgBoxStyle.YesNo Or MsgBoxStyle.Question,"Set current position") = MsgBoxResult.No Then GoTo Skipped
+                    If MsgBox("Do you want to set the current position to " & txtReqPos.Text & "°?" & vbCrLf & vbCrLf & "The offset will be saved in the application's options file!", MsgBoxStyle.YesNo Or MsgBoxStyle.Question, "Set current position") = MsgBoxResult.No Then GoTo Skipped
 
                     Turntable.SetPositionToZero()
 
                     'set offset
                     gsngTT4AOffset = -1 * Val(txtReqPos.Text)
-                    
+
                     GetAngle()
-                    
+
                     'save options
                     INIOptions.WriteFile(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) & "\ExpSuite\" & My.Application.Info.Title & "\" & My.Application.Info.Title & ".ini")
 
@@ -425,9 +428,10 @@ SkipRotation:
                     sbStatusLabel.Text = "Position set to " & txtReqPos.Text & "°"
 
                 Case 3 'Imperial
-                    gsngTTAngle = sngX
+                    Turntable.SetAngle(sngX)
+                    'gsngTTAngle = sngX
                     txtReqPos.Text = TStr(gsngTTAngle)
-                    gblnTTInitialized = True
+                    'gblnTTInitialized = True
                     sbStatusLabel.Text = "Position set to " & txtReqPos.Text & "°"
 
             End Select
@@ -440,7 +444,6 @@ Skipped:
 
         UIReady()
     End Sub
-
 
     Private Sub frmTurntable_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
         Dim szErr As String = ""

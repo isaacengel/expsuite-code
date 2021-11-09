@@ -325,6 +325,13 @@ SubError:
 
     End Function
 
+    Public Sub SetAngle(angle As Double)
+
+        gsngTTAngle = angle
+        gblnTTInitialized = True
+
+    End Sub
+
     ''' <summary>
     ''' Get current turntable position in degrees azimuth, including offsets if bActualAngle = False (default).
     ''' </summary>
