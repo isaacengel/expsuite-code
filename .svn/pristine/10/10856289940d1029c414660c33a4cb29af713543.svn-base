@@ -1,0 +1,608 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <MyType>WindowsForms</MyType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{743005DE-98EE-4C12-BC53-E59B1B8C7CFB}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>AMTatARI</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ExpSuite.My.MyApplication</StartupObject>
+    <AssemblyMajorVersion>0</AssemblyMajorVersion>
+    <AssemblyMinorVersion>6</AssemblyMinorVersion>
+    <AssemblyRevisionNumber>14</AssemblyRevisionNumber>
+    <GenerateRevisionNumber>False</GenerateRevisionNumber>
+    <AssemblyCompanyName>Acoustics Research Institute - Austrian Academy of Science</AssemblyCompanyName>
+    <StartWithIE>False</StartWithIE>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <RootNamespace>ExpSuite</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <ManifestCertificateThumbprint>A1086BDF4A56052632408DF09D42AE8B0F257204</ManifestCertificateThumbprint>
+    <ManifestKeyFile>FrameWork_1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>.\bin\</OutputPath>
+    <DocumentationFile>AMTatARI.xml</DocumentationFile>
+    <DebugSymbols>True</DebugSymbols>
+    <DefineDebug>True</DefineDebug>
+    <DefineTrace>True</DefineTrace>
+    <DefineConstants>Win32=True</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.\bin\</OutputPath>
+    <DocumentationFile>AMTatARI.xml</DocumentationFile>
+    <DebugSymbols>False</DebugSymbols>
+    <DefineDebug>False</DefineDebug>
+    <DefineTrace>True</DefineTrace>
+    <DefineConstants>Win32=True</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>none</DebugType>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>Win32=True</DefineConstants>
+    <DocumentationFile>AMTatARI.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>Win32=True</DefineConstants>
+    <DocumentationFile>AMTatARI.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX.DirectInput, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <Name>Microsoft.VisualBasic.Compatibility</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <Name>System.Core</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.Compatibility" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb" />
+    <Compile Include="frmListbox.Designer.vb">
+      <DependentUpon>frmListbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmListbox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalcTOA.Designer.vb">
+      <DependentUpon>frmCalcTOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalcTOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIR.Designer.vb">
+      <DependentUpon>frmIR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmIR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLatency.Designer.vb">
+      <DependentUpon>frmLatency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLatency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMESM.Designer.vb">
+      <DependentUpon>frmMESM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMESM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlotData.Designer.vb">
+      <DependentUpon>frmPlotData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlotData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlotTOA.Designer.vb">
+      <DependentUpon>frmPlotTOA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlotTOA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPostProcessing.Designer.vb">
+      <DependentUpon>frmPostProcessing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPostProcessing.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrackerLeadInRange.Designer.vb">
+      <DependentUpon>frmTrackerLeadInRange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrackerLeadInRange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\clsDataDirectory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\clsFREQUENCY.vb" />
+    <Compile Include="FW\clsItemList.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Create.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\clsSTIMULUS.vb" />
+    <Compile Include="FW\CSVParser.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Events.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventsSettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\DDELib.vb" />
+    <Compile Include="FW\frmAbout.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmAbout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmAbout.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmExp.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmExp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmExp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmFitt4Fun.Designer.vb">
+      <DependentUpon>frmFitt4Fun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmFitt4Fun.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmInputBox.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmInputBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmInputBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmInputMultiline.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmInputMultiline.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmInputMultiline.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmItemListPostfix.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmItemListPostfix.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmItemListPostfix.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmLevelDancer.designer.vb">
+      <DependentUpon>frmLevelDancer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmLevelDancer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmMain.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmOptions.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmOptions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmOptions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmResult.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmResult.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmResult.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmSettings.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmSettingsTrackRange.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmSettingsTrackRange.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmSettingsTrackRange.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmShowStimulus.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmShowStimulus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmShowStimulus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\frmTurntable.Designer.vb">
+      <SubType>Code</SubType>
+      <DependentUpon>frmTurntable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FW\frmTurntable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FW\FWintern.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\HUI.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\Implant.vb" />
+    <Compile Include="FW\INIOptions.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\INISettings.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\MIDI.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\RemoteMonitorClient.vb" />
+    <Compile Include="FW\RemoteMonitorServer.vb" />
+    <Compile Include="FW\RemoteMonitorServerSend.vb" />
+    <Compile Include="FW\RIB.vb" />
+    <Compile Include="FW\RIB2.vb" />
+    <Compile Include="FW\STIM.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FW\OSC.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\Output.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\Proc.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PlothMParameterSet.vb" />
+    <Compile Include="Result.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\Tracker.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\Turntable.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FW\ViWo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ToolboxIR.vb" />
+    <EmbeddedResource Include="frmListbox.resx">
+      <DependentUpon>frmListbox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalcTOA.resx">
+      <DependentUpon>frmCalcTOA.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIR.resX">
+      <DependentUpon>frmIR.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLatency.resX">
+      <DependentUpon>frmLatency.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMESM.resx">
+      <DependentUpon>frmMESM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlotData.resX">
+      <DependentUpon>frmPlotData.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlotTOA.resx">
+      <DependentUpon>frmPlotTOA.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPostProcessing.resX">
+      <DependentUpon>frmPostProcessing.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrackerLeadInRange.resX">
+      <DependentUpon>frmTrackerLeadInRange.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmAbout.resX">
+      <DependentUpon>frmAbout.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmExp.resX">
+      <DependentUpon>frmExp.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmFitt4Fun.resx">
+      <DependentUpon>frmFitt4Fun.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmInputBox.resX">
+      <DependentUpon>frmInputBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmInputMultiline.resX">
+      <DependentUpon>frmInputMultiline.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmItemListPostfix.resX">
+      <DependentUpon>frmItemListPostfix.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmLevelDancer.resx">
+      <DependentUpon>frmLevelDancer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmMain.resX">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmOptions.resX">
+      <DependentUpon>frmOptions.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmResult.resX">
+      <DependentUpon>frmResult.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmSettings.resX">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmSettingsTrackRange.resX">
+      <DependentUpon>frmSettingsTrackRange.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmShowStimulus.resX">
+      <DependentUpon>frmShowStimulus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FW\frmTurntable.resX">
+      <DependentUpon>frmTurntable.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="FW\FWhistory.txt" />
+    <Content Include="history.txt" />
+    <Content Include="Icon.ico" />
+    <Content Include="Matlab\AA_AppendExpSweep.m" />
+    <Content Include="Matlab\AA_AppendIR.m" />
+    <Content Include="Matlab\AA_ARI2CIPIC.m" />
+    <Content Include="Matlab\AA_ARI2STx.m" />
+    <Content Include="Matlab\AA_Augment.m" />
+    <Content Include="Matlab\AA_AverageCepstral.m" />
+    <Content Include="Matlab\AA_AverageSpectral.m" />
+    <Content Include="Matlab\AA_CalcEnergy.m" />
+    <Content Include="Matlab\AA_CalcLinearMatrix.m" />
+    <Content Include="Matlab\AA_CalcMLSToIR.m" />
+    <Content Include="Matlab\AA_CalcPositions.m" />
+    <Content Include="Matlab\AA_CalcSaveEMP.m" />
+    <Content Include="Matlab\AA_CalcSaveFILT.m" />
+    <Content Include="Matlab\AA_CalcSINAD.m" />
+    <Content Include="Matlab\AA_CalcSweepToIR.m" />
+    <Content Include="Matlab\AA_CalcTHD.m" />
+    <Content Include="Matlab\AA_CalcTOA.m" />
+    <Content Include="Matlab\AA_CalcXCorr.m" />
+    <Content Include="Matlab\AA_CIPIC2ARI.m" />
+    <Content Include="Matlab\AA_ConvertARI2SOFA.m" />
+    <Content Include="Matlab\AA_CorrectWAV_pdblocksize.m" />
+    <Content Include="Matlab\AA_CreateHRTFItemList.m" />
+    <Content Include="Matlab\AA_Equalize.m" />
+    <Content Include="Matlab\AA_Filter.m" />
+    <Content Include="Matlab\AA_FrequencyWarp.m" />
+    <Content Include="Matlab\AA_hM.m" />
+    <Content Include="Matlab\AA_hM_V1toV2.m" />
+    <Content Include="Matlab\AA_hM_V2toV1.m" />
+    <Content Include="Matlab\AA_LoadFilterToM.m" />
+    <Content Include="Matlab\AA_LoadhM.m" />
+    <Content Include="Matlab\AA_MergeChannels.m" />
+    <Content Include="Matlab\AA_MergeItems.m" />
+    <Content Include="Matlab\AA_MESM.m" />
+    <Content Include="Matlab\AA_MinimalPhase.m" />
+    <Content Include="Matlab\AA_NormaliseInvSweep.m" />
+    <Content Include="Matlab\AA_PlotTOA.m" />
+    <Content Include="Matlab\AA_Preemphasize.m" />
+    <Content Include="Matlab\AA_REALmedianplane.m" />
+    <Content Include="Matlab\AA_Remove.m" />
+    <Content Include="Matlab\AA_Resample.m" />
+    <Content Include="Matlab\AA_SaveLinearToWAV.m" />
+    <Content Include="Matlab\AA_SaveMat.m" />
+    <Content Include="Matlab\AA_SmoothCepstral.m" />
+    <Content Include="Matlab\AA_SOFAconvertSOFA2ARI.m" />
+    <Content Include="Matlab\AA_SOFAload.m" />
+    <Content Include="Matlab\AA_SOFAsaveGeneralFIR.m" />
+    <Content Include="Matlab\AA_SOFAsaveGeneralFIRLAS.m" />
+    <Content Include="Matlab\AA_SOFAsaveSimpleFreeFieldHRIR.m" />
+    <Content Include="Matlab\AA_SOFAsaveSimpleFreeFieldHRIRLAS.m" />
+    <Content Include="Matlab\AA_SOFAsaveSimpleHeadphoneIR.m" />
+    <Content Include="Matlab\AA_SOFAstart.m" />
+    <Content Include="Matlab\AA_SphereModel.m" />
+    <Content Include="Matlab\AA_suplabel.m" />
+    <Content Include="Matlab\AA_Window.m" />
+    <Content Include="Matlab\CalcETC.m" />
+    <Content Include="Matlab\db2rms.m" />
+    <Content Include="Matlab\deg2rad.m" />
+    <Content Include="Matlab\FW_AppendBreak.m" />
+    <Content Include="Matlab\FW_AppendCISPulseTrain.m" />
+    <Content Include="Matlab\FW_AppendPulseTrain.m" />
+    <Content Include="Matlab\FW_DataChannel.m" />
+    <Content Include="Matlab\FW_DataChannelImport.m" />
+    <Content Include="Matlab\FW_ElectricVocoder.m" />
+    <Content Include="Matlab\FW_fade.m" />
+    <Content Include="Matlab\FW_FilterPulses.m" />
+    <Content Include="Matlab\FW_GetStimulusDuration.m" />
+    <Content Include="Matlab\FW_GETVocoderEl.m" />
+    <Content Include="Matlab\FW_NoiseVocoderEl.m" />
+    <Content Include="Matlab\FW_PlotResults.m" />
+    <Content Include="Matlab\FW_ra.m" />
+    <Content Include="Matlab\FW_RIBGap.m" />
+    <Content Include="Matlab\FW_RIBPulse.m" />
+    <Content Include="Matlab\FW_ShowStimulus.m" />
+    <Content Include="Matlab\FW_stimVec2Sig.m" />
+    <Content Include="Matlab\FW_Trigger.m" />
+    <Content Include="Matlab\geo2horpolar.m" />
+    <Content Include="Matlab\hor2geo.m" />
+    <Content Include="Matlab\hrtfLAS_CalcHrtfDtfLAS.m" />
+    <Content Include="Matlab\hrtfLAS_CalcREFLAS.m" />
+    <Content Include="Matlab\hrtfOld_CalcALL.m" />
+    <Content Include="Matlab\hrtfOld_CalcHrtfDtf.m" />
+    <Content Include="Matlab\hrtf_CalcHrtfDtfC.m" />
+    <Content Include="Matlab\hrtf_CalcREF.m" />
+    <Content Include="Matlab\hrtf_UpdateSOFAmetadata.m" />
+    <Content Include="Matlab\polar3.m" />
+    <Content Include="Matlab\polar3ortho.m" />
+    <Content Include="Matlab\rad2deg.m" />
+    <Content Include="Matlab\rms2dB.m" />
+    <Content Include="Matlab\testitemlistsymmetry.m" />
+    <Content Include="Matlab\test_grpdelay.m" />
+    <Content Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </Content>
+    <None Include="Matlab\FW_testWorkspace.mat" />
+    <None Include="Matlab\SimpleFreeFieldHRIR.csv" />
+    <None Include="Matlab\SpeakerPositionsLAS.csv" />
+    <None Include="Resources\network_offline.png" />
+    <None Include="Resources\network_idle.png" />
+    <None Include="Resources\disconnected.png" />
+    <None Include="Resources\connected.png" />
+    <None Include="Resources\network_transmit_receive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

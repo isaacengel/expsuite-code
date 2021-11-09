@@ -1,0 +1,2437 @@
+*************************************************************
+*** ExpSuite
+*** History of FrameWork
+*** by Piotr Majdak, Michael Mihocic
+*************************************************************
+
+*** DEVELOPMENT STATUS ***
+
+*** v1.1.52 (21.09.2021) by miho
+- Turntable: bug fixed when performing turntable emergency stop and library not available
+
+*** v1.1.51 (06.09.2021) by miho
+- frmFitt4Fun, frmLevelDancer: Time-out bug fixed when using short signal durations
+
+*** v1.1.50 (02.09.2021) by miho
+- STIM: Bug fixed when using fitting files from network folders (starting with "\"), the folder names were truncated incorrectly
+
+*** v1.1.49 (02.08.2021) by miho
+- frmOptions: Tab "CSV Export/Import" renamed to "Item List", Options content sorted, 
+	all item list related options moved to tab "Item List"
+- Item List: Set Optimal Column Width feature improved (much faster now); some redundant sequential calls of function removed
+- Create/Load Item List: Timer value added to status box
+- several minor optimizations
+- TestFW: frmTurntableTest: Bugs fixed
+
+*** v1.1.48 (06.05.2021) by miho
+- Turntable/frmTurntable: turntable rotations with delayed commands implemented; 
+	allows triggering rotation commands already sometime during previous stimulations
+- turntable commands simplified	
+
+*** v1.1.47 (18.03.2021) by miho
+- Turntable/frmTurntable: Turntable bugs fixed
+
+*** v1.1.46 (15.03.2021) by miho
+- frmMain: Update procedure improved when checking for updates on kfs4 server
+- frmOptions -> Description tab: Word wrap enabled
+
+*** v1.1.45 (12.03.2021) by miho
+- new feature/option implemented for Four Audio turntable: allow pre-rotation (eg. for next item): 
+	send the command to move and don't wait until the target position has been reached
+	(FW supports the checkbox to enable/disable; function has to be implemented in application)
+
+*** v1.1.44 (11.03.2021) by miho
+- frmTurntable: Bug fixed: Reset CW & CCW buttons were disabled
+- Turntable/frmTurntable/frmMain: show TT angle on frmMain
+- frmMain: if check for updates takes longer, hour glass cursor is displayed, 
+	so the user is informed that something is happening
+
+*** v1.1.43 (24.02.2021) by mlindenbeck
+- frmFitt4Fun.cmdTHR_Click(): 1000 * .Duration now compared with .MinDist * .TimeBase
+
+*** v1.1.42 (18.02.2021) by miho
+- frmMain: SetOptimalColWidth optimized if item list contains one very wide column (wider than half of total width)
+- frmMain: SetOptimalColWidth: performance improved (function not executed so often)
+
+*** v1.1.41 (28.01.2021) by miho
+- frmInputMultiline: vertically scrollable if text is long
+
+*** v1.1.40 (22.01.2021) by miho
+- Turntable.vb, frmTurntableTest.vb: bugs fixed / library updated
+
+*** v1.1.39 (21.01.2021) by miho
+- copyright years updated
+- links adapted to new ARI website
+- download links for Sourceforge mirrors updated
+- frmSettings: bug fixed: ExperimentID disabled when connected (has influence on 
+	folder's or files' names); tool tip added
+
+*** v1.1.38 (02.12.2020) by miho
+- frmTurntable: set current position: Dialogue when using Four Audio turntable
+- Turntable.vb: Move functions improved to enable rotations >= 360° (FW)
+- frmTurntable: 2 buttons to rotate +/-360° when using Four Audio turntable
+- FW_ShowStimulus: comments/help improved
+
+*** v1.1.37 (27.11.2020) by miho
+- frmOptions, frmSettings, HUI: Description added when an exception is thrown (loader lock)
+
+*** v1.1.36 (24.11.2020) by miho
+- frmSettings: bug fixed when using file names in constants with absolute paths (labels fixed)
+- Turntable, frmTurntable: Bugs fixed, stability improvements
+- Test FrameWork: frmTurntableTest: Bugs fixed
+- frmInputBox: minor bugs fixed
+
+*** v1.1.35 (17.11.2020) by Martin Lindenbeck
+- frmFitt4Fun.cmdMCL_Click(): 1000 * .Duration now compared with .MinDist * .TimeBase ("* .TimeBase" was missing in v1.1.34)
+
+*** v1.1.34 (15.11.2020) by Martin Lindenbeck
+- frmFitt4Fun.cmdMCL_Click(): Bug comparing a ms variable (.Duration) with a us Variable (.MinDist) fixed. Now, arbitrarily short fittings are possible
+
+*** v1.1.33 (04.11.2020) by Martin Lindenbeck
+- frmLevelDancer: Further bug fixing from v1.1.32. Local ShowStimulus flag introduced to disentangle Level Dancer and frmMain.
+
+*** v1.1.32 (04.11.2020) by Martin Lindenbeck
+- Stim.ShowStimulus(): Bug fixed when plotting stimulus via Level Dancer without having previously plotted stimuli via frmMain
+
+*** v1.1.31 (29.10.2020) by miho
+- frmSettingsTrackRange: Bug fixed when loading window the first time during session
+- frmSettingsTrackRange/INISettings: Default values for range min/max values changed to +-5 instead of +-100
+- frmSettings: Tracker min/max values are displayed in Tracker tab
+
+*** v1.1.30 (09.10.2020) by miho
+- frmMain: backing up log files improved: log files are also backed up when stimulating items (one/all) or
+	when cancelling experiments with an error message (and not exclusively when successfully finishing an experiment)
+- FWintern: gblnExpDone renamed to gblnStimulationDone
+- frmMain/STIM: Backing up of item lists improved: 
+	# item lists are also backed-up when stimulating items (one/all)
+	# item lists use a time stamp -> more than one backup file can be created within one "connect session":
+		new name:	~[settings name]_backup_[yyyyMMdd_HHmmss].[item list extension]
+		example:	~my test setting_backup_20201009_090647.itl.csv
+	# time stamp file name is reset in the following cases:
+		an experiment is started
+		all items are stimulated
+		a new item list is created
+		an item list is loaded
+		connect
+	# time stamp file name is re-used when just stimulating selected items, using the date/time from the first stimulation
+
+*** v1.1.29 (05.10.2020) by Michael Mihocic
+- frmSettings: Bug fixed that caused occasional clearing of Signal tab
+- frmSettings: Code style bugs fixed
+
+*** v1.1.28 (22.09.2020) by Michael Mihocic
+- frmSettings: Organizing of Constants tab happens already when opening window (resizing is invisible for users now)
+- frmSettings: Showing subject's request text in status box only when not empty text string
+
+*** v1.1.27 (16.09.2020) by Michael Mihocic
+- FW_ShowStimulus.m: Bug fixed when showing stimuli in Unity mode
+
+*** v1.1.26 (14.09.2020) by Michael Mihocic
+- frmSettings: Minor bug fixed when selecting file in constants (label got changed)
+
+*** v1.1.25 (09.09.2020) by Martin Lindenbeck
+- frmResult: Initial directory can now be defined by the application developer for "Load List" and "Append List" (in addition to "Save List", as already implemented)
+
+*** v1.1.24 (31.08.2020) by Michael Mihocic
+- frmTurntable: Handling with Outline Turntable improved
+
+*** v1.1.23 (27.08.2020) by Michael Mihocic
+- frmMain: Pasting to item list improved
+- frmMain: Shortcut for pasting to item list changed --> Ctrl+Shift+V
+
+*** v1.1.22 (21.08.2020) by Michael Mihocic
+- HUI.vb: Bug fixed when using gamepad
+
+*** v1.1.21 (19.08.2020) by Martin Lindenbeck
+- frmFitt4Fun: Bug fixed that triggered errors when stimulating electrodes of the right ear
+
+*** v1.1.20 (14.08.2020) by Michael Mihocic
+- clsItemList: Bug fixed when setting itemcount of result list to 0: item list has been reset instead
+- clsItemList: .ItemCount should not be set when column count = 0; remark added to help comments
+- frmSettings: Signal tab is not cleared by default when switching from Unity <-> pd at Signal Output
+
+*** v1.1.19 (12.08.2020) by Michael Mihocic
+- frmMain: Bug fixed when updating applications from Sourceforge
+- Sourceforge mirror list tested and updated
+- frmMain: Pasting values in item list implemented (indices must not exceed available items (rows, columns), 
+	otherwise exceeding content will be skipped); if you copy content from the item list itself
+	it is recommended to use the new options parameter:
+- frmOptions/INIOptions: new parameter: gblnIncludeHeadersInClipboard (include headers when copying
+	content from item list)
+
+*** v1.1.18 (07.08.2020) by Michael Mihocic
+- INIOptions: Bug fixed when number of channels in options file was higher than defined in Confic.vb
+	(caused crash when opening Settings window)
+- clsItemList: New item status: Ignored (items are ignored during experiment)
+- frmSettings: Bug fixed: File select button was always disabled 
+	(bug implemented in one of the recent versions)
+- frmSettings: Constants tab: New feature, resizing and positioning more dynamically, 
+	depending on label text length
+- frmSettings: Constants tab: Text alignment right if numeric, nonvectorized values
+- frmSettings: Some minor bugs fixed
+- clsItemList: new property (get/set): Set/get directory where result list is stored. 
+	This value will overwrite default folder (eg. Settings file location).
+	If value is empty the directory of last Save/Load dialogue is the initial directory for the next Save dialogue.
+	Does not influence directory for Settings and Item Lists dialogues.
+- many FW files: code optimization (compound assignments, simplifications, unused parameters removed,...)
+
+*** v1.1.17 (28.07.2020) by Michael Mihocic
+- Turntable.vb/frmTurntable.vb: Turntable FourAudio ANT with 32bit dlls implemented
+- installation requires:
+	- installation of RS485-USB driver before connecting cable
+	- ELFANT-V0.9.7.dll and Qt5Core.dll in %windir% or location of .exe file
+
+*** v1.1.16 (24.07.2020) by Michael Mihocic
+- frmSettings: Bug fixed when disabling constants (type: file name)
+- further improvements of Four Audio ANT turntable control, eg: brake pulled when disconnecting
+	or after a timer has expired (timer starts after movement, stimulation, experiment;
+	timer stops before moving, stimulating, experiment)
+
+*** v1.1.15 (23.07.2020) by Martin Lindenbeck
+- frmFitt4Fun: Bug fixed when saving fitting file
+
+*** v1.1.14 (23.07.2020) by Michael Mihocic
+- frmFitt4Fun/Implant: Bug fixed when opening Fitt4Fun
+- frmFitt4Fun/Implant: Bug fixed when stimulating with Fitt4Fun
+
+*** v1.1.13 (23.07.2020) by Martin Lindenbeck
+- frmSettings: Load and release of fitting files and F4FL/F4FR in context with changes for v1.1.12 improved
+- frmFitt4Fun: Safety checks regarding the 'minimum pulse distance' changed to MINDIST_MIN instead of MINDIST
+- frmSettings_FormClosed: "mStimOutput <> mStimOutput" changed to "mStimOutput <> gStimOutput"
+
+*** v1.1.12 (14.07.2020) by Michael Mihocic and Martin Lindenbeck
+- Implant/frmSettings/frmMain: Handling of 'Pulse period' and 'Minimum pulse distance' (fitting files) within application improved
+- F4FL and F4FR are only modified when 1. loading settings or 2. closing settings window (OK/Apply: store new or remove fitting; Cancel/X: restore)
+
+*** v1.1.11 (13.07.2020) by Michael Mihocic
+- Four Audio ANT turntable implementation, documentation updated
+- frmSettings: Constants tab: more space for units
+- frmSettings: Constants tab: units are also displayed as tooltips in case they are longer then text field
+- frmMain: FW version also displayed in title bar
+- frmSettings: Bug fixed when cancelling or applying fitting files, some parameters were cleared
+
+*** v1.1.10 (15.06.2020) by Michael Mihocic
+- frmSettings: Some visual issues fixed (position of elements,...)
+- frmSettings: List of constants is scrollable (if necessary)
+- frmTurntableTest: First functions tested to use Four Audio ANT turntable, documentation started
+
+*** v1.1.9 (17.04.2020) by Michael Mihocic
+- FW_ShowStimulus: spectrogram mode added (specgram will be removed in future versions of Matlab),
+	in this release still both options (specgram, spectrogram) are included
+
+*** v1.1.8 (01.04.2020) by Michael Mihocic
+- frmMain/INIOptions: minor bug fixed when checking for default options template
+- frmMain: new feature in menu "Help" -> "Open Documentation Folder"
+
+*** v1.1.7 (10.03.2020) by Michael Mihocic
+- frmMain: minor feature: version check ignores displaying Revision number if zero (versioning: major.minor.build.revision)
+- frmMain, Tracker.vb: Set Tracker Offset fixed for Unity
+
+*** v1.1.6 (04.03.2020) by Michael Mihocic
+- new feature in options: silent backup of log file
+- frmTT added, form to test turntable control (only to TestFW app)
+
+*** v1.1.5 (24.01.2020) by Michael Mihocic
+- frmOptions: bug fixed when no ASIO interfaces available and listing devices
+
+*** v1.1.4 (22.01.2020) by Michael Mihocic
+- frmOptions: "Get Devices" button renamed to "Show Devices"
+- frmOptions: ADC and DAC devices dropdown menus set to invisible (not used (yet))
+- INISettings: Bug fixed when loading settings with more channels defined than set in options
+- frmSettings: Bug fixed when loading settings file with paths lengths of zero
+- frmMain: two new menu points: Help -> History allows opening of 
+	history.txt and FWhistory.txt (if existing)
+- frmMain: some tooltips updated
+- copyright years updated
+
+*** v1.1.3 (04.12.2019) by Piotr Majdak
+- Turntable: no reset when moving to an angle.
+
+*** v1.1.2 (14.11.2019) by Michael Mihocic
+- minor fix: 'Viwo' replaced by 'ViWo' in messages
+- status messages improved
+- version & info about audio player and ViWo are saved in log file
+
+*** v1.1.1 (23.10.2019) by Michael Mihocic
+- STIM: Bug fixed: Unity uses always (stereo) channel 1 for output (pd options ignored)
+- ViWo.vb: some bugs fixed, improvements for Unity setup
+- frmOptions: some steps prepared to determine audio devices in options
+
+*** v1.1.0 (14.10.2019) by Michael Mihocic
+- frmExp: Windows Media Player replaced by DirectX Audio-/Video-Player -> many advantages like WMP object
+	does not to be loaded in every application
+- recommended Video format: *.wmv
+- tested in Ironie v1.0.0
+
+*** v1.0.0 (20.09.2019) by Michael Mihocic
+- frmOptions/Output/INIOptions: Audio Interfaces can be addressed by device name instead of index
+- YAMI*.bat patches are adapted to this feature but remain backwards compatible for old applications
+- tested with upgraded pd 0.49
+- item list extension can be defined in Config.vb by application developers
+- new icon (by Martin Lindenbeck); credits updated
+- frmAbout: minor optical redesigns, larger logo
+- frmMain: Check when loaded if Windows Media Player is available (required since FW v0.10.19)
+- FWintern: text changed from "...bis Pause" to "...bis zur Pause"
+- INIOptions: undefined (empty) parameters are not stored in options (when matching default)
+- doc: readme.rtf and Getting Started.odt updated
+
+##################################################################################
+##################################################################################
+
+*** v0.10.22 (21.08.2019) by Michael Mihocic
+- frmExp: Mode0 supports one image as well (used in Ironie)
+
+*** v0.10.21 (20.08.2019) by Michael Mihocic
+- frmExp: some updates when resizing in mode 0 and using video player
+
+*** v0.10.20 (19.08.2019) by Michael Mihocic
+- STIM: CheckStimulationFile: Bug fixed, file was not closed after reading 
+	(could other functions block from reading file)
+- frmExp: some updates when resizing in mode 0 and using video player
+
+*** v0.10.19 (09.08.2019) by Michael Mihocic
+- frmExp: Video player (Windows Media Player) added to Exp Mode 0, invisible by default
+	application Ironie is the first one using video playback
+- FWintern: Bug fixed when checking constants for ifInteger flag
+- frmSettings: Minor bug fixed when allowing multiple file types in variables or constants
+- template options file: user is asked before loading template options file (see FW v0.9.84)
+
+*** v0.10.18 (24.07.2019) by Michael Mihocic & Piotr Majdak
+- glOutputPlay(*) is set to false when Player is set on
+
+*** v0.10.17 (18.06.2019) by Michael Mihocic
+- frmOptions: design bug fixed
+
+*** v0.10.16 (12.06.2019) by Michael Mihocic & Piotr Majdak
+- Turntable: slow fine adjustment removed (hardware issues)
+- Turntable: bug fixed: rotation when tt is disabled in settings
+- Turntable: new feature: tt can be activated and deactivated in settings, while being connected
+- frmSettings: Variables: Default values: Shortcuts bug fixed:
+	- Ctrl +D			-> Fill selected variable with default value
+	- Ctrl +Shift +D	-> Fill all variables with default values
+- frmSettings: Audio: Audio multichannel DAC real-time: minor visual improvements in Settings tab
+
+*** v0.10.15 (22.05.2019) by Michael Mihocic
+- Output/frmOptions: New feature: DAC & ADC devices can be set differently 
+	(feature is backwards compatible to old options files)
+- turntable can be controlled without being connected
+- frmTurntable: "Stop" clearing initialization and current position
+- frmTurntable: minor modifications
+- turntable handling improved
+- frmOptions: minor modifications
+- frmOptions: hide NIC tab (NIC stimulation not implemented)
+
+*** v0.10.14 (20.05.2019) by Michael Mihocic
+- frmTurntable: turntable position fine adjustment improved
+
+*** v0.10.13 (30.04.2019) by Michael Mihocic
+- frmSettings: backslash at end of path names removed
+- Output: UnityOff added (closing receiving UDP port, still room for improvement...)
+
+*** v0.10.12 (08.04.2019) by Michael Mihocic
+- frmTurntable: Bug fixed: directions (0, 90, 180, 270) buttons are disabled when not initialized (reset)
+
+*** v0.10.11 (05.04.2019) by Michael Mihocic
+- frmTurntable: Bug fixed: images displaying correct direction of +/- 10° steps
+- frmTurntable: Bug fixed: +/- 10° steps start from current position (not previously cancelled destined direction)
+- frmTurntable: Some other bugs fixed concerning TT handling and removing strange behaviours...
+- frmMain: New feature: connecting time is displayed after connection is established
+
+*** v0.10.10 (04.02.2019) by Michael Mihocic
+- frmOptions & frmSettings: bug fixed when displaying and handling number of tracker sensors
+- Souceforge mirrors list (for updates) updated
+
+*** v0.10.9 (23.01.2019) by Michael Mihocic
+- proper "Dark Mode" in FW implemented, can be enabled in 
+	Settings -> Experiment Screen 
+	(useful for EEG experiments)
+
+*** v0.10.8 (15.01.2019) by Michael Mihocic
+- (onset) trigger output channel implemented
+- trigger channel handled by FW; data channel handled by application
+- copyright years updated
+
+*** v0.10.7 (19.12.2018) by Michael Mihocic
+- data channel communication improved
+- bugs fixed handling audio & data channels
+
+*** v0.10.6 (13.12.2018) by Michael Mihocic
+- New feature: data channel functionality added (transmit data via audio)
+	(relevant for many VB files, and 2 Matlab files)
+
+*** v0.10.5 (07.11.2018) by Michael Mihocic
+- frmSettings: bug fixed when displaying variables indices
+- frmSettings: bug fixed when setting default variables
+- minor bugs fixed
+
+*** v0.10.4 (15.10.2018) by Michael Mihocic
+- frmSettings: minor bug fixed: radio buttons disabled for all stimulation types when connected
+
+*** v0.10.3 (28.08.2018) by Michael Mihocic
+- Implementation of Unity and output modes further implemented
+- Unity/tracker triggers added to control experiment
+
+*** v0.10.2 (02.08.2018) by Michael Mihocic
+- frmOptions, frmSettings: Implemenatation of Audio (Unity) as new output device
+- frmOptions: Tracker can be switched between YAMI (COM-port) and ViWo (Unity)
+- gblnTrackerInViWo replaced by glTrackerMode (0: disabled, 1: YAMI, 2: ViWo)
+
+*** v0.10.1 (27.7.2018) by Piotr Majdak
+- frmExp.GetResponse considers now responses from ViWo: 
+  - frmExp.EnableResponse sends /Tracker/EnableResponse to ViWo if in use
+  - Tracker saves a response when WiVo sends /Tracker/GetResponse/X with X being the response number
+  - frmExp.DisableResponse sends /Tracker/DisableResponse to ViWo if in use
+
+*** v0.10.0 (27.7.2018) by Piotr Majdak
+- gblnTrackerInViWo: if set, the tracker is assumed to be in ViWo, not the Output device. This is a parameter currently editable in the option ini file only. 
+
+##################################################################################
+##################################################################################
+
+*** v0.9.110 (23.07.2018) by Michael Mihocic
+- Tracker.vb: Get current tracker value command is sent to ViWo if "ViWo.Version" contains string "unity"
+	(feature used for Unity implementation, a more sophisticated solution will follow)
+
+*** v0.9.109 (17.07.2018) by Michael Mihocic
+- OSC implementation (v0.9.108) commented out in source code and set to invisible in GUI
+	because a modified implementation in Unity can deal with OSC messages without parameters,
+	feature will remain commented out in source code, in case it is needed some time to comply with standard
+- (frmOptions: Minor feature: Warning when changing OSC checkbox to 
+	click OK/Apply to effect changes)
+
+*** v0.9.108 (16.07.2018) by Michael Mihocic
+- First steps for Unity support
+- Options to comply with standard in OSC messages (a parameter must be transmitted),
+	if enabled a '0' (zero) will be sent as parameter,
+	can cause troubles in old versions of YAMI/ViWo but is mandatory to enable OSC
+	communication with Unity
+- Update procedure improved
+
+*** v0.9.107 (13.07.2018) by Michael Mihocic
+- frmExp: Bugs fixed when clipping cursor to exp window,
+	and using trackbar in experiment mode 5 (trackbar),
+	and exp window is not the main screen
+
+*** v0.9.106 (13.07.2018) by Michael Mihocic
+- frmExp: More bugs fixed when clipping cursor to exp window
+- frmExp: Clipping cursor to exp window even more improved for experiment mode 5 (trackbar)
+
+*** v0.9.105 (12.07.2018) by Michael Mihocic
+- frmExp: Bugs fixed when clipping cursor to exp window
+- frmExp: Clipping cursor to exp window improved for experiment mode 5 (trackbar)
+
+*** v0.9.104 (02.07.2018) by Michael Mihocic
+- FWintern: glOutputPlay changed from Integer to BitArray to enable higher bit sums
+
+*** v0.9.103 (02.07.2018) by Michael Mihocic
+- frmMain: Bug fixed when setting experiment range for one item only:
+	experiment range was not displayed on "Start Experiment" button
+- frmMain: Update procedure from sourceforge improved (more servers added)
+
+*** v0.9.102 (08.06.2018) by Michael Mihocic
+- Update paths updated (kfs4 change from "Public" to "eap", and sourceforge mirror changed)
+
+*** v0.9.101 (23.04.2018) by Michael Mihocic
+- frmSettings: creation of Analysis Settings improved
+
+*** v0.9.100 (15.03.2018) by Michael Mihocic
+- frmResults: Bug fixed when loading window (restoring window size)
+- frmMain: Minor bug fixed in visualization
+
+*** v0.9.99 (14.02.2018) by Michael Mihocic
+- frmSettings: New feature: Display variable index in variables description box
+- frmSettings: New feature: Shortcuts (PageUp, PageDown) allow switching between 
+	variables in settings -> variables tab
+- frmSettings: Variables: Filling of default values improved
+- frmMain: Minor modifications in form
+- Copyright years updated
+
+*** v0.9.98 (21.12.2017) by Michael Mihocic
+- Update constants & variables when changing output type (allows different constants/variables
+	for electrical and acoustical stimulation)
+- frmMain: Bug fixed when using different variables for different output types
+	and loading new settings file
+
+*** v0.9.97 (16.11.2017) by Michael Mihocic
+- frmFitt4Fun: Bug fixed when editing fitting file and calculating min. distance
+
+*** v0.9.96 (31.07.2017) by Martin Lindenbeck
+- frmLevelDancer: Bug fixed when using application files for appending pulse trains
+
+*** v0.9.95 (28.07.2017) by Michael Mihocic
+- frmLevelDancer: Bug fixed when using application files for appending pulse trains
+
+*** v0.9.94 (12.07.2017) by Michael Mihocic
+- License changed to EUPL 1.2
+- frmMain: minor bug fixed (tooltip)
+
+*** v0.9.93 (07.07.2017) by Michael Mihocic
+- Bug fixed when launching application and options file is corrupt
+
+*** v0.9.92 (22.02.2017) by Martin Lindenbeck
+- frmSettings.vb: Minor bug fixed in UpdateVariables, display of units added
+
+*** v0.9.91 (14.02.2017) by Michael Mihocic
+- FW_AppendPulseTrain.m: Major bug fixed, please don't use 
+	older FW versions for RIB2 experiments
+- frmMain: Bug fixed when setting experiment item range
+- Copyright years updated
+
+*** v0.9.90 (15.12.2016) by Michael Mihocic
+- frmExp: Bug fixed for mode 7
+
+*** v0.9.89 (13.12.2016) by Michael Mihocic
+- CPU load in loops improved (mostly in frmMain)
+- FW_GetStimulusDuration.m: Bug fixed when file not found
+- frmExp: Mode 7 adapted; wait after break implemented
+- STIM: Function GetWavDuration improved (not backwards compatible but
+	was not used by any application), working without MATLAB
+- frmExp: Bug fixed for mode 5
+
+*** v0.9.88 (05.12.2016) by Michael Mihocic
+- Output: FadeOut implemented (requires YAMI v0.23!)
+
+*** v0.9.87 (11.11.2016) by Michael Mihocic
+- clsItemList/Output: Echo mode in pd
+
+*** v0.9.86 (04.11.2016) by Michael Mihocic
+- frmMain: Sort item list function improved
+
+*** v0.9.85 (22.09.2016) by Michael Mihocic
+- INISettings: Minor bug fixed
+
+*** v0.9.84 (05.09.2016) by Michael Mihocic
+- frmMain/INISettings: Loading of settings improved; check added if settings
+	were saved with a newer application version (-> notification)
+- frmMain/INIOptions: New feature: Template options loaded (if available, 
+	and, of course, no application options file existing);
+	this feature allows to prepare default options for every computer
+	Location/Syntax: "%ProgramData%\Expsuite\Template.ini" (not case-sensitive)
+- frmExp: Timer bug fixed (tmrStatus), calculation for end-of-experiment
+	did not consider experiment range
+- frmFitt: New feature: Amplitudes can be imported from a .signal file
+- Minor improvements when loading/saving settings
+- Implant: Minor bugs fixed
+- frmMain: Minor improvements
+
+*** v0.9.83 (22.08.2016) by Michael Mihocic
+- Output: Bug fixed: User is warned when loading a wave file including
+	special characters that are not supported by pd
+
+*** v0.9.82 (16.08.2016) by Michael Mihocic
+- frmExp: New mode (7) for InPaint added
+- frmMain: Bug fixed: (dis)connect was possible during experiment via
+	"Run" menu or shortcut (F5)
+- Output: GetStimulusDuration also provides sampling rate
+- frmSettings: Tracker windows warnings improved
+
+*** v0.9.81 (08.08.2016) by Michael Mihocic
+- frmMain: Minor bug fix: Automatic backup of item list improved
+
+*** v0.9.80 (26.07.2016) by Michael Mihocic
+- frmResult: New feature: Function SortColumn allows optional boolean input
+	to sort in reverse order
+- Warning is displayed when using "ä", "ö", "ü", or "ß" in output folder
+	(pd cannot handle those characters)
+- ".itl.itl" will be replaced by ".itl" when saving item lists (bug caused by
+	disabling file extension showed in Windows Explorer
+
+*** v0.9.79 (21.07.2016) by Michael Mihocic
+- Minor, build and revision updates are silent (no dialogs) when updating via
+	Help -> Check for updates; major updates are not silent
+
+*** v0.9.78 (20.07.2016) by Michael Mihocic
+- HUI: New function: IsModeEnabled returns current state of Mode LED of gamepad
+	(0: mode off; 1: mode on; -1: no gamepad/error)
+- frmExp: Resize mode of Mode 6 improved
+
+*** v0.9.77 (12.07.2016) by Michael Mihocic
+- frmExp: New feature: Response Time Stamp: Response time is recorded
+	(useful for reaction experiments)
+
+*** v0.9.76 (11.07.2016) by Michael Mihocic
+- frmExp: Mode 6 (AudPrime): vertical instead of horizontal
+- Minor bug fixed: Message box when checking for updates
+
+*** v0.9.75 (28.06.2016) by Michael Mihocic
+!!! MATLAB 2012b OR NEWER REQUIRED !!!
+- STIM: wavwrite replaced by audiowrite
+	(due to compatibility reasons for MATLAB 2016a;
+	function not implemented in MATLAB 2012a or earlier)
+- New feature: Program thread priority can be set in options
+- 32-bit OS beeps disabled (hidden)
+- ra.m replaced by FW_ra.m
+- MATLAB files cleaned up
+- Copyright years updated
+
+*** v0.9.74 (02.06.2016) by Michael Mihocic
+- frmExp: Mode 6 improved and adapted to AudPrime
+- FW_ra.m added to FW Matlab files
+- Time-Out default value: 2000ms instead of 0ms (should be adapted to application anyway)
+- Error messages improved when checking numeric values
+
+*** v0.9.73 (19.05.2016) by Michael Mihocic
+- ARI logo updated (new color)
+- frmMain: Performance of datagridview improved significantly by double buffering
+	(scrolling item long lists stucked)
+
+*** v0.9.72 (11.05.2016) by Michael Mihocic
+- frmSettings: Override Exp Mode: Maximum value set to 6 (possible range: 0-6)
+
+*** v0.9.71 (09.05.2016) by Michael Mihocic
+- frmExp: New experiment mode added (for AudPrime)
+
+*** v0.9.70 (02.05.2016) by Theresa Loss
+- FW_ElectricVocoder.m: error message changed, division factor
+                        format changed to double, removed silence problem
+- INISettings.vb:       changed division factor from integer to double, 
+                        save division factor with settings
+- frmMain.vb:           save division factor in szSettings 
+- Stim.vb:              division factor changed
+
+*** v0.9.69 (20.04.2016) by Michael Mihocic
+- FW_GetStimulusDuration: wavread replaced by audioread
+
+*** v0.9.68 (19.04.2016) by Theresa Loss
+- FW_GETVocoderEl: small frequency bug fixed
+
+*** v0.9.67 (18.04.2016) by Theresa Loss
+- FW_GETVocoderEl: frequency variable bug fixed,
+                   GET normalization changed
+- FW_NoiseVocoderEl: selected vocoder changed
+
+*** v0.9.66 (14.04.2016) by Theresa Loss
+- FW_GETVocoderEl.m:      Call GET100.mat file later, so it is not needed for LoudSca...
+- FW_ElectricVocoder.m:   changes for ITDGaps method, ITDGaps is coded with '0' electrode,  
+                          therefore some changes for MCL and THR had to be applied
+
+*** v0.9.65 (14.04.2016) by Theresa Loss
+- FW_AppendCisPulseTrain: Electric Vocoder mode added to RIB2 mode -> {3,4} in switch case loop
+- FW_AppendPulseTrain:    Electric Vocoder mode added to RIB2 mode -> {3,4} in switch case loop
+- FW_RIBGap: 		  Electric Vocoder mode added to RIB2 mode -> {3,4} in switch case loop
+- FW_RIBPulse:	          Electric Vocoder mode added to RIB2 mode -> {3,4} in switch case loop
+- FW_Show Stimulus: 	  Electric Vocoder mode added to RIB2 mode -> {3,4} in switch case loop
+- frmAbout.Designer.vb    Extra field 'Electric Vocoder' added for acoustic simulation
+- frmFitt4Fun.vb          set myFitt as 'public', add STIM.GENMODE.genVocoder to all STIM.GENMODE.RIB2 
+- frmMain.vb              add genVocoder mode to all RIB2 modes
+- frmSettings             extra field for 'Electric Vocoder'
+- Implant.vb              range parameter added for range information
+- INISettings.vb          extra parameter for 'Electric Vocoder' mode added
+- Output.vb               'Electric Vocoder' added to acoustic output 
+
+*** v0.9.64 (13.04.2016) by Michael Mihocic
+- frmExp: Minor bug fixed when displaying breaks on experiment screen
+
+*** v0.9.63 (09.02.2016) by Michael Mihocic
+- frmFitt4Fun/Implant: Default Phase duration changed to 16
+- frmFitt4Fun: Default range = 1, default MCL = 30 for new fitting files
+- frmLevelDancer: Bug fixed: Phase duration was used from fitting file and not from
+	Signal tab (right electrode only)
+- frmMain: New feature: Request Text is displayed in status field when a setting is loaded or set
+	(optionally press Ctrl+R in main window to display)
+
+*** v0.9.62 (26.01.2016) by Michael Mihocic
+- frmMain/frmExp: Bug fixed when using time intervals for break
+- frmMain/frmExp: Bug fixed when initiating break (time intervals)
+- frmMain/frmExp: Timer starts with subject's start button
+- frmAbout: OeAW logo updated
+
+*** v0.9.61 (20.01.2016) by Michael Mihocic
+- frmExp: OeAW logo updated
+- Copyright years updated
+
+*** v0.9.60 (14.12.2015) by Michael Mihocic
+- frmMain: Button tooltip ("Add Repetition) shows number of repetitions to be added
+- frmMain: Bug fixed: Break interval calculation was not correct when continuing experiment
+- New feature: Break interval can be set to percent
+- frmExp: Objects' sizes and dynamic adaptations improved, bugs fixed, general optimizations; tested with:
+		# FrameWork (all modes)
+		# ShortIPI (mode 0, mode 3)
+		# BLBauto (mode 2)
+		# PitchEst (mode 4)
+	Screenshots see w07kfs4 server
+- frmFitt4Fun: Minor bug fixed: Label alignment		
+- frmFitt4Fun: Minor bug fixed when exporting amplitudes (full directory was shown in file name field)
+- frmFitt4Fun: New feature: Fitting file is backed up in work directory when stimulating
+- frmSettings: Bug fixed: Calculating and displaying phase duration in Signal tab
+- frmSettings/frmExp: New feature: Override experiment mode (see: Settings -> Experiment Screen tab)
+- frmExp: "Bug" fixed for mode 2: text input field accepts just single key-down events when entering
+	numbers to avoid huge feedback numbers by non-pc-familiar subjects
+	(keep pressing on "5": now -> "5", before -> "5555555...")
+- frmExp: Resizing and label positioning of mode 4 improved when not using buttons (labels centered)
+- frmMain: Bug fixed when auto-saving item list
+
+*** v0.9.59 (06.11.2015) by Michael Mihocic
+- frmMain: Load Settings -> Asking (msgbox) for linked item list only if file exists
+
+*** v0.9.58 (15.10.2015) by Michael Mihocic
+- frmMain: Bug fixed: Global variable gszSettingTitle was not set correctly when saving Settings
+- frmFitt4Fun: Tab index order changed
+- frmLevelDancer: Tab index order changed
+- frmMain: Minor change: Updates notification text changed
+
+*** v0.9.57 (12.10.2015) by Michael Mihocic
+- frmFitt4Fun: Minor bugs fixed when saving fitting file and showing file name
+- frmMain: Minor bugs fixed when checking for updates, some improvements
+
+*** v0.9.56 (07.10.2015) by Katharina Egger
+- frmLevelDancer: Calculation of lPNr generalized for all called Matlab functions
+
+*** v0.9.55 (31.08.2015) by Michael Mihocic
+- STIM: New feature for application developers: function GetWavDuration provides 
+	the duration of a wav file in ms/samples (without using MATLAB);
+	see TestFW application or FW comments for further details;
+	documentation will be included in future help files
+	(sourceforge features ticket #8 closed)
+- Bug fixed in all FW forms: stack overflow prevented by setting the maximal
+	number of characters to 10 (for numeric text boxes)
+	(sourceforge bugs ticket #3 closed)
+- frmInputBox: Bugs fixed concerning window position and size
+
+*** v0.9.54 (06.08.2015) by Michael Mihocic
+- frmResult: Sort function button for users implemented, column to be sorted
+	can be selected with combobox; index renumbering possible by button
+- frmResult/Result: New function for developer: Result.SortColumn can be used
+	to sort filled result lists by the column index;
+	optional index renumbering can be performed by [frmX].ResultList.RenumberIndex();
+	(the sorting function doesn't need to be implemented in every single application anymore)
+- frmResult: Window size handling and position adjustments improved
+- frmMain: Bug fixed for sorting function
+- Some obsolete comment fields for old help file builder removed
+
+*** v0.9.53 (30.07.2015) by Michael Mihocic
+- Beeps (wave files) for errors and last items added
+- frmMain: Bug fixed when synchronising progress bar to break,
+	and number of items in list is less than break interval;
+	general improvement of progress calculation
+- Warning implemented if output directory contains many files (2.500+)
+	(this will slow down the system)
+
+*** v0.9.52 (03.06.2015) by Michael Mihocic
+- clsItemList: New function AppendToItem allows to append information to existing
+	item (optional: append existing value to new value)
+
+*** v0.9.51 (29.05.2015) by Michael Mihocic
+- Minor bug fixed: tooltips
+- Comments improved
+
+*** v0.9.50 (20.05.2015) by Michael Mihocic
+- Bug fixed (frmMain) when increasing the number of items during an experiment
+- Minor bugs fixed (clsItemList)
+
+*** v0.9.49 (07.04.2015) by Michael Mihocic
+- Bug fixed for Signal tab in Settings
+- Bug fixed for update routine
+- Minor bugs fixed in Fitt4Fun (left/right indicators)
+
+*** v0.9.48 (07.04.2015) by Michael Mihocic
+- frmOptions/STIM: New feature: Backup item list (automatically on .NextItem)
+	can be enabled in Options, target: work directory
+- frmSettings: Minor bug fixed (background color in Signal tab)
+
+*** v0.9.47 (02.04.2015) by Michael Mihocic
+- Update procedure improved: Help->Check for updates checks if w07kfs4-
+	server is available (hard-coded, nevertheless the check is much faster
+	if server w07kfs4 is available)
+- frmFitt4Fun, frmOptions: Tooltips bugs fixed
+
+*** v0.9.46 (25.03.2015) by Michael Mihocic
+- Bug fixed for mode 5 when displaying long test instructions
+- frmExp: "Auto Backup Log File" renamed to "Backup Log File when Disconnecting"
+
+*** v0.9.45 (12.03.2015) by Michael Mihocic
+- Several bugs fixed for mode 5
+- Bug fixed: Sometimes main window was opened out of the screen and
+	item list columns' titles were empty
+- Drag-and-drop implemented for settings files and item lists
+
+*** v0.9.44 (16.02.2015) by Michael Mihocic
+- New mode (5): Mouse wheel adjustment, test procedure included,
+	(experiment type 5), don't forget to read comments in
+	Events.OnExpShow and Events.OnStartExperiment (case 5)
+- frmExp: several bugs fixed
+
+*** v0.9.43 (22.08.2014) by Katharina Egger
+- Implant.vb: Bug fixed: C40P_RANGE1 and C40P_RIB2_RANGE1 was wrong (decimals were twisted).
+
+*** v0.9.42 (18.08.2014) by Michael Mihocic
+- frmMain: Bug fixed when break interval = 1 and last item was played
+	(a break appeared at the end of the experiment)
+
+*** v0.9.41 (10.06.2014) by Michael Mihocic
+- New feature: Play sound when starting break or finishing experiment,
+	sound files (can be replaced and) are saved as:
+		"\Resources\Application\break.wav"
+		"\Resources\Application\endofexperiment.wav"
+	sound files' source: freesound.org
+
+*** v0.9.40 (19.02.2014) by Michael Mihocic
+- frmMain: New flag: /stimulateall to stimulate all items
+
+*** v0.9.39 (14.02.2014) by Michael Mihocic
+- frmExp: New visual experiment mode 4: visual items
+	and response buttons are arranged vertically
+- append item list: efficiency and speed improved
+
+*** v0.9.38 (10.02.2014) by Michael Mihocic
+- frmExp: Dispose to reset form implemented before showing frmExpe
+- frmMain: Minor changes (flags handling)
+
+*** v0.9.37 (07.02.2014) by Michael Mihocic
+- frmMain/frmItemListPostfix: More flags added:
+	/createitemlist, /addrepetition, /createallstimuli
+- Text changed when running application the first time
+- Auto Backup Log File set to disabled by default
+
+*** v0.9.36 (16.01.2014) by Michael Mihocic
+- frmSettings: New feature: Enter sends parameter to ViWo in ViWo tab
+- minor bugs fixed in frmSettings
+
+*** v0.9.35 (13.01.2014) by Michael Mihocic
+- frmMain/frmItemListPostfix: More flags added
+- Bugs fixed
+
+- frmMain: Bug fixed (flags' string) that did not appear in debug mode
+*** v0.9.34 (10.01.2014) by Michael Mihocic
+- frmMain: Bug fixed (flags' string) that did not appear in debug mode
+
+*** v0.9.33 (10.01.2014) by Michael Mihocic
+- frmMain: Flags handling improved
+	new flag: "/saveitemlist" saves item list automatically as [settingsname]_response.itl.csv
+	after experiment finished
+
+*** v0.9.32 (09.01.2014) by Michael Mihocic
+- frmMain: New feature: flag "/start" starts an experiment automatically,
+	does not require flag "/c" (connection is established before starting exp.),
+	linked item list is loaded silently without dialog
+- frmSettings: New feature: Tooltip shows file name in Constants tab
+- Minor bugs fixed
+- Copyright years updated (2014)
+
+*** v0.9.31 (03.12.2013) by Michael Mihocic
+- Bug fixed when pressing space (stimulate)
+	multiple times in F4F or Level Dancer
+
+*** v0.9.30 (24.11.2013) by Michael Mihocic
+- ViWo/frmSettings: Oculus Rift support
+
+*** v0.9.29 (20.11.2013) by Michael Mihocic
+- frmSettings: Minor bug fixed: Label size fixed
+
+*** v0.9.28 (16.11.2013) by Michael Mihocic
+- frmMain: New feature: Try to reconnect to Viwo when connection was lost
+	because of closed and re-opened Viwo instance
+
+*** v0.9.27 (22.10.2013) by Michael Mihocic
+- Implant: Bug fixed when loading fitting files
+- frmFitt4Fun: Bug fixed when changing phase duration and saving without
+	changing focus
+- frmFitt4Fun/Implant: Bug fixed when saving fitting files: Translate
+	only active electrodes
+- frmFitt4Fun/Implant: Bug fixed when saving fitting files: phase dur and
+	max. energy check performed only for active electrodes
+- frmFitt4Fun: Bug fixed when checking electrode -> buttons are enabled
+	only when connected
+- frmLevelDancer: New feature: 2 new shortcuts:
+	- Ctrl+Left/Right: Increase all enabled electrode sliders 
+		left/right and decrease other side (SmallChange value)
+	- Shift+Left/Right: Increase all enabled electrode sliders
+		left/right and decrease other side  (LargeChange value)
+
+*** v0.9.26 (01.10.2013) by Michael Mihocic
+- Implant: Minor bug fixed when importing ampmap files with CLs
+- frmResults: Bug fixed: legends when plotting results
+
+*** v0.9.25 (24.09.2013) by Michael Mihocic
+- FW_FilterPulses: Bug fixed
+
+*** v0.9.24 (23.09.2013) by Michael Mihocic
+- frmFitt4Fun/frmSettings: New feature: CLs are stored in ampmap fitting
+	files, and can be imported in settings (signal tab) or Fitt4Fun
+- frmLevelDancer: Bug fixed: Application extension removed from
+	amplitude and binaural ampel file names (CI only)
+- Copyright and license updated in .m-files
+
+*** v0.9.23 (17.09.2013) by Michael Mihocic
+- frmFitt4Fun: Bug fixed when El1 is disabled and other electrodes are
+	stimulated with space key
+- frmMain: New feature: Warning when trying to save an empty item list
+- frmMain: New feature: Connecting possible when RIB/RIB2 and simulation selected and
+	folder not existing (a warning message is displayed)
+
+*** v0.9.22 (16.09.2013) by Michael Mihocic
+- frmMain: Error messages improved when stimulating items or running experiments
+- frmExp: Bug fixed: Truncated request texts
+
+*** v0.9.21 (09.09.2013) by Michael Mihocic
+- Leveldancer: New feature: show dynamic range (%),
+	step sizes optionally also in DR
+- Leveldancer: New feature: selected electrodes highlighted
+	in colors (blue=left, red=right)
+
+*** v0.9.20 (03.08.2013) by Michael Mihocic
+- STIM: Bug fixed when creating new stimulus, stimPar.Application was deleted
+	(is needed by SOFA)
+- frmMain: Minor bug fixed
+
+*** v0.9.19 (31.07.2013) by Katharina Egger
+- frmSettings/Implant: Bug fixed in fitting tabs within the settings 
+	(pulse period, min. distance was not set correctly when .ampmap files were loaded)
+
+*** v0.9.18 (30.07.2013) by Katharina Egger
+- FW MATLAB files: bug fixed in error messages concerning phase durations
+
+*** v0.9.17 (19.07.2013) by Michael Mihocic
+- frmMain: Bug fixed
+
+*** v0.9.16 (19.07.2013) by Michael Mihocic
+- frmSettings: Bug fixed on settings screen
+
+*** v0.9.15 (17.07.2013) by Michael Mihocic
+- frmMain: Bug fixed: Wait after break
+- frmOptions/frmSettings: Bugs fixed when saving window's sizes
+- Minor bugs fixed
+
+*** v0.9.14 (09.07.2013) by Michael Mihocic
+- Credits window modified
+
+*** v0.9.13 (28.06.2013) by Michael Mihocic
+- FW_GetStimulusDuration: audioread replaced by wavread again (due to compatibility
+	reasons with old Matlab versions)
+
+*** v0.9.12 (28.06.2013) by Michael Mihocic
+- frmFitt4Fun: Bug fixed when using space to stimulate
+- FW MATLAB files: display more informative error messages (phase duration too low)
+- FW_GetStimulusDuration: wavread replaced by audioread
+
+*** v0.9.11 (21.06.2013) by Katharina Egger
+- RIB2: minimum stimulus offset must be at least 55us (mindist), corresponding changes in: 
+  frmFitt4Fun, frmLevelDancer, frmSettings, FW_AppendBreak.m, FW_AppendPulseTrain.m, FW_AppendCISPulseTrain.m
+- frmLevelDancer: Designer: Stimulus duration text box renamed and rearranged
+
+*** v0.9.10 (21.06.2013) by Michael Mihocic
+- frmLevelDancer: Bug fixed for new feature from v0.9.9
+
+*** v0.9.9 (20.06.2013) by Michael Mihocic
+- frmLevelDancer: New feature: Added stimulation of "[Application]_AppendPulseTrain" as
+	an alternative to "FW_AppendCISPulseTrain.m" when stimulating multiple electrodes
+
+*** v0.9.8 (13.06.2013) by Michael Mihocic
+- frmFitt4Fun/Implant: Bug fixed: First names with spaces in between allowed now,
+	fitting files save "first name" and "last name" instead of "patient" (full name),
+	loading of old files is possible, new fitting files can not be used with old FW versions
+
+*** v0.9.7 (12.06.2013) by Katharina Egger & Michael Mihocic
+- frmFitt4Fun: Bugs fixed when exporting amplitudes (extension, write files)
+- frmFitt4Fun: New feature: checkbox to disable electrodes -> stimulation in F4F is not possible
+	and electrode(s) will be disabled in fitting file
+- frmSettings: ResetPhaseDuration: Bugs fixed -> calculation was buggy, signal tab was not updated
+- Implant: Bug fixed when saving old RIB fitting files (description C40+ instead of C40P)
+	was not compatible to old applications
+- FW_RIBGap: for breaks, electrode 0 will be used instead of 1
+- FW_AppendCISPulseTrain: was still not adapted to the new function calls of FW_RIBGap/FW_RIBPulse
+- FW_ShowStimulus and FW_stimVec2Sig: ShowStimulus-functionality implemented for RIB2 
+- new icons for Fitt4Fun, Level Dancer
+
+*** v0.9.6 (06.06.2013) by Michael Mihocic
+- frmMain, frmSettings: Bug fixed: Lack of inconsistency between settings & fitting files
+	-> values will be fixed when opening settings (like THR, MCL,...), a replacement was
+	button "reset phase durations"
+
+*** v0.9.5 (06.06.2013) by Michael Mihocic
+- frmLevelDancer/frmMain/INISettings: Bug fixed: Pulse Rate for level dancer
+	was not saved/loaded with settings
+- frmLevelDancer: Several bugs fixed
+- INIOptions: Bug fixed: RIB2 options were not loaded properly
+
+*** v0.9.4 (05.06.2013) by Katharina Egger
+Bug fix, frmFitt4Fun:
+Changes from v0.9.0 concerning mlEar undone
+
+*** v0.9.3 (28.05.2013) by Katharina Egger
+frmSettings.vb:
+	General tab: Order of device types changed
+
+*** v0.9.2 (24.05.2013) by Katharina Egger
+RIB2.vb: Bug fixes:
+	- First call of an RIB2.dll function (within RIB2.Connect) enclosed in Try-Catch Environment to produce error message when dll is not found.
+	- mblnConnected variable included (necessary for RIB2.Terminate)
+
+*** v0.9.1 (17.05.2013) by Katharina Egger
+minor changes:
+- frmFitt4Fun: disable Pulsar datastream for the moment: only Legacy datastream enabled
+			   if RIB2 then disable MapLaw ("Zero" by default) and ChannelOrder (is not used with RIB2)
+- Implant: save pulse period in .ampmap fitting files
+- frmSettings: show a warning when a .fitt file is chosen with RIB2 as device type (as it is done within Fitt4Fun)
+- RIB2: delete commented sections which will not be used anymore
+
+*** v0.9.0 (17.05.2013) by Katharina Egger
+RIB2 functionality implemented.
+Among other things:
+	- frmOptions: RIB2 tab added
+	- frmSettings: RIB2 Device type added
+				   when browsing for fitting files: depending on the device type, open .fitt or .ampmap files
+	- frmFitt4Fun: new Implant 'MED-EL Pulsar Sonata Concerto' Tab added
+				   'Data stream' and 'Gap duratation' combo boxes within panelDataRIB2 added
+				   'Channel used' check box added			
+	- frmMain
+	- Implant: C40+ changed to C40P
+			   specifications and new implants for RIB2 implants (C40P_RIB2, Pulsar) added
+			   new implant properties 'DataStreamType' and 'GapDuration' added
+			   new channelparameter 'blnChUsed' (channel used)
+			   functions SaveFileAmpmap() and ParseLineAmpmap() to save and load .ampmap fitting files added
+			   OpenFile(): setting implant type to invalid at the beginning disabled (important for loading .ampmap fitting files), therefore other occasions of OpenFile() adapted to set implanttype invalid before calling the function
+	- INIOptions: renamed gblnSimulation to gblnRIBSimulation and created gblnRIB2Simulation
+				  gszRIB2DeviceName and gszRIB2Path added according to RIB2 tab in frmOptions
+	- INISettings: glImpLeft and glImpRight variables added (are set when left/right implant is used when stimulating with RIB2)
+	- Output: .stm set as stimfile extension for RIB2
+			  functions RIB2On() and RIB2Off() added
+	- STIM:	generation mode genElectricalRIB2  = 3 added
+			implant type is passed on to Matlab in stimPar.Device
+			CheckStimulationFile(): check fitting file consistency between settings and .stm file
+	- RIB2 module added
+	- Matlab: added RIB2 functionality to FW_AppendPulseTrain.m, FW_AppendBreak.m, FW_AppendCISPulseTrain.m, FW_RIBPulse.m, and FW_RIBGap.m
+			  copyright year updated (-> 2013) also in all the other functions
+	- RIB2 folder: RIB2.dll must be copied to bin folder (Win XP) / Windows folder (Win 7) in order to be accessible by VB.NET
+				   RIB2_Assemble.m, RIB2_Mapread.m and default fitting files (needed for F4F) RIB2_c40p.ampmap, RIB2_pulsar.ampmap
+
+Bug fixes
+	- frmFitt4Fun: mlEar disabled:  mlEar was redundant, reseted mEar within an implant always to LEFT
+	- STIM: sTimeBase now defined as Double instead of Single to avoid rounding errors due to truncation
+	- Implant: msTimeBase now defined as Double instead of Single to avoid rounding errors due to truncation
+
+##################################################################################
+##################################################################################
+
+*** v0.8.62 (29.01.2013) by Michael Mihocic
+- Proc.vb: Bug fixed: Check for running processes (pd.com, pd.exe) did not work
+	properly because InStr method was used instead of StrComp
+- Copyright year updated (2012 -> 2013)
+- License links updated (EUPL)
+
+*** v0.8.61 (11.12.2012) by Michael Mihocic
+- Use Beeps in experiment disabled by default
+
+*** v0.8.60 (06.11.2012) by Michael Mihocic
+- frmSettings: Truncated tracker values fixed
+- frmSettings: New feature: button "A" in general tab creates Analysis Setting
+- frmSettings: New feature: Ctrl+S -> Save settings and close window
+- INIOptions: Minor bug fixed
+
+*** v0.8.59 (12.10.2012) by Michael Mihocic
+- INIOptions: Bug fixed when launching application and user has no permissions to
+	read options file -> error handling
+- Turntable/frmTurntable: Bugs fixed, Windows 64-bit systems are supported now
+	(file inpout32.dll replaces io.dll)
+
+*** v0.8.58 (02.10.2012) by Michael Mihocic
+- frmMain: Bug fixed when checking for updates and no internet connection available
+- frmSettings: Minor bug fixed in Tracker tab:
+	buttons were too small, text was truncated ("Set values")
+- frmSettings/frmExp: New feature: 2 new buttons to set exp screen to primary screen
+	and to set it to small debug screen
+- frmSettings: some cosmetic improvements
+
+*** v0.8.57 (23.08.2012) by Michael Mihocic
+- STIM: ResetStimPar as new function; used in AMTatARI before loading new HRTF sets
+- STIM: Unclear step when connecting (Acoustical ONLY): If Sampling Rate
+	AND Resolution are 0 stimPar is NOT created!? Maybe bug?????
+- FW_ShowStimulus.m: Bug fixed by Piotr Majdak
+- frmMain: Bug fixed: (empty) stimlog.csv was created when using silent mode
+
+*** v0.8.56 (20.08.2012) by Michael Mihocic
+- frmSettings: Show experiment item range (Procedure tab)
+
+*** v0.8.55 (16.07.2012) by Michael Mihocic
+- frmMain/frmOptions/INIOptions: New feature: Check for updates every xx days
+- frmOptions/frmSettings: Labels' background colors fixed
+
+*** v0.8.54 (11.07.2012) by Michael Mihocic
+- frmMain: Bug fixed "Fill automatically with numeric values" now in correct order
+
+*** v0.8.53 (04.07.2012) by Michael Mihocic
+- frmAbout: Minor bug fixed
+- frmFitt4Fun: Several bugs fixed
+- frmFitt4Fun/Implant: Default Prefix = ExperimentID (Settings -> Description)
+- Several forms: positioning bugs fixed
+- frmSettings: Minor bugs fixed
+
+*** v0.8.52 (04.07.2012) by Michael Mihocic
+- frmMain: Check for updates (Sourceforge) improved
+
+*** v0.8.51 (03.07.2012) by Michael Mihocic
+- STIM: Major bug fixed: Absolute RIB path caused problems in Fitt4Fun
+- frmExp/frmMain/frmSettings: New feature: Wait after Break implemented
+- frmFitt4Fun: Bug fixed: File extension ".fitt" is now appended to every fitting file
+
+*** v0.8.50 (22.06.2012) by Michael Mihocic
+- Minor change: EUPL links and Copyright years updated
+
+*** v0.8.49 (12.06.2012) by Michael Mihocic
+- frmMain: Minor bug fixed: Main Form text (top) showed backslash after settings file name
+
+*** v0.8.48 (11.06.2012) by Michael Mihocic
+- frmMain: New feature: Main Form text (top) shows application version
+
+*** v0.8.47 (11.05.2012) by Michael Mihocic
+- frmMain/frmAbout: Minor bugs fixed, positions of some textboxes on forms improved
+- frmMain: New server (mirror) to check for updates on sourceforge:
+	heanet.dl.sourceforge.net instead of kent.dl.sourceforge.net (not always up-to-date)
+- frmAbout: New icons/logos added
+- frmAbout: Application version revision number (4th number) is displayed if <> 0
+	([Major].[Minor].[Build].[Revision])
+	
+*** v0.8.46 (22.02.2012) by Michael Mihocic
+- frmMain/frmOptions: New feature: Check for Updates improved, check for updates when
+	starting application can be enabled in options (default: disabled);
+	when checking for updates new setup can be downloaded immediatly (before: project
+	page was openend)
+
+*** v0.8.45 (20.02.2012) by Michael Mihocic
+- frmMain: Bug fixed: Quick Save did not save item status
+
+*** v0.8.44 (10.01.2012) by Michael Mihocic
+- frmMain/frmOptions: New feature: Check for Updates improved, check for updates when
+	starting application can be enabled in options (default: disabled);
+	when checking for updates new setup can be downloaded immediatly (before: project
+	page was openend)
+- INIOptions: Bug fixed: Test settings and item lists are now in directory
+	%AllUsersProfile%\ExpSuite\{Application-Name}\Test due to write permissions in Win7
+- CSVParser: Bug fixed: Load item lists with parameter "read-only" causes
+	no more errors with Win7
+- INISettings: Error message caused when saving setting file contains error number	
+
+*** v0.8.43 (12.12.2011) by Michael Mihocic
+- STIM: Bug fixed: When MATLAB was closed manually application crashed when executing
+	MATLAB commands -> Try/Catch inserted
+- FW_PlotResults: Bug fixed: Paper size = A4 by default
+- STIM: New feature: Computer name saved in log file
+- frmMain/INISettings: New feature: Computer name saved in setting
+
+*** v0.8.42 (07.12.2011) by Michael Mihocic
+- frmMain: New feature: Renumber index after shuffling item list
+- frmMain/frmResult: Bug fixed: Log file contains time in central European style
+	(14:00h instead of 02:00PM)
+
+*** v0.8.41 (06.12.2011) by Michael Mihocic
+- frmMain: Bug fixed when adding repetitions to item list and repeating item by item
+
+*** v0.8.40 (06.12.2011) by Michael Mihocic
+- frm: Bug fixed for feedback delay during experiment
+
+*** v0.8.39 (05.12.2011) by Michael Mihocic
+- frmSettings: Bug fixed: Button "Set default values" for variables was hidden
+- frmExp: Minor bug fixed: Back color of Mode-3 text fixed
+
+*** v0.8.38 (12.10.2011) by Michael Mihocic
+- New feature: More information is sent to stimPar (MATLAB) when connecting:
+	application name, application version, FrameWork version
+- New feature: Options file location is displayed in frmOptions > General
+- frmMain: Minor bugs fixed
+
+*** v0.8.37 (12.09.2011) by Michael Mihocic
+- New feature in settings: "Do not connect to output" -> when connecting: pd or RIB/NIC
+	server are not started (allows faster connection to MATLAB e.g. for analysis settings)
+- frmMain: New feature: improved error message when connecting (electrical stimulation) and
+	RIB/NIC folder is not existing
+- frmMain: Bug fixed: "Current item" index was not displayed correctly on main form
+- frmSettings: New feature: Ctrl+A added in some text boxes to select text
+- frmSettings: New feature: In Audio tab, when selecting a channel shortcuts
+	added to enable synthesizers A/B (buttons "A", "B") or disable current synthesizer ("D")
+- frmOptions: Tooltips added
+- frmSettings: New feature for variables: Button "Duplicate value" added (shortcut "D")
+- frmSettings: New feature for variables: Keyboard Button "Del" deletes current value
+- frmMain: Message box with shortcuts: Minor bugs fixed and updated
+- frmSettings: Several minor changes (box sizes, positions, information in Fitting tabs, ...)
+
+*** v0.8.36 (19.07.2011) by Michael Mihocic
+- frmSettings: Bug fixed in Procedure Tab: Prestimulus break and Pre-Stimulus Visual Offset
+	Input boxes were switched
+- frmSettings: Minor bug fixed: General tab "electrical" instead of "electric"
+	stimulation for NIC
+- frmSettings: Minor bug fixed: in Tracker tab text was truncated
+- default position for ExpScreen changed: left/top=primary screen left/top (before 0/0)
+- frmSettings: Feature added in Tab Experiment Screen: New button to set default positions
+
+*** v0.8.35 (20.05.2011) by Michael Mihocic
+- STIM: New feature: Work Dir not existing -> msgbox 'Do you want to create Work Dir?'
+- Proc: Bug fixed (Set Status)
+- frmSettings: Minor bug fixed
+- Icon.ico: More icons added
+
+*** v0.8.34 (12.05.2011) by Michael Mihocic
+- frmMain: Credits added (Help -> Credits) incl. all (former) FW programmers
+- frmSettings: Minor bug fixed: Position of text box
+- frmAbout: Link to my E-Mail address added
+- frmOptions: Minor bugs fixed
+
+*** v0.8.33 (04.03.2011) by Michael Mihocic
+- frmMain: Bug fixed: Move item down in item list
+- frmMain: New feature: Relative path possible for Output directory
+- frmMain: Several minor bugs fixed
+
+*** v0.8.32 (18.01.2011) by Michael Mihocic
+- frmMain/INIOptions: New feature: Full screen status saved in options file
+- frmOptions: Bugs fixed: textboxes on Matlab/RIB/NIC tab did cut pathes
+- frmMain: Bug fixed: Sort item list now working with numeric values
+	new: single columns can be selected to sort (eg. sort only by column 4)
+
+*** v0.8.31 (04.01.2011) by Michael Mihocic
+- STIM: Bug fixed: RIB files could not be found when application ran from "\bin" subfolder
+- Test Settings added
+
+*** v0.8.30 (13.12.2010) by Michael Mihocic
+- clsItemList: Set Optimal Column Width: Bug fixed
+- clsItemList: Set Item: Bug fixed
+
+*** v0.8.29 (04.11.2010) by Michael Mihocic
+- help comments updated
+- Remote Monitor: several bugs fixed
+
+*** v0.8.28 (18.10.2010) by Michael Mihocic
+- frmSettings: Bug fixed: Callback (Change Settings) added when a constant is changed
+
+*** v0.8.27 (28.09.2010) by Harald Ziegelwanger & Michael Mihocic
+- New EXPERIMENTAL feature: Remote Monitoring, a connection from one
+	or more client applications to a server application is possible to
+	watch experiments running on a different computer; item list
+	and settings are transferred and updated automatically
+- New files:
+	- RemoteMonitorClient
+	- RemoteMonitorServer
+	- RemoteMonitorServerSend
+- Feature is still buggy and in an experimental status
+- By default the server functionality is disabled in Options
+
+*** v0.8.26 (25.08.2010) by Michael Mihocic
+- Feature added: Global boolean introduced to disable automatic setting of optimal column width
+	(set in Options -> General)
+- Bug fixed: Copying text from textbox when editing items
+
+*** v0.8.25 (24.08.2010) by Michael Mihocic
+- FIRST RELEASE WORKING ON WINDOWS 7
+- INIOptions: change option file location to application directory (more stable on Windows 7 systems)
+- frmMain: OnLoad: Remove file associations (caused problems on Windows 7 systems)
+- FW_ShowStimulus.m (Matlab file): Bug fixed
+
+*** v0.8.24 (24.08.2010) by Guillem Quer Romeo
+- Include XML comments for Sancastle documentation
+- Open expsuite.shfbproj with sandcastle help file builder
+
+*** v0.8.23 by Michael Mihocic
+- frmMain/INIOptions: Bug fixed: FW could crash when checking if resources folder existing
+- frmMain/INIOptions: Minor bugs fixed: Folder adresses are shown correctly now (eg. "C:\" instead of "C:\\")
+- frmMain: New feature: Check fur updates (sourceforge server) available
+- frmMain: New feature in menu: Goto project page on Sourceforge
+
+*** v0.8.22 (09.08.2010) by M.Mihocic
+- FW_ShowStimulus modified by Piotr Majdak
+- frmOptions: Feature added: Button added to search for YAMI batch file
+- frmMain: Bug fixed: When saving item list during break: Item list postfix = "_response"
+- frmShowStimulus: Feature added: Matlab flags are displayed on the form
+
+*** v0.8.21 (28.07.2010) by Michael Mihocic
+- frmMain: Bug fixed: Buttons (move to top/bottom) were not disabled when no items in list
+
+*** v0.8.20 (28.07.2010) by M.Mihocic
+- INIOptions: Bug fixed: First application start -> ask only for YAMI (not Matlab, RIB, NIC)
+
+*** v0.8.19 (27.07.2010) by M.Mihocic
+- frmSettings: minor bugs fixed (numbers on several tabs were truncated)
+- clsItemList/frmMain: Bug fixed: Ctrl+C copies now content of current cell
+	if only one (non empty) cell is enabled
+- clsItemList/frmMain: New feature: Fill cells automatically with increasing/decreasing values
+- clsItemList: New feature: move items to top/bottom of item list
+- clsItemlist: SetOptimalColWidth improved
+- Matlab: FW_ShowStimulus: Bug fixed, when showing 2D plots
+- AppResourcesDirectory: New feature (global variable) used to access application's resources
+	(searches for \Resources\Application, otherwise: app. folder used); application programmer
+	no needs to copy all files to the folder \Resources\Application to include in setup packages,
+	setup installer copies these files in the app. directory
+- INIOptions: New feature: When starting application the first time (no .ini file existing) the
+	user is asked for YAMI batch file and Matlab/RIB/NIC paths	
+
+*** v0.8.18 (01.07.2010) by M.Mihocic
+- frmMain: buttons menu improved
+- test procedures 3, 4 added
+- comments added/improved in source code
+- documentation "Getting Started with ExpSuite" created based on current version
+
+*** v0.8.17 (06.2010) by M.Mihocic
+- Help system: XML comments in source code added (only for clsDataDirectory and clsFREQUENCY)
+	to test help creation; further comments will be added in near future
+- INISettings: Bug fixed (loading ViWo parameters)
+- CSVParser: Bug fixed (Error when saving item list with one item)
+- Application Framework: 3 Test procedures (0, 1, 2) added and commented,
+    recommended to be used when developing new applications
+
+*** v0.8.16 (05.2010) by M.Mihocic
+- frmMain: SetUIReady: bug fixed: checking item list flags could cause errors -> fixed
+
+*** v0.8.15 (05.2010) by M.Mihocic
+- frmMain: log list and status list boxes (right at the top) change their width when resizing main window
+- frmMain: minor bug fixed: procedure name was truncated -> text field resized
+
+*** v0.8.14 (04.2010) by M.Mihocic
+- frmOptions: sizes and positions of form and text fields improved
+- frmResults: minor bug fixed: Minimum size set
+
+*** v0.8.13 (04.2010) by M.Mihocic
+- frmMain/GetProgressbar: New Feature: function output is current progress bar value
+- frmMain/Events: New Callback: OnBreak introduced
+- frmMain/Help/Shortcuts: Updated
+- frmTurntable: bug fixed: arrows (icons) on buttons wrong direction (clockwise <> counterclockwise)
+- Itemlist/SetOptimalColWidth: bugs fixed
+- Itemlist/Append item list: bug fixed (UI was disabled and when cancelling append
+- frmExp/SetProgress: bug fixed
+
+*** v0.8.12 (04.2010) by M.Mihocic
+- Bug fixed: "Del" key is working now in item list for selected cells (clear)
+   and in the text boxes above (remove)
+- New icons for "ExpSuite" (main icon) and new small icons on the following forms:
+	- Main form
+	- Settings form
+	- Options form
+	- Fitt4Fun form
+	- Leveldancer form
+	- Turntable form
+- Bug fix: Item List/Index column/Bold values
+- License changed to EUPL 1.1 (http://ec.europa.eu/idabc/eupl)
+
+*** v0.8.11 (04.2010) by M.Mihocic
+- frmExp/Show Progress: always one digit after decimal point visible ("0.0" instead of "0")
+- Options: 
+	- New Tab: "NIC" -> Enter path for NIC files
+	- "RIB" Tab: Enter path for RIB files
+	- "STIM" Tab renamed to "MATLAB"
+	- New file name system for the options: 
+		- try to read "APPLICATION (COMPUTERNAME).ini"
+		- if not found: try to read "APPLICATION.ini" (old options file name)
+		- if not found: a new option file is created (as hitherto)
+	- "Logging mode" moved to tab "General"
+- Item List:
+	- Index column has thick frame line on its right side
+	- Index column: values are bold (needs to be improved!!!)
+	- Set Optimal Column Width improved: max column width = (total item list width / 3); but more rows possible within cell
+	- Set Optimal Column Width also available for Result lists: Call .SetOptimalColWidth() after .Show()
+	- Automatic scrolling in experiment improved (when using Itemlist.Itemindex)
+- several minor improvements and minor bugs fixed
+
+*** v0.8.10 (31.03.2010) by M.Mihocic
+- Bug fixed: applications without any constants possible now
+- Replaced: 'System.Math.Round' by 'Math.Round' 
+   and 'System.Windows.Forms.Application.DoEvents' by 'Windows.Forms.Application.DoEvents'
+
+*** v0.8.9 (29.03.2010) PMajdak
+- INISettings: more robust loading of data arrays
+
+*** v0.8.8 (22.3.2010) PMajdak
+- bug fix in ViWo.DataArrival: floating-point response are saved correctly now
+- bug fix in CSVParser.QuoteCell: empty cell are not quoted now
+- merged with newest v0.8.7 by MMihocic (23.03.2010)
+
+*** v0.8.7 (23.02.2010) by Michael Mihocic
+- Smoke tests with Loca passed
+- Form Settings and Form Turntable: minor bugs fixed, design improved
+- Load Settings: Experiment item range corrected when loading VB6 Settings
+- Cancel/Error in experiment -> Experiment form unloaded (was a problem in "Loca": Mouse pointer was locked)
+- New: frmExp.InExperiment (is an experiment pending?)
+- Experiment Screen is unloaded when "Lock mouse in experiment screen" is enabled (like in Loca)
+- Median function in Proc now compatible with Integer; Output: Double
+
+*** v0.8.6 (5.2.2010)
+- Application Version is saved in the Settings file
+- Help/About updated, more application fields added (company, copyright, description)
+- License added (ExpSuite is under GPL now!)
+- Settings: 
+  - Audio/Synth: bug fix in the GUI
+  - Audio: "Synth A for All Channels" added
+  - Audio: "Synth B for All Channels" added
+  - minor bug fixes (sizes, locations)
+- Continue Experiment: bug fix in calculation of the last item of experiment
+- Experiment Progress Bar: more sophisticated calculation of the progress
+- Experiment Screen: minor bug fixes introduced while porting to .NET
+
+*** v0.8.5 (31.12.2009)
+- all framework MATLAB scripts have the prefix FW_ 
+- all files provided by MED-EL have the prefix RIB_
+- all scripts related to the NIC interface have the prefix NIC_
+- Experiment Screen:
+  - Following texts can be set by the application:
+    - Start of Experiment
+    - End of Experiment
+    - Break
+- Result List: print on the standard printer (with a print preview)
+- CSV Handling unified: delimiter and quotation from Options is used per default now
+- Joypad mapping added: add a map for your joypad and assign buttons to the response codes 
+- Settings/Show Response Codes show the buttons and keys for the response codes in the experiment
+- New: Item Status controls the experiment and allows nested items:
+  - Encoded by the background color of the Index column:
+	- White: "Fresh"
+	- Yellow: "Processing": item just being processed
+	- Green: "Finished" without any errors (the * in the previous versions)
+	- Red: "Finished" with errors (error text allowed in a tooltip)
+  - Start Experiment: clears all items to "Fresh" and starts the experiment
+  - Continue Experiment: runs the experiment for not-finished items only
+  - If Experiment Range set: run/continue the experiment for items within the range
+- Support for nested items (useful for interleaved adaptive procedures): 
+  - ItemList.NextItem(): simply get the next item in the item list and set the current item to Finished
+  - ItemList.NextItem(Double): similar to previous but with a value for the progress bars
+  - ItemList.NextItem(Integer): support for nested items:
+    - get a random item within the range given by the Integer. 
+    - status of the items does not change - application must set it to Finished to leave an item
+  - ItemList.NextItem(Integer, Double): similar to previous but with a value for the progress bars
+
+*** v0.8.4 (16.12.2009-28.12.2009)
+- First NIC functionality
+- Pulse Rate and Stimulus Duration are saved in the fitting files now. We are quite consistent now :-)
+- Level Dancer uses configurable phase duration for each electrode now and can pass it to the application
+- Minor bugs and improvements
+
+*** v0.8.3 (14.12.2009)
+- First framework release
+
+*** v0.8.2 .NET developers build 24
+- GUI Improvements:
+  - frmMain: resizable, from scratch rearranged the controls 
+  - frmSettings: resizable, many controls follow the size
+  - a few minor bug fixes, especially for Fitt4Fun and Level Dances
+
+*** v0.8.2 .NET developers build 23
+- Fitt4Fun:
+  - Fitt4Fun is a build-in module accessible from Settings/Fitting File. 
+  - Works in electric mode only
+  - connects if required
+  - the "godfather" fitting files must be placed in the application directory
+- Fitt4RIB renamed to Implant (it's more general now)
+
+*** v0.8.2 .NET developers build 22 (1.12.2009)
+- Level Dancer: BLBManu is the Level Dancer in the FW now
+  - works in electric mode only
+  - needs a stable connection
+
+*** v0.8.2 .NET developers build 21 (27.11.2009)
+- No OSC4VB: the old OSC library (DLL) was probably the origin of all the crashes. Reprogrammed, no need for OSC4VB.dll anymore
+
+*** v0.8.2 .NET developers build 20 (25.11.2009)
+- Debug Release: Loca works in debug mode fine. It crashes uncontrolled in the release mode. Trying to clean up more and more
+
+*** v0.8.2 .NET developers build 19 (17.11.2009)
+- Friend Shared: trying to treat the threading issues by cleaning up the variable declarations
+
+*** v0.8.2 .NET developers build 18 (16.11.2009)
+- Strict On: we are strict now (STIM is not strict because the late binding is required for the MATLAB object)
+
+*** v0.8.2 .NET developers build 17 (16.11.2009)
+- Almost Strict On: desperetaly trying to get rid of uncontrolled crashes: cleaned most of the syntax to Strict (no late binds)
+
+*** v0.8.2 .NET developers build 16 (13.11.2009)
+- Loca: first tests with Loca. Disappointing
+
+*** v0.8.2 .NET developers build 15 (13.11.2009)
+- HUI: DirectX DLL removed and joypad interface reprogrammed from the scratch. Managed DirectX libraries are required now
+
+*** v0.8.2 .NET developers build 14 (4.11.2009)
+- No RIB: RIB.OCX removed as, being unmanaged, it was causing some uncontrolled crashes
+
+*** v0.8.2 .NET developers build 13 (4.11.2009)
+- F4RIB: F4F class changed to F4RIB
+
+*** v0.8.2 .NET developers build 12 (3.11.2009)
+- No Winsocks: We are WinSock.OCX free now. ItemListServer not implemented for now
+
+*** v0.8.2 .NET developers build 11
+- ??? (skipped?)
+
+*** v0.8.2 .NET developers build 10 (29.10.2009)
+- Less Winsocks: the WinSock OCX sucks. Partially replaced by Net.Sockets.UDPClient
+
+*** v0.8.2 .NET developers build 9 (28.10.2009)
+- Almost there: first successful tests with BICI
+
+*** v0.8.2 .NET developers build 8 (28.10.2009)
+- No sliders: sliders replaced by trackbars
+
+*** v0.8.2 .NET developers build 7 (22.10.2009)
+- Compatibility: fighting with some compatibility issues for the applications
+
+*** v0.8.2 .NET developers build 6 (22.10.2009)
+- No Flexigrid: many uncontrolled crashes led to remove all compatibility classes (Ax*). Flexigrid replaced by DataGridView
+
+*** v0.8.2 .NET developers build 5 (16.10.2009)
+- BICI continuing, getting better
+
+*** v0.8.2 .NET developers build 4 (10.10.2009)
+- BICI started, working copy
+
+*** v0.8.2 .NET developers build 3 (9.10.2009)
+- last TestFW, we switch to a test with the first application
+
+*** v0.8.2 .NET developers build 2 (9.10.2009)
+- no wrappers
+
+*** v0.8.2 .NET developers build 1 (8.10.2009)
+- no MyVal, MyStr, MyIsNumeric: TStr replaces MyStr; IsNumeric and Val are valid functions
+
+*** v0.8.x .NET developers build 0 (6.10.2009)
+- started to play around
+
+*** v0.8.0 07.09.2009 (KEgger, Piotr Majdak)
+- update version number
+- first check-in for sourceforge
+- popupmenu added
+- bug fixed: select more than 1 cell within a row in flgstatus: 
+	- use str instead of mystr (lblSelItemNr.Text = TStr(.Row))
+	- show tooltip only when 1 cell is selected, not more: (If .ColSel = .Col Then ToolTip1.SetToolTip(flgStatus, .get_TextMatrix(0, .Col) & " (" & TStr(.Row) & "): " & .get_TextMatrix(.Row, .Col))
+
+	
+##################################################################################
+##################################################################################
+*** Juli, August 2009 by KEgger
+FW ported from VB 6.0 to .NET
+##################################################################################
+##################################################################################
+
+''
+' EXPSuite: History of FrameWork
+
+*** v0.7.4 (8.10.2009) PMajdak
+- change: subject can continue after a break by pressing the "Break" button
+- fixed: ShowStimulus for acoustic stimuli
+
+
+*** v0.7.3 (30.9.2009) by Piotr Majdak
+- fixed: ShowStimulus for electric stimuli: uses correct electrodes now
+- change: PlotResults and frmResults: support for strings in the parameter vector
+- frmExp: 
+	- change: Cancel button is visible if the response buttons are used
+	- change: Cancel button has the focus after enabling the response buttons
+	- fixed: correct response code for the response buttons
+	- change: response buttons are stretched to fit in the width of the exp screen
+- frmMain:
+	- fixed: the toolbar icons are correct now
+	- fixed: ShuffleItemBlock is publich now (to do: wrap in clsItemlist later)
+	- fixed: Default values for a new signal channel fixed (bug fro 0.7.2)
+- STIM:
+	- fixed: Phase duration is in samples now when passed to Matlab in stimPar
+	- fixed: error message is displayed on errors in ShowStimulus
+
+*** v0.7.2 (28.07.2009) by KEgger
+STIM_ocx Control deleted in Projects -> Components -> Controls -> STIM_ocx unchecked
+frmAbout: Load: STIM Version will not be displayed anymore
+
+*** v0.7.1 (27.07.2009) by KEgger
+STIM implemented without ActiveX
+not only clsFREQUENCY, also new class clsSTIMULUS
+
+*** v0.7.0 (23.07.2009) by KEgger
+provisional version
+- STIM implemented without ActiveX
+--> new class clsFREQUENCY
+
+##################################################################################
+##################################################################################
+
+*** v0.6.14 (09.07.2009) by KEgger
+- clsItemList: Item [PropertyGet] Bug fixed
+- Preparations for .NET Update: 
+	Print --> Debug.Print
+	Hex, Mid, Right, Left, LCase, UCase, Trim, LTrim, Str --> Hex$, Mid$, Right$, Left$, LCase$, UCase$, Trim$, LTrim$, Str$ 
+	Add Variable Declaration (Datatype) where it was possible
+	Use 'Sub' for functions which do not return a value
+
+*** v0.6.13 (28.11.2008, PM)
+- frmSettings: use default values for Signal tab for the right channel
+- ItemList: .Item returns doubles when the cell is set to be a numeric scalar or electrode scalar
+- frmMain: StartExperimentAtItem: beep on cancel added
+
+*** v0.6.12 (01.09.2008) by M.Mihocic
+- frmMain: 
+  - Public Wrappers (see v0.6.11) improved, modified, and changed to Public Functions
+  - Flags (ignore warnings) possible for Public Functions
+  - New Wrapper for StimulateAllItems
+- Bug fixed: "\" at the ending of work directory will be removed automatically when applying settings
+- Progress Bar in Settings and Main Form will be set to 100 after experiment finished
+
+*** v0.6.11 (18.08.2008) by M.Mihocic
+- frmMain: Public Wrappers for:
+  - StimulateSelected
+  - StartExperiment
+  - CreateItemList
+  - CreateAllStimuli
+... will be used and tested in Loca v1.2.9
+- small bugs fixed (double error messages,...)
+
+*** v0.6.10 (5.12.2007)
+- General: 
+  - FIX: Val(), Str() or CStr() are not used by FrameWork now (exceptions: MyStr and MyVal)
+  - YAMI version v0.018 required
+- Item list: 
+  - CTRL+A: select the item list content without first row and columns
+  - CTRL+SHIFT+A: select the total item list (all rows and columns)
+  - NEW: handling of the column type changed (ifElectrodeL and ifElectrodeR)
+
+         Do not use ifElectrodeX with ifNumeric!
+
+- Result list: 
+  - 16th order butterworth low-pass-filtered white noise added 
+  - 4th order chebyscheff lowpass filter changed to butterworth
+  - CTRL+A: select the result list content without first row and columns
+  - CTRL+SHIFT+A: select the total result list (all rows and columns)
+- Settings:
+  - FIX: Description: scrollbars were missing
+  - FIX: vfDisabled fixed for variables
+  - FIX: MsgBox now always on top 
+  - NEW: handling of the variable/constant type changed (vfElectrodeL and vfElectrodeR)
+	 vfNoTHRCheck and vfNoMCLCheck added 
+
+         Do not use vfElectrodeX with vfNumeric!
+
+
+
+
+*** v0.6.9 (17.4.2007)
+- Settings:
+  - NEW: Signal: default values for new electrodes can be defined using INISettings.SignalDefault
+  - NEW: The caption of the Signal tab is used for the error message while validation of values defined as electrodes.
+- Main window:
+  - NEW: CTRL+A: select all data in the item list
+  - NEW: CTRL+C: copy the selection to the clipboard
+- Result window:
+  - NEW: CTRL+A: select all data in the result list
+  - NEW: CTRL+C: copy the selection to the clipboard
+
+
+*** v0.6.8 (26.3.2007)
+- Settings/Audio: 
+  - 4th order chebyschev low pass filtered white noise added 
+  - description of Par1 changes according to chosen Synth source
+- Bug fix: First experiment was set to ""Experiment performed" after start of the application 
+- Bug fix: Settings: The event OnExpTypeChange was not performed on Cancel
+
+
+*** v0.6.7 (8.2.2007)
+- ItemList: setting the focus on clearing to the next available command button caused a problem tracking an item list via network. Now, the focus will change only if it was in the item list.
+
+*** v0.6.6 (17.1.2007)
+- Main Window: bug fix for entering numeric values using german language settings
+
+
+*** v0.6.5 (12.1.2007)
+- Main Window:
+  - Append item list to the existing implemented
+  - Append Item List allows multiple files now
+  - Shortcut list revised
+  - Shortcut for Stimulate selected changed to F6
+  - Shortcut for Start Experiment changed to F7
+  - Shortcut for Remove (delete) items from the item list added: CTRL+R
+  - Execute section: Double-click an item for execution
+  - Drag-and-drop added: drop a settings or item list file on the application title to open it
+  - bug fix: has a correct width, with runtime adaptation
+  - bug fix: 'loose' corrected to 'lose'
+  - bug fix: show correctly cutted root directory when not creating a new working directory 
+  - bug fix: Crash opening the settings form if 10002 was not available and ViWo is active
+  - bug fix: backup of the logging file uses correct extension now (*.log.csv)
+- Result Form: 
+  - bug fix: show result form with 1 item only, click “sort” -> all buttons disabled
+  - bug fix: disable “Sort” having only only row in the result table
+- Experiment: bug fix causing crash on break if experimental screen is not visible
+- Options: disconnect from ViWo only if a previous connection existed
+- Settings:
+  - CTRL+A allows to select the entire text in the description box
+  - ESC closes the Settings window as a click on Cancel as does
+- Show Stimulus shows electric stimuli in a multiple plot window now
+- Show Stimulus shows the legend only for less than 30 items now
+- Multiline input box: 
+  - CTRL+A selects the entire text
+  - the form is resizable now for a better editing of longer texts
+
+
+
+*** v0.6.4 (26.9.2006)
+- frmExp:
+  - release the mouse cursor from the experiment screen on break
+  - press "B" for a break having the focus on the experiment screen
+- frmMain:
+	- bug fix on connect: kill pd on error only if set in Options to Kill on Disconnect
+	- the same bug fix on disconnect
+	- bug fix: checking the "experiment pending" check box initiates a break in the experiment mode only
+- About/Shortcuts: updated
+- Output:
+  - Player Off: bug fix: kill pd only if requested in the Options
+  - LoadStimulationFile: add work directory only for file names without an absolute path.
+- Proc:
+	- Std: bug fix in the calculations
+	- RMSError: bug fix in the calculations
+- ViWo:
+	- reset progress bar after correct loading
+	
+
+*** v0.6.3 (28.7.2006)
+- frmExp: a callback on key response can be defined.
+- Output: tell YAMI to stop sending data to ViWo on disconnect
+- Proc:
+	- trigometric functions added: Deg2Rad, Rad2Deg, ArcSin, ArcCos
+	- statistic functions added: Mean, Std, RMSError
+	- bug fix in MyStr: correct format for numbers like 5.1234E-10
+- Tracker: GetCurrentValues: asynchronuous mode added
+- ViWo tested with Loca. Changes:
+	- on load of a world ViWo responses with "GetLoaded". Before connecting, a new world will be loaded only if no another world has been loaded
+	- ViWo's world can send a response and pass parameters using the "/Response" command
+	- GetParameterIndex added, preview parameters will be parsed if real parameter not found
+	- bug fix in AddPreviewParameter copying default value
+	
+
+
+*** v0.6.2 (07.07.2006)
+- ViWo support extended to beta stage:
+	- MIDI support for ViWo added
+	- Use Viwo's parameters file to assign MIDI controller to a parameter
+	- Connect to YAMI to get MIDI data
+	- Change parameters via MIDI
+	- Set MIDI controller to parameters on connect
+	- Events.OnOutputResponse will be called after processing Viwo's parameters
+- ViWo support extended to alpha stage:
+  - Connect to ViWo on application start
+  - Reconnect to Viwo via Options/ViWo
+  - Get the list of all available worlds from ViWo
+  - Select a world in Settings/ViWo
+  - Load the selected world on connect
+  - Unload a world on disconnect
+  - Parameters can be previewed and loaded from the ViWo for selected world
+  - Parameters will be saved in Settings
+  - Parameters can be edited in Settings/Viwo
+- Experiment Screen: Mouse can be locked in the experiment screen (Settings/Exp. Screen/Options)
+- Settings/Experiment Screen: keycode used for the setup of the experimental procedure will be shown.
+- CSV: UnquoteCell added
+
+*** v0.6.1
+- Settings:
+  - Allow multiple selection of files for variables of type "File Name"
+- Main Window:
+	- Double click on the "Work Dir" or "Root Dir" opens an explorer window in these directories
+
+- Bug fixes:
+	- Settings/Variables/Restrictions: missing CR in restrictions of file names
+	- Settings/Experiment Screen/Stimulation button: input box in english now
+	- Item List: update the number of items after loading/clearing item list
+	- Start Experiment: don't start if the experiment range is not valid
+	- Main Window: labels Root Dir improved
+	- Options/STIM/Matlab Path: handling of absolute/relative directories improved
+  
+
+*** v0.6.0
+- Data Directories introduced:
+  - set application specific data directories using titles
+  - User can set each data directory to the correct path in Settings/General
+  - Constants, Variables and Item List columns can be file names relative to the first 7 data directories
+- Settings:
+  - Variable list improved for a better handling
+  - Allow multiple selection of files for variables of type "File Name"
+- CSV: Bug fix in QuoteCell: empty cell will be quoted
+- CSV: Bug fix in ParseString: single rows will be interpreted correctly now
+
+
+
+*** v0.5.5
+- Set Tracker Ranges window: bug fix for internationalization/localization
+- Individual icon can be assigned to an application
+  - Icons of all windows are set to the icon of the main window
+  - Set the main window icon to your icon (e.g.: frmMain.Icon = MyWindow.Icon)
+  - To assign your icon to the settings files and see it in the explorer, set the projects icon the the window containing the appropriate icon
+- Main Window:
+  - Item Range of experiment can be defined: 
+    - select the item range, use "Set experiment item range", start experiment: only the selected item range will be processed
+    - The range will be saved in the settings files
+    - Select the total item list to remove the range
+- Options: headphone channels can be selected for special purposes
+- Output.LoadStimulationFile: other audio channels than 1/2 can be set for acoustical stimuli.
+- MATLAB/ShowStimulus:
+	- parameter (yaxis in matrix mode) will be sorted to ascending order
+	- in matrix mode: the colormap range can be set using axis parameter. Syntax: [xmin xmax ymin ymax colormapmin colormapmax]
+
+*** v0.5.3, v0.5.4
+Bug fixes:
+	- MATLAB/Assemble: lower and upper cases match the file name and function name now
+	- MATLAB/Assemble: works in directories with path name containing blanks now
+	- Experiment Screen: Delay Until Next Interval works correct now
+	- Main Window: enable the "Edit" menu when the Item List gets the focus
+	- Settings Windows/Signal: page down/up keys work for the right channels/electrodes now
+	- Main Window: disable "Stimulate Selected" menu if not connected
+	- Update the main window closing the settings window by "x"
+	- Experiment Screen: reset the response value on experiment init
+	- Opening a settings file a message box will be shown on inconsistent signal values in settings and fitting files
+
+
+*** v0.5.1, v0.5.2
+
+- Improvements:
+	- Settings window:
+		- Signal: move through channels using page up/down keys in any text box
+		- Tracker: Offset and current values can be send to tracker and saved with settings
+		- General: Silent Mode added. In silent mode, the logging mode will be set to no logging at all, regardless the logging mode set in Options
+		- Open Settings window disables File/New, File/Open and View/Options to avoid unconsitencies.
+		- Changing any real-time parameter will be detected:
+		  - A message will be shown. It can be supressed at further changes.
+			- A red label appears showing an immediate change of a real-time parameter
+			- This label remains grey if a real-time parameter was changed since opening the form, showing a possible inconsitency between the parameters in the window and at the devices.
+	- Options window:
+	  - able to connect to remote YAMI now
+	  - option to freeze the application thread on stimulation (use Output.WaitForReady)
+	  - Logging modes extended with improved descriptions
+	- Main Window:
+		- File/Quick Save added. Settings and the Item List will be saved with one title in the work directory. Shortcut: SRTG+Q
+		- File/Load, File/Save: The extension of the setting files has been extended to *.Applicationname.esf
+		- Result list changed to a list for improved access
+		- Selected item in the result list will not changed on changes of the result list.
+		- File/Save: the user is forced to update the description of the settings before saving the settings.
+  	- Close or Exit: ask to disconnect+close or Cancel while connected
+  	- Item List: show browse button for columns defined as directory or file name
+  	- Item List: limit "Set Optimal Column Width" to the half width of the item list.
+  	- Show the Root Directory in the general settings section. Append \ID_* if a new directory in root will be created
+	- ViWo (Virtual World) introduced (needed for localization experiments):
+		- simple interface in Options window (address/port of the ViWo computer)
+		- simple interface in Settings (let tracker average and send the data to ViWo)
+	- STIM active X:
+		- setting the logging mode to LogToFile every Matlab command will be logged
+		- disabling the Logging Mode LogToFile doesn't create the ID_DATE_TIME.csv file anymore
+	- General:
+    -	Command line parameters are available: file name (open setting file) and /C (connect to output)
+    - Associate the application with setting files at the start of the application
+    - MATLAB access can be parametrized now:
+		  - Use MATLAB or not,
+			- Input the name of the MATLAB server (leave empty for the local machine)
+			- Input the path to MATLAB scripts (begin with \ or drive for an absolute path or input a relative path, relative to the application path)
+			- The path to the MATLAB scripts is set on connect and lives only until disconnect
+	  - Move result form to the main window corner on load
+	  - ItemList.NextItem supports custom progress bar values now
+	  - ItemList.ItemStamp supports customable stamps now. Default is " *"
+	  - frmExp.ShowNextScreen: feedback can be delay to the end of the item now
+
+- Bug fixes:
+	- ItemList:
+	  - Stimulate All updated
+	  - Server and Client functionality updated
+	  - Sort: works for vectorized items now
+	  - update item count label on correctly (on .ItemCount)
+    - disable the selection of an item while experiment running. (ItemIndex returns the current selected item index in no-experiment mode only. In experiment mode, the last selected index before entering the experiment mode is returned.)
+	- Settings:
+	  - Tracker/Set Tracker Ranges: localization of values fixed (frmSettingsTrackRange)
+	  - Experiment Screen/Stimulation button: description text fixed
+	  - Variables: validity check fixed (frmSettings)
+	  - General: disable the interface while connected
+	- File/Open: loading wrong settings: message box as critical now (different to the message: load item list automatically)
+	- Localization for conversion of numerical variants fixed. (MyVal() introduced, use it instead of Val().)
+	- Repeated connection to failuring RIB32 fixed
+	- Result Window/Set Optimal Column Width: consider bolded text in cells now
+	- Calculate of the end of block correct (frmMain.NextItem)
+	- Message on start of the application about another ExpSuite application running was improved
+
+- Application programmer:
+	- description of EventSettings callback functions included in the help
+	- description of frmExp included in the help
+	- A programmable input form added (frmInputBox). Example: Settings/Tracker/Set Values
+	- A programmable mulitline input form added (frmInputMultiline). Example: File/Save Settings, form: update description.
+	- Label of the framework branch has been added to show differences to the original framework release (see FWIntern.bas)
+	- glItemNr has been removed. Use ItemList.ItemCount instead
+	- glResponseIndex and glCreateIndex have been removed. Use ItemList.ItemIndex instead
+
+*** v0.5.0
+- Begin of many changes - the goal is a final release of framework.
+- MIDI functionality added:
+	- A new module MIDI.bas must be included in the project file
+	- A new tab in Options is provided.
+	- YAMI including YAMI.bat have changed, use YAMI >v0.015
+- Settings: UpdateConstants and UpdateVariables added
+- OSC.dll renamed to OSC4VB.dll which will be installed in Windows directory now
+- New Event on response from YAMI added in Events.bas
+- MyIsNumeric added. Use it instead of IsNumeric (Proc.bas)
+- Show the IP address of connected client in the tooltip text of server
+
+*** v0.4.7
+- Documentation created 
+	- HTML files extracted from the source using VBDOX (vbdox.sourceforge.net):
+	- CHM help file compiled using MS HTML Workshop compiler
+	- All documentation files can be found in vbdox directory
+	- All source files changed...
+	- The description of user modules such as Events are included in project TestFW.
+	- To include the documentation of STIM object, project FrameWork HELP System.vbp has been created, which includes STIM but is not compileable.
+- minor bug fixes:
+	- Settings/Variables/Default button worked not properly
+	- select an item row press “F2”, -> Run-time Error, Invalid Procedure call or argument
+	- Constant, Variables and ItemList: Electrode Flag didn't check for a valid electrode in Settings/Signal
+	- gblnSettingsForm was always FALSE
+	- 0.7 gets .7 after MyStr() and IsNumeric results in FALSE. Leading zero included for numbers -1<x<+1
+- minor features added:
+	- Settings/Variables: Input of values improved, display longer values
+  	- Stimule Selected works for multiple items now
+	- Variable Flag and Itemlist Flag: vectorized added. 
+	- Checking of Items, Constants and/or Variables improved.
+	- Toolbar Icons for Load/Save Item List added
+
+*** v0.4.5, v0.4.6
+- minor changes in clsItemList.
+- Help system (VBDOX) installed and first comments added for clsItemList
+
+*** v0.4.4
+- ItemList class added with improvement of handling with item list and its items:
+	- .Reset: reset old item list to a new empty one without any columns or items
+	- .AddCol: add columns with captions, flags, min/max values similar to exp. variables
+	- .Clear: clear list before creating a new one, columns must be defined before clearing list
+	- .ItemCount: set/get count of items in the list
+	- .ItemIndex: set/get the index of current item
+	- .ItemStamp: stamp an item (add "*" in the index column)
+	- .Item(item,column): get/set the content of an item cell
+	- .CheckItem(column, content): validate a value for a specific column
+	- .TextMatrix: for compatibility to flexigrid (just change flgStatus to ItemList in your code)
+	- furthermore: .ColCount, .ColFlag, .ColCaption, .Load, .SetOptimalColWidth
+	- NECESSARY CHANGES:
+		- include FW/clsItemList.cls in your project
+		- remove the increment of glResponseIndex in Events.OnStartExperiment. This will happen in frmMain.NextItem now
+		- change frmMain.ClearItemList to ItemList.Clear
+	- USEFUL CHANGES:
+		- define new item list with .Reset and .AddCol in Events.OnLoad (you need one index column)
+		- replace flgStatus with ItemList everywhere
+		- remove the logging of an item. This will be done in frmMain.NextItem
+		- replace frmMain.Next with .NextItem. .NextItem returns TRUE at the end of experiment
+	- see documentation in clsItemList.cls for further details
+- Settings/Signal: lblSignal shows "Acoust. channel" or "Electrode" depending on output mode
+
+*** v0.4.3
+- General:
+  - bug fix after Connect: progress bar stocked after successful connection
+  - feature removed: we don't warn if settings file name contains " " or "_"
+  - MyStr() added for number to string conversions. Use MyStr() instead of CStr() or Str()
+- Main window: 
+  - show directory and filename of settings in the title bar (truncate if too long)
+  - Stimulate Selected: bug fixed: show error message
+- Turntable: 
+  - buttons 0°, 90°, 180°, 270°, +10° and -10° added
+  - on Connect: halt the turntable on .Init
+- Tracker: 
+  - bug fix for TrackMinMaxVlaues and 1 sensor
+  - bugs in CheckTrackedMinValues, MaxValues and InRange fixed
+  - on Connect: Retry or Abort on error getting status of the tracker
+- Result Form: 
+  - Set Optimal Column Width added
+  - Result Form: Append Result List added 
+  - bug fix: Results Form crashed in .Resize on minimizing 
+- Settings: 
+  - General: new button added: copy the settings directory to work dir
+  - Variables: dblclick on a list entry copies the content to the text box
+  - Variables: Paste Variables from Clipboard added
+  - Variables: new flags added: 
+     - FileName: .szUnit is the file filter
+     - Directory
+  - Variables will be updated on change of procedure now
+- Item List can be linked with settings now:
+  - Save Item list to set the title of the item list in the settings
+  - save Settings to save the link
+  - Automatically load the linked item list on loading setting file
+  - new extensions for item lists: _itemlist, _resultlist, and log changed to .itl,.rsl, and .log respectively for an easier filtering of loading/saving of item, results and log lists
+
+
+*** v0.4.2
+- bug fixes and improvements for the remote control:
+  - status icons in the right bottom corner
+  - more modularity
+  - send item list on connect (update on connect) -> use it for polling item list
+
+*** v0.4.1
+- Lock of work directory after disconnect fixed
+- Focus handling for the item list improved (still not optimal :-(
+- Some Run-Time-Crashes will be catched, optional saving item list and settings before killing the process
+- Bug fix: number of items after undo updated
+- frmResults: bug fix in Plot Axis Combobox after loading a new result list
+- stimlog.csv is locked after connect to lock the work directory until disconnect
+- Remote Control functionality added:
+  - Client: 
+    - connect to a server application via View/Remote Connect
+    - receive messages from the server app and process
+  - Server:
+    - listen to port 10002 for a client
+    - send the complete Item List (ServeData) on changes in the item list
+    - send the experiment state (ServeExpState) on frmMain.NextItem
+
+*** v0.4.0
+- First version with Tracker support
+  - functionality for real-time tracking
+  - Range settings in Settings (frmSettingsTrackRange)
+  - needs YAMI >= 0.12
+- Proc: Sleep function added to get the CPU load lower in DoEvents
+- Results: first column as x-axis for plotting enabled
+- Turntable:
+  - bugfix: frmTurntable appears at the position of the main form
+  - GetAngle added
+  - time out bug fixed
+  - Canceling reset function cancels immediatly now
+  - io.dll is required only if turntable is enabled
+  - bugfix: no more time outs moving over long distances
+- MATLAB/ShowStimulus: normalized log scaling for the Y axis added
+- io.dll moved to %windows% directory
+
+*** v0.3.1
+- Tracker: still many changes
+- frmSettings/Audio: visilibity of synth channel list improved
+- Turntable: imported from AMT@ARI to FW. See Options, Settings/General and frmMain
+- Bug fix: Successful connected -> Successfully connected
+- Bug fix: changing index column in the item list after Stimulate Selected disabled
+- Options/Audio: new flags added
+ - kill pd on disconnect
+ - start pd with no GUI 
+- frmMain/Connect: error handling improved
+- Proc.bas: 
+  - kill a process on CloseApp added
+  - cleaned up the function naming (Proc_ removed)
+
+*** v0.3.0
+- version number fixed for distribution:
+	- works with pd v0.39 (fixed pd.com problem)
+	- needs YAMI >= v0.008 (expanded response messages)
+
+*** v0.2.4
+- Tracker module added:
+	- Options:
+		- Tracker options added (Tracker simulation just optional up to now)
+	- Settings:
+		- Settings regarding tracker added
+	  - Tracker tab with real-time sensor data
+	  - Time out label added
+	- frmMain:
+		- new response server in wskResponse
+		- Tracker init in Connect, pd will be started in electrical stimulation too!
+	- Output: some changes regarding the new response server
+		- glOutputPlay and glOutputRecord correspond to the playing/recording channel (bitwise)
+		- old construct with PlayerCmd removed
+		- Start doesn't take a pattern, just set glOutputPlay/Record to correct values (no wrapper up to now)
+		- OSC: new functions regarding the response server and communication via OSC (use OSC4pd.dll v0.3)
+		- Starting pd seek for pd.com as well (needed for pd 0.39)
+- frmSettings/Constants: bug fix for the file name button handling
+- frmSettings/Audio: show synth # in the channel list
+- frmMain: bug fix: Close STIM if starting output device failed!
+- Options/Audio: # of channels and device # added
+
+
+*** v0.2.3
+- frmSettings: MsgBoxOnTop is public now
+
+*** v0.2.2
+- Options: CSV export/import: delimiter and quota characters editable
+- frmOptions: minor bug fix
+- frmMain/Item list: press F2 selects the text
+- frmSettings/Variables: updated description after switch to variables tab
+- frmExp:
+	- exp. mode 3: bug fix (resizing exp window)
+	- SetVisuCaption: change captions of interval visualization boxes
+	- improve feedback in exp. without "wait for next"
+- frmResults: Plot Results added:
+	- select 3 axes (x,y,parameter)
+	- plot results in a figure (Matlab: PlotResults.m)
+	
+
+*** v0.2.1
+- Time Out: better verbalization of the message
+- Settings: better check of experiment constants (on lost focus AND on OK/Apply)
+
+
+*** v0.2.0 (requires STIM v0.2.0 and RIB v0.2.0)
+- Reset Phase Duration in Settings/Fitting Left/Right added
+- "Hide/Show Experiment Form" buttons are disabled while running an experiment
+- Path/File access error while writing Item List or Settings: show "Read only flags set" as a possible reason
+- Some warnings are optional:
+	- if item list not shuffled on exp. start
+	- if item list not repeated on exp. start
+	- if exp. already performed on shuffle
+	- if previous exp. performed on start of next exp.
+- Item List: Move Up, Down added
+- Item List buttons redesigned
+- Creating of a new work directory is optional now.
+- ShowStimulus: improved user interface
+- Load Item List: keep correct n# of columns
+- temporary item list (flgTemp) created
+- Undo functionality (using flgUndo): Undo works for all functions but clear and load item list
+- bug fix for CRTL-TAB in Settings
+- changing item list form depending on experiment type is possible now (see ITDSync)
+
+*** v0.1.9
+- New constants flags: Hidden, Disabled
+- frmSettings: Constants can be experiment dependent (see AMT@ARI)
+- frmSettings/Variables: Move Up/Down a value implemented
+- frmSettings/Variables: show value count and number
+- frmSettings: callback OnExpTypeChange(oldExpType, newExpType) added
+- frmSettings: Change of callback OnChange() to OnChange(currentExpType)
+- Callback system of settings works more sophisticated now, see EventsSettings.sxw
+- ShowStimulus: new functions, coded completly from the scratch.
+  - plots: Plot, Specgram, Surface, Waterfall, Stretched Plot
+  - all plots in time and/or frequency domain
+  - ERB scaling possible
+  - difference of signals possible (e.g. show ILD)
+  - optional axes scaling 
+  - optional parameter(s) passing
+- some number convertion bugs fixed
+
+*** v0.1.8
+- frmSettings: labels in Signal tab / audio section are named and can be accessed now.
+- frmMain: hour glass cursor while busy
+- Execute Result List can be changed now, e.g. different items for specific exp types
+	- new public function frmMain.SetResultList
+	- Config.RESULTTEXT is used only on start of the application
+- Output.bas:
+	- StartSequencer: starts the sequencer, initating waiting for a response pattern
+		e.g. StartSequencer("/Rec/Stop/0") WaitForReady(TimeOut) --> start the sequencer
+		and waits for the response /Rec/Stop/0. StartSequencer uses a new glPlayerCmd: WaitForPattern
+	- WaitForRecording removed (use WaitForReady instead)
+	- PrepareStimulationFile(FileName) creates full file name for loading in pd
+- ShowStimulus: specgram mode added. Concern Matlab function ShowStimulus and frmShowStimulus.
+- Set Optimal Column Width in the item list added.
+
+
+*** v0.1.7
+- Output: allow access to work dir after loading stimulation files (problem with Dir())
+- frmResult: Resize/Edit mode for flgResult added, allowing resize columns or select all fields
+- Experimental feature added: hide fitting tag in electrical and audio tab in acoustical mode
+- frmSettings/Variables: set cursor to the input box after click on "Clear list"
+- frmSettings/Audio: Synth parameters (HC, LC and Par1) are validated before sending to pd or saving
+
+*** v0.1.6
+- frmMain: some bugs with break handling fixed
+- frmSettings: signal parameters are adapted each time the settings form is created
+		to avoid an incostistency by externally changing fitting file.
+
+*** v0.1.5
+- frmMain:
+	- copy to clipboard added
+	- Edit menu is visible now
+	- shortcuts to the edit menu added
+- Result:
+	- copy to clipboard added
+	- buttons arrangement changed (easier to resize now)
+	- no fixed cells in flexgrid
+- Settings:
+	- localization improved:
+		- CDbl/CStr is used in the GUI, to provide windows localization settings
+		- Val/Str is used for loading/saving to ensure an english format of fractional values
+- CSVParser:
+	- QuoteCell added
+
+
+*** v0.1.4
+- Hide Progress in Settings/Experiment Screen addded
+- Settings: Experiment Flags changed to Check List
+- Sync Progress Bar to Break in Settings/Experiment Screen added
+- Dummy HUI support added -> selecting a nonexisting device is possible now
+- Break support added:
+	- Choose Break on elapsed minutes or Break on items
+	- frmExp: Break will flash in red instead of progress value
+	- Progress Bar can be synced to the break (elapsed time or items)
+	- Break support works even for "Wait For Next" disabled
+	- Experiment can be canceled in a break
+- Blocked Item List Design added:
+	- input number of blocks and repetitions
+	- Number of Items is the product of both values
+	- In Blocked Design each block is shuffled separatly and Shuffle is disabled
+- Time of Experiment starts at the response of the first item (frmMain.NextItem)
+- Tracking of changes in Settings enabled again (let's try again)
+- Create Item List is available without connecting now
+
+*** v0.1.3
+- Context menu to the item list added
+- Duplicate Item Row/Block added to the context menu
+- Renumber index added to the context menu
+- Beep in experiment added
+- file naming rules added:
+	- Save Settings As...: warn if file title contains _ or blanks
+	- Save Item List As...: postfix control dialog added (frmItemListPostFix)
+		Rules of changing the postfix:
+		  - Load Item List: set to "nothing"
+		  - Create Item List: set to "fresh"
+		  - Start of Experiment: set to "response"
+		  - any operation on item list: set to "begin"
+		  - no rule for "user"
+		"New version" check box and the user postfix string are saved in Options
+	- Backup Log List: file name creation with versioning added
+	- Auto Backup on Disconnect: file name creation with versioning added
+	- frmResult, Save As...: file name creation with versioning added
+- Cancel added in WaitForReady and WaitForRecording
+- Loading fitting file the PhDur is set to the fitting value for new electrodes
+- last directory tracking removed in ImportAmplitudes and Constants.
+- user must disconnect before exit the application
+
+
+*** v0.1.2
+- record functionality with YAMI added
+
+*** v0.1.1
+- bug in Save Settings: warning if the path contains _ or blanks
+- Backup Log List: file name generating according to file naming rules
+- Shuffle List: bug fix in progress bar calculation
+- stay in last directory: all Open/Save File dialogs start in last directory
+	(excepting Browse For Fitting File: here we start in source dir)
+
+*** v0.1.0
+- Proc.bas: CloseApp redesigned (close not terminate!)
+- dithering revisited:
+	- INISettings: parameter are saved in a structure
+	- frmSettings: different frames for 2 or multichannel audio
+	- Output.bas: adapted to YAMI (pd_PLAYER is obsolete now!)
+	- Config.bas: constant to define max. # of channels added
+- frmMain:
+	- delete multiple rows in cmdItemDel added
+	- set multilple cells in cmdItemSet added
+- frmSettings: new type of constants added: FileName
+- frmMain: display WorkDir
+- frmSettings: Import Data button in Signal tab. Only electrical so far...
+- Save Item List: file name generating according to file naming rules
+- Save Result List: file name generating according to file naming rules
+- Save Settings: warning if the file name contains _ or blanks
+	
+
+
+*** v0.0.38
+- bug fix: Snapshot: write name and not description to the log
+- bug fix: Load Item List: enable list after warnings
+- bug fix: Sort Result List: don't sort in fixed columns
+
+
+*** v0.0.37
+- bug fix in calculation of FadeIn and FadeOut
+- error handling during the start of pd was improved
+- bug fix in frmSettings: ReleaseFittFile
+- focus handling improvement in frmSettings: Add new Variable
+- disable cmbResult while busy framework
+
+*** v0.0.36
+- SetOutputStatus: new status added: Break, color: green
+- frmMain: CreateItemList bug fixed
+- frmSettings: signal parameters handling improved
+- Output: pd-connection tries increased to 6
+
+*** v0.0.35
+- frmExp: openNum experiment improved/fixed
+- frmMain: HighlightItem added
+- frmMain: CreateAllStimuli/StimulateAll fixed
+- CLSParser: updated
+- frmSettings: Description of constants and veriables added
+- frmSettings: Linked Variables feature added
+- frmSettings: user interface improved
+- frmResult: recognize index column in cmdSort
+- frmResult: enable/disable cmdRefreshIndex
+- frmSettings: refresh PhDur labels after settings load
+- frmSettings: Reload Data bug fixed
+- frmExp: InExperiment flag added
+
+
+
+*** v0.0.34
+- show details of quantized phase duration
+- gblnChanged removed
+- bug fix in starting pd
+- bug fixed in frmResult: Sort list
+- frmResult: Refresh Index added
+- starting pd improved
+
+*** v0.0.33
+- Output: automatic start of pd
+- Output: setting sampling rate before start
+- new option added: use ASIO
+- frmOptions: Player: start file name added
+- frmSettings, Output: Dither control added (pd_PLAYER > v0.004 required)
+- ShowStimulus: passing parameters with special form
+- About form changed
+
+*** v0.0.32
+- ckeck shuffled item list before starting an experiment
+- check repeated item list before starting an experiment
+- Start Experiment at Selected Item added
+
+*** v0.0.31
+- minor bugs fixed
+- frmExp: more flexible using flags
+- frmSetting: flags for frmExp
+- Auto Backup Log File feature added
+- frmResult: Write to Log File feature added
+- Auto snapshot all parameter on experiment start
+- Backup Log File added
+
+** v0.0.29
+- changes in frmExp: RequestText bigger and adjustable
+- logging of application and framework versions
+- InsertItem added
+
+
+*** v0.0.28
+- Shortcut for StimulateSelected, menu structure adapted
+- checking of negative window positions (frmMain, frmSettings, frmOptions)
+- AddRepetition: two methods available: list after list and item after item
+
+*** v0.0.27
+- seeking for TimeOut bug
+
+*** v0.0.26
+- Procedure Constants NFadeIn and NFadeOut removed. Declare User-Constants instead
+- New experiment timing control, see function WaitHP
+- checking of Phase Duration added: must be at least one sample
+- bug fix in HUI: CheckButtons is more robust now
+- pass freqPar[L|R] to MATLAB
+
+*** v0.0.25
+- frmExp:
+	- key assignment added
+	- expState added
+	- optional visibility for start, response and next buttons
+	- NEXT frame removed, feedback will appear in the STIM frame
+	- Mode 3 added
+	- ShowHighlightedItem
+- frmSettings:
+	- Variables are user defined and contain description, units and flags
+	- ItdType, FadeIn, FadeOut, NFadeIn, NFadeOut and PreStimBreak added
+	- bug fix in Signal/Range
+	- unchecking FittingLeft/Use App Dir shows BrowseForFolder-Window
+	- Constants are user defined (not test yet!), old Constants are
+		Procedure Constants now.
+	- Procedure Constants PulsePeriod, Roving Level, Adaptation Level removed
+- Output.bas:
+	-	time out handling improved, using high performance timer
+	- LoadStimulationFile: bug fix in creating file names
+- frmMain: CreateStimList is available only after Connect
+
+
+*** v0.0.24 (STIM:0.0.49; RIB:0.0.27)
+- frmSettings: use MsgBoxOnTop to provide a MsgBox on the top of settings form
+- remaining time changed to the estimated end of experiment
+- F1 during pending experiment -> cancel (not hide)
+- delete item: optional renumber index column
+- minor bug fixes
+
+
+*** v0.0.23 (STIM:0.0.49; RIB:0.0.27)
+- directory structure changed, all framework files in FW\
+- output.loadstimulationfile: append extension if needed
+- cancel experiment: "are you sure?" before cancelling
+- versioning of FW added (changes in FWIntern are necessary :-(
+
+*** v0.0.22 (STIM:0.0.49; RIB:0.0.27)
+- HUI: robust init with list of HUI devices
+- frmSettings: list of HUI devices
+- iniSettings: load/save HUI ID
+
+*** v0.0.21 (STIM:0.0.49; RIB:0.0.27)
+- item list: FLG_COLS removed, get # of cols from the ubound of FLGTEXT
+- Menu added: load/save item list
+- result combobox added
+- result execute added, Result.Execute is called (index = cmbResult)
+- frmResult added:
+	- close
+	- save as...
+	- resize function
+- Menu added: clear item list
+- Button added: Stimulate All (Events.OnStimulateAll)
+
+*** v0.0.20 (STIM:0.0.49; RIB:0.0.27)
+- error msg in INIsettings & INIoptions improved
+- default value for LogMode is 13
+- loading variable list using Config.bas
+- appearing of windows outside the screen prevented
+- cmdItemStimulateSelected: stimulating part outsourced to OnStimulateSelected
+- constants fro silence files
+- default values for COMLeft = 1, COMRight = 2, PlayerPort = 10003
+- all tabs starts with the first tab
+- OnConnect and OnDisconnect added
+- SortItemList added
+
+*** v0.0.19 (STIM:0.0.48; RIB:0.0.27)
+- file structure changed
+- separated framework internal functions from user functions
+- tracking of changes (Save allowed or not) improved
+- ShowForm is obsolete, use SetUIReady/SetUIBusy
+
+*** v0.0.18 (STIM:0.0.48; RIB:0.0.27)
+- versioning changed
+- electrical Stimulation: range values read-only
+- fixed: Amp slider disabled switching from disabled to enabled electrode
+
+
+*** v0.016 -> v0.0.17
+- new structure, framework and user sections separated (not optimal yet :-(
+- adaptive experiment type: creating of stimuli before experiment not necessary
+- status list added
+- prefix changed: str.. to sz... and sng... to s...
+
+*** v0.015
+- different Experiment types can be added
+- adaptive procedure added
+- constant stimuli procedure added
+
+*** v0.014
+- THR and MCL audio support added
+- conversion of frequency parameter structure FREQUENCY. .esf not compatible now.
+
+*** v0.013
+- input of variables changed (combobox/listbox array)
+- frmExp: mode 0 is AFC/IFC mode now. Set AFC and IFC before Init()
+- delete an item from the item list
+- Stimulierzeugung für adaptive Test begonnen, Problem:THR und MCL nicht vereinheitlicht
+
+*** v0.012
+- audio und rib parameter wurden vereinheitlicht:
+	- in frmMain wird keine Unterscheidung betreffend der Art der Stimuli vorgenommen!!!!
+	- frmSettings: StimCreation schaltet im Tab "Signal" zw. Audio und Electric
+	  frames um.
+	- die Werte Amp, Range, PhDur, SPLOffset, CenterFreq und Bandwidth werden für
+	  jede Electrode einzeln gespeichert, siehe Tab "Signal"
+	- ElectrodeL/R zeigt auf die ausgewählte Werte.
+	- in frmSettings werden die globalen Werte erst nach "OK" oder "Apply" überschrieben
+	- es findet nocht keine Umrechnung zw. elektrisch und akustisch
+	- es ist noch keine Struktur für die o.g. Werte vorhanden
+	- Die Daten können über "ReloadData" aus den fitting files übernommen werden.
+- Stimuli werden nur einmal erzeugt, danach wird die entsprechende Datei verwendet
+- ClearStimuli: Die erzeugten Stimulusdateien können aus der Liste entfernt werden
+	um nochmal erzeugt zu werden.
+
+*** 0.010
+- audio support started, UDP/OCS/PLAYER(pd) are used
+- audio parameters in frmSettings added
+- all output function in output.bas ported -> should be included in RIB.ocx
+
+
+*** v0.008
+- offline generation of stimulus files
+- experiment screen improved regarding multi-experiment ability
+- joystick (Human Interface Device) functionality added
+- experiment flow changed
+
+*** v0.007
+- adapted to new STIM.ocx (timing in device time units)
+
+*** v0.006
+- show remaining time during experiment
+- log everything
+
+
+*** v0.005
+- progress bar in main
+- edit item
+- check for first experiment
+- log ID in options
+- item list follows the current item
+- weitere Änderungen...
+
+*** v0.004
+- frmSettings: some changes (saving of lLevel, lRange...)
+- frmMain: stimulate selected item
+- frmMain: StartExperiment (not finished)
+- frmExp: some improvements (auto disable response, auto set to blank stim screen)
+
+*** v0.003
+- frmSettings: weitere Parameter hinzugefügt
+- GetUbound: Abfangen des Fehlers von Ubound beim nichtvorhandenen Array
+- CreateList
+- ShuffleList: rnd + quicksort
+
+*** v0.002
+- frmSettings: vorläufig fertig, fehlt noch Unterscheidung ob Exp läuft...
+
+*** v0.001
+- portiert aud binloudbalance, v0.009
+- frmExp: vorläufig fertig
+- frmSettings: alle Funktionen von frmExp abrufbar
