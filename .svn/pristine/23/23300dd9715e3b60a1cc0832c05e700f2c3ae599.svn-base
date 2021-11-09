@@ -1,4 +1,0 @@
-Index,Azimuth,Channel ID,Freq,Amp,Status,Description
-1,,1,1000,80,,run 1
-2,,2,1000,80,,run 2
-3,,1 2,1000,80,,run 1+2
