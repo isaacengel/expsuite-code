@@ -7,6 +7,9 @@
 
 *** DEVELOPMENT STATUS ***
 
+*** v7.0.27 (09.11.2021) by miho
+- updated to FW v1.1.53
+
 *** v7.0.26 (02.11.2021) by miho
 - frmIR/ToolboxIR: bug fixed when loading IR toolbox and not having any recorded files
 - documentation updated to v7.0.26

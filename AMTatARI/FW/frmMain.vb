@@ -1264,7 +1264,7 @@ Friend Class frmMain
         STIM.UseMatlab = gblnUseMATLAB
         STIM.MATLABServer = gszMATLABServer
         STIM.MATLABPath = gszMATLABPath
-        szErr = STIM.Init(glSamplingRate, glResolution)
+        szErr = STIM.Init(glSamplingRate, glResolution) ' launch Matlab?
         If Len(szErr) <> 0 Then
             If InStr(szErr, "nonexistent or not a directory") > 0 Then
                 If (INISettings.gStimOutput = GENMODE.genElectricalRIB2 And gblnRIB2Simulation) Or (INISettings.gStimOutput = GENMODE.genElectricalRIB And gblnRIBSimulation) Then
@@ -1315,7 +1315,7 @@ Friend Class frmMain
         ' configure output
         ' init output device(s)
         Me.SetStatus("Init Output Device...")
-        szErr = Output.Connect(glTrackerCOM > 0 And gblnTrackerUse And glTrackerMode = 1) 'only YAMI tracker
+        szErr = Output.Connect(glTrackerCOM > 0 And gblnTrackerUse And glTrackerMode = 1) ' launch pd?    also for YAMI tracker
         If Len(szErr) <> 0 Then GoTo SubErrorSTIM
 SubInitTracker:
         ' init tracker

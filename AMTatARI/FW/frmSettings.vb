@@ -302,6 +302,7 @@ Friend Class frmSettings
             F4FT = Nothing
             txtFName(shX).Text = "not available"
             txtLName(shX).Text = "not available"
+            lblImpType(shX).Text= "---"
             cmdFittResetPhDur(shX).Enabled = False
             txtMinDist(shX).Text = "---"
             lblMinDist(shX).Text = "---"
@@ -353,6 +354,7 @@ Friend Class frmSettings
             ' set controls
             txtFName(shX).Text = F4FT.FirstName
             txtLName(shX).Text = F4FT.LastName
+            lblImpType(shX).Text= F4FT.ImpTypeString
             txtMinDist(shX).Text = VB.Right("   " & TStr((F4FT.MinDist)), 3)
             lblMinDist(shX).Text = "tu = " & TStr(Math.Round(F4FT.MinDist * F4FT.TimeBase, 1)) & " µs"
             lblPPer(shX).Text = TStr(Math.Round(F4FT.PulsePeriod)) & " tu = " & TStr(Math.Round(F4FT.PulsePeriod * F4FT.TimeBase, 1)) & " µs = " & TStr(Math.Round(1000000 / (F4FT.PulsePeriod * F4FT.TimeBase), 1)) & " pps"
@@ -3124,6 +3126,8 @@ SubError:
 
         ' audio
         TextBoxState(txtSamplingRate, Not gblnOutputStable)
+        TextBoxState(txtResolution, Not gblnOutputStable)
+
         ' tracker
         chkTrackerUse.Enabled = Not gblnOutputStable
         cmbTrackerRepRate.Enabled = Not gblnOutputStable

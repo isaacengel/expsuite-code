@@ -48,7 +48,7 @@
     Public WithEvents _Label6_0 As System.Windows.Forms.Label
     Public WithEvents _lblPPer_0 As System.Windows.Forms.Label
     Public WithEvents _lblCycPer_0 As System.Windows.Forms.Label
-    Public WithEvents _Label6_2 As System.Windows.Forms.Label
+    Public WithEvents _Label9_0 As System.Windows.Forms.Label
     Public WithEvents _Label6_4 As System.Windows.Forms.Label
     Public WithEvents Label4 As System.Windows.Forms.Label
     Public WithEvents _txtMinDist_0 As System.Windows.Forms.TextBox
@@ -71,7 +71,7 @@
     Public WithEvents _Label6_1 As System.Windows.Forms.Label
     Public WithEvents _lblPPer_1 As System.Windows.Forms.Label
     Public WithEvents _lblCycPer_1 As System.Windows.Forms.Label
-    Public WithEvents _Label6_3 As System.Windows.Forms.Label
+    Public WithEvents _Label9_1 As System.Windows.Forms.Label
     Public WithEvents _Label6_5 As System.Windows.Forms.Label
     Public WithEvents _txtMinDist_1 As System.Windows.Forms.TextBox
     Public WithEvents _txtFittFile_1 As System.Windows.Forms.TextBox
@@ -352,6 +352,7 @@
     Public WithEvents lblInterStimBreakU As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
     Public WithEvents lblMinDist As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
     Public WithEvents lblPPer As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblImpType As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
     Public WithEvents lblPostStimVisuOffsetU As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
     Public WithEvents lblPreStimBreakU As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
     Public WithEvents lblPreStimVisuOffsetU As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
@@ -478,6 +479,8 @@
         Me.fraTurntable = New System.Windows.Forms.GroupBox()
         Me.chkTTUse = New System.Windows.Forms.CheckBox()
         Me.tabFittingLeft = New System.Windows.Forms.TabPage()
+        Me._Label7_0 = New System.Windows.Forms.Label()
+        Me._lblImpType_0 = New System.Windows.Forms.Label()
         Me._Label14_0 = New System.Windows.Forms.Label()
         Me._Label2_0 = New System.Windows.Forms.Label()
         Me._Label3_0 = New System.Windows.Forms.Label()
@@ -486,7 +489,7 @@
         Me._Label6_0 = New System.Windows.Forms.Label()
         Me._lblPPer_0 = New System.Windows.Forms.Label()
         Me._lblCycPer_0 = New System.Windows.Forms.Label()
-        Me._Label6_2 = New System.Windows.Forms.Label()
+        Me._Label9_0 = New System.Windows.Forms.Label()
         Me._Label6_4 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me._txtMinDist_0 = New System.Windows.Forms.TextBox()
@@ -497,6 +500,8 @@
         Me._lstChInfo_0 = New System.Windows.Forms.ListBox()
         Me.cmdSourceDir = New System.Windows.Forms.Button()
         Me.tabFittingRight = New System.Windows.Forms.TabPage()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me._lblImpType_1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me._Label14_1 = New System.Windows.Forms.Label()
         Me._Label2_1 = New System.Windows.Forms.Label()
@@ -506,7 +511,7 @@
         Me._Label6_1 = New System.Windows.Forms.Label()
         Me._lblPPer_1 = New System.Windows.Forms.Label()
         Me._lblCycPer_1 = New System.Windows.Forms.Label()
-        Me._Label6_3 = New System.Windows.Forms.Label()
+        Me._Label9_1 = New System.Windows.Forms.Label()
         Me._Label6_5 = New System.Windows.Forms.Label()
         Me._txtMinDist_1 = New System.Windows.Forms.TextBox()
         Me._txtFittFile_1 = New System.Windows.Forms.TextBox()
@@ -783,6 +788,7 @@
         Me.lblInterStimBreakU = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblMinDist = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblPPer = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
+        Me.lblImpType = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblPostStimVisuOffsetU = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblPreStimBreakU = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblPreStimVisuOffsetU = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
@@ -894,6 +900,7 @@
         CType(Me.lblInterStimBreakU,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.lblMinDist,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.lblPPer,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.lblImpType,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.lblPostStimVisuOffsetU,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.lblPreStimBreakU,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.lblPreStimVisuOffsetU,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1097,7 +1104,7 @@
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.txtSourceDir.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtSourceDir.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtSourceDir.Location = New System.Drawing.Point(137, 38)
+        Me.txtSourceDir.Location = New System.Drawing.Point(137, 33)
         Me.txtSourceDir.MaxLength = 0
         Me.txtSourceDir.Name = "txtSourceDir"
         Me.txtSourceDir.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -1112,7 +1119,7 @@
         Me._cmdFittClear_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me._cmdFittClear_0.Image = CType(resources.GetObject("_cmdFittClear_0.Image"),System.Drawing.Image)
         Me.cmdFittClear.SetIndex(Me._cmdFittClear_0, CType(0,Short))
-        Me._cmdFittClear_0.Location = New System.Drawing.Point(412, 81)
+        Me._cmdFittClear_0.Location = New System.Drawing.Point(412, 58)
         Me._cmdFittClear_0.Name = "_cmdFittClear_0"
         Me._cmdFittClear_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdFittClear_0.Size = New System.Drawing.Size(25, 21)
@@ -1129,7 +1136,7 @@
         Me._cmdFittReload_0.Image = CType(resources.GetObject("_cmdFittReload_0.Image"),System.Drawing.Image)
         Me._cmdFittReload_0.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdFittReload.SetIndex(Me._cmdFittReload_0, CType(0,Short))
-        Me._cmdFittReload_0.Location = New System.Drawing.Point(439, 81)
+        Me._cmdFittReload_0.Location = New System.Drawing.Point(439, 58)
         Me._cmdFittReload_0.Name = "_cmdFittReload_0"
         Me._cmdFittReload_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdFittReload_0.Size = New System.Drawing.Size(25, 21)
@@ -1145,7 +1152,7 @@
         Me._cmdFittClear_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me._cmdFittClear_1.Image = CType(resources.GetObject("_cmdFittClear_1.Image"),System.Drawing.Image)
         Me.cmdFittClear.SetIndex(Me._cmdFittClear_1, CType(1,Short))
-        Me._cmdFittClear_1.Location = New System.Drawing.Point(412, 81)
+        Me._cmdFittClear_1.Location = New System.Drawing.Point(412, 58)
         Me._cmdFittClear_1.Name = "_cmdFittClear_1"
         Me._cmdFittClear_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdFittClear_1.Size = New System.Drawing.Size(25, 21)
@@ -1162,7 +1169,7 @@
         Me._cmdFittReload_1.Image = CType(resources.GetObject("_cmdFittReload_1.Image"),System.Drawing.Image)
         Me._cmdFittReload_1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdFittReload.SetIndex(Me._cmdFittReload_1, CType(1,Short))
-        Me._cmdFittReload_1.Location = New System.Drawing.Point(439, 81)
+        Me._cmdFittReload_1.Location = New System.Drawing.Point(439, 58)
         Me._cmdFittReload_1.Name = "_cmdFittReload_1"
         Me._cmdFittReload_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdFittReload_1.Size = New System.Drawing.Size(25, 21)
@@ -1468,7 +1475,7 @@
         Me.cmdFittEdit_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdFittEdit_0.Image = CType(resources.GetObject("cmdFittEdit_0.Image"),System.Drawing.Image)
         Me.cmdFittEdit_0.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.cmdFittEdit_0.Location = New System.Drawing.Point(466, 81)
+        Me.cmdFittEdit_0.Location = New System.Drawing.Point(466, 58)
         Me.cmdFittEdit_0.Name = "cmdFittEdit_0"
         Me.cmdFittEdit_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdFittEdit_0.Size = New System.Drawing.Size(25, 21)
@@ -1484,7 +1491,7 @@
         Me.cmdFittEdit_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdFittEdit_1.Image = CType(resources.GetObject("cmdFittEdit_1.Image"),System.Drawing.Image)
         Me.cmdFittEdit_1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.cmdFittEdit_1.Location = New System.Drawing.Point(466, 81)
+        Me.cmdFittEdit_1.Location = New System.Drawing.Point(466, 58)
         Me.cmdFittEdit_1.Name = "cmdFittEdit_1"
         Me.cmdFittEdit_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdFittEdit_1.Size = New System.Drawing.Size(25, 21)
@@ -1575,7 +1582,7 @@
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.txtSourceDirCopy.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtSourceDirCopy.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtSourceDirCopy.Location = New System.Drawing.Point(137, 38)
+        Me.txtSourceDirCopy.Location = New System.Drawing.Point(137, 33)
         Me.txtSourceDirCopy.MaxLength = 0
         Me.txtSourceDirCopy.Name = "txtSourceDirCopy"
         Me.txtSourceDirCopy.ReadOnly = true
@@ -2123,6 +2130,8 @@
         '
         'tabFittingLeft
         '
+        Me.tabFittingLeft.Controls.Add(Me._Label7_0)
+        Me.tabFittingLeft.Controls.Add(Me._lblImpType_0)
         Me.tabFittingLeft.Controls.Add(Me.cmdFittEdit_0)
         Me.tabFittingLeft.Controls.Add(Me._Label14_0)
         Me.tabFittingLeft.Controls.Add(Me._Label2_0)
@@ -2132,7 +2141,7 @@
         Me.tabFittingLeft.Controls.Add(Me._Label6_0)
         Me.tabFittingLeft.Controls.Add(Me._lblPPer_0)
         Me.tabFittingLeft.Controls.Add(Me._lblCycPer_0)
-        Me.tabFittingLeft.Controls.Add(Me._Label6_2)
+        Me.tabFittingLeft.Controls.Add(Me._Label9_0)
         Me.tabFittingLeft.Controls.Add(Me._Label6_4)
         Me.tabFittingLeft.Controls.Add(Me.Label4)
         Me.tabFittingLeft.Controls.Add(Me._txtMinDist_0)
@@ -2153,11 +2162,37 @@
         Me.tabFittingLeft.Text = "Fitting Left"
         Me.tabFittingLeft.UseVisualStyleBackColor = true
         '
+        '_Label7_0
+        '
+        Me._Label7_0.AutoSize = true
+        Me._Label7_0.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Label7_0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Label7_0.Location = New System.Drawing.Point(60, 139)
+        Me._Label7_0.Name = "_Label7_0"
+        Me._Label7_0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Label7_0.Size = New System.Drawing.Size(71, 13)
+        Me._Label7_0.TabIndex = 236
+        Me._Label7_0.Text = "Implant Type:"
+        Me._Label7_0.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        '_lblImpType_0
+        '
+        Me._lblImpType_0.AutoSize = true
+        Me._lblImpType_0.Cursor = System.Windows.Forms.Cursors.Default
+        Me._lblImpType_0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblImpType.SetIndex(Me._lblImpType_0, CType(0,Short))
+        Me._lblImpType_0.Location = New System.Drawing.Point(137, 139)
+        Me._lblImpType_0.Name = "_lblImpType_0"
+        Me._lblImpType_0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._lblImpType_0.Size = New System.Drawing.Size(28, 13)
+        Me._lblImpType_0.TabIndex = 237
+        Me._lblImpType_0.Text = "XXX"
+        '
         '_Label14_0
         '
         Me._Label14_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label14_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label14_0.Location = New System.Drawing.Point(66, 86)
+        Me._Label14_0.Location = New System.Drawing.Point(66, 63)
         Me._Label14_0.Name = "_Label14_0"
         Me._Label14_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._Label14_0.Size = New System.Drawing.Size(64, 16)
@@ -2170,7 +2205,7 @@
         Me._Label2_0.AutoSize = true
         Me._Label2_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label2_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label2_0.Location = New System.Drawing.Point(70, 113)
+        Me._Label2_0.Location = New System.Drawing.Point(70, 91)
         Me._Label2_0.Name = "_Label2_0"
         Me._Label2_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._Label2_0.Size = New System.Drawing.Size(60, 13)
@@ -2183,7 +2218,7 @@
         Me._Label3_0.AutoSize = true
         Me._Label3_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label3_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label3_0.Location = New System.Drawing.Point(69, 137)
+        Me._Label3_0.Location = New System.Drawing.Point(69, 115)
         Me._Label3_0.Name = "_Label3_0"
         Me._Label3_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._Label3_0.Size = New System.Drawing.Size(61, 13)
@@ -2255,18 +2290,18 @@
         Me._lblCycPer_0.TabIndex = 29
         Me._lblCycPer_0.Text = "XXX"
         '
-        '_Label6_2
+        '_Label9_0
         '
-        Me._Label6_2.AutoSize = true
-        Me._Label6_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Label6_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label6_2.Location = New System.Drawing.Point(71, 206)
-        Me._Label6_2.Name = "_Label6_2"
-        Me._Label6_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label6_2.Size = New System.Drawing.Size(59, 13)
-        Me._Label6_2.TabIndex = 30
-        Me._Label6_2.Text = "Time base:"
-        Me._Label6_2.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me._Label9_0.AutoSize = true
+        Me._Label9_0.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Label9_0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Label9_0.Location = New System.Drawing.Point(71, 206)
+        Me._Label9_0.Name = "_Label9_0"
+        Me._Label9_0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Label9_0.Size = New System.Drawing.Size(59, 13)
+        Me._Label9_0.TabIndex = 30
+        Me._Label9_0.Text = "Time base:"
+        Me._Label9_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label6_4
         '
@@ -2284,7 +2319,7 @@
         '
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(39, 42)
+        Me.Label4.Location = New System.Drawing.Point(39, 37)
         Me.Label4.Name = "Label4"
         Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label4.Size = New System.Drawing.Size(92, 13)
@@ -2314,7 +2349,7 @@
         Me._txtFittFile_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtFittFile_0.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtFittFile.SetIndex(Me._txtFittFile_0, CType(0,Short))
-        Me._txtFittFile_0.Location = New System.Drawing.Point(137, 82)
+        Me._txtFittFile_0.Location = New System.Drawing.Point(137, 59)
         Me._txtFittFile_0.MaxLength = 0
         Me._txtFittFile_0.Name = "_txtFittFile_0"
         Me._txtFittFile_0.ReadOnly = true
@@ -2330,7 +2365,7 @@
         Me._txtFName_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtFName_0.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtFName.SetIndex(Me._txtFName_0, CType(0,Short))
-        Me._txtFName_0.Location = New System.Drawing.Point(137, 110)
+        Me._txtFName_0.Location = New System.Drawing.Point(137, 88)
         Me._txtFName_0.MaxLength = 0
         Me._txtFName_0.Name = "_txtFName_0"
         Me._txtFName_0.ReadOnly = true
@@ -2347,7 +2382,7 @@
         Me._txtLName_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtLName_0.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLName.SetIndex(Me._txtLName_0, CType(0,Short))
-        Me._txtLName_0.Location = New System.Drawing.Point(137, 134)
+        Me._txtLName_0.Location = New System.Drawing.Point(137, 112)
         Me._txtLName_0.MaxLength = 0
         Me._txtLName_0.Name = "_txtLName_0"
         Me._txtLName_0.ReadOnly = true
@@ -2362,7 +2397,7 @@
         Me._cmdFittBrowse_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittBrowse_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdFittBrowse.SetIndex(Me._cmdFittBrowse_0, CType(0,Short))
-        Me._cmdFittBrowse_0.Location = New System.Drawing.Point(385, 81)
+        Me._cmdFittBrowse_0.Location = New System.Drawing.Point(385, 58)
         Me._cmdFittBrowse_0.Name = "_cmdFittBrowse_0"
         Me._cmdFittBrowse_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdFittBrowse_0.Size = New System.Drawing.Size(25, 21)
@@ -2390,7 +2425,7 @@
         Me.cmdSourceDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.cmdSourceDir.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdSourceDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdSourceDir.Location = New System.Drawing.Point(465, 37)
+        Me.cmdSourceDir.Location = New System.Drawing.Point(465, 32)
         Me.cmdSourceDir.Name = "cmdSourceDir"
         Me.cmdSourceDir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdSourceDir.Size = New System.Drawing.Size(26, 21)
@@ -2400,6 +2435,8 @@
         '
         'tabFittingRight
         '
+        Me.tabFittingRight.Controls.Add(Me.Label5)
+        Me.tabFittingRight.Controls.Add(Me._lblImpType_1)
         Me.tabFittingRight.Controls.Add(Me.txtSourceDirCopy)
         Me.tabFittingRight.Controls.Add(Me.Label2)
         Me.tabFittingRight.Controls.Add(Me.cmdFittEdit_1)
@@ -2411,7 +2448,7 @@
         Me.tabFittingRight.Controls.Add(Me._Label6_1)
         Me.tabFittingRight.Controls.Add(Me._lblPPer_1)
         Me.tabFittingRight.Controls.Add(Me._lblCycPer_1)
-        Me.tabFittingRight.Controls.Add(Me._Label6_3)
+        Me.tabFittingRight.Controls.Add(Me._Label9_1)
         Me.tabFittingRight.Controls.Add(Me._Label6_5)
         Me.tabFittingRight.Controls.Add(Me._txtMinDist_1)
         Me.tabFittingRight.Controls.Add(Me._txtFittFile_1)
@@ -2429,11 +2466,37 @@
         Me.tabFittingRight.Text = "Fitting Right"
         Me.tabFittingRight.UseVisualStyleBackColor = true
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = true
+        Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Label5.Location = New System.Drawing.Point(60, 139)
+        Me.Label5.Name = "Label5"
+        Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.Label5.Size = New System.Drawing.Size(71, 13)
+        Me.Label5.TabIndex = 239
+        Me.Label5.Text = "Implant Type:"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        '_lblImpType_1
+        '
+        Me._lblImpType_1.AutoSize = true
+        Me._lblImpType_1.Cursor = System.Windows.Forms.Cursors.Default
+        Me._lblImpType_1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblImpType.SetIndex(Me._lblImpType_1, CType(1,Short))
+        Me._lblImpType_1.Location = New System.Drawing.Point(137, 139)
+        Me._lblImpType_1.Name = "_lblImpType_1"
+        Me._lblImpType_1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._lblImpType_1.Size = New System.Drawing.Size(28, 13)
+        Me._lblImpType_1.TabIndex = 240
+        Me._lblImpType_1.Text = "XXX"
+        '
         'Label2
         '
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(39, 42)
+        Me.Label2.Location = New System.Drawing.Point(39, 37)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label2.Size = New System.Drawing.Size(92, 13)
@@ -2445,7 +2508,7 @@
         '
         Me._Label14_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label14_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label14_1.Location = New System.Drawing.Point(66, 86)
+        Me._Label14_1.Location = New System.Drawing.Point(66, 63)
         Me._Label14_1.Name = "_Label14_1"
         Me._Label14_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._Label14_1.Size = New System.Drawing.Size(64, 16)
@@ -2458,7 +2521,7 @@
         Me._Label2_1.AutoSize = true
         Me._Label2_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label2_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label2_1.Location = New System.Drawing.Point(70, 113)
+        Me._Label2_1.Location = New System.Drawing.Point(70, 91)
         Me._Label2_1.Name = "_Label2_1"
         Me._Label2_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._Label2_1.Size = New System.Drawing.Size(60, 13)
@@ -2471,7 +2534,7 @@
         Me._Label3_1.AutoSize = true
         Me._Label3_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label3_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label3_1.Location = New System.Drawing.Point(69, 137)
+        Me._Label3_1.Location = New System.Drawing.Point(69, 115)
         Me._Label3_1.Name = "_Label3_1"
         Me._Label3_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._Label3_1.Size = New System.Drawing.Size(61, 13)
@@ -2543,18 +2606,18 @@
         Me._lblCycPer_1.TabIndex = 31
         Me._lblCycPer_1.Text = "XXX"
         '
-        '_Label6_3
+        '_Label9_1
         '
-        Me._Label6_3.AutoSize = true
-        Me._Label6_3.Cursor = System.Windows.Forms.Cursors.Default
-        Me._Label6_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label6_3.Location = New System.Drawing.Point(71, 206)
-        Me._Label6_3.Name = "_Label6_3"
-        Me._Label6_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label6_3.Size = New System.Drawing.Size(59, 13)
-        Me._Label6_3.TabIndex = 32
-        Me._Label6_3.Text = "Time base:"
-        Me._Label6_3.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me._Label9_1.AutoSize = true
+        Me._Label9_1.Cursor = System.Windows.Forms.Cursors.Default
+        Me._Label9_1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._Label9_1.Location = New System.Drawing.Point(71, 206)
+        Me._Label9_1.Name = "_Label9_1"
+        Me._Label9_1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._Label9_1.Size = New System.Drawing.Size(59, 13)
+        Me._Label9_1.TabIndex = 32
+        Me._Label9_1.Text = "Time base:"
+        Me._Label9_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label6_5
         '
@@ -2589,7 +2652,7 @@
         Me._txtFittFile_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtFittFile_1.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtFittFile.SetIndex(Me._txtFittFile_1, CType(1,Short))
-        Me._txtFittFile_1.Location = New System.Drawing.Point(137, 82)
+        Me._txtFittFile_1.Location = New System.Drawing.Point(137, 59)
         Me._txtFittFile_1.MaxLength = 0
         Me._txtFittFile_1.Name = "_txtFittFile_1"
         Me._txtFittFile_1.ReadOnly = true
@@ -2605,7 +2668,7 @@
         Me._txtFName_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtFName_1.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtFName.SetIndex(Me._txtFName_1, CType(1,Short))
-        Me._txtFName_1.Location = New System.Drawing.Point(137, 110)
+        Me._txtFName_1.Location = New System.Drawing.Point(137, 88)
         Me._txtFName_1.MaxLength = 0
         Me._txtFName_1.Name = "_txtFName_1"
         Me._txtFName_1.ReadOnly = true
@@ -2622,7 +2685,7 @@
         Me._txtLName_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtLName_1.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLName.SetIndex(Me._txtLName_1, CType(1,Short))
-        Me._txtLName_1.Location = New System.Drawing.Point(137, 134)
+        Me._txtLName_1.Location = New System.Drawing.Point(137, 112)
         Me._txtLName_1.MaxLength = 0
         Me._txtLName_1.Name = "_txtLName_1"
         Me._txtLName_1.ReadOnly = true
@@ -2637,7 +2700,7 @@
         Me._cmdFittBrowse_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittBrowse_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdFittBrowse.SetIndex(Me._cmdFittBrowse_1, CType(1,Short))
-        Me._cmdFittBrowse_1.Location = New System.Drawing.Point(385, 81)
+        Me._cmdFittBrowse_1.Location = New System.Drawing.Point(385, 58)
         Me._cmdFittBrowse_1.Name = "_cmdFittBrowse_1"
         Me._cmdFittBrowse_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdFittBrowse_1.Size = New System.Drawing.Size(25, 21)
@@ -6354,6 +6417,7 @@
         CType(Me.lblInterStimBreakU,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.lblMinDist,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.lblPPer,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.lblImpType,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.lblPostStimVisuOffsetU,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.lblPreStimBreakU,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.lblPreStimVisuOffsetU,System.ComponentModel.ISupportInitialize).EndInit
@@ -6452,5 +6516,9 @@ End Sub
     Public WithEvents _lblTrackerX_Range_1 As Label
     Public WithEvents _lblTrackerE_Range_1 As Label
     Public WithEvents _lblTrackerA_Range_1 As Label
+    Public WithEvents _Label7_0 As Label
+    Public WithEvents _lblImpType_0 As Label
+    Public WithEvents Label5 As Label
+    Public WithEvents _lblImpType_1 As Label
 #End Region
 End Class

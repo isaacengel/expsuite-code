@@ -698,6 +698,20 @@ SubError:
         Output.Send("/Play/SetFade", 0)     'the application's developer is responsible to use a different value in pd (send in Events: OnConnect or Stimulate) or MATLAB (stPar.lFadeIn)
         Output.Send("/Play/SetFadeOut", 0)  'the application's developer is responsible to use a different value in pd (send in Events: OnConnect or Stimulate) or MATLAB (stPar.lFadeOut)
 
+        If CBool(INIOptions.glPlayerFlags And PLAYERFLAGS.pfNoADC) = False Then ' ADC is checked
+            If glResolution <= 16 Then
+                Output.Send("/Rec/SetBytes", 2) ' 16-bit recording
+                frmMain.SetStatus("16-bit recording in pd")
+            elseIf glResolution <= 24 Then 
+                Output.Send("/Rec/SetBytes", 3) ' 24-bit recording
+                frmMain.SetStatus("24-bit recording in pd")
+            Else
+                Output.Send("/Rec/SetBytes", 4) ' 32-bit floating point recording
+                frmMain.SetStatus("32-bit floating point recording in pd")
+            End If
+            
+        End If
+
         Output.Send("/DAC/SetVol/*", 0)
         ' connect synthesizer units to DAC's
         For lX = 0 To glPlayerChannels - 1

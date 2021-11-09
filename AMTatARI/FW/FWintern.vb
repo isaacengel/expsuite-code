@@ -28,7 +28,7 @@ Module FWintern
     ''' Revision of framework.
     ''' </summary>
     ''' <remarks></remarks>
-    Public Const FW_REVISION As Short = 52
+    Public Const FW_REVISION As Short = 53
     ''' <summary>
     ''' Label of the framework branch. Put your own label here if your branch differs from the original release.
     ''' </summary>

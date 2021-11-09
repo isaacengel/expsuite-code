@@ -6,6 +6,11 @@
 
 *** DEVELOPMENT STATUS ***
 
+*** v1.1.53 (09.11.2021) by miho
+- frmSettings: Bug fixed: text box for resolution (bit rate) disabled when connected
+- Output: Bug fixed: bit rate is used for ADC recording in pd (16, 24, or 32 bit)
+- frmSettings: Fitting File left/right tab show implant type
+
 *** v1.1.52 (21.09.2021) by miho
 - Turntable: bug fixed when performing turntable emergency stop and library not available
 
