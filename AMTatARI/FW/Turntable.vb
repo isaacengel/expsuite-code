@@ -310,6 +310,7 @@ SubError:
                 ttMoving = False
                 gsngTTAngle = -1
                 gblnTTInitialized = False
+                frmMain.labelTTcalibrated.Text = "No"
                 Return 0
 
         End Select
@@ -329,6 +330,7 @@ SubError:
 
         gsngTTAngle = angle
         gblnTTInitialized = True
+        frmMain.labelTTcalibrated.Text = "Yes"
 
     End Sub
 

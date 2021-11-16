@@ -1628,6 +1628,7 @@ SubEnd:
         cmdContinueExp.Enabled = gblnOutputStable And dgvItemList.Enabled And Not gblnExperiment  'And Not gblnRemoteClientConnected
         cmdStartExp.Enabled = gblnOutputStable And dgvItemList.Enabled And Not gblnExperiment  'And Not gblnRemoteClientConnected
         cmdInitButton.Enabled = Not gblnExperiment And gblnOutputStable
+        cmdGenerateSOFA.Enabled = Not gblnExperiment And gblnOutputStable
 
         szX = "Start Experiment"
         If glExperimentStartItem >= 0 And glExperimentEndItem >= 0 Then
@@ -5650,6 +5651,10 @@ SubError:
         szErr = CalibrateOptitrack()
         If Len(szErr) <> 0 Then MsgBox(szErr, MsgBoxStyle.Critical, "Calibrate Optitrack")
         Turntable.SetAngle(0)
+    End Sub
+
+    Private Sub cmdGenerateSOFA_Click(sender As Object, e As EventArgs) Handles cmdGenerateSOFA.Click
+        frmGenerateSOFA.ShowDialog()
     End Sub
 
     'Private Sub dgvItemList_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dgvItemList.KeyPress

@@ -1315,13 +1315,13 @@ SubError:
             With ItemList
                 If glExpType = 3 Then szY = "Elevation" Else szY = "Channel ID"
                 If InStr(1, .Item(Arr(lArrRow) , szY), " ") > 0 Then
-                    szArr = Split(Trim(.Item(Arr(lArrRow) , szY)), " ")
+                    szArr = Split(Trim(.Item(Arr(lArrRow), szY)), " ") 'szArr = array with elevations in string format ["-45","-30"...]
                 Else
                     szArr = Split(.Item(Arr(lArrRow) , szY), ";")
                 End If
                 If GetUbound(szArr) < 0 Then szErr = szY & " not specified" : GoTo SubError
                 ReDim lCh(GetUbound(szArr))
-                For lX = 0 To GetUbound(szArr)
+                For lX = 0 To GetUbound(szArr) ' lCh = int array with channels corresponding to the elevations in szArr [1,2,3...]
                     If Not IsNumeric(szArr(lX)) Then
                         szErr = szErr & "Item #" & TStr(Arr(lArrRow)) & ": " & szY & " must be a valid numeric." & vbCrLf
                         GoTo NextItem
@@ -1336,8 +1336,8 @@ SubError:
                     szErr = szErr & "Item #" & TStr(Arr(lArrRow)) & ": More " & szY & "s than ISDs specified." & vbCrLf
                     GoTo NextItem
                 End If
-                szPrefix = Create.CreateRecPrefix(Arr(lArrRow))
-                szName = Dir(STIM.WorkDir & "\" & szPrefix & "_*.wav")
+                szPrefix = Create.CreateRecPrefix(Arr(lArrRow)) 'Arr = int array with selected items with 0 index [3,4,5...]
+                szName = Dir(STIM.WorkDir & "\" & szPrefix & "_*.wav") ' filenames "AMTatARI_0004_*.wav"
             End With
             ' prepare latency and position strings
             szLat = ""
@@ -1345,19 +1345,19 @@ SubError:
             If Len(ItemList.Item(Arr(lArrRow) , "AZIMUTH")) = 0 Then
                 szY = "NaN"
             Else
-                szY = TStr(Val(ItemList.Item(Arr(lArrRow) , "AZIMUTH")))
+                szY = TStr(Val(ItemList.Item(Arr(lArrRow), "AZIMUTH"))) ' get Azimuth from item list index
             End If
             For lX = 0 To UBound(lCh)
                 ' latency matrix: item x rec-stream
-                szLat = szLat & TStr(System.Math.Round(CDbl(gfreqParL(lCh(lX) - 1).lPhDur) * glSamplingRate / 1000000)) & ";"
+                szLat = szLat & TStr(System.Math.Round(CDbl(gfreqParL(lCh(lX) - 1).lPhDur) * glSamplingRate / 1000000)) & ";" 'lPhDur=latency (113000) 
                 ' position matrix: item x [azimuth elevation channel]
-                szX = szX & szY & " " & TStr((gfreqParL(lCh(lX) - 1).sAmp)) & " " & TStr(lCh(lX)) & ";"
+                szX = szX & szY & " " & TStr((gfreqParL(lCh(lX) - 1).sAmp)) & " " & TStr(lCh(lX)) & ";" 'sAmp=elevation (-45), szX = [az el ch] = [0 -45 1]
             Next
-            szX &= "];"
+            szX &= "];" ' szX has all the elevations for a single Azimuth. Elevation and Channel (2nd and 3rd elements) are redundant to each other
             ' set position
             szY = STIM.Matlab(szX)
             If Len(szY) <> 0 Then szErr = szX & vbCrLf & "Error: " & szY : GoTo SubError
-            szX = "{"
+            szX = "{" ' szX here holds the *_adc0.wav and *_adc1.wav files
             ' get file names
             lNr = 0
             While Len(szName) <> 0
@@ -1376,7 +1376,7 @@ SubError:
             If blnGM Then
                 szX = "[hC{" & TStr(Arr(lArrRow)+1) & "},idxC{" & TStr(Arr(lArrRow)+1) & "},latC{" & TStr(Arr(lArrRow)+1) & "},htotalX]=AA_CalcSweepToIR(" & szX & ",sweepX,invsweepX,[" & szISD & "]," & TStr(glSamplingRate) & "," & TStr(UBound(lCh) + 1) & ",[" & szLat & "]," & TStr(System.Math.Round(gsIRLen * glSamplingRate / 1000)) & ",[" & TStr(System.Math.Round(gsIRBeg * glSamplingRate / 1000)) & ";" & TStr(System.Math.Round(gsIREnd * glSamplingRate / 1000)) & "]," & TStr(CInt(blnGM)) & ");"
             Else
-                szX = "[hC{" & TStr(Arr(lArrRow)+1) & "},idxC{" & TStr(Arr(lArrRow)+1) & "},latC{" & TStr(Arr(lArrRow)+1) & "},htotalX]=AA_CalcSweepToIR(" & szX & ",sweepX,invsweepX,[" & szISD & "]," & TStr(glSamplingRate) & "," & TStr(UBound(lCh) + 1) & ",[" & szLat & "]," & TStr(System.Math.Round(gsIRLen * glSamplingRate / 1000)) & ",[" & TStr(System.Math.Round(gsIRBeg * glSamplingRate / 1000)) & ";" & TStr(System.Math.Round(gsIREnd * glSamplingRate / 1000)) & "]);"
+                szX = "[hC{" & TStr(Arr(lArrRow) + 1) & "},idxC{" & TStr(Arr(lArrRow) + 1) & "},latC{" & TStr(Arr(lArrRow) + 1) & "},htotalX]=AA_CalcSweepToIR(" & szX & ",sweepX,invsweepX,[" & szISD & "]," & TStr(glSamplingRate) & "," & TStr(UBound(lCh) + 1) & ",[" & szLat & "]," & TStr(System.Math.Round(gsIRLen * glSamplingRate / 1000)) & ",[" & TStr(System.Math.Round(gsIRBeg * glSamplingRate / 1000)) & ";" & TStr(System.Math.Round(gsIREnd * glSamplingRate / 1000)) & "]);" ' gsIRBeg and gsIREnd are 2.5ms when I debugged this
             End If
             szY = STIM.Matlab(szX)
             If Len(szY) <> 0 Then szErr = szX & vbCrLf & "Error: " & szY : GoTo SubError

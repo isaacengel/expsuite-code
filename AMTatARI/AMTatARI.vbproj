@@ -140,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.vb" />
+    <Compile Include="frmGenerateSOFA.Designer.vb">
+      <DependentUpon>frmGenerateSOFA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerateSOFA.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmListbox.Designer.vb">
       <DependentUpon>frmListbox.vb</DependentUpon>
     </Compile>
@@ -368,6 +374,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ToolboxIR.vb" />
+    <EmbeddedResource Include="frmGenerateSOFA.resx">
+      <DependentUpon>frmGenerateSOFA.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListbox.resx">
       <DependentUpon>frmListbox.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -386,6 +396,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMESM.resx">
       <DependentUpon>frmMESM.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlotData.resX">
       <DependentUpon>frmPlotData.vb</DependentUpon>

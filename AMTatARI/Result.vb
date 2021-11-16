@@ -10,11 +10,29 @@ Option Explicit On
 'See the Licence for the specific language governing  permissions and limitations under the Licence. 
 #End Region
 Module Result
-	
-	
-	Public gIRFlags As IRFlags
-	
-	Public Sub Execute(ByRef lIndex As Integer)
+
+
+    Public gIRFlags As IRFlags
+
+    Public Sub GenerateSOFA(sofaname As String, settingsFile As String, stimListFile As String, referenceFile As String, doPlots As Integer, saveRaw As Integer, saveEQ As Integer, saveITD As Integer, save3DTI As Integer, targetFs As String)
+        If Not gblnOutputStable Then
+            MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+        Dim StartTime As DateTime = System.DateTime.Now 'calculation time
+        STIM.Matlab("AA_SOFAstart;")
+        STIM.Matlab("this_dir = cd; amt_start(); cd(this_dir);")
+        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & "','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveEQ & "," & saveITD & "," & save3DTI & "," & targetFs & ");")
+        If Len(szErr) > 0 Then
+            MsgBox(szErr, MsgBoxStyle.Critical, "Generate SOFA files")
+            frmMain.SetStatus("Error(s) generating SOFA files")
+        Else
+            MsgBox("Successfully saved SOFA files!", MsgBoxStyle.Information, "Generate SOFA files")
+        End If
+        frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
+    End Sub
+
+    Public Sub Execute(ByRef lIndex As Integer)
 		Dim szX As String
         'Dim lRowBeg, lRowEnd As Integer
 		
@@ -81,7 +99,7 @@ Module Result
                             ToolboxIR.ProcessIRForm()
                             frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
                             'SweeptoIR lRowBeg, lRowEnd
-                        Case 2 ' IR Menu
+                        Case 2 ' Postprocessing menu
                             If Not gblnOutputStable Then
                                 MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
                                 Exit Sub

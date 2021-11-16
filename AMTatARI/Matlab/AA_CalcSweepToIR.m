@@ -62,8 +62,8 @@ for jj=1:size(name,2)
   htotal(:,jj)=htemp(1:nges);
     % separate linear IR of each system
   for ii=1:N
-    ibeg=T+(ISD(ii))+lat(ii)-IRoffset(1);
-    iend=T+(ISD(ii))+lat(ii)+len+IRoffset(2)-1;
+    ibeg=int32(T+(ISD(ii))+lat(ii)-IRoffset(1));
+    iend=int32(T+(ISD(ii))+lat(ii)+len+IRoffset(2)-1);
     h(:,ii)=htotal(ibeg:iend,jj);
         % estimate the latency time
     [val1,idx1]=max(abs(double(h(:,ii))));
