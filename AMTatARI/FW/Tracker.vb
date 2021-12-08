@@ -130,8 +130,8 @@ Module Tracker
             Return ""
         ElseIf glTrackerMode = 3 Then
             ' OptiTrack (Motive OSC Streamer)
-            frmMain.SetStatus("Initializing Tracker: Motive OSC Streamer on address 127.0.0.1 port 10001 with settings 20211021_Turret_rotated.ttp...")
-            Process.Start("CMD", "/C .\Optitrack\MotiveOscStreamer.exe .\Optitrack\20211021_Turret_rotated.ttp 127.0.0.1 10001")
+            frmMain.SetStatus("Initializing Tracker: Motive OSC Streamer on address 127.0.0.1 port 10001 with settings 14CamerasSetup.ttp...")
+            Process.Start("CMD", "/C .\Optitrack\MotiveOscStreamer.exe .\Optitrack\14CamerasSetup.ttp 127.0.0.1 10001")
             ' Init current tracker value to 0
             mtsData(0).sngX = 0
             mtsData(0).sngY = 0
