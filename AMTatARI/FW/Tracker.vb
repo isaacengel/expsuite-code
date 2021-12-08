@@ -132,8 +132,12 @@ Module Tracker
             Return ""
         ElseIf glTrackerMode = 3 Then
             ' OptiTrack (Motive OSC Streamer)
-            frmMain.SetStatus("Initializing Tracker: " & OSCstreamerFile & " on address 127.0.0.1 port " & TStr(motiveUDPport) & " with settings " & motiveFile & "...")
-            Process.Start("CMD", "/C " & OSCstreamerFile & " " & motiveFile & " 127.0.0.1" & TStr(motiveUDPport))
+            If Not FindProcess("MotiveOscStreamer.exe") Then
+                frmMain.SetStatus("Initializing Tracker: " & OSCstreamerFile & " on address 127.0.0.1 port " & TStr(motiveUDPport) & " with settings " & motiveFile & "...")
+                Shell("""" & OSCstreamerFile & """ """ & motiveFile & """ 127.0.0.1 " & TStr(motiveUDPport))
+            Else
+                frmMain.SetStatus("Tracker already running...")
+            End If
             ' Init current tracker value to 0
             mtsData(0).sngX = 0
             mtsData(0).sngY = 0
