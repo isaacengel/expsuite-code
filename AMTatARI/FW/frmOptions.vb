@@ -221,12 +221,20 @@ Friend Class frmOptions
         txtTT4AOffset.Text = TStr(gsngTT4AOffset)
         glTT4aBrakeTimer = CInt(numTT4ABrakeTimer.Value)
         gblnAllowPreRotation = CBool(ckbTT4AAllowPreRotation.CheckState)
+        ttAddress = textBoxTTIPaddress.Text
+        ttPort = CInt(textBoxTTport.Text)
+        ttSpeed = CDbl(textBoxTTspeed.Value)
 
         ' ViWo
         glViWoPort = CInt(Val(txtViWoPort.Text))
         gszViWoAddress = txtViWoAddress.Text
         'gbViWoOSC = CBool(chkViWoOSC.CheckState)
         chkViWoOSC.Text = "Comply with OSC standard"
+
+        'Optitrack parameters
+        motiveFile = textBoxMotiveFile.Text
+        OSCstreamerFile = textBoxOSCstreamerFile.Text
+        motiveUDPport = CInt(textBoxUDPport.Text)
 
         ' Joypad
         ReDim JoyPads(dgvJoypad.RowCount - 1)
@@ -246,6 +254,7 @@ Friend Class frmOptions
         gblnRemoteMonitorServerEnabled = CBool(chkEnableRemoteMonitorServer.Checked)
         gszRemoteMonitorServerAdress = txtRemoteServer.Text
         Return Nothing
+
     End Function
 
 
@@ -669,6 +678,10 @@ Friend Class frmOptions
         txtTRSettingsInterval.Text = TStr(glTrackerSettingsInterval)
         chkTRLog.CheckState = DirectCast(-CInt(gblnTrackerLog), CheckState)
 
+        textBoxMotiveFile.Text = motiveFile
+        textBoxOSCstreamerFile.Text = OSCstreamerFile
+        textBoxUDPport.Text = TStr(motiveUDPport)
+
         ' Turntable
         Select Case glTTMode
             Case 0
@@ -687,8 +700,11 @@ Friend Class frmOptions
         cmbTTLPT.SelectedIndex = glTTLPT
         txtTTOffset.Text = TStr(gsngTTOffset)
         txtTT4AOffset.Text = TStr(gsngTT4AOffset)
-        numTT4ABrakeTimer.Value=glTT4aBrakeTimer
+        numTT4ABrakeTimer.Value=glTT4ABrakeTimer
         ckbTT4AAllowPreRotation.CheckState = DirectCast(-CInt(gblnAllowPreRotation), CheckState)
+        textBoxTTIPaddress.Text = ttAddress
+        textBoxTTport.Text = TStr(ttPort)
+        textBoxTTspeed.Value = CDec(Math.Min(Math.Max(ttSpeed, 0.5), 4))
 
         ' ViWo
         txtViWoAddress.Text = gszViWoAddress
@@ -1224,5 +1240,41 @@ Friend Class frmOptions
 
     Private Sub UpdateTTOptions(sender As Object, e As EventArgs) Handles rdbTTOutline.CheckedChanged, rdbTTFourAudio.CheckedChanged, rdbTTDisabled.CheckedChanged, rdbTTImperial.CheckedChanged
 
+    End Sub
+
+    Private Sub buttonBrowseMotiveFile_Click(sender As Object, e As EventArgs) Handles buttonBrowseMotiveFile.Click
+        Dim dlgOpen As New OpenFileDialog With {
+            .Title = "Load Motive project file",
+            .InitialDirectory = gszCurrentDir,
+            .FileName = "",
+            .CheckFileExists = True,
+            .CheckPathExists = True,
+            .Filter = "motive project files (*.ttp)|*.ttp",
+            .FilterIndex = 1,
+            .SupportMultiDottedExtensions = True
+        }
+        If dlgOpen.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            Dim szFile As String = dlgOpen.FileName
+            gszCurrentDir = Mid(dlgOpen.FileName, 1, Len(dlgOpen.FileName) - Len((New System.IO.FileInfo(dlgOpen.FileName)).Name) - 1)
+            textBoxMotiveFile.Text = szFile
+        End If
+    End Sub
+
+    Private Sub buttonBrowseOSCstreamerFile_Click(sender As Object, e As EventArgs) Handles buttonBrowseOSCstreamerFile.Click
+        Dim dlgOpen As New OpenFileDialog With {
+            .Title = "Load Motive OSC streamer executable",
+            .InitialDirectory = gszCurrentDir,
+            .FileName = "",
+            .CheckFileExists = True,
+            .CheckPathExists = True,
+            .Filter = "executable files (*.exe)|*.exe",
+            .FilterIndex = 1,
+            .SupportMultiDottedExtensions = True
+        }
+        If dlgOpen.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            Dim szFile As String = dlgOpen.FileName
+            gszCurrentDir = Mid(dlgOpen.FileName, 1, Len(dlgOpen.FileName) - Len((New System.IO.FileInfo(dlgOpen.FileName)).Name) - 1)
+            textBoxOSCstreamerFile.Text = szFile
+        End If
     End Sub
 End Class

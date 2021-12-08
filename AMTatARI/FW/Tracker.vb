@@ -90,6 +90,8 @@ Module Tracker
         ''' </summary>
         ''' <remarks></remarks>
         Dim lStatus As Integer
+        Dim nCameras As Integer
+        Dim visible As Boolean
     End Structure
 
     Private mtsData(13) As TrackerSensor ' max. 14 sensors
@@ -130,8 +132,8 @@ Module Tracker
             Return ""
         ElseIf glTrackerMode = 3 Then
             ' OptiTrack (Motive OSC Streamer)
-            frmMain.SetStatus("Initializing Tracker: Motive OSC Streamer on address 127.0.0.1 port 10001 with settings 14CamerasSetup.ttp...")
-            Process.Start("CMD", "/C .\Optitrack\MotiveOscStreamer.exe .\Optitrack\14CamerasSetup.ttp 127.0.0.1 10001")
+            frmMain.SetStatus("Initializing Tracker: " & OSCstreamerFile & " on address 127.0.0.1 port " & TStr(motiveUDPport) & " with settings " & motiveFile & "...")
+            Process.Start("CMD", "/C " & OSCstreamerFile & " " & motiveFile & " 127.0.0.1" & TStr(motiveUDPport))
             ' Init current tracker value to 0
             mtsData(0).sngX = 0
             mtsData(0).sngY = 0
@@ -511,6 +513,8 @@ Module Tracker
                         If CInt(varArgs(1)) = 1 Then
                             ' Rigid Body is being tracked
                             mtsData(0).blnValid = True
+                            mtsData(0).nCameras = CInt(varArgs(12))
+                            mtsData(0).visible = True
                             mtsData(0).sngX = Val(varArgs(2))
                             mtsData(0).sngY = Val(varArgs(3))
                             mtsData(0).sngZ = Val(varArgs(4))
@@ -528,18 +532,6 @@ Module Tracker
                             'mtsData(0).sngE = eul(1)
                             'mtsData(0).sngR = eul(2)
 
-                            ' GUI
-                            frmMain.labelTrackingYesNo.Text = "Yes"
-                            frmMain.labelTrackingYesNo.ForeColor = Color.Green
-                            frmMain.labelNcams.Text = TStr(Val(varArgs(8)))
-                            frmMain.labelX.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
-                            frmMain.labelY.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
-                            frmMain.labelZ.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
-                            frmMain.labelYaw.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
-                            frmMain.labelPitch.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
-                            frmMain.labelRoll.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
-                            frmMain.labelNcams.Text = TStr(Math.Round(currentTrackerValue.sngX, 1))
-
                         Else
                             ' Tracking lost. Assign wrong values to indicate so
                             mtsData(0).sngX = 999
@@ -549,19 +541,14 @@ Module Tracker
                             mtsData(0).sngE = 999
                             mtsData(0).sngR = 999
                             mtsData(0).blnValid = True
+                            mtsData(0).visible = False
+                            mtsData(0).nCameras = CInt(varArgs(12))
 
-                            ' GUI
-                            frmMain.labelTrackingYesNo.Text = "No"
-                            frmMain.labelTrackingYesNo.ForeColor = Color.Red
-                            frmMain.labelNcams.Text = TStr(Val(varArgs(8)))
-                            frmMain.labelX.Text = "-"
-                            frmMain.labelY.Text = "-"
-                            frmMain.labelZ.Text = "-"
-                            frmMain.labelYaw.Text = "-"
-                            frmMain.labelPitch.Text = "-"
-                            frmMain.labelRoll.Text = "-"
-                            frmMain.labelNcams.Text = "-"
                         End If
+
+                        currentTrackerValue.blnValid = mtsData(0).blnValid
+                        currentTrackerValue.visible = mtsData(0).visible
+                        currentTrackerValue.nCameras = mtsData(0).nCameras
 
                         ' Calibrate
                         If glTrackerMode = 3 Then

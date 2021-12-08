@@ -5657,6 +5657,48 @@ SubError:
         frmGenerateSOFA.ShowDialog()
     End Sub
 
+    Private Sub tmrTracker_Tick(sender As Object, e As EventArgs) Handles tmrTracker.Tick
+        Dim tsData As TrackerSensor
+        Dim szErr As String
+        szErr = Tracker.GetCurrentValues(tmrTracker.Interval \ 2, 0, tsData)
+
+        If Len(szErr) <> 0 Then GoTo SubTrackingError ' no tracking info received
+
+        labelNcams.Text = TStr(tsData.nCameras)
+        If tsData.nCameras >= 14 Then
+            labelNcams.BackColor = Color.Lime
+        ElseIf tsData.nCameras >= 3 Then
+            labelNcams.BackColor = Color.Yellow
+        Else
+            labelNcams.BackColor = Color.Red
+        End If
+
+        If tsData.visible = False Then GoTo SubNotTracking
+
+        labelTrackingYesNo.Text = "Yes"
+        labelTrackingYesNo.BackColor = Color.Lime
+        labelX.Text = TStr(Math.Round(tsData.sngX, 1))
+        labelY.Text = TStr(Math.Round(tsData.sngY, 1))
+        labelZ.Text = TStr(Math.Round(tsData.sngZ, 1))
+        labelYaw.Text = TStr(Math.Round(tsData.sngA, 1))
+        labelPitch.Text = TStr(Math.Round(tsData.sngE, 1))
+        labelRoll.Text = TStr(Math.Round(tsData.sngR, 1))
+
+        Return
+SubTrackingError:
+        labelNcams.BackColor = Color.Red
+        labelNcams.Text = "0"
+SubNotTracking:
+        labelTrackingYesNo.BackColor = Color.Red
+        labelTrackingYesNo.Text = "No"
+        labelX.Text = "-"
+        labelY.Text = "-"
+        labelZ.Text = "-"
+        labelYaw.Text = "-"
+        labelPitch.Text = "-"
+        labelRoll.Text = "-"
+    End Sub
+
     'Private Sub dgvItemList_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dgvItemList.KeyPress
 
     '             'asdasd

@@ -680,6 +680,14 @@ Module FWintern
     Public glAppendPulseTrainIndex As Integer = 0
     Public gszAppendPulseTrain As String = ""
 
+    Public motiveFile As String
+    Public OSCstreamerFile As String
+    Public motiveUDPport As Integer
+
+    Public ttAddress As String
+    Public ttPort As Integer
+    Public ttSpeed As Double
+
     'Applicationtitle and version for checking Application in RemoteMonitor
     ''' <summary>
     ''' Application title.

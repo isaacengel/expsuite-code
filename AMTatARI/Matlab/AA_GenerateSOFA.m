@@ -60,6 +60,9 @@ for i=1:numAz
     ir = [];
     for ch=1:2
         file = sprintf('%s/AMTatARI_%0.4d_adc%d.wav',workdir,id,ch-1);
+        if ~isfile(file)
+            continue
+        end
         [x,fs_] = audioread(file); % read recording
         assert(fs==fs_,'Sampling frequency mismatch!')
         convlen = size(x,1) + swlen - 1;
@@ -67,13 +70,21 @@ for i=1:numAz
         irtemp = ifft( fft(x,nfft) .* fft(invsweep,nfft) );
         ir(:,ch) = irtemp(1:convlen);
     end
+    % If files were not found, skip this azimuth
+    if size(ir,2) < 2
+        warning('Could not find files for azimuth %d. Skipping...',az)
+        continue
+    end
+    % Plot
+    figure, AKp(ir,'et2d','fs',fs)
+    title(sofaname,'interpreter','none')
     % Separate HRIRs
     for j=1:numEl
         ind = srcList(:,2)==el(j);
         lat(j) = srcList(ind,3)*fs/1e6; % in samples
         % NOTE: in this version, the initial offset is counted as part of
         % the IR length. The end offset is not used.
-        ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1)) - 1000; % NOTE: harcoded the -1000 for a test
+        ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1)); % NOTE: harcoded the -1000 for a test
         %iend=int32(swlen+(ISD(j))+lat(j)+irLen+irOffset(2)-1);
         iend = ibeg + irLen - 1;
         for ch=1:2
@@ -95,10 +106,19 @@ t = linspace(0,pi/2,fadelen).';
 fadein = sin(t).^2;
 fadeout = cos(t).^2;
 win = [fadein; ones(irLen-2*fadelen,1); fadeout];
-h = win.*h(1:irLen,:,:);
+hwin = win.*h(1:irLen,:,:);
+
+% Check energy loss
+nrg = sum(abs(h(:)).^2);
+nrgwin = sum(abs(hwin(:)).^2);
+nrgloss = 1-nrgwin/nrg;
+if nrgloss>0.01
+    warning('Energy loss was %0.2f%%. Maybe the windowing went wrong',nrgloss*100)
+end
 
 % Apply gain
-h = h.*db2mag(gain);
+h = hwin.*db2mag(gain);
+clear hwin
 
 %% Equalise by reference measurement
 

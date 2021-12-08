@@ -56,9 +56,17 @@ Friend Class frmTurntable
                         lblCurrentAzi.Text = TStr(Math.Round((360 + gsngTTAngle) Mod 360, 1)) & "°"
                         lblTrueAzi.Text = TStr(Math.Round((360 + gsngTTActualAngle) Mod 360, 1)) & "°"
                     End If
-                    frmMain.lblTTShow.Text = TStr(Math.Round((360 + gsngTTAngle) Mod 360, 1)) & "°" & "    Turntable:"
-                    frmMain.labelTTaz.Text = TStr(Math.Round((360 + gsngTTAngle) Mod 360, 1))
+                    Dim az As Double = Math.Round((360 + gsngTTAngle) Mod 360, 1)
+                    frmMain.lblTTShow.Text = TStr(az) & "°" & "    Turntable:"
+                    frmMain.labelTTaz.Text = TStr(az)
+                    If az = 0 Then
+                        frmMain.labelTTaz.BackColor = Color.Lime
+                    Else
+                        frmMain.labelTTaz.BackColor = SystemColors.Control
+                    End If
             End Select
+
+
 
         End If
 
@@ -1174,8 +1182,8 @@ SubError:
                     txtReqSpeed.Text = TStr(ttSpeed)
                     sbStatusLabel.Text = "Speed set to " & txtReqSpeed.Text & "°/s"
 
-                    If sngX > 1 Then
-                        MsgBox("Speeds higher than 1°/s might lead to inaccurate movements. They are fine to set the initial position of the turntable but be careful when using them during the actual measurements.", MsgBoxStyle.Information, "Set angle")
+                    If sngX > 2 Then
+                        MsgBox("Speeds higher than 2°/s might lead to inaccurate movements. They are fine to set the initial position of the turntable but be careful when using them during the actual measurements.", MsgBoxStyle.Information, "Set angle")
                     End If
 
             End Select

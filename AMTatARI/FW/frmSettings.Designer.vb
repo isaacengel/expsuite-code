@@ -949,365 +949,390 @@
         Me.PanelBottom.Controls.Add(Me.cmdApply)
         Me.PanelBottom.Controls.Add(Me.cmdCancel)
         Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelBottom.Location = New System.Drawing.Point(0, 491)
+        Me.PanelBottom.Location = New System.Drawing.Point(0, 604)
+        Me.PanelBottom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PanelBottom.Name = "PanelBottom"
-        Me.PanelBottom.Size = New System.Drawing.Size(554, 70)
+        Me.PanelBottom.Size = New System.Drawing.Size(739, 86)
         Me.PanelBottom.TabIndex = 291
         '
         'pbProgress
         '
         Me.pbProgress.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pbProgress.Location = New System.Drawing.Point(0, 47)
+        Me.pbProgress.Location = New System.Drawing.Point(0, 58)
+        Me.pbProgress.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbProgress.Name = "pbProgress"
-        Me.pbProgress.Size = New System.Drawing.Size(554, 23)
+        Me.pbProgress.Size = New System.Drawing.Size(739, 28)
         Me.pbProgress.TabIndex = 290
         '
         'lblRealTime
         '
-        Me.lblRealTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lblRealTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblRealTime.BackColor = System.Drawing.SystemColors.Control
         Me.lblRealTime.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblRealTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblRealTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRealTime.ForeColor = System.Drawing.Color.Red
-        Me.lblRealTime.Location = New System.Drawing.Point(110, 23)
+        Me.lblRealTime.Location = New System.Drawing.Point(147, 28)
+        Me.lblRealTime.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblRealTime.Name = "lblRealTime"
         Me.lblRealTime.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblRealTime.Size = New System.Drawing.Size(174, 18)
+        Me.lblRealTime.Size = New System.Drawing.Size(232, 22)
         Me.lblRealTime.TabIndex = 289
         Me.lblRealTime.Text = "Real-time parameter changed"
-        Me.lblRealTime.Visible = false
+        Me.lblRealTime.Visible = False
         '
         'cmdOK
         '
-        Me.cmdOK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdOK.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdOK.BackColor = System.Drawing.SystemColors.Control
         Me.cmdOK.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdOK.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdOK.Location = New System.Drawing.Point(292, 16)
+        Me.cmdOK.Location = New System.Drawing.Point(389, 20)
+        Me.cmdOK.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdOK.Name = "cmdOK"
         Me.cmdOK.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdOK.Size = New System.Drawing.Size(73, 25)
+        Me.cmdOK.Size = New System.Drawing.Size(97, 31)
         Me.cmdOK.TabIndex = 0
         Me.cmdOK.Tag = "OK"
         Me.cmdOK.Text = "OK"
-        Me.cmdOK.UseVisualStyleBackColor = false
+        Me.cmdOK.UseVisualStyleBackColor = False
         '
         'cmdApply
         '
-        Me.cmdApply.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdApply.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdApply.BackColor = System.Drawing.SystemColors.Control
         Me.cmdApply.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdApply.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdApply.Location = New System.Drawing.Point(454, 16)
+        Me.cmdApply.Location = New System.Drawing.Point(605, 20)
+        Me.cmdApply.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdApply.Name = "cmdApply"
         Me.cmdApply.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdApply.Size = New System.Drawing.Size(73, 25)
+        Me.cmdApply.Size = New System.Drawing.Size(97, 31)
         Me.cmdApply.TabIndex = 2
         Me.cmdApply.Tag = "&Apply"
         Me.cmdApply.Text = "&Apply"
-        Me.cmdApply.UseVisualStyleBackColor = false
+        Me.cmdApply.UseVisualStyleBackColor = False
         '
         'cmdCancel
         '
-        Me.cmdCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdCancel.BackColor = System.Drawing.SystemColors.Control
         Me.cmdCancel.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.cmdCancel.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdCancel.Location = New System.Drawing.Point(374, 16)
+        Me.cmdCancel.Location = New System.Drawing.Point(499, 20)
+        Me.cmdCancel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdCancel.Size = New System.Drawing.Size(73, 25)
+        Me.cmdCancel.Size = New System.Drawing.Size(97, 31)
         Me.cmdCancel.TabIndex = 1
         Me.cmdCancel.Tag = "Cancel"
         Me.cmdCancel.Text = "Cancel"
-        Me.cmdCancel.UseVisualStyleBackColor = false
+        Me.cmdCancel.UseVisualStyleBackColor = False
         '
         'cmdDestinationFromSetting
         '
-        Me.cmdDestinationFromSetting.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdDestinationFromSetting.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdDestinationFromSetting.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdDestinationFromSetting.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdDestinationFromSetting.Location = New System.Drawing.Point(382, 44)
+        Me.cmdDestinationFromSetting.Location = New System.Drawing.Point(509, 54)
+        Me.cmdDestinationFromSetting.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdDestinationFromSetting.Name = "cmdDestinationFromSetting"
         Me.cmdDestinationFromSetting.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdDestinationFromSetting.Size = New System.Drawing.Size(25, 21)
+        Me.cmdDestinationFromSetting.Size = New System.Drawing.Size(33, 26)
         Me.cmdDestinationFromSetting.TabIndex = 280
         Me.cmdDestinationFromSetting.Text = "!!!"
         Me.ToolTip1.SetToolTip(Me.cmdDestinationFromSetting, "Copy directory from settings directory")
-        Me.cmdDestinationFromSetting.UseVisualStyleBackColor = false
+        Me.cmdDestinationFromSetting.UseVisualStyleBackColor = False
         '
         'txtDestinationDir
         '
-        Me.txtDestinationDir.AcceptsReturn = true
-        Me.txtDestinationDir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtDestinationDir.AcceptsReturn = True
+        Me.txtDestinationDir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDestinationDir.BackColor = System.Drawing.SystemColors.Window
         Me.txtDestinationDir.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtDestinationDir.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtDestinationDir.Location = New System.Drawing.Point(96, 44)
+        Me.txtDestinationDir.Location = New System.Drawing.Point(128, 54)
+        Me.txtDestinationDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtDestinationDir.MaxLength = 0
         Me.txtDestinationDir.Name = "txtDestinationDir"
         Me.txtDestinationDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtDestinationDir.Size = New System.Drawing.Size(250, 20)
+        Me.txtDestinationDir.Size = New System.Drawing.Size(332, 22)
         Me.txtDestinationDir.TabIndex = 96
         Me.ToolTip1.SetToolTip(Me.txtDestinationDir, "where to write all log files?")
         '
         'cmdDestinationDir
         '
-        Me.cmdDestinationDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdDestinationDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdDestinationDir.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdDestinationDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdDestinationDir.Location = New System.Drawing.Point(352, 43)
+        Me.cmdDestinationDir.Location = New System.Drawing.Point(469, 53)
+        Me.cmdDestinationDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdDestinationDir.Name = "cmdDestinationDir"
         Me.cmdDestinationDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdDestinationDir.Size = New System.Drawing.Size(25, 21)
+        Me.cmdDestinationDir.Size = New System.Drawing.Size(33, 26)
         Me.cmdDestinationDir.TabIndex = 115
         Me.cmdDestinationDir.Text = "..."
         Me.ToolTip1.SetToolTip(Me.cmdDestinationDir, "Browse directory")
-        Me.cmdDestinationDir.UseVisualStyleBackColor = false
+        Me.cmdDestinationDir.UseVisualStyleBackColor = False
         '
         'cmdDataDir
         '
-        Me.cmdDataDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdDataDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdDataDir.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdDataDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdDataDir.Location = New System.Drawing.Point(412, 73)
+        Me.cmdDataDir.Location = New System.Drawing.Point(549, 90)
+        Me.cmdDataDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdDataDir.Name = "cmdDataDir"
         Me.cmdDataDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdDataDir.Size = New System.Drawing.Size(25, 21)
+        Me.cmdDataDir.Size = New System.Drawing.Size(33, 26)
         Me.cmdDataDir.TabIndex = 120
         Me.cmdDataDir.Text = "..."
         Me.ToolTip1.SetToolTip(Me.cmdDataDir, "Browse directory")
-        Me.cmdDataDir.UseVisualStyleBackColor = false
+        Me.cmdDataDir.UseVisualStyleBackColor = False
         '
         'txtDataDir
         '
-        Me.txtDataDir.AcceptsReturn = true
-        Me.txtDataDir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtDataDir.AcceptsReturn = True
+        Me.txtDataDir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDataDir.BackColor = System.Drawing.SystemColors.Window
         Me.txtDataDir.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtDataDir.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtDataDir.Location = New System.Drawing.Point(20, 73)
+        Me.txtDataDir.Location = New System.Drawing.Point(27, 90)
+        Me.txtDataDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtDataDir.MaxLength = 0
         Me.txtDataDir.Name = "txtDataDir"
         Me.txtDataDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtDataDir.Size = New System.Drawing.Size(387, 20)
+        Me.txtDataDir.Size = New System.Drawing.Size(515, 22)
         Me.txtDataDir.TabIndex = 119
         Me.ToolTip1.SetToolTip(Me.txtDataDir, "Data Directory")
         '
         'txtSourceDir
         '
-        Me.txtSourceDir.AcceptsReturn = true
-        Me.txtSourceDir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtSourceDir.AcceptsReturn = True
+        Me.txtSourceDir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSourceDir.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtSourceDir.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtSourceDir.Location = New System.Drawing.Point(137, 33)
+        Me.txtSourceDir.Location = New System.Drawing.Point(183, 41)
+        Me.txtSourceDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSourceDir.MaxLength = 0
         Me.txtSourceDir.Name = "txtSourceDir"
         Me.txtSourceDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtSourceDir.Size = New System.Drawing.Size(322, 20)
+        Me.txtSourceDir.Size = New System.Drawing.Size(428, 22)
         Me.txtSourceDir.TabIndex = 91
         Me.ToolTip1.SetToolTip(Me.txtSourceDir, "Source Directory")
         '
         '_cmdFittClear_0
         '
-        Me._cmdFittClear_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdFittClear_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdFittClear_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittClear_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdFittClear_0.Image = CType(resources.GetObject("_cmdFittClear_0.Image"),System.Drawing.Image)
-        Me.cmdFittClear.SetIndex(Me._cmdFittClear_0, CType(0,Short))
-        Me._cmdFittClear_0.Location = New System.Drawing.Point(412, 58)
+        Me._cmdFittClear_0.Image = CType(resources.GetObject("_cmdFittClear_0.Image"), System.Drawing.Image)
+        Me.cmdFittClear.SetIndex(Me._cmdFittClear_0, CType(0, Short))
+        Me._cmdFittClear_0.Location = New System.Drawing.Point(549, 71)
+        Me._cmdFittClear_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdFittClear_0.Name = "_cmdFittClear_0"
         Me._cmdFittClear_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdFittClear_0.Size = New System.Drawing.Size(25, 21)
+        Me._cmdFittClear_0.Size = New System.Drawing.Size(33, 26)
         Me._cmdFittClear_0.TabIndex = 207
         Me._cmdFittClear_0.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me._cmdFittClear_0, "Release fitting file from experiment")
-        Me._cmdFittClear_0.UseVisualStyleBackColor = false
+        Me._cmdFittClear_0.UseVisualStyleBackColor = False
         '
         '_cmdFittReload_0
         '
-        Me._cmdFittReload_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdFittReload_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdFittReload_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittReload_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdFittReload_0.Image = CType(resources.GetObject("_cmdFittReload_0.Image"),System.Drawing.Image)
+        Me._cmdFittReload_0.Image = CType(resources.GetObject("_cmdFittReload_0.Image"), System.Drawing.Image)
         Me._cmdFittReload_0.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.cmdFittReload.SetIndex(Me._cmdFittReload_0, CType(0,Short))
-        Me._cmdFittReload_0.Location = New System.Drawing.Point(439, 58)
+        Me.cmdFittReload.SetIndex(Me._cmdFittReload_0, CType(0, Short))
+        Me._cmdFittReload_0.Location = New System.Drawing.Point(585, 71)
+        Me._cmdFittReload_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdFittReload_0.Name = "_cmdFittReload_0"
         Me._cmdFittReload_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdFittReload_0.Size = New System.Drawing.Size(25, 21)
+        Me._cmdFittReload_0.Size = New System.Drawing.Size(33, 26)
         Me._cmdFittReload_0.TabIndex = 227
         Me._cmdFittReload_0.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me._cmdFittReload_0, "Reload fitting file from disk")
-        Me._cmdFittReload_0.UseVisualStyleBackColor = false
+        Me._cmdFittReload_0.UseVisualStyleBackColor = False
         '
         '_cmdFittClear_1
         '
-        Me._cmdFittClear_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdFittClear_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdFittClear_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittClear_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdFittClear_1.Image = CType(resources.GetObject("_cmdFittClear_1.Image"),System.Drawing.Image)
-        Me.cmdFittClear.SetIndex(Me._cmdFittClear_1, CType(1,Short))
-        Me._cmdFittClear_1.Location = New System.Drawing.Point(412, 58)
+        Me._cmdFittClear_1.Image = CType(resources.GetObject("_cmdFittClear_1.Image"), System.Drawing.Image)
+        Me.cmdFittClear.SetIndex(Me._cmdFittClear_1, CType(1, Short))
+        Me._cmdFittClear_1.Location = New System.Drawing.Point(549, 71)
+        Me._cmdFittClear_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdFittClear_1.Name = "_cmdFittClear_1"
         Me._cmdFittClear_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdFittClear_1.Size = New System.Drawing.Size(25, 21)
+        Me._cmdFittClear_1.Size = New System.Drawing.Size(33, 26)
         Me._cmdFittClear_1.TabIndex = 208
         Me._cmdFittClear_1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me._cmdFittClear_1, "Release fitting file from experiment")
-        Me._cmdFittClear_1.UseVisualStyleBackColor = false
+        Me._cmdFittClear_1.UseVisualStyleBackColor = False
         '
         '_cmdFittReload_1
         '
-        Me._cmdFittReload_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdFittReload_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdFittReload_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittReload_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdFittReload_1.Image = CType(resources.GetObject("_cmdFittReload_1.Image"),System.Drawing.Image)
+        Me._cmdFittReload_1.Image = CType(resources.GetObject("_cmdFittReload_1.Image"), System.Drawing.Image)
         Me._cmdFittReload_1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.cmdFittReload.SetIndex(Me._cmdFittReload_1, CType(1,Short))
-        Me._cmdFittReload_1.Location = New System.Drawing.Point(439, 58)
+        Me.cmdFittReload.SetIndex(Me._cmdFittReload_1, CType(1, Short))
+        Me._cmdFittReload_1.Location = New System.Drawing.Point(585, 71)
+        Me._cmdFittReload_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdFittReload_1.Name = "_cmdFittReload_1"
         Me._cmdFittReload_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdFittReload_1.Size = New System.Drawing.Size(25, 21)
+        Me._cmdFittReload_1.Size = New System.Drawing.Size(33, 26)
         Me._cmdFittReload_1.TabIndex = 228
         Me._cmdFittReload_1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me._cmdFittReload_1, "Reload fitting file from disk")
-        Me._cmdFittReload_1.UseVisualStyleBackColor = false
+        Me._cmdFittReload_1.UseVisualStyleBackColor = False
         '
         'txtPreStimVisu
         '
-        Me.txtPreStimVisu.AcceptsReturn = true
+        Me.txtPreStimVisu.AcceptsReturn = True
         Me.txtPreStimVisu.BackColor = System.Drawing.SystemColors.Window
         Me.txtPreStimVisu.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtPreStimVisu.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtPreStimVisu.Location = New System.Drawing.Point(187, 87)
+        Me.txtPreStimVisu.Location = New System.Drawing.Point(249, 107)
+        Me.txtPreStimVisu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPreStimVisu.MaxLength = 10
         Me.txtPreStimVisu.Name = "txtPreStimVisu"
         Me.txtPreStimVisu.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtPreStimVisu.Size = New System.Drawing.Size(53, 20)
+        Me.txtPreStimVisu.Size = New System.Drawing.Size(69, 22)
         Me.txtPreStimVisu.TabIndex = 132
         Me.ToolTip1.SetToolTip(Me.txtPreStimVisu, "Duration of a visual flash before the acoustical stimulus begins.")
         '
         'cmbExpType
         '
-        Me.cmbExpType.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmbExpType.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbExpType.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbExpType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbExpType.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbExpType.Location = New System.Drawing.Point(131, 27)
+        Me.cmbExpType.Location = New System.Drawing.Point(175, 33)
+        Me.cmbExpType.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbExpType.Name = "cmbExpType"
         Me.cmbExpType.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbExpType.Size = New System.Drawing.Size(357, 21)
+        Me.cmbExpType.Size = New System.Drawing.Size(475, 24)
         Me.cmbExpType.TabIndex = 129
         Me.ToolTip1.SetToolTip(Me.cmbExpType, "Selects the experiment type.")
         '
         'txtInterStimBreak
         '
-        Me.txtInterStimBreak.AcceptsReturn = true
+        Me.txtInterStimBreak.AcceptsReturn = True
         Me.txtInterStimBreak.BackColor = System.Drawing.SystemColors.Window
         Me.txtInterStimBreak.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtInterStimBreak.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtInterStimBreak.Location = New System.Drawing.Point(187, 115)
+        Me.txtInterStimBreak.Location = New System.Drawing.Point(249, 142)
+        Me.txtInterStimBreak.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtInterStimBreak.MaxLength = 10
         Me.txtInterStimBreak.Name = "txtInterStimBreak"
         Me.txtInterStimBreak.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtInterStimBreak.Size = New System.Drawing.Size(53, 20)
+        Me.txtInterStimBreak.Size = New System.Drawing.Size(69, 22)
         Me.txtInterStimBreak.TabIndex = 133
-        Me.ToolTip1.SetToolTip(Me.txtInterStimBreak, "Break between two stimuli in a stimulation sequence. Any visual offset are not in"& _ 
+        Me.ToolTip1.SetToolTip(Me.txtInterStimBreak, "Break between two stimuli in a stimulation sequence. Any visual offset are not in" &
         "cluded.")
         '
         'txtRepetition
         '
-        Me.txtRepetition.AcceptsReturn = true
+        Me.txtRepetition.AcceptsReturn = True
         Me.txtRepetition.BackColor = System.Drawing.SystemColors.Window
         Me.txtRepetition.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtRepetition.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtRepetition.Location = New System.Drawing.Point(303, 304)
+        Me.txtRepetition.Location = New System.Drawing.Point(404, 374)
+        Me.txtRepetition.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtRepetition.MaxLength = 10
         Me.txtRepetition.Name = "txtRepetition"
         Me.txtRepetition.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtRepetition.Size = New System.Drawing.Size(53, 20)
+        Me.txtRepetition.Size = New System.Drawing.Size(69, 22)
         Me.txtRepetition.TabIndex = 141
-        Me.ToolTip1.SetToolTip(Me.txtRepetition, "Number of repetitions using ""Add repetition"" command. No order/channel combinatio"& _ 
+        Me.ToolTip1.SetToolTip(Me.txtRepetition, "Number of repetitions using ""Add repetition"" command. No order/channel combinatio" &
         "n included!")
         '
         'txtOffsetL
         '
-        Me.txtOffsetL.AcceptsReturn = true
+        Me.txtOffsetL.AcceptsReturn = True
         Me.txtOffsetL.BackColor = System.Drawing.SystemColors.Window
         Me.txtOffsetL.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtOffsetL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtOffsetL.Location = New System.Drawing.Point(159, 163)
+        Me.txtOffsetL.Location = New System.Drawing.Point(212, 201)
+        Me.txtOffsetL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtOffsetL.MaxLength = 10
         Me.txtOffsetL.Name = "txtOffsetL"
         Me.txtOffsetL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtOffsetL.Size = New System.Drawing.Size(53, 20)
+        Me.txtOffsetL.Size = New System.Drawing.Size(69, 22)
         Me.txtOffsetL.TabIndex = 135
-        Me.ToolTip1.SetToolTip(Me.txtOffsetL, "Offset added to the begin of each stimulus to allow time shifting in any directio"& _ 
+        Me.ToolTip1.SetToolTip(Me.txtOffsetL, "Offset added to the begin of each stimulus to allow time shifting in any directio" &
         "n. Channel Left.")
         '
         'txtOffsetR
         '
-        Me.txtOffsetR.AcceptsReturn = true
+        Me.txtOffsetR.AcceptsReturn = True
         Me.txtOffsetR.BackColor = System.Drawing.SystemColors.Window
         Me.txtOffsetR.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtOffsetR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtOffsetR.Location = New System.Drawing.Point(215, 163)
+        Me.txtOffsetR.Location = New System.Drawing.Point(287, 201)
+        Me.txtOffsetR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtOffsetR.MaxLength = 10
         Me.txtOffsetR.Name = "txtOffsetR"
         Me.txtOffsetR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtOffsetR.Size = New System.Drawing.Size(53, 20)
+        Me.txtOffsetR.Size = New System.Drawing.Size(69, 22)
         Me.txtOffsetR.TabIndex = 136
-        Me.ToolTip1.SetToolTip(Me.txtOffsetR, "Offset added to the begin of each stimulus to allow time shifting in any directio"& _ 
+        Me.ToolTip1.SetToolTip(Me.txtOffsetR, "Offset added to the begin of each stimulus to allow time shifting in any directio" &
         "n. Channel Right.")
         '
         'txtPreStimBreak
         '
-        Me.txtPreStimBreak.AcceptsReturn = true
+        Me.txtPreStimBreak.AcceptsReturn = True
         Me.txtPreStimBreak.BackColor = System.Drawing.SystemColors.Window
         Me.txtPreStimBreak.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtPreStimBreak.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtPreStimBreak.Location = New System.Drawing.Point(187, 67)
+        Me.txtPreStimBreak.Location = New System.Drawing.Point(249, 82)
+        Me.txtPreStimBreak.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPreStimBreak.MaxLength = 10
         Me.txtPreStimBreak.Name = "txtPreStimBreak"
         Me.txtPreStimBreak.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtPreStimBreak.Size = New System.Drawing.Size(53, 20)
+        Me.txtPreStimBreak.Size = New System.Drawing.Size(69, 22)
         Me.txtPreStimBreak.TabIndex = 131
-        Me.ToolTip1.SetToolTip(Me.txtPreStimBreak, "Break before the stimulus sequence starts. Pre-Stimulus Visual Offset is not incl"& _ 
+        Me.ToolTip1.SetToolTip(Me.txtPreStimBreak, "Break before the stimulus sequence starts. Pre-Stimulus Visual Offset is not incl" &
         "uded.")
         '
         'txtPostStimVisu
         '
-        Me.txtPostStimVisu.AcceptsReturn = true
+        Me.txtPostStimVisu.AcceptsReturn = True
         Me.txtPostStimVisu.BackColor = System.Drawing.SystemColors.Window
         Me.txtPostStimVisu.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtPostStimVisu.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtPostStimVisu.Location = New System.Drawing.Point(187, 135)
+        Me.txtPostStimVisu.Location = New System.Drawing.Point(249, 166)
+        Me.txtPostStimVisu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPostStimVisu.MaxLength = 10
         Me.txtPostStimVisu.Name = "txtPostStimVisu"
         Me.txtPostStimVisu.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtPostStimVisu.Size = New System.Drawing.Size(53, 20)
+        Me.txtPostStimVisu.Size = New System.Drawing.Size(69, 22)
         Me.txtPostStimVisu.TabIndex = 134
         Me.ToolTip1.SetToolTip(Me.txtPostStimVisu, "Duration of a visual flash after the acoustical stimulus ends.")
         '
         'txtBreak
         '
-        Me.txtBreak.AcceptsReturn = true
+        Me.txtBreak.AcceptsReturn = True
         Me.txtBreak.BackColor = System.Drawing.SystemColors.Window
         Me.txtBreak.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtBreak.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtBreak.Location = New System.Drawing.Point(187, 268)
+        Me.txtBreak.Location = New System.Drawing.Point(249, 330)
+        Me.txtBreak.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtBreak.MaxLength = 10
         Me.txtBreak.Name = "txtBreak"
         Me.txtBreak.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtBreak.Size = New System.Drawing.Size(53, 20)
+        Me.txtBreak.Size = New System.Drawing.Size(69, 22)
         Me.txtBreak.TabIndex = 138
-        Me.ToolTip1.SetToolTip(Me.txtBreak, "Number of repetitions using ""Add repetition"" command. No order/channel combinatio"& _ 
+        Me.ToolTip1.SetToolTip(Me.txtBreak, "Number of repetitions using ""Add repetition"" command. No order/channel combinatio" &
         "n included!")
         '
         'cmbBreak
@@ -1315,447 +1340,479 @@
         Me.cmbBreak.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbBreak.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbBreak.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbBreak.Location = New System.Drawing.Point(243, 268)
+        Me.cmbBreak.Location = New System.Drawing.Point(324, 330)
+        Me.cmbBreak.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbBreak.Name = "cmbBreak"
         Me.cmbBreak.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbBreak.Size = New System.Drawing.Size(85, 21)
+        Me.cmbBreak.Size = New System.Drawing.Size(112, 24)
         Me.cmbBreak.TabIndex = 139
         Me.ToolTip1.SetToolTip(Me.cmbBreak, "Selects the experiment type.")
         '
         'cmdVariablesPaste
         '
-        Me.cmdVariablesPaste.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesPaste.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesPaste.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesPaste.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesPaste.Location = New System.Drawing.Point(242, 99)
+        Me.cmdVariablesPaste.Location = New System.Drawing.Point(322, 122)
+        Me.cmdVariablesPaste.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesPaste.Name = "cmdVariablesPaste"
         Me.cmdVariablesPaste.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesPaste.Size = New System.Drawing.Size(62, 21)
+        Me.cmdVariablesPaste.Size = New System.Drawing.Size(83, 26)
         Me.cmdVariablesPaste.TabIndex = 279
         Me.cmdVariablesPaste.Text = "Paste"
         Me.ToolTip1.SetToolTip(Me.cmdVariablesPaste, "Paste variables from clipboard")
-        Me.cmdVariablesPaste.UseVisualStyleBackColor = false
+        Me.cmdVariablesPaste.UseVisualStyleBackColor = False
         '
         'cmdVariablesDir
         '
-        Me.cmdVariablesDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesDir.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesDir.Location = New System.Drawing.Point(242, 51)
+        Me.cmdVariablesDir.Location = New System.Drawing.Point(322, 63)
+        Me.cmdVariablesDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesDir.Name = "cmdVariablesDir"
         Me.cmdVariablesDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesDir.Size = New System.Drawing.Size(62, 21)
+        Me.cmdVariablesDir.Size = New System.Drawing.Size(83, 26)
         Me.cmdVariablesDir.TabIndex = 278
         Me.cmdVariablesDir.Text = "Add Dir..."
         Me.ToolTip1.SetToolTip(Me.cmdVariablesDir, "Browse directory")
-        Me.cmdVariablesDir.UseVisualStyleBackColor = false
+        Me.cmdVariablesDir.UseVisualStyleBackColor = False
         '
         'cmdVariablesBrowse
         '
-        Me.cmdVariablesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesBrowse.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesBrowse.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesBrowse.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesBrowse.Location = New System.Drawing.Point(242, 75)
+        Me.cmdVariablesBrowse.Location = New System.Drawing.Point(322, 92)
+        Me.cmdVariablesBrowse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesBrowse.Name = "cmdVariablesBrowse"
         Me.cmdVariablesBrowse.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesBrowse.Size = New System.Drawing.Size(62, 21)
+        Me.cmdVariablesBrowse.Size = New System.Drawing.Size(83, 26)
         Me.cmdVariablesBrowse.TabIndex = 277
         Me.cmdVariablesBrowse.Text = "Add File..."
         Me.ToolTip1.SetToolTip(Me.cmdVariablesBrowse, "Browse filename")
-        Me.cmdVariablesBrowse.UseVisualStyleBackColor = false
+        Me.cmdVariablesBrowse.UseVisualStyleBackColor = False
         '
         'cmdVariablesUp
         '
-        Me.cmdVariablesUp.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesUp.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesUp.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesUp.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesUp.Image = CType(resources.GetObject("cmdVariablesUp.Image"),System.Drawing.Image)
-        Me.cmdVariablesUp.Location = New System.Drawing.Point(211, 51)
+        Me.cmdVariablesUp.Image = CType(resources.GetObject("cmdVariablesUp.Image"), System.Drawing.Image)
+        Me.cmdVariablesUp.Location = New System.Drawing.Point(280, 63)
+        Me.cmdVariablesUp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesUp.Name = "cmdVariablesUp"
         Me.cmdVariablesUp.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesUp.Size = New System.Drawing.Size(23, 23)
+        Me.cmdVariablesUp.Size = New System.Drawing.Size(31, 28)
         Me.cmdVariablesUp.TabIndex = 233
         Me.cmdVariablesUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me.cmdVariablesUp, "Move selected value one position up")
-        Me.cmdVariablesUp.UseVisualStyleBackColor = false
+        Me.cmdVariablesUp.UseVisualStyleBackColor = False
         '
         'cmdVariablesDown
         '
-        Me.cmdVariablesDown.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesDown.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesDown.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesDown.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesDown.Image = CType(resources.GetObject("cmdVariablesDown.Image"),System.Drawing.Image)
-        Me.cmdVariablesDown.Location = New System.Drawing.Point(211, 138)
+        Me.cmdVariablesDown.Image = CType(resources.GetObject("cmdVariablesDown.Image"), System.Drawing.Image)
+        Me.cmdVariablesDown.Location = New System.Drawing.Point(280, 170)
+        Me.cmdVariablesDown.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesDown.Name = "cmdVariablesDown"
         Me.cmdVariablesDown.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesDown.Size = New System.Drawing.Size(23, 23)
+        Me.cmdVariablesDown.Size = New System.Drawing.Size(31, 28)
         Me.cmdVariablesDown.TabIndex = 232
         Me.cmdVariablesDown.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me.cmdVariablesDown, "Move selected value one position down")
-        Me.cmdVariablesDown.UseVisualStyleBackColor = false
+        Me.cmdVariablesDown.UseVisualStyleBackColor = False
         '
         'cmdVariablesDefault
         '
-        Me.cmdVariablesDefault.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesDefault.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesDefault.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesDefault.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesDefault.Location = New System.Drawing.Point(242, 123)
+        Me.cmdVariablesDefault.Location = New System.Drawing.Point(322, 151)
+        Me.cmdVariablesDefault.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesDefault.Name = "cmdVariablesDefault"
         Me.cmdVariablesDefault.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesDefault.Size = New System.Drawing.Size(62, 21)
+        Me.cmdVariablesDefault.Size = New System.Drawing.Size(83, 26)
         Me.cmdVariablesDefault.TabIndex = 154
         Me.cmdVariablesDefault.Text = "Default"
-        Me.ToolTip1.SetToolTip(Me.cmdVariablesDefault, "Fill the variables with default values."&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Shortcuts:"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"- Ctrl+D "&Global.Microsoft.VisualBasic.ChrW(9)&Global.Microsoft.VisualBasic.ChrW(9)&"→ Fill selected"& _ 
-        " variable with default values"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"- Ctrl+Shift+D "&Global.Microsoft.VisualBasic.ChrW(9)&"→ Fill ALL variables with default"& _ 
+        Me.ToolTip1.SetToolTip(Me.cmdVariablesDefault, "Fill the variables with default values." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Shortcuts:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Ctrl+D " & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "→ Fill selected" &
+        " variable with default values" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- Ctrl+Shift+D " & Global.Microsoft.VisualBasic.ChrW(9) & "→ Fill ALL variables with default" &
         " values")
-        Me.cmdVariablesDefault.UseVisualStyleBackColor = false
+        Me.cmdVariablesDefault.UseVisualStyleBackColor = False
         '
         'cmdVariablesAdd
         '
-        Me.cmdVariablesAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesAdd.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesAdd.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesAdd.Location = New System.Drawing.Point(242, 6)
+        Me.cmdVariablesAdd.Location = New System.Drawing.Point(322, 7)
+        Me.cmdVariablesAdd.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesAdd.Name = "cmdVariablesAdd"
         Me.cmdVariablesAdd.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesAdd.Size = New System.Drawing.Size(62, 21)
+        Me.cmdVariablesAdd.Size = New System.Drawing.Size(83, 26)
         Me.cmdVariablesAdd.TabIndex = 147
         Me.cmdVariablesAdd.Text = "Add"
         Me.ToolTip1.SetToolTip(Me.cmdVariablesAdd, "Add value to the end of the list")
-        Me.cmdVariablesAdd.UseVisualStyleBackColor = false
+        Me.cmdVariablesAdd.UseVisualStyleBackColor = False
         '
         'cmdVariablesRemove
         '
-        Me.cmdVariablesRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesRemove.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesRemove.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesRemove.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesRemove.Image = CType(resources.GetObject("cmdVariablesRemove.Image"),System.Drawing.Image)
-        Me.cmdVariablesRemove.Location = New System.Drawing.Point(211, 109)
+        Me.cmdVariablesRemove.Image = CType(resources.GetObject("cmdVariablesRemove.Image"), System.Drawing.Image)
+        Me.cmdVariablesRemove.Location = New System.Drawing.Point(280, 134)
+        Me.cmdVariablesRemove.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesRemove.Name = "cmdVariablesRemove"
         Me.cmdVariablesRemove.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesRemove.Size = New System.Drawing.Size(23, 23)
+        Me.cmdVariablesRemove.Size = New System.Drawing.Size(31, 28)
         Me.cmdVariablesRemove.TabIndex = 151
         Me.cmdVariablesRemove.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me.cmdVariablesRemove, "Delete selected value")
-        Me.cmdVariablesRemove.UseVisualStyleBackColor = false
+        Me.cmdVariablesRemove.UseVisualStyleBackColor = False
         '
         'cmdVariablesClear
         '
-        Me.cmdVariablesClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdVariablesClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdVariablesClear.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdVariablesClear.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdVariablesClear.Location = New System.Drawing.Point(242, 147)
+        Me.cmdVariablesClear.Location = New System.Drawing.Point(322, 181)
+        Me.cmdVariablesClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdVariablesClear.Name = "cmdVariablesClear"
         Me.cmdVariablesClear.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdVariablesClear.Size = New System.Drawing.Size(62, 21)
+        Me.cmdVariablesClear.Size = New System.Drawing.Size(83, 26)
         Me.cmdVariablesClear.TabIndex = 153
         Me.cmdVariablesClear.Text = "Clear"
         Me.ToolTip1.SetToolTip(Me.cmdVariablesClear, "Clear the list")
-        Me.cmdVariablesClear.UseVisualStyleBackColor = false
+        Me.cmdVariablesClear.UseVisualStyleBackColor = False
         '
         '_cmdConstCmd_0
         '
-        Me._cmdConstCmd_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdConstCmd_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdConstCmd_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdConstCmd_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdConstCmd.SetIndex(Me._cmdConstCmd_0, CType(0,Short))
-        Me._cmdConstCmd_0.Location = New System.Drawing.Point(389, 20)
+        Me.cmdConstCmd.SetIndex(Me._cmdConstCmd_0, CType(0, Short))
+        Me._cmdConstCmd_0.Location = New System.Drawing.Point(519, 25)
+        Me._cmdConstCmd_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdConstCmd_0.Name = "_cmdConstCmd_0"
         Me._cmdConstCmd_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdConstCmd_0.Size = New System.Drawing.Size(24, 21)
+        Me._cmdConstCmd_0.Size = New System.Drawing.Size(32, 26)
         Me._cmdConstCmd_0.TabIndex = 229
         Me._cmdConstCmd_0.Text = "..."
         Me.ToolTip1.SetToolTip(Me._cmdConstCmd_0, "Browse file")
-        Me._cmdConstCmd_0.UseVisualStyleBackColor = false
+        Me._cmdConstCmd_0.UseVisualStyleBackColor = False
         '
         'cmdFittEdit_0
         '
-        Me.cmdFittEdit_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdFittEdit_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdFittEdit_0.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdFittEdit_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdFittEdit_0.Image = CType(resources.GetObject("cmdFittEdit_0.Image"),System.Drawing.Image)
+        Me.cmdFittEdit_0.Image = CType(resources.GetObject("cmdFittEdit_0.Image"), System.Drawing.Image)
         Me.cmdFittEdit_0.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.cmdFittEdit_0.Location = New System.Drawing.Point(466, 58)
+        Me.cmdFittEdit_0.Location = New System.Drawing.Point(621, 71)
+        Me.cmdFittEdit_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdFittEdit_0.Name = "cmdFittEdit_0"
         Me.cmdFittEdit_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdFittEdit_0.Size = New System.Drawing.Size(25, 21)
+        Me.cmdFittEdit_0.Size = New System.Drawing.Size(33, 26)
         Me.cmdFittEdit_0.TabIndex = 235
         Me.cmdFittEdit_0.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me.cmdFittEdit_0, "Edit Fitting File")
-        Me.cmdFittEdit_0.UseVisualStyleBackColor = false
+        Me.cmdFittEdit_0.UseVisualStyleBackColor = False
         '
         'cmdFittEdit_1
         '
-        Me.cmdFittEdit_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdFittEdit_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdFittEdit_1.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdFittEdit_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdFittEdit_1.Image = CType(resources.GetObject("cmdFittEdit_1.Image"),System.Drawing.Image)
+        Me.cmdFittEdit_1.Image = CType(resources.GetObject("cmdFittEdit_1.Image"), System.Drawing.Image)
         Me.cmdFittEdit_1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.cmdFittEdit_1.Location = New System.Drawing.Point(466, 58)
+        Me.cmdFittEdit_1.Location = New System.Drawing.Point(621, 71)
+        Me.cmdFittEdit_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdFittEdit_1.Name = "cmdFittEdit_1"
         Me.cmdFittEdit_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdFittEdit_1.Size = New System.Drawing.Size(25, 21)
+        Me.cmdFittEdit_1.Size = New System.Drawing.Size(33, 26)
         Me.cmdFittEdit_1.TabIndex = 236
         Me.cmdFittEdit_1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me.cmdFittEdit_1, "Edit Fitting File")
-        Me.cmdFittEdit_1.UseVisualStyleBackColor = false
+        Me.cmdFittEdit_1.UseVisualStyleBackColor = False
         '
         '_cmdFittResetPhDur_0
         '
-        Me._cmdFittResetPhDur_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me._cmdFittResetPhDur_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me._cmdFittResetPhDur_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittResetPhDur_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdFittResetPhDur.SetIndex(Me._cmdFittResetPhDur_0, CType(0,Short))
-        Me._cmdFittResetPhDur_0.Location = New System.Drawing.Point(6, 378)
+        Me.cmdFittResetPhDur.SetIndex(Me._cmdFittResetPhDur_0, CType(0, Short))
+        Me._cmdFittResetPhDur_0.Location = New System.Drawing.Point(8, 465)
+        Me._cmdFittResetPhDur_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdFittResetPhDur_0.Name = "_cmdFittResetPhDur_0"
         Me._cmdFittResetPhDur_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdFittResetPhDur_0.Size = New System.Drawing.Size(102, 38)
+        Me._cmdFittResetPhDur_0.Size = New System.Drawing.Size(136, 47)
         Me._cmdFittResetPhDur_0.TabIndex = 234
         Me._cmdFittResetPhDur_0.Text = "Reset Phase Durations"
-        Me.ToolTip1.SetToolTip(Me._cmdFittResetPhDur_0, "Set the Phase Durations in the Signal tab to the default values (from the fitting"& _ 
+        Me.ToolTip1.SetToolTip(Me._cmdFittResetPhDur_0, "Set the Phase Durations in the Signal tab to the default values (from the fitting" &
         " file)")
-        Me._cmdFittResetPhDur_0.UseVisualStyleBackColor = false
+        Me._cmdFittResetPhDur_0.UseVisualStyleBackColor = False
         '
         '_cmdFittResetPhDur_1
         '
-        Me._cmdFittResetPhDur_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me._cmdFittResetPhDur_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me._cmdFittResetPhDur_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittResetPhDur_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdFittResetPhDur.SetIndex(Me._cmdFittResetPhDur_1, CType(1,Short))
-        Me._cmdFittResetPhDur_1.Location = New System.Drawing.Point(6, 378)
+        Me.cmdFittResetPhDur.SetIndex(Me._cmdFittResetPhDur_1, CType(1, Short))
+        Me._cmdFittResetPhDur_1.Location = New System.Drawing.Point(8, 465)
+        Me._cmdFittResetPhDur_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdFittResetPhDur_1.Name = "_cmdFittResetPhDur_1"
         Me._cmdFittResetPhDur_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdFittResetPhDur_1.Size = New System.Drawing.Size(102, 38)
+        Me._cmdFittResetPhDur_1.Size = New System.Drawing.Size(136, 47)
         Me._cmdFittResetPhDur_1.TabIndex = 235
         Me._cmdFittResetPhDur_1.Text = "Reset Phase Durations"
-        Me.ToolTip1.SetToolTip(Me._cmdFittResetPhDur_1, "Set the Phase Durations in the Signal tab to the default values (from the fitting"& _ 
+        Me.ToolTip1.SetToolTip(Me._cmdFittResetPhDur_1, "Set the Phase Durations in the Signal tab to the default values (from the fitting" &
         " file)")
-        Me._cmdFittResetPhDur_1.UseVisualStyleBackColor = false
+        Me._cmdFittResetPhDur_1.UseVisualStyleBackColor = False
         '
         'cmdSignalImport
         '
         Me.cmdSignalImport.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdSignalImport.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdSignalImport.Location = New System.Drawing.Point(345, 23)
+        Me.cmdSignalImport.Location = New System.Drawing.Point(460, 28)
+        Me.cmdSignalImport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdSignalImport.Name = "cmdSignalImport"
         Me.cmdSignalImport.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdSignalImport.Size = New System.Drawing.Size(86, 21)
+        Me.cmdSignalImport.Size = New System.Drawing.Size(115, 26)
         Me.cmdSignalImport.TabIndex = 206
         Me.cmdSignalImport.Text = "Import Amp's"
         Me.ToolTip1.SetToolTip(Me.cmdSignalImport, "Not implemented for acoustic stimulation!")
-        Me.cmdSignalImport.UseVisualStyleBackColor = false
+        Me.cmdSignalImport.UseVisualStyleBackColor = False
         '
         'cmbAudioSynthCh
         '
-        Me.cmbAudioSynthCh.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.cmbAudioSynthCh.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmbAudioSynthCh.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbAudioSynthCh.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbAudioSynthCh.IntegralHeight = false
-        Me.cmbAudioSynthCh.Location = New System.Drawing.Point(12, 16)
+        Me.cmbAudioSynthCh.IntegralHeight = False
+        Me.cmbAudioSynthCh.ItemHeight = 16
+        Me.cmbAudioSynthCh.Location = New System.Drawing.Point(16, 20)
+        Me.cmbAudioSynthCh.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbAudioSynthCh.Name = "cmbAudioSynthCh"
         Me.cmbAudioSynthCh.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbAudioSynthCh.Size = New System.Drawing.Size(167, 126)
+        Me.cmbAudioSynthCh.Size = New System.Drawing.Size(221, 154)
         Me.cmbAudioSynthCh.TabIndex = 213
-        Me.ToolTip1.SetToolTip(Me.cmbAudioSynthCh, "You can use buttons 'A' and 'B' to set the synthesizers and 'D' to disable curren"& _ 
+        Me.ToolTip1.SetToolTip(Me.cmbAudioSynthCh, "You can use buttons 'A' and 'B' to set the synthesizers and 'D' to disable curren" &
         "t channel.")
         '
         'cmbDuplicate
         '
-        Me.cmbDuplicate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmbDuplicate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbDuplicate.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbDuplicate.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmbDuplicate.Image = CType(resources.GetObject("cmbDuplicate.Image"),System.Drawing.Image)
-        Me.cmbDuplicate.Location = New System.Drawing.Point(211, 80)
+        Me.cmbDuplicate.Image = CType(resources.GetObject("cmbDuplicate.Image"), System.Drawing.Image)
+        Me.cmbDuplicate.Location = New System.Drawing.Point(280, 98)
+        Me.cmbDuplicate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbDuplicate.Name = "cmbDuplicate"
         Me.cmbDuplicate.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbDuplicate.Size = New System.Drawing.Size(23, 23)
+        Me.cmbDuplicate.Size = New System.Drawing.Size(31, 28)
         Me.cmbDuplicate.TabIndex = 293
         Me.cmbDuplicate.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.ToolTip1.SetToolTip(Me.cmbDuplicate, "Duplicate selected value")
-        Me.cmbDuplicate.UseVisualStyleBackColor = false
+        Me.cmbDuplicate.UseVisualStyleBackColor = False
         '
         'txtSourceDirCopy
         '
-        Me.txtSourceDirCopy.AcceptsReturn = true
-        Me.txtSourceDirCopy.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtSourceDirCopy.AcceptsReturn = True
+        Me.txtSourceDirCopy.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtSourceDirCopy.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtSourceDirCopy.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtSourceDirCopy.Location = New System.Drawing.Point(137, 33)
+        Me.txtSourceDirCopy.Location = New System.Drawing.Point(183, 41)
+        Me.txtSourceDirCopy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSourceDirCopy.MaxLength = 0
         Me.txtSourceDirCopy.Name = "txtSourceDirCopy"
-        Me.txtSourceDirCopy.ReadOnly = true
+        Me.txtSourceDirCopy.ReadOnly = True
         Me.txtSourceDirCopy.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtSourceDirCopy.Size = New System.Drawing.Size(322, 20)
+        Me.txtSourceDirCopy.Size = New System.Drawing.Size(428, 22)
         Me.txtSourceDirCopy.TabIndex = 238
         Me.ToolTip1.SetToolTip(Me.txtSourceDirCopy, "Source Directory")
         '
         'cmdAnalysisSetting
         '
-        Me.cmdAnalysisSetting.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdAnalysisSetting.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdAnalysisSetting.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdAnalysisSetting.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdAnalysisSetting.Location = New System.Drawing.Point(412, 44)
+        Me.cmdAnalysisSetting.Location = New System.Drawing.Point(549, 54)
+        Me.cmdAnalysisSetting.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdAnalysisSetting.Name = "cmdAnalysisSetting"
         Me.cmdAnalysisSetting.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdAnalysisSetting.Size = New System.Drawing.Size(25, 21)
+        Me.cmdAnalysisSetting.Size = New System.Drawing.Size(33, 26)
         Me.cmdAnalysisSetting.TabIndex = 291
         Me.cmdAnalysisSetting.Text = "A"
         Me.ToolTip1.SetToolTip(Me.cmdAnalysisSetting, "Create Analysis Setting")
-        Me.cmdAnalysisSetting.UseVisualStyleBackColor = false
+        Me.cmdAnalysisSetting.UseVisualStyleBackColor = False
         '
         'OexpMode
         '
-        Me.OexpMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.OexpMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.OexpMode.ForeColor = System.Drawing.Color.DarkRed
-        Me.OexpMode.Location = New System.Drawing.Point(149, 346)
+        Me.OexpMode.Location = New System.Drawing.Point(199, 426)
+        Me.OexpMode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.OexpMode.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
         Me.OexpMode.Name = "OexpMode"
-        Me.OexpMode.Size = New System.Drawing.Size(46, 20)
+        Me.OexpMode.Size = New System.Drawing.Size(61, 23)
         Me.OexpMode.TabIndex = 232
-        Me.ToolTip1.SetToolTip(Me.OexpMode, "Override experiment with a different mode. Please check if your AFC/IFC combinati"& _ 
+        Me.ToolTip1.SetToolTip(Me.OexpMode, "Override experiment with a different mode. Please check if your AFC/IFC combinati" &
         "on allows using the desired experiment type!")
         '
         'chkOverrideExpMode
         '
         Me.chkOverrideExpMode.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkOverrideExpMode.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkOverrideExpMode.Location = New System.Drawing.Point(6, 346)
+        Me.chkOverrideExpMode.Location = New System.Drawing.Point(8, 426)
+        Me.chkOverrideExpMode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkOverrideExpMode.Name = "chkOverrideExpMode"
         Me.chkOverrideExpMode.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkOverrideExpMode.Size = New System.Drawing.Size(216, 20)
+        Me.chkOverrideExpMode.Size = New System.Drawing.Size(288, 25)
         Me.chkOverrideExpMode.TabIndex = 233
         Me.chkOverrideExpMode.Text = "Override Exp. Mode to:"
-        Me.ToolTip1.SetToolTip(Me.chkOverrideExpMode, "Override experiment with a different mode. Please check if your AFC/IFC combinati"& _ 
+        Me.ToolTip1.SetToolTip(Me.chkOverrideExpMode, "Override experiment with a different mode. Please check if your AFC/IFC combinati" &
         "on allows using the desired experiment type!")
-        Me.chkOverrideExpMode.UseVisualStyleBackColor = false
+        Me.chkOverrideExpMode.UseVisualStyleBackColor = False
         '
         '_optDeviceType_5
         '
-        Me._optDeviceType_5.AutoSize = true
+        Me._optDeviceType_5.AutoSize = True
         Me._optDeviceType_5.Cursor = System.Windows.Forms.Cursors.Default
         Me._optDeviceType_5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optDeviceType.SetIndex(Me._optDeviceType_5, CType(5,Short))
-        Me._optDeviceType_5.Location = New System.Drawing.Point(25, 48)
+        Me.optDeviceType.SetIndex(Me._optDeviceType_5, CType(5, Short))
+        Me._optDeviceType_5.Location = New System.Drawing.Point(33, 59)
+        Me._optDeviceType_5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optDeviceType_5.Name = "_optDeviceType_5"
         Me._optDeviceType_5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optDeviceType_5.Size = New System.Drawing.Size(85, 17)
+        Me._optDeviceType_5.Size = New System.Drawing.Size(111, 21)
         Me._optDeviceType_5.TabIndex = 92
-        Me._optDeviceType_5.TabStop = true
+        Me._optDeviceType_5.TabStop = True
         Me._optDeviceType_5.Text = "Audio (Unity)"
         Me.ToolTip1.SetToolTip(Me._optDeviceType_5, "Audio signal, output via Unity")
-        Me._optDeviceType_5.UseVisualStyleBackColor = false
+        Me._optDeviceType_5.UseVisualStyleBackColor = False
         '
         '_optDeviceType_4
         '
-        Me._optDeviceType_4.AutoSize = true
+        Me._optDeviceType_4.AutoSize = True
         Me._optDeviceType_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._optDeviceType_4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optDeviceType.SetIndex(Me._optDeviceType_4, CType(4,Short))
-        Me._optDeviceType_4.Location = New System.Drawing.Point(143, 88)
+        Me.optDeviceType.SetIndex(Me._optDeviceType_4, CType(4, Short))
+        Me._optDeviceType_4.Location = New System.Drawing.Point(191, 108)
+        Me._optDeviceType_4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optDeviceType_4.Name = "_optDeviceType_4"
         Me._optDeviceType_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optDeviceType_4.Size = New System.Drawing.Size(147, 17)
+        Me._optDeviceType_4.Size = New System.Drawing.Size(188, 21)
         Me._optDeviceType_4.TabIndex = 91
-        Me._optDeviceType_4.TabStop = true
+        Me._optDeviceType_4.TabStop = True
         Me._optDeviceType_4.Text = "Electrical (Vocoder/WAV)"
         Me.ToolTip1.SetToolTip(Me._optDeviceType_4, "Electric signal, vocoder, output via Pd")
-        Me._optDeviceType_4.UseVisualStyleBackColor = false
+        Me._optDeviceType_4.UseVisualStyleBackColor = False
         '
         '_optDeviceType_3
         '
         Me._optDeviceType_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._optDeviceType_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optDeviceType.SetIndex(Me._optDeviceType_3, CType(3,Short))
-        Me._optDeviceType_3.Location = New System.Drawing.Point(143, 48)
+        Me.optDeviceType.SetIndex(Me._optDeviceType_3, CType(3, Short))
+        Me._optDeviceType_3.Location = New System.Drawing.Point(191, 59)
+        Me._optDeviceType_3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optDeviceType_3.Name = "_optDeviceType_3"
         Me._optDeviceType_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optDeviceType_3.Size = New System.Drawing.Size(108, 17)
+        Me._optDeviceType_3.Size = New System.Drawing.Size(144, 21)
         Me._optDeviceType_3.TabIndex = 90
-        Me._optDeviceType_3.TabStop = true
+        Me._optDeviceType_3.TabStop = True
         Me._optDeviceType_3.Text = "Electrical (RIB2)"
         Me.ToolTip1.SetToolTip(Me._optDeviceType_3, "Electric signal, output via RIB2")
-        Me._optDeviceType_3.UseVisualStyleBackColor = false
+        Me._optDeviceType_3.UseVisualStyleBackColor = False
         '
         '_optDeviceType_2
         '
         Me._optDeviceType_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._optDeviceType_2.Enabled = false
+        Me._optDeviceType_2.Enabled = False
         Me._optDeviceType_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optDeviceType.SetIndex(Me._optDeviceType_2, CType(2,Short))
-        Me._optDeviceType_2.Location = New System.Drawing.Point(143, 68)
+        Me.optDeviceType.SetIndex(Me._optDeviceType_2, CType(2, Short))
+        Me._optDeviceType_2.Location = New System.Drawing.Point(191, 84)
+        Me._optDeviceType_2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optDeviceType_2.Name = "_optDeviceType_2"
         Me._optDeviceType_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optDeviceType_2.Size = New System.Drawing.Size(108, 17)
+        Me._optDeviceType_2.Size = New System.Drawing.Size(144, 21)
         Me._optDeviceType_2.TabIndex = 88
-        Me._optDeviceType_2.TabStop = true
+        Me._optDeviceType_2.TabStop = True
         Me._optDeviceType_2.Text = "Electrical (NIC)"
-        Me.ToolTip1.SetToolTip(Me._optDeviceType_2, "Electric signal, output via NIC"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"(not implemented yet)")
-        Me._optDeviceType_2.UseVisualStyleBackColor = false
+        Me.ToolTip1.SetToolTip(Me._optDeviceType_2, "Electric signal, output via NIC" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(not implemented yet)")
+        Me._optDeviceType_2.UseVisualStyleBackColor = False
         '
         '_optDeviceType_1
         '
-        Me._optDeviceType_1.AutoSize = true
+        Me._optDeviceType_1.AutoSize = True
         Me._optDeviceType_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._optDeviceType_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optDeviceType.SetIndex(Me._optDeviceType_1, CType(1,Short))
-        Me._optDeviceType_1.Location = New System.Drawing.Point(25, 28)
+        Me.optDeviceType.SetIndex(Me._optDeviceType_1, CType(1, Short))
+        Me._optDeviceType_1.Location = New System.Drawing.Point(33, 34)
+        Me._optDeviceType_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optDeviceType_1.Name = "_optDeviceType_1"
         Me._optDeviceType_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optDeviceType_1.Size = New System.Drawing.Size(74, 17)
+        Me._optDeviceType_1.Size = New System.Drawing.Size(96, 21)
         Me._optDeviceType_1.TabIndex = 87
-        Me._optDeviceType_1.TabStop = true
+        Me._optDeviceType_1.TabStop = True
         Me._optDeviceType_1.Text = "Audio (Pd)"
         Me.ToolTip1.SetToolTip(Me._optDeviceType_1, "Audio signal, output via Pd")
-        Me._optDeviceType_1.UseVisualStyleBackColor = false
+        Me._optDeviceType_1.UseVisualStyleBackColor = False
         '
         '_optDeviceType_0
         '
         Me._optDeviceType_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._optDeviceType_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optDeviceType.SetIndex(Me._optDeviceType_0, CType(0,Short))
-        Me._optDeviceType_0.Location = New System.Drawing.Point(143, 28)
+        Me.optDeviceType.SetIndex(Me._optDeviceType_0, CType(0, Short))
+        Me._optDeviceType_0.Location = New System.Drawing.Point(191, 34)
+        Me._optDeviceType_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optDeviceType_0.Name = "_optDeviceType_0"
         Me._optDeviceType_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optDeviceType_0.Size = New System.Drawing.Size(108, 17)
+        Me._optDeviceType_0.Size = New System.Drawing.Size(144, 21)
         Me._optDeviceType_0.TabIndex = 86
-        Me._optDeviceType_0.TabStop = true
+        Me._optDeviceType_0.TabStop = True
         Me._optDeviceType_0.Text = "Electrical (RIB)"
         Me.ToolTip1.SetToolTip(Me._optDeviceType_0, "Electric signal, output via RIB")
-        Me._optDeviceType_0.UseVisualStyleBackColor = false
+        Me._optDeviceType_0.UseVisualStyleBackColor = False
         '
         'ckbUseDataChannel
         '
-        Me.ckbUseDataChannel.AutoSize = true
-        Me.ckbUseDataChannel.Location = New System.Drawing.Point(51, 86)
+        Me.ckbUseDataChannel.AutoSize = True
+        Me.ckbUseDataChannel.Location = New System.Drawing.Point(68, 106)
+        Me.ckbUseDataChannel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ckbUseDataChannel.Name = "ckbUseDataChannel"
-        Me.ckbUseDataChannel.Size = New System.Drawing.Size(110, 17)
+        Me.ckbUseDataChannel.Size = New System.Drawing.Size(141, 21)
         Me.ckbUseDataChannel.TabIndex = 226
         Me.ckbUseDataChannel.Text = "Use data channel"
         Me.ToolTip1.SetToolTip(Me.ckbUseDataChannel, "Use data channel to transmit digital information via audio channel")
-        Me.ckbUseDataChannel.UseVisualStyleBackColor = true
+        Me.ckbUseDataChannel.UseVisualStyleBackColor = True
         '
         'ckbUseTriggerChannel
         '
-        Me.ckbUseTriggerChannel.AutoSize = true
-        Me.ckbUseTriggerChannel.Location = New System.Drawing.Point(176, 86)
+        Me.ckbUseTriggerChannel.AutoSize = True
+        Me.ckbUseTriggerChannel.Location = New System.Drawing.Point(235, 106)
+        Me.ckbUseTriggerChannel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ckbUseTriggerChannel.Name = "ckbUseTriggerChannel"
-        Me.ckbUseTriggerChannel.Size = New System.Drawing.Size(118, 17)
+        Me.ckbUseTriggerChannel.Size = New System.Drawing.Size(154, 21)
         Me.ckbUseTriggerChannel.TabIndex = 227
         Me.ckbUseTriggerChannel.Text = "Use trigger channel"
         Me.ToolTip1.SetToolTip(Me.ckbUseTriggerChannel, "Use data channel to transmit digital information via audio channel")
-        Me.ckbUseTriggerChannel.UseVisualStyleBackColor = true
+        Me.ckbUseTriggerChannel.UseVisualStyleBackColor = True
         '
         '_lblTrackerR_0
         '
         Me._lblTrackerR_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerR_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerR.SetIndex(Me._lblTrackerR_0, CType(0,Short))
-        Me._lblTrackerR_0.Location = New System.Drawing.Point(269, 40)
+        Me.lblTrackerR.SetIndex(Me._lblTrackerR_0, CType(0, Short))
+        Me._lblTrackerR_0.Location = New System.Drawing.Point(359, 49)
+        Me._lblTrackerR_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerR_0.Name = "_lblTrackerR_0"
         Me._lblTrackerR_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerR_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerR_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerR_0.TabIndex = 258
         Me._lblTrackerR_0.Text = "0"
         Me._lblTrackerR_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1765,11 +1822,12 @@
         '
         Me._lblTrackerE_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerE_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerE.SetIndex(Me._lblTrackerE_0, CType(0,Short))
-        Me._lblTrackerE_0.Location = New System.Drawing.Point(218, 40)
+        Me.lblTrackerE.SetIndex(Me._lblTrackerE_0, CType(0, Short))
+        Me._lblTrackerE_0.Location = New System.Drawing.Point(291, 49)
+        Me._lblTrackerE_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerE_0.Name = "_lblTrackerE_0"
         Me._lblTrackerE_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerE_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerE_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerE_0.TabIndex = 257
         Me._lblTrackerE_0.Text = "0"
         Me._lblTrackerE_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1779,11 +1837,12 @@
         '
         Me._lblTrackerA_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerA_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerA.SetIndex(Me._lblTrackerA_0, CType(0,Short))
-        Me._lblTrackerA_0.Location = New System.Drawing.Point(157, 40)
+        Me.lblTrackerA.SetIndex(Me._lblTrackerA_0, CType(0, Short))
+        Me._lblTrackerA_0.Location = New System.Drawing.Point(209, 49)
+        Me._lblTrackerA_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerA_0.Name = "_lblTrackerA_0"
         Me._lblTrackerA_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerA_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerA_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerA_0.TabIndex = 256
         Me._lblTrackerA_0.Text = "0"
         Me._lblTrackerA_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1793,11 +1852,12 @@
         '
         Me._lblTrackerZ_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerZ_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerZ.SetIndex(Me._lblTrackerZ_0, CType(0,Short))
-        Me._lblTrackerZ_0.Location = New System.Drawing.Point(92, 40)
+        Me.lblTrackerZ.SetIndex(Me._lblTrackerZ_0, CType(0, Short))
+        Me._lblTrackerZ_0.Location = New System.Drawing.Point(123, 49)
+        Me._lblTrackerZ_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerZ_0.Name = "_lblTrackerZ_0"
         Me._lblTrackerZ_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerZ_0.Size = New System.Drawing.Size(43, 13)
+        Me._lblTrackerZ_0.Size = New System.Drawing.Size(57, 16)
         Me._lblTrackerZ_0.TabIndex = 255
         Me._lblTrackerZ_0.Text = "0"
         Me._lblTrackerZ_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1807,11 +1867,12 @@
         '
         Me._lblTrackerY_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerY_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerY.SetIndex(Me._lblTrackerY_0, CType(0,Short))
-        Me._lblTrackerY_0.Location = New System.Drawing.Point(51, 40)
+        Me.lblTrackerY.SetIndex(Me._lblTrackerY_0, CType(0, Short))
+        Me._lblTrackerY_0.Location = New System.Drawing.Point(68, 49)
+        Me._lblTrackerY_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerY_0.Name = "_lblTrackerY_0"
         Me._lblTrackerY_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerY_0.Size = New System.Drawing.Size(43, 13)
+        Me._lblTrackerY_0.Size = New System.Drawing.Size(57, 16)
         Me._lblTrackerY_0.TabIndex = 254
         Me._lblTrackerY_0.Text = "0"
         Me._lblTrackerY_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1821,11 +1882,12 @@
         '
         Me._lblTrackerX_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerX_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerX.SetIndex(Me._lblTrackerX_0, CType(0,Short))
-        Me._lblTrackerX_0.Location = New System.Drawing.Point(11, 40)
+        Me.lblTrackerX.SetIndex(Me._lblTrackerX_0, CType(0, Short))
+        Me._lblTrackerX_0.Location = New System.Drawing.Point(15, 49)
+        Me._lblTrackerX_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerX_0.Name = "_lblTrackerX_0"
         Me._lblTrackerX_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerX_0.Size = New System.Drawing.Size(43, 13)
+        Me._lblTrackerX_0.Size = New System.Drawing.Size(57, 16)
         Me._lblTrackerX_0.TabIndex = 249
         Me._lblTrackerX_0.Text = "0"
         Me._lblTrackerX_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1835,11 +1897,12 @@
         '
         Me._lblTrackerX_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerX_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerX.SetIndex(Me._lblTrackerX_1, CType(1,Short))
-        Me._lblTrackerX_1.Location = New System.Drawing.Point(11, 40)
+        Me.lblTrackerX.SetIndex(Me._lblTrackerX_1, CType(1, Short))
+        Me._lblTrackerX_1.Location = New System.Drawing.Point(15, 49)
+        Me._lblTrackerX_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerX_1.Name = "_lblTrackerX_1"
         Me._lblTrackerX_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerX_1.Size = New System.Drawing.Size(43, 13)
+        Me._lblTrackerX_1.Size = New System.Drawing.Size(57, 16)
         Me._lblTrackerX_1.TabIndex = 270
         Me._lblTrackerX_1.Text = "0"
         Me._lblTrackerX_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1849,11 +1912,12 @@
         '
         Me._lblTrackerY_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerY_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerY.SetIndex(Me._lblTrackerY_1, CType(1,Short))
-        Me._lblTrackerY_1.Location = New System.Drawing.Point(51, 40)
+        Me.lblTrackerY.SetIndex(Me._lblTrackerY_1, CType(1, Short))
+        Me._lblTrackerY_1.Location = New System.Drawing.Point(68, 49)
+        Me._lblTrackerY_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerY_1.Name = "_lblTrackerY_1"
         Me._lblTrackerY_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerY_1.Size = New System.Drawing.Size(43, 13)
+        Me._lblTrackerY_1.Size = New System.Drawing.Size(57, 16)
         Me._lblTrackerY_1.TabIndex = 265
         Me._lblTrackerY_1.Text = "0"
         Me._lblTrackerY_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1863,11 +1927,12 @@
         '
         Me._lblTrackerZ_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerZ_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerZ.SetIndex(Me._lblTrackerZ_1, CType(1,Short))
-        Me._lblTrackerZ_1.Location = New System.Drawing.Point(92, 40)
+        Me.lblTrackerZ.SetIndex(Me._lblTrackerZ_1, CType(1, Short))
+        Me._lblTrackerZ_1.Location = New System.Drawing.Point(123, 49)
+        Me._lblTrackerZ_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerZ_1.Name = "_lblTrackerZ_1"
         Me._lblTrackerZ_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerZ_1.Size = New System.Drawing.Size(43, 13)
+        Me._lblTrackerZ_1.Size = New System.Drawing.Size(57, 16)
         Me._lblTrackerZ_1.TabIndex = 264
         Me._lblTrackerZ_1.Text = "0"
         Me._lblTrackerZ_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1877,11 +1942,12 @@
         '
         Me._lblTrackerA_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerA_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerA.SetIndex(Me._lblTrackerA_1, CType(1,Short))
-        Me._lblTrackerA_1.Location = New System.Drawing.Point(157, 40)
+        Me.lblTrackerA.SetIndex(Me._lblTrackerA_1, CType(1, Short))
+        Me._lblTrackerA_1.Location = New System.Drawing.Point(209, 49)
+        Me._lblTrackerA_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerA_1.Name = "_lblTrackerA_1"
         Me._lblTrackerA_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerA_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerA_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerA_1.TabIndex = 263
         Me._lblTrackerA_1.Text = "0"
         Me._lblTrackerA_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1891,11 +1957,12 @@
         '
         Me._lblTrackerE_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerE_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerE.SetIndex(Me._lblTrackerE_1, CType(1,Short))
-        Me._lblTrackerE_1.Location = New System.Drawing.Point(218, 40)
+        Me.lblTrackerE.SetIndex(Me._lblTrackerE_1, CType(1, Short))
+        Me._lblTrackerE_1.Location = New System.Drawing.Point(291, 49)
+        Me._lblTrackerE_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerE_1.Name = "_lblTrackerE_1"
         Me._lblTrackerE_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerE_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerE_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerE_1.TabIndex = 262
         Me._lblTrackerE_1.Text = "0"
         Me._lblTrackerE_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1905,11 +1972,12 @@
         '
         Me._lblTrackerR_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblTrackerR_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerR.SetIndex(Me._lblTrackerR_1, CType(1,Short))
-        Me._lblTrackerR_1.Location = New System.Drawing.Point(269, 40)
+        Me.lblTrackerR.SetIndex(Me._lblTrackerR_1, CType(1, Short))
+        Me._lblTrackerR_1.Location = New System.Drawing.Point(359, 49)
+        Me._lblTrackerR_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerR_1.Name = "_lblTrackerR_1"
         Me._lblTrackerR_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerR_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerR_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerR_1.TabIndex = 261
         Me._lblTrackerR_1.Text = "0"
         Me._lblTrackerR_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -1917,26 +1985,27 @@
         '
         'txtID
         '
-        Me.txtID.AcceptsReturn = true
-        Me.txtID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtID.AcceptsReturn = True
+        Me.txtID.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtID.BackColor = System.Drawing.SystemColors.Window
         Me.txtID.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtID.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtID.Location = New System.Drawing.Point(165, 47)
+        Me.txtID.Location = New System.Drawing.Point(220, 58)
+        Me.txtID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtID.MaxLength = 0
         Me.txtID.Name = "txtID"
         Me.txtID.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtID.Size = New System.Drawing.Size(324, 20)
+        Me.txtID.Size = New System.Drawing.Size(431, 22)
         Me.txtID.TabIndex = 38
-        Me.ToolTip1.SetToolTip(Me.txtID, "The experiment ID is used for file and folder names creations, and when specific "& _ 
+        Me.ToolTip1.SetToolTip(Me.txtID, "The experiment ID is used for file and folder names creations, and when specific " &
         "scripts are loaded (application-dependent).")
         '
         'tabSettings
         '
-        Me.tabSettings.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.tabSettings.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabSettings.Controls.Add(Me.tabGeneral)
         Me.tabSettings.Controls.Add(Me.tabFittingLeft)
         Me.tabSettings.Controls.Add(Me.tabFittingRight)
@@ -1950,11 +2019,12 @@
         Me.tabSettings.Controls.Add(Me.tabTracker)
         Me.tabSettings.Controls.Add(Me.tabVirtualWorld)
         Me.tabSettings.ItemSize = New System.Drawing.Size(42, 18)
-        Me.tabSettings.Location = New System.Drawing.Point(12, 0)
-        Me.tabSettings.Multiline = true
+        Me.tabSettings.Location = New System.Drawing.Point(16, 0)
+        Me.tabSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tabSettings.Multiline = True
         Me.tabSettings.Name = "tabSettings"
         Me.tabSettings.SelectedIndex = 5
-        Me.tabSettings.Size = New System.Drawing.Size(522, 474)
+        Me.tabSettings.Size = New System.Drawing.Size(696, 583)
         Me.tabSettings.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.tabSettings.TabIndex = 4
         '
@@ -1965,16 +2035,17 @@
         Me.tabGeneral.Controls.Add(Me.fraDataDir)
         Me.tabGeneral.Controls.Add(Me.fraTurntable)
         Me.tabGeneral.Location = New System.Drawing.Point(4, 40)
+        Me.tabGeneral.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabGeneral.Name = "tabGeneral"
-        Me.tabGeneral.Size = New System.Drawing.Size(514, 430)
+        Me.tabGeneral.Size = New System.Drawing.Size(688, 539)
         Me.tabGeneral.TabIndex = 0
         Me.tabGeneral.Text = "General"
-        Me.tabGeneral.UseVisualStyleBackColor = true
+        Me.tabGeneral.UseVisualStyleBackColor = True
         '
         'fraDeviceType
         '
-        Me.fraDeviceType.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.fraDeviceType.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fraDeviceType.Controls.Add(Me._optDeviceType_5)
         Me.fraDeviceType.Controls.Add(Me._optDeviceType_4)
         Me.fraDeviceType.Controls.Add(Me._optDeviceType_3)
@@ -1983,28 +2054,31 @@
         Me.fraDeviceType.Controls.Add(Me._optDeviceType_1)
         Me.fraDeviceType.Controls.Add(Me._optDeviceType_0)
         Me.fraDeviceType.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraDeviceType.Location = New System.Drawing.Point(32, 16)
+        Me.fraDeviceType.Location = New System.Drawing.Point(43, 20)
+        Me.fraDeviceType.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraDeviceType.Name = "fraDeviceType"
+        Me.fraDeviceType.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraDeviceType.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraDeviceType.Size = New System.Drawing.Size(444, 140)
+        Me.fraDeviceType.Size = New System.Drawing.Size(592, 172)
         Me.fraDeviceType.TabIndex = 85
-        Me.fraDeviceType.TabStop = false
+        Me.fraDeviceType.TabStop = False
         Me.fraDeviceType.Text = "Signal (Output):"
         '
         'chkDoNotConnectToDevice
         '
-        Me.chkDoNotConnectToDevice.AutoSize = true
-        Me.chkDoNotConnectToDevice.Location = New System.Drawing.Point(58, 112)
+        Me.chkDoNotConnectToDevice.AutoSize = True
+        Me.chkDoNotConnectToDevice.Location = New System.Drawing.Point(77, 138)
+        Me.chkDoNotConnectToDevice.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkDoNotConnectToDevice.Name = "chkDoNotConnectToDevice"
-        Me.chkDoNotConnectToDevice.Size = New System.Drawing.Size(145, 17)
+        Me.chkDoNotConnectToDevice.Size = New System.Drawing.Size(186, 21)
         Me.chkDoNotConnectToDevice.TabIndex = 89
         Me.chkDoNotConnectToDevice.Text = "Do not connect to output"
-        Me.chkDoNotConnectToDevice.UseVisualStyleBackColor = true
+        Me.chkDoNotConnectToDevice.UseVisualStyleBackColor = True
         '
         'fraWorkDir
         '
-        Me.fraWorkDir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.fraWorkDir.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fraWorkDir.Controls.Add(Me.cmdAnalysisSetting)
         Me.fraWorkDir.Controls.Add(Me.chkSilentMode)
         Me.fraWorkDir.Controls.Add(Me.cmdDestinationFromSetting)
@@ -2014,119 +2088,132 @@
         Me.fraWorkDir.Controls.Add(Me.cmdDestinationDir)
         Me.fraWorkDir.Controls.Add(Me.Label32)
         Me.fraWorkDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraWorkDir.Location = New System.Drawing.Point(32, 157)
+        Me.fraWorkDir.Location = New System.Drawing.Point(43, 193)
+        Me.fraWorkDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraWorkDir.Name = "fraWorkDir"
+        Me.fraWorkDir.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraWorkDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraWorkDir.Size = New System.Drawing.Size(444, 109)
+        Me.fraWorkDir.Size = New System.Drawing.Size(592, 134)
         Me.fraWorkDir.TabIndex = 95
-        Me.fraWorkDir.TabStop = false
+        Me.fraWorkDir.TabStop = False
         Me.fraWorkDir.Text = "Output directory:"
         '
         'chkSilentMode
         '
         Me.chkSilentMode.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkSilentMode.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkSilentMode.Location = New System.Drawing.Point(20, 88)
+        Me.chkSilentMode.Location = New System.Drawing.Point(27, 108)
+        Me.chkSilentMode.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkSilentMode.Name = "chkSilentMode"
         Me.chkSilentMode.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkSilentMode.Size = New System.Drawing.Size(309, 17)
+        Me.chkSilentMode.Size = New System.Drawing.Size(412, 21)
         Me.chkSilentMode.TabIndex = 290
         Me.chkSilentMode.Text = "Silent Mode (no logging to files or list)"
-        Me.chkSilentMode.UseVisualStyleBackColor = false
+        Me.chkSilentMode.UseVisualStyleBackColor = False
         '
         'chkNewWorkDir
         '
         Me.chkNewWorkDir.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkNewWorkDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkNewWorkDir.Location = New System.Drawing.Point(20, 72)
+        Me.chkNewWorkDir.Location = New System.Drawing.Point(27, 89)
+        Me.chkNewWorkDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkNewWorkDir.Name = "chkNewWorkDir"
         Me.chkNewWorkDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkNewWorkDir.Size = New System.Drawing.Size(309, 17)
+        Me.chkNewWorkDir.Size = New System.Drawing.Size(412, 21)
         Me.chkNewWorkDir.TabIndex = 236
         Me.chkNewWorkDir.Text = "Create Working Directory (Syntax: Root\ID_Date_Time\)"
-        Me.chkNewWorkDir.UseVisualStyleBackColor = false
+        Me.chkNewWorkDir.UseVisualStyleBackColor = False
         '
         'chkTempDir
         '
         Me.chkTempDir.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkTempDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkTempDir.Location = New System.Drawing.Point(20, 17)
+        Me.chkTempDir.Location = New System.Drawing.Point(27, 21)
+        Me.chkTempDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkTempDir.Name = "chkTempDir"
         Me.chkTempDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkTempDir.Size = New System.Drawing.Size(273, 26)
+        Me.chkTempDir.Size = New System.Drawing.Size(364, 32)
         Me.chkTempDir.TabIndex = 116
         Me.chkTempDir.Text = "Use temporary directory of windows"
-        Me.chkTempDir.UseVisualStyleBackColor = false
+        Me.chkTempDir.UseVisualStyleBackColor = False
         '
         'Label32
         '
-        Me.Label32.AutoSize = true
+        Me.Label32.AutoSize = True
         Me.Label32.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label32.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label32.Location = New System.Drawing.Point(16, 48)
+        Me.Label32.Location = New System.Drawing.Point(21, 59)
+        Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label32.Name = "Label32"
         Me.Label32.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label32.Size = New System.Drawing.Size(76, 13)
+        Me.Label32.Size = New System.Drawing.Size(101, 17)
         Me.Label32.TabIndex = 117
         Me.Label32.Text = "Root directory:"
         Me.Label32.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'fraDataDir
         '
-        Me.fraDataDir.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.fraDataDir.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fraDataDir.Controls.Add(Me.cmbDataDir)
         Me.fraDataDir.Controls.Add(Me.cmdDataDir)
         Me.fraDataDir.Controls.Add(Me.txtDataDir)
         Me.fraDataDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraDataDir.Location = New System.Drawing.Point(32, 268)
+        Me.fraDataDir.Location = New System.Drawing.Point(43, 330)
+        Me.fraDataDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraDataDir.Name = "fraDataDir"
+        Me.fraDataDir.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraDataDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraDataDir.Size = New System.Drawing.Size(444, 105)
+        Me.fraDataDir.Size = New System.Drawing.Size(592, 129)
         Me.fraDataDir.TabIndex = 118
-        Me.fraDataDir.TabStop = false
+        Me.fraDataDir.TabStop = False
         Me.fraDataDir.Text = "Data directories:"
         '
         'cmbDataDir
         '
-        Me.cmbDataDir.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmbDataDir.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbDataDir.BackColor = System.Drawing.SystemColors.Window
         Me.cmbDataDir.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbDataDir.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbDataDir.Location = New System.Drawing.Point(20, 20)
+        Me.cmbDataDir.ItemHeight = 16
+        Me.cmbDataDir.Location = New System.Drawing.Point(27, 25)
+        Me.cmbDataDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbDataDir.Name = "cmbDataDir"
         Me.cmbDataDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbDataDir.Size = New System.Drawing.Size(387, 43)
+        Me.cmbDataDir.Size = New System.Drawing.Size(515, 52)
         Me.cmbDataDir.TabIndex = 291
         '
         'fraTurntable
         '
-        Me.fraTurntable.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.fraTurntable.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fraTurntable.Controls.Add(Me.chkTTUse)
         Me.fraTurntable.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraTurntable.Location = New System.Drawing.Point(32, 375)
+        Me.fraTurntable.Location = New System.Drawing.Point(43, 462)
+        Me.fraTurntable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraTurntable.Name = "fraTurntable"
+        Me.fraTurntable.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraTurntable.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraTurntable.Size = New System.Drawing.Size(444, 48)
+        Me.fraTurntable.Size = New System.Drawing.Size(592, 59)
         Me.fraTurntable.TabIndex = 275
-        Me.fraTurntable.TabStop = false
+        Me.fraTurntable.TabStop = False
         Me.fraTurntable.Text = "Turntable"
         '
         'chkTTUse
         '
         Me.chkTTUse.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkTTUse.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkTTUse.Location = New System.Drawing.Point(20, 18)
+        Me.chkTTUse.Location = New System.Drawing.Point(27, 22)
+        Me.chkTTUse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkTTUse.Name = "chkTTUse"
         Me.chkTTUse.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkTTUse.Size = New System.Drawing.Size(144, 23)
+        Me.chkTTUse.Size = New System.Drawing.Size(192, 28)
         Me.chkTTUse.TabIndex = 276
         Me.chkTTUse.Text = "Use Turntable"
-        Me.chkTTUse.UseVisualStyleBackColor = false
+        Me.chkTTUse.UseVisualStyleBackColor = False
         '
         'tabFittingLeft
         '
@@ -2156,35 +2243,38 @@
         Me.tabFittingLeft.Controls.Add(Me._cmdFittReload_0)
         Me.tabFittingLeft.Controls.Add(Me._cmdFittResetPhDur_0)
         Me.tabFittingLeft.Location = New System.Drawing.Point(4, 40)
+        Me.tabFittingLeft.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabFittingLeft.Name = "tabFittingLeft"
-        Me.tabFittingLeft.Size = New System.Drawing.Size(514, 430)
+        Me.tabFittingLeft.Size = New System.Drawing.Size(688, 539)
         Me.tabFittingLeft.TabIndex = 1
         Me.tabFittingLeft.Text = "Fitting Left"
-        Me.tabFittingLeft.UseVisualStyleBackColor = true
+        Me.tabFittingLeft.UseVisualStyleBackColor = True
         '
         '_Label7_0
         '
-        Me._Label7_0.AutoSize = true
+        Me._Label7_0.AutoSize = True
         Me._Label7_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label7_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label7_0.Location = New System.Drawing.Point(60, 139)
+        Me._Label7_0.Location = New System.Drawing.Point(80, 171)
+        Me._Label7_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label7_0.Name = "_Label7_0"
         Me._Label7_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label7_0.Size = New System.Drawing.Size(71, 13)
+        Me._Label7_0.Size = New System.Drawing.Size(93, 17)
         Me._Label7_0.TabIndex = 236
         Me._Label7_0.Text = "Implant Type:"
         Me._Label7_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblImpType_0
         '
-        Me._lblImpType_0.AutoSize = true
+        Me._lblImpType_0.AutoSize = True
         Me._lblImpType_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblImpType_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblImpType.SetIndex(Me._lblImpType_0, CType(0,Short))
-        Me._lblImpType_0.Location = New System.Drawing.Point(137, 139)
+        Me.lblImpType.SetIndex(Me._lblImpType_0, CType(0, Short))
+        Me._lblImpType_0.Location = New System.Drawing.Point(183, 171)
+        Me._lblImpType_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblImpType_0.Name = "_lblImpType_0"
         Me._lblImpType_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblImpType_0.Size = New System.Drawing.Size(28, 13)
+        Me._lblImpType_0.Size = New System.Drawing.Size(35, 17)
         Me._lblImpType_0.TabIndex = 237
         Me._lblImpType_0.Text = "XXX"
         '
@@ -2192,89 +2282,96 @@
         '
         Me._Label14_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label14_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label14_0.Location = New System.Drawing.Point(66, 63)
+        Me._Label14_0.Location = New System.Drawing.Point(88, 78)
+        Me._Label14_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label14_0.Name = "_Label14_0"
         Me._Label14_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label14_0.Size = New System.Drawing.Size(64, 16)
+        Me._Label14_0.Size = New System.Drawing.Size(85, 20)
         Me._Label14_0.TabIndex = 20
         Me._Label14_0.Text = "Fitting file:"
         Me._Label14_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label2_0
         '
-        Me._Label2_0.AutoSize = true
+        Me._Label2_0.AutoSize = True
         Me._Label2_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label2_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label2_0.Location = New System.Drawing.Point(70, 91)
+        Me._Label2_0.Location = New System.Drawing.Point(93, 112)
+        Me._Label2_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label2_0.Name = "_Label2_0"
         Me._Label2_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label2_0.Size = New System.Drawing.Size(60, 13)
+        Me._Label2_0.Size = New System.Drawing.Size(80, 17)
         Me._Label2_0.TabIndex = 21
         Me._Label2_0.Text = "First Name:"
         Me._Label2_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label3_0
         '
-        Me._Label3_0.AutoSize = true
+        Me._Label3_0.AutoSize = True
         Me._Label3_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label3_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label3_0.Location = New System.Drawing.Point(69, 115)
+        Me._Label3_0.Location = New System.Drawing.Point(92, 142)
+        Me._Label3_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label3_0.Name = "_Label3_0"
         Me._Label3_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label3_0.Size = New System.Drawing.Size(61, 13)
+        Me._Label3_0.Size = New System.Drawing.Size(80, 17)
         Me._Label3_0.TabIndex = 22
         Me._Label3_0.Text = "Last Name:"
         Me._Label3_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label5_0
         '
-        Me._Label5_0.AutoSize = true
+        Me._Label5_0.AutoSize = True
         Me._Label5_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label5_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label5_0.Location = New System.Drawing.Point(58, 162)
+        Me._Label5_0.Location = New System.Drawing.Point(77, 199)
+        Me._Label5_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label5_0.Name = "_Label5_0"
         Me._Label5_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label5_0.Size = New System.Drawing.Size(72, 13)
+        Me._Label5_0.Size = New System.Drawing.Size(93, 17)
         Me._Label5_0.TabIndex = 23
         Me._Label5_0.Text = "Min Distance:"
         Me._Label5_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblMinDist_0
         '
-        Me._lblMinDist_0.AutoSize = true
+        Me._lblMinDist_0.AutoSize = True
         Me._lblMinDist_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblMinDist_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblMinDist.SetIndex(Me._lblMinDist_0, CType(0,Short))
-        Me._lblMinDist_0.Location = New System.Drawing.Point(207, 162)
+        Me.lblMinDist.SetIndex(Me._lblMinDist_0, CType(0, Short))
+        Me._lblMinDist_0.Location = New System.Drawing.Point(276, 199)
+        Me._lblMinDist_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblMinDist_0.Name = "_lblMinDist_0"
         Me._lblMinDist_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblMinDist_0.Size = New System.Drawing.Size(63, 13)
+        Me._lblMinDist_0.Size = New System.Drawing.Size(82, 17)
         Me._lblMinDist_0.TabIndex = 24
         Me._lblMinDist_0.Text = "tu = XXX µs"
         '
         '_Label6_0
         '
-        Me._Label6_0.AutoSize = true
+        Me._Label6_0.AutoSize = True
         Me._Label6_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label6_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label6_0.Location = New System.Drawing.Point(62, 186)
+        Me._Label6_0.Location = New System.Drawing.Point(83, 229)
+        Me._Label6_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label6_0.Name = "_Label6_0"
         Me._Label6_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label6_0.Size = New System.Drawing.Size(68, 13)
+        Me._Label6_0.Size = New System.Drawing.Size(91, 17)
         Me._Label6_0.TabIndex = 25
         Me._Label6_0.Text = "Pulse period:"
         Me._Label6_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblPPer_0
         '
-        Me._lblPPer_0.AutoSize = true
+        Me._lblPPer_0.AutoSize = True
         Me._lblPPer_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblPPer_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPPer.SetIndex(Me._lblPPer_0, CType(0,Short))
-        Me._lblPPer_0.Location = New System.Drawing.Point(137, 186)
+        Me.lblPPer.SetIndex(Me._lblPPer_0, CType(0, Short))
+        Me._lblPPer_0.Location = New System.Drawing.Point(183, 229)
+        Me._lblPPer_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblPPer_0.Name = "_lblPPer_0"
         Me._lblPPer_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblPPer_0.Size = New System.Drawing.Size(28, 13)
+        Me._lblPPer_0.Size = New System.Drawing.Size(35, 17)
         Me._lblPPer_0.TabIndex = 26
         Me._lblPPer_0.Text = "XXX"
         '
@@ -2282,36 +2379,39 @@
         '
         Me._lblCycPer_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblCycPer_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblCycPer.SetIndex(Me._lblCycPer_0, CType(0,Short))
-        Me._lblCycPer_0.Location = New System.Drawing.Point(137, 206)
+        Me.lblCycPer.SetIndex(Me._lblCycPer_0, CType(0, Short))
+        Me._lblCycPer_0.Location = New System.Drawing.Point(183, 254)
+        Me._lblCycPer_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblCycPer_0.Name = "_lblCycPer_0"
         Me._lblCycPer_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblCycPer_0.Size = New System.Drawing.Size(133, 13)
+        Me._lblCycPer_0.Size = New System.Drawing.Size(177, 16)
         Me._lblCycPer_0.TabIndex = 29
         Me._lblCycPer_0.Text = "XXX"
         '
         '_Label9_0
         '
-        Me._Label9_0.AutoSize = true
+        Me._Label9_0.AutoSize = True
         Me._Label9_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label9_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label9_0.Location = New System.Drawing.Point(71, 206)
+        Me._Label9_0.Location = New System.Drawing.Point(95, 254)
+        Me._Label9_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label9_0.Name = "_Label9_0"
         Me._Label9_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label9_0.Size = New System.Drawing.Size(59, 13)
+        Me._Label9_0.Size = New System.Drawing.Size(78, 17)
         Me._Label9_0.TabIndex = 30
         Me._Label9_0.Text = "Time base:"
         Me._Label9_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label6_4
         '
-        Me._Label6_4.AutoSize = true
+        Me._Label6_4.AutoSize = True
         Me._Label6_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label6_4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label6_4.Location = New System.Drawing.Point(3, 230)
+        Me._Label6_4.Location = New System.Drawing.Point(4, 283)
+        Me._Label6_4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label6_4.Name = "_Label6_4"
         Me._Label6_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label6_4.Size = New System.Drawing.Size(103, 13)
+        Me._Label6_4.Size = New System.Drawing.Size(138, 17)
         Me._Label6_4.TabIndex = 33
         Me._Label6_4.Text = "Channel information:"
         '
@@ -2319,119 +2419,128 @@
         '
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(39, 37)
+        Me.Label4.Location = New System.Drawing.Point(52, 46)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label4.Size = New System.Drawing.Size(92, 13)
+        Me.Label4.Size = New System.Drawing.Size(123, 16)
         Me.Label4.TabIndex = 94
         Me.Label4.Text = "Source Directory:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_txtMinDist_0
         '
-        Me._txtMinDist_0.AcceptsReturn = true
+        Me._txtMinDist_0.AcceptsReturn = True
         Me._txtMinDist_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtMinDist_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtMinDist.SetIndex(Me._txtMinDist_0, CType(0,Short))
-        Me._txtMinDist_0.Location = New System.Drawing.Point(137, 158)
+        Me.txtMinDist.SetIndex(Me._txtMinDist_0, CType(0, Short))
+        Me._txtMinDist_0.Location = New System.Drawing.Point(183, 194)
+        Me._txtMinDist_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtMinDist_0.MaxLength = 0
         Me._txtMinDist_0.Name = "_txtMinDist_0"
-        Me._txtMinDist_0.ReadOnly = true
+        Me._txtMinDist_0.ReadOnly = True
         Me._txtMinDist_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtMinDist_0.Size = New System.Drawing.Size(64, 20)
+        Me._txtMinDist_0.Size = New System.Drawing.Size(84, 22)
         Me._txtMinDist_0.TabIndex = 6
         '
         '_txtFittFile_0
         '
-        Me._txtFittFile_0.AcceptsReturn = true
-        Me._txtFittFile_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtFittFile_0.AcceptsReturn = True
+        Me._txtFittFile_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtFittFile_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtFittFile_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtFittFile.SetIndex(Me._txtFittFile_0, CType(0,Short))
-        Me._txtFittFile_0.Location = New System.Drawing.Point(137, 59)
+        Me.txtFittFile.SetIndex(Me._txtFittFile_0, CType(0, Short))
+        Me._txtFittFile_0.Location = New System.Drawing.Point(183, 73)
+        Me._txtFittFile_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtFittFile_0.MaxLength = 0
         Me._txtFittFile_0.Name = "_txtFittFile_0"
-        Me._txtFittFile_0.ReadOnly = true
+        Me._txtFittFile_0.ReadOnly = True
         Me._txtFittFile_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtFittFile_0.Size = New System.Drawing.Size(242, 20)
+        Me._txtFittFile_0.Size = New System.Drawing.Size(321, 22)
         Me._txtFittFile_0.TabIndex = 10
         '
         '_txtFName_0
         '
-        Me._txtFName_0.AcceptsReturn = true
-        Me._txtFName_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtFName_0.AcceptsReturn = True
+        Me._txtFName_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtFName_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtFName_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtFName.SetIndex(Me._txtFName_0, CType(0,Short))
-        Me._txtFName_0.Location = New System.Drawing.Point(137, 88)
+        Me.txtFName.SetIndex(Me._txtFName_0, CType(0, Short))
+        Me._txtFName_0.Location = New System.Drawing.Point(183, 108)
+        Me._txtFName_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtFName_0.MaxLength = 0
         Me._txtFName_0.Name = "_txtFName_0"
-        Me._txtFName_0.ReadOnly = true
+        Me._txtFName_0.ReadOnly = True
         Me._txtFName_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtFName_0.Size = New System.Drawing.Size(242, 20)
+        Me._txtFName_0.Size = New System.Drawing.Size(321, 22)
         Me._txtFName_0.TabIndex = 11
         Me._txtFName_0.Text = "XXX"
         '
         '_txtLName_0
         '
-        Me._txtLName_0.AcceptsReturn = true
-        Me._txtLName_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtLName_0.AcceptsReturn = True
+        Me._txtLName_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtLName_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtLName_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtLName.SetIndex(Me._txtLName_0, CType(0,Short))
-        Me._txtLName_0.Location = New System.Drawing.Point(137, 112)
+        Me.txtLName.SetIndex(Me._txtLName_0, CType(0, Short))
+        Me._txtLName_0.Location = New System.Drawing.Point(183, 138)
+        Me._txtLName_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtLName_0.MaxLength = 0
         Me._txtLName_0.Name = "_txtLName_0"
-        Me._txtLName_0.ReadOnly = true
+        Me._txtLName_0.ReadOnly = True
         Me._txtLName_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtLName_0.Size = New System.Drawing.Size(242, 20)
+        Me._txtLName_0.Size = New System.Drawing.Size(321, 22)
         Me._txtLName_0.TabIndex = 12
         Me._txtLName_0.Text = "XXX"
         '
         '_cmdFittBrowse_0
         '
-        Me._cmdFittBrowse_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdFittBrowse_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdFittBrowse_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittBrowse_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdFittBrowse.SetIndex(Me._cmdFittBrowse_0, CType(0,Short))
-        Me._cmdFittBrowse_0.Location = New System.Drawing.Point(385, 58)
+        Me.cmdFittBrowse.SetIndex(Me._cmdFittBrowse_0, CType(0, Short))
+        Me._cmdFittBrowse_0.Location = New System.Drawing.Point(513, 71)
+        Me._cmdFittBrowse_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdFittBrowse_0.Name = "_cmdFittBrowse_0"
         Me._cmdFittBrowse_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdFittBrowse_0.Size = New System.Drawing.Size(25, 21)
+        Me._cmdFittBrowse_0.Size = New System.Drawing.Size(33, 26)
         Me._cmdFittBrowse_0.TabIndex = 27
         Me._cmdFittBrowse_0.Text = "..."
-        Me._cmdFittBrowse_0.UseVisualStyleBackColor = false
+        Me._cmdFittBrowse_0.UseVisualStyleBackColor = False
         '
         '_lstChInfo_0
         '
-        Me._lstChInfo_0.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lstChInfo_0.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lstChInfo_0.BackColor = System.Drawing.SystemColors.Window
         Me._lstChInfo_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lstChInfo_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lstChInfo.SetIndex(Me._lstChInfo_0, CType(0,Short))
-        Me._lstChInfo_0.Location = New System.Drawing.Point(114, 230)
+        Me.lstChInfo.SetIndex(Me._lstChInfo_0, CType(0, Short))
+        Me._lstChInfo_0.ItemHeight = 16
+        Me._lstChInfo_0.Location = New System.Drawing.Point(152, 283)
+        Me._lstChInfo_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._lstChInfo_0.Name = "_lstChInfo_0"
         Me._lstChInfo_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lstChInfo_0.Size = New System.Drawing.Size(377, 186)
+        Me._lstChInfo_0.Size = New System.Drawing.Size(501, 228)
         Me._lstChInfo_0.TabIndex = 34
         '
         'cmdSourceDir
         '
-        Me.cmdSourceDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmdSourceDir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdSourceDir.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdSourceDir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdSourceDir.Location = New System.Drawing.Point(465, 32)
+        Me.cmdSourceDir.Location = New System.Drawing.Point(620, 39)
+        Me.cmdSourceDir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdSourceDir.Name = "cmdSourceDir"
         Me.cmdSourceDir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdSourceDir.Size = New System.Drawing.Size(26, 21)
+        Me.cmdSourceDir.Size = New System.Drawing.Size(35, 26)
         Me.cmdSourceDir.TabIndex = 92
         Me.cmdSourceDir.Text = "..."
-        Me.cmdSourceDir.UseVisualStyleBackColor = false
+        Me.cmdSourceDir.UseVisualStyleBackColor = False
         '
         'tabFittingRight
         '
@@ -2460,35 +2569,38 @@
         Me.tabFittingRight.Controls.Add(Me._cmdFittReload_1)
         Me.tabFittingRight.Controls.Add(Me._cmdFittResetPhDur_1)
         Me.tabFittingRight.Location = New System.Drawing.Point(4, 40)
+        Me.tabFittingRight.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabFittingRight.Name = "tabFittingRight"
-        Me.tabFittingRight.Size = New System.Drawing.Size(514, 430)
+        Me.tabFittingRight.Size = New System.Drawing.Size(688, 539)
         Me.tabFittingRight.TabIndex = 2
         Me.tabFittingRight.Text = "Fitting Right"
-        Me.tabFittingRight.UseVisualStyleBackColor = true
+        Me.tabFittingRight.UseVisualStyleBackColor = True
         '
         'Label5
         '
-        Me.Label5.AutoSize = true
+        Me.Label5.AutoSize = True
         Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label5.Location = New System.Drawing.Point(60, 139)
+        Me.Label5.Location = New System.Drawing.Point(80, 171)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label5.Size = New System.Drawing.Size(71, 13)
+        Me.Label5.Size = New System.Drawing.Size(93, 17)
         Me.Label5.TabIndex = 239
         Me.Label5.Text = "Implant Type:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblImpType_1
         '
-        Me._lblImpType_1.AutoSize = true
+        Me._lblImpType_1.AutoSize = True
         Me._lblImpType_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblImpType_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblImpType.SetIndex(Me._lblImpType_1, CType(1,Short))
-        Me._lblImpType_1.Location = New System.Drawing.Point(137, 139)
+        Me.lblImpType.SetIndex(Me._lblImpType_1, CType(1, Short))
+        Me._lblImpType_1.Location = New System.Drawing.Point(183, 171)
+        Me._lblImpType_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblImpType_1.Name = "_lblImpType_1"
         Me._lblImpType_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblImpType_1.Size = New System.Drawing.Size(28, 13)
+        Me._lblImpType_1.Size = New System.Drawing.Size(35, 17)
         Me._lblImpType_1.TabIndex = 240
         Me._lblImpType_1.Text = "XXX"
         '
@@ -2496,10 +2608,11 @@
         '
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(39, 37)
+        Me.Label2.Location = New System.Drawing.Point(52, 46)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label2.Size = New System.Drawing.Size(92, 13)
+        Me.Label2.Size = New System.Drawing.Size(123, 16)
         Me.Label2.TabIndex = 237
         Me.Label2.Text = "Source Directory:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -2508,89 +2621,96 @@
         '
         Me._Label14_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label14_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label14_1.Location = New System.Drawing.Point(66, 63)
+        Me._Label14_1.Location = New System.Drawing.Point(88, 78)
+        Me._Label14_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label14_1.Name = "_Label14_1"
         Me._Label14_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label14_1.Size = New System.Drawing.Size(64, 16)
+        Me._Label14_1.Size = New System.Drawing.Size(85, 20)
         Me._Label14_1.TabIndex = 13
         Me._Label14_1.Text = "Fitting file:"
         Me._Label14_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label2_1
         '
-        Me._Label2_1.AutoSize = true
+        Me._Label2_1.AutoSize = True
         Me._Label2_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label2_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label2_1.Location = New System.Drawing.Point(70, 91)
+        Me._Label2_1.Location = New System.Drawing.Point(93, 112)
+        Me._Label2_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label2_1.Name = "_Label2_1"
         Me._Label2_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label2_1.Size = New System.Drawing.Size(60, 13)
+        Me._Label2_1.Size = New System.Drawing.Size(80, 17)
         Me._Label2_1.TabIndex = 14
         Me._Label2_1.Text = "First Name:"
         Me._Label2_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label3_1
         '
-        Me._Label3_1.AutoSize = true
+        Me._Label3_1.AutoSize = True
         Me._Label3_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label3_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label3_1.Location = New System.Drawing.Point(69, 115)
+        Me._Label3_1.Location = New System.Drawing.Point(92, 142)
+        Me._Label3_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label3_1.Name = "_Label3_1"
         Me._Label3_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label3_1.Size = New System.Drawing.Size(61, 13)
+        Me._Label3_1.Size = New System.Drawing.Size(80, 17)
         Me._Label3_1.TabIndex = 15
         Me._Label3_1.Text = "Last Name:"
         Me._Label3_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_Label5_1
         '
-        Me._Label5_1.AutoSize = true
+        Me._Label5_1.AutoSize = True
         Me._Label5_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label5_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label5_1.Location = New System.Drawing.Point(58, 162)
+        Me._Label5_1.Location = New System.Drawing.Point(77, 199)
+        Me._Label5_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label5_1.Name = "_Label5_1"
         Me._Label5_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label5_1.Size = New System.Drawing.Size(72, 13)
+        Me._Label5_1.Size = New System.Drawing.Size(93, 17)
         Me._Label5_1.TabIndex = 16
         Me._Label5_1.Text = "Min Distance:"
         Me._Label5_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblMinDist_1
         '
-        Me._lblMinDist_1.AutoSize = true
+        Me._lblMinDist_1.AutoSize = True
         Me._lblMinDist_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblMinDist_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblMinDist.SetIndex(Me._lblMinDist_1, CType(1,Short))
-        Me._lblMinDist_1.Location = New System.Drawing.Point(207, 162)
+        Me.lblMinDist.SetIndex(Me._lblMinDist_1, CType(1, Short))
+        Me._lblMinDist_1.Location = New System.Drawing.Point(276, 199)
+        Me._lblMinDist_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblMinDist_1.Name = "_lblMinDist_1"
         Me._lblMinDist_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblMinDist_1.Size = New System.Drawing.Size(63, 13)
+        Me._lblMinDist_1.Size = New System.Drawing.Size(82, 17)
         Me._lblMinDist_1.TabIndex = 17
         Me._lblMinDist_1.Text = "tu = XXX µs"
         '
         '_Label6_1
         '
-        Me._Label6_1.AutoSize = true
+        Me._Label6_1.AutoSize = True
         Me._Label6_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label6_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label6_1.Location = New System.Drawing.Point(62, 186)
+        Me._Label6_1.Location = New System.Drawing.Point(83, 229)
+        Me._Label6_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label6_1.Name = "_Label6_1"
         Me._Label6_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label6_1.Size = New System.Drawing.Size(68, 13)
+        Me._Label6_1.Size = New System.Drawing.Size(91, 17)
         Me._Label6_1.TabIndex = 18
         Me._Label6_1.Text = "Pulse period:"
         Me._Label6_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblPPer_1
         '
-        Me._lblPPer_1.AutoSize = true
+        Me._lblPPer_1.AutoSize = True
         Me._lblPPer_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblPPer_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPPer.SetIndex(Me._lblPPer_1, CType(1,Short))
-        Me._lblPPer_1.Location = New System.Drawing.Point(137, 186)
+        Me.lblPPer.SetIndex(Me._lblPPer_1, CType(1, Short))
+        Me._lblPPer_1.Location = New System.Drawing.Point(183, 229)
+        Me._lblPPer_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblPPer_1.Name = "_lblPPer_1"
         Me._lblPPer_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblPPer_1.Size = New System.Drawing.Size(28, 13)
+        Me._lblPPer_1.Size = New System.Drawing.Size(35, 17)
         Me._lblPPer_1.TabIndex = 19
         Me._lblPPer_1.Text = "XXX"
         '
@@ -2598,23 +2718,25 @@
         '
         Me._lblCycPer_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblCycPer_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblCycPer.SetIndex(Me._lblCycPer_1, CType(1,Short))
-        Me._lblCycPer_1.Location = New System.Drawing.Point(137, 206)
+        Me.lblCycPer.SetIndex(Me._lblCycPer_1, CType(1, Short))
+        Me._lblCycPer_1.Location = New System.Drawing.Point(183, 254)
+        Me._lblCycPer_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblCycPer_1.Name = "_lblCycPer_1"
         Me._lblCycPer_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblCycPer_1.Size = New System.Drawing.Size(109, 13)
+        Me._lblCycPer_1.Size = New System.Drawing.Size(145, 16)
         Me._lblCycPer_1.TabIndex = 31
         Me._lblCycPer_1.Text = "XXX"
         '
         '_Label9_1
         '
-        Me._Label9_1.AutoSize = true
+        Me._Label9_1.AutoSize = True
         Me._Label9_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label9_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label9_1.Location = New System.Drawing.Point(71, 206)
+        Me._Label9_1.Location = New System.Drawing.Point(95, 254)
+        Me._Label9_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label9_1.Name = "_Label9_1"
         Me._Label9_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label9_1.Size = New System.Drawing.Size(59, 13)
+        Me._Label9_1.Size = New System.Drawing.Size(78, 17)
         Me._Label9_1.TabIndex = 32
         Me._Label9_1.Text = "Time base:"
         Me._Label9_1.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -2623,103 +2745,111 @@
         '
         Me._Label6_5.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label6_5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label6_5.Location = New System.Drawing.Point(3, 230)
+        Me._Label6_5.Location = New System.Drawing.Point(4, 283)
+        Me._Label6_5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label6_5.Name = "_Label6_5"
         Me._Label6_5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label6_5.Size = New System.Drawing.Size(110, 13)
+        Me._Label6_5.Size = New System.Drawing.Size(147, 16)
         Me._Label6_5.TabIndex = 36
         Me._Label6_5.Text = "Channel information:"
         '
         '_txtMinDist_1
         '
-        Me._txtMinDist_1.AcceptsReturn = true
+        Me._txtMinDist_1.AcceptsReturn = True
         Me._txtMinDist_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtMinDist_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtMinDist.SetIndex(Me._txtMinDist_1, CType(1,Short))
-        Me._txtMinDist_1.Location = New System.Drawing.Point(137, 158)
+        Me.txtMinDist.SetIndex(Me._txtMinDist_1, CType(1, Short))
+        Me._txtMinDist_1.Location = New System.Drawing.Point(183, 194)
+        Me._txtMinDist_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtMinDist_1.MaxLength = 0
         Me._txtMinDist_1.Name = "_txtMinDist_1"
-        Me._txtMinDist_1.ReadOnly = true
+        Me._txtMinDist_1.ReadOnly = True
         Me._txtMinDist_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtMinDist_1.Size = New System.Drawing.Size(64, 20)
+        Me._txtMinDist_1.Size = New System.Drawing.Size(84, 22)
         Me._txtMinDist_1.TabIndex = 5
         '
         '_txtFittFile_1
         '
-        Me._txtFittFile_1.AcceptsReturn = true
-        Me._txtFittFile_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtFittFile_1.AcceptsReturn = True
+        Me._txtFittFile_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtFittFile_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtFittFile_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtFittFile.SetIndex(Me._txtFittFile_1, CType(1,Short))
-        Me._txtFittFile_1.Location = New System.Drawing.Point(137, 59)
+        Me.txtFittFile.SetIndex(Me._txtFittFile_1, CType(1, Short))
+        Me._txtFittFile_1.Location = New System.Drawing.Point(183, 73)
+        Me._txtFittFile_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtFittFile_1.MaxLength = 0
         Me._txtFittFile_1.Name = "_txtFittFile_1"
-        Me._txtFittFile_1.ReadOnly = true
+        Me._txtFittFile_1.ReadOnly = True
         Me._txtFittFile_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtFittFile_1.Size = New System.Drawing.Size(242, 20)
+        Me._txtFittFile_1.Size = New System.Drawing.Size(321, 22)
         Me._txtFittFile_1.TabIndex = 7
         '
         '_txtFName_1
         '
-        Me._txtFName_1.AcceptsReturn = true
-        Me._txtFName_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtFName_1.AcceptsReturn = True
+        Me._txtFName_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtFName_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtFName_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtFName.SetIndex(Me._txtFName_1, CType(1,Short))
-        Me._txtFName_1.Location = New System.Drawing.Point(137, 88)
+        Me.txtFName.SetIndex(Me._txtFName_1, CType(1, Short))
+        Me._txtFName_1.Location = New System.Drawing.Point(183, 108)
+        Me._txtFName_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtFName_1.MaxLength = 0
         Me._txtFName_1.Name = "_txtFName_1"
-        Me._txtFName_1.ReadOnly = true
+        Me._txtFName_1.ReadOnly = True
         Me._txtFName_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtFName_1.Size = New System.Drawing.Size(242, 20)
+        Me._txtFName_1.Size = New System.Drawing.Size(321, 22)
         Me._txtFName_1.TabIndex = 8
         Me._txtFName_1.Text = "XXX"
         '
         '_txtLName_1
         '
-        Me._txtLName_1.AcceptsReturn = true
-        Me._txtLName_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtLName_1.AcceptsReturn = True
+        Me._txtLName_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtLName_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtLName_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtLName.SetIndex(Me._txtLName_1, CType(1,Short))
-        Me._txtLName_1.Location = New System.Drawing.Point(137, 112)
+        Me.txtLName.SetIndex(Me._txtLName_1, CType(1, Short))
+        Me._txtLName_1.Location = New System.Drawing.Point(183, 138)
+        Me._txtLName_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtLName_1.MaxLength = 0
         Me._txtLName_1.Name = "_txtLName_1"
-        Me._txtLName_1.ReadOnly = true
+        Me._txtLName_1.ReadOnly = True
         Me._txtLName_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtLName_1.Size = New System.Drawing.Size(242, 20)
+        Me._txtLName_1.Size = New System.Drawing.Size(321, 22)
         Me._txtLName_1.TabIndex = 9
         Me._txtLName_1.Text = "XXX"
         '
         '_cmdFittBrowse_1
         '
-        Me._cmdFittBrowse_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdFittBrowse_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdFittBrowse_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdFittBrowse_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdFittBrowse.SetIndex(Me._cmdFittBrowse_1, CType(1,Short))
-        Me._cmdFittBrowse_1.Location = New System.Drawing.Point(385, 58)
+        Me.cmdFittBrowse.SetIndex(Me._cmdFittBrowse_1, CType(1, Short))
+        Me._cmdFittBrowse_1.Location = New System.Drawing.Point(513, 71)
+        Me._cmdFittBrowse_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdFittBrowse_1.Name = "_cmdFittBrowse_1"
         Me._cmdFittBrowse_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdFittBrowse_1.Size = New System.Drawing.Size(25, 21)
+        Me._cmdFittBrowse_1.Size = New System.Drawing.Size(33, 26)
         Me._cmdFittBrowse_1.TabIndex = 28
         Me._cmdFittBrowse_1.Text = "..."
-        Me._cmdFittBrowse_1.UseVisualStyleBackColor = false
+        Me._cmdFittBrowse_1.UseVisualStyleBackColor = False
         '
         '_lstChInfo_1
         '
-        Me._lstChInfo_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lstChInfo_1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lstChInfo_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lstChInfo_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lstChInfo.SetIndex(Me._lstChInfo_1, CType(1,Short))
-        Me._lstChInfo_1.Location = New System.Drawing.Point(114, 230)
+        Me.lstChInfo.SetIndex(Me._lstChInfo_1, CType(1, Short))
+        Me._lstChInfo_1.ItemHeight = 16
+        Me._lstChInfo_1.Location = New System.Drawing.Point(152, 283)
+        Me._lstChInfo_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._lstChInfo_1.Name = "_lstChInfo_1"
         Me._lstChInfo_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lstChInfo_1.Size = New System.Drawing.Size(377, 186)
+        Me._lstChInfo_1.Size = New System.Drawing.Size(501, 228)
         Me._lstChInfo_1.TabIndex = 35
         '
         'tabDescription
@@ -2729,21 +2859,23 @@
         Me.tabDescription.Controls.Add(Me.txtDescription)
         Me.tabDescription.Controls.Add(Me.txtID)
         Me.tabDescription.Location = New System.Drawing.Point(4, 40)
+        Me.tabDescription.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabDescription.Name = "tabDescription"
-        Me.tabDescription.Size = New System.Drawing.Size(514, 430)
+        Me.tabDescription.Size = New System.Drawing.Size(688, 539)
         Me.tabDescription.TabIndex = 3
         Me.tabDescription.Text = "Description"
-        Me.tabDescription.UseVisualStyleBackColor = true
+        Me.tabDescription.UseVisualStyleBackColor = True
         '
         'lblExpDescription
         '
-        Me.lblExpDescription.AutoSize = true
+        Me.lblExpDescription.AutoSize = True
         Me.lblExpDescription.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblExpDescription.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblExpDescription.Location = New System.Drawing.Point(49, 99)
+        Me.lblExpDescription.Location = New System.Drawing.Point(65, 122)
+        Me.lblExpDescription.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblExpDescription.Name = "lblExpDescription"
         Me.lblExpDescription.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblExpDescription.Size = New System.Drawing.Size(129, 13)
+        Me.lblExpDescription.Size = New System.Drawing.Size(172, 17)
         Me.lblExpDescription.TabIndex = 37
         Me.lblExpDescription.Text = "Description of experiment:"
         '
@@ -2751,30 +2883,32 @@
         '
         Me.lblExpID.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblExpID.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblExpID.Location = New System.Drawing.Point(61, 51)
+        Me.lblExpID.Location = New System.Drawing.Point(81, 63)
+        Me.lblExpID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblExpID.Name = "lblExpID"
         Me.lblExpID.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblExpID.Size = New System.Drawing.Size(103, 13)
+        Me.lblExpID.Size = New System.Drawing.Size(137, 16)
         Me.lblExpID.TabIndex = 157
         Me.lblExpID.Text = "Experiment ID:"
         Me.lblExpID.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'txtDescription
         '
-        Me.txtDescription.AcceptsReturn = true
-        Me.txtDescription.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtDescription.AcceptsReturn = True
+        Me.txtDescription.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDescription.BackColor = System.Drawing.SystemColors.Window
         Me.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtDescription.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtDescription.Location = New System.Drawing.Point(14, 127)
+        Me.txtDescription.Location = New System.Drawing.Point(19, 156)
+        Me.txtDescription.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtDescription.MaxLength = 0
-        Me.txtDescription.Multiline = true
+        Me.txtDescription.Multiline = True
         Me.txtDescription.Name = "txtDescription"
         Me.txtDescription.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtDescription.Size = New System.Drawing.Size(475, 251)
+        Me.txtDescription.Size = New System.Drawing.Size(632, 308)
         Me.txtDescription.TabIndex = 39
         '
         'tabExperimentScreen
@@ -2785,20 +2919,22 @@
         Me.tabExperimentScreen.Controls.Add(Me.Frame3)
         Me.tabExperimentScreen.Controls.Add(Me.cmbHUI)
         Me.tabExperimentScreen.Location = New System.Drawing.Point(4, 40)
+        Me.tabExperimentScreen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabExperimentScreen.Name = "tabExperimentScreen"
-        Me.tabExperimentScreen.Size = New System.Drawing.Size(514, 430)
+        Me.tabExperimentScreen.Size = New System.Drawing.Size(688, 539)
         Me.tabExperimentScreen.TabIndex = 4
         Me.tabExperimentScreen.Text = "Experiment Screen"
-        Me.tabExperimentScreen.UseVisualStyleBackColor = true
+        Me.tabExperimentScreen.UseVisualStyleBackColor = True
         '
         'lblKeyCode
         '
         Me.lblKeyCode.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblKeyCode.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblKeyCode.Location = New System.Drawing.Point(23, 374)
+        Me.lblKeyCode.Location = New System.Drawing.Point(31, 460)
+        Me.lblKeyCode.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblKeyCode.Name = "lblKeyCode"
         Me.lblKeyCode.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblKeyCode.Size = New System.Drawing.Size(158, 13)
+        Me.lblKeyCode.Size = New System.Drawing.Size(211, 16)
         Me.lblKeyCode.TabIndex = 293
         Me.lblKeyCode.Text = "Press any key to see the code"
         Me.lblKeyCode.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -2813,63 +2949,69 @@
         Me.Frame1.Controls.Add(Me.cmdExpDisableResponse)
         Me.Frame1.Controls.Add(Me.cmdExpEnableResponse)
         Me.Frame1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Frame1.Location = New System.Drawing.Point(8, 210)
+        Me.Frame1.Location = New System.Drawing.Point(11, 258)
+        Me.Frame1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Frame1.Name = "Frame1"
+        Me.Frame1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Frame1.Size = New System.Drawing.Size(185, 134)
+        Me.Frame1.Size = New System.Drawing.Size(247, 165)
         Me.Frame1.TabIndex = 44
-        Me.Frame1.TabStop = false
+        Me.Frame1.TabStop = False
         Me.Frame1.Text = "Response:"
         '
         'cmdExpShowResponseCodes
         '
-        Me.cmdExpShowResponseCodes.Location = New System.Drawing.Point(5, 102)
+        Me.cmdExpShowResponseCodes.Location = New System.Drawing.Point(7, 126)
+        Me.cmdExpShowResponseCodes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpShowResponseCodes.Name = "cmdExpShowResponseCodes"
-        Me.cmdExpShowResponseCodes.Size = New System.Drawing.Size(174, 26)
+        Me.cmdExpShowResponseCodes.Size = New System.Drawing.Size(232, 32)
         Me.cmdExpShowResponseCodes.TabIndex = 163
         Me.cmdExpShowResponseCodes.Text = "Show Response Codes"
-        Me.cmdExpShowResponseCodes.UseVisualStyleBackColor = true
+        Me.cmdExpShowResponseCodes.UseVisualStyleBackColor = True
         '
         'cmdExpGetValue
         '
         Me.cmdExpGetValue.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpGetValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpGetValue.Location = New System.Drawing.Point(6, 77)
+        Me.cmdExpGetValue.Location = New System.Drawing.Point(8, 95)
+        Me.cmdExpGetValue.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpGetValue.Name = "cmdExpGetValue"
         Me.cmdExpGetValue.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpGetValue.Size = New System.Drawing.Size(85, 21)
+        Me.cmdExpGetValue.Size = New System.Drawing.Size(113, 26)
         Me.cmdExpGetValue.TabIndex = 162
         Me.cmdExpGetValue.Text = "Get Value"
-        Me.cmdExpGetValue.UseVisualStyleBackColor = false
+        Me.cmdExpGetValue.UseVisualStyleBackColor = False
         '
         'txtExpValue
         '
-        Me.txtExpValue.AcceptsReturn = true
+        Me.txtExpValue.AcceptsReturn = True
         Me.txtExpValue.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtExpValue.Enabled = false
+        Me.txtExpValue.Enabled = False
         Me.txtExpValue.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtExpValue.Location = New System.Drawing.Point(107, 77)
+        Me.txtExpValue.Location = New System.Drawing.Point(143, 95)
+        Me.txtExpValue.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtExpValue.MaxLength = 0
         Me.txtExpValue.Name = "txtExpValue"
-        Me.txtExpValue.ReadOnly = true
+        Me.txtExpValue.ReadOnly = True
         Me.txtExpValue.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtExpValue.Size = New System.Drawing.Size(49, 20)
+        Me.txtExpValue.Size = New System.Drawing.Size(64, 22)
         Me.txtExpValue.TabIndex = 161
         Me.txtExpValue.Text = "XXX"
         Me.txtExpValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtExpResponse
         '
-        Me.txtExpResponse.AcceptsReturn = true
+        Me.txtExpResponse.AcceptsReturn = True
         Me.txtExpResponse.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtExpResponse.Enabled = false
+        Me.txtExpResponse.Enabled = False
         Me.txtExpResponse.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtExpResponse.Location = New System.Drawing.Point(107, 50)
+        Me.txtExpResponse.Location = New System.Drawing.Point(143, 62)
+        Me.txtExpResponse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtExpResponse.MaxLength = 0
         Me.txtExpResponse.Name = "txtExpResponse"
-        Me.txtExpResponse.ReadOnly = true
+        Me.txtExpResponse.ReadOnly = True
         Me.txtExpResponse.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtExpResponse.Size = New System.Drawing.Size(49, 20)
+        Me.txtExpResponse.Size = New System.Drawing.Size(64, 22)
         Me.txtExpResponse.TabIndex = 48
         Me.txtExpResponse.Text = "XXX"
         Me.txtExpResponse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -2878,37 +3020,40 @@
         '
         Me.cmdExpGetResponse.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpGetResponse.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpGetResponse.Location = New System.Drawing.Point(6, 50)
+        Me.cmdExpGetResponse.Location = New System.Drawing.Point(8, 62)
+        Me.cmdExpGetResponse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpGetResponse.Name = "cmdExpGetResponse"
         Me.cmdExpGetResponse.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpGetResponse.Size = New System.Drawing.Size(85, 21)
+        Me.cmdExpGetResponse.Size = New System.Drawing.Size(113, 26)
         Me.cmdExpGetResponse.TabIndex = 47
         Me.cmdExpGetResponse.Text = "Get Response"
-        Me.cmdExpGetResponse.UseVisualStyleBackColor = false
+        Me.cmdExpGetResponse.UseVisualStyleBackColor = False
         '
         'cmdExpDisableResponse
         '
         Me.cmdExpDisableResponse.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpDisableResponse.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpDisableResponse.Location = New System.Drawing.Point(96, 23)
+        Me.cmdExpDisableResponse.Location = New System.Drawing.Point(128, 28)
+        Me.cmdExpDisableResponse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpDisableResponse.Name = "cmdExpDisableResponse"
         Me.cmdExpDisableResponse.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpDisableResponse.Size = New System.Drawing.Size(83, 21)
+        Me.cmdExpDisableResponse.Size = New System.Drawing.Size(111, 26)
         Me.cmdExpDisableResponse.TabIndex = 46
         Me.cmdExpDisableResponse.Text = "Disable"
-        Me.cmdExpDisableResponse.UseVisualStyleBackColor = false
+        Me.cmdExpDisableResponse.UseVisualStyleBackColor = False
         '
         'cmdExpEnableResponse
         '
         Me.cmdExpEnableResponse.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpEnableResponse.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpEnableResponse.Location = New System.Drawing.Point(6, 23)
+        Me.cmdExpEnableResponse.Location = New System.Drawing.Point(8, 28)
+        Me.cmdExpEnableResponse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpEnableResponse.Name = "cmdExpEnableResponse"
         Me.cmdExpEnableResponse.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpEnableResponse.Size = New System.Drawing.Size(85, 21)
+        Me.cmdExpEnableResponse.Size = New System.Drawing.Size(113, 26)
         Me.cmdExpEnableResponse.TabIndex = 45
         Me.cmdExpEnableResponse.Text = "Enable"
-        Me.cmdExpEnableResponse.UseVisualStyleBackColor = false
+        Me.cmdExpEnableResponse.UseVisualStyleBackColor = False
         '
         'Frame2
         '
@@ -2926,107 +3071,116 @@
         Me.Frame2.Controls.Add(Me._lblExp_2)
         Me.Frame2.Controls.Add(Me._lblExp_3)
         Me.Frame2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Frame2.Location = New System.Drawing.Point(8, 13)
+        Me.Frame2.Location = New System.Drawing.Point(11, 16)
+        Me.Frame2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Frame2.Name = "Frame2"
+        Me.Frame2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Frame2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Frame2.Size = New System.Drawing.Size(185, 191)
+        Me.Frame2.Size = New System.Drawing.Size(247, 235)
         Me.Frame2.TabIndex = 49
-        Me.Frame2.TabStop = false
+        Me.Frame2.TabStop = False
         Me.Frame2.Text = "Screen arrangement:"
         '
         'cmdExpSetSmall
         '
         Me.cmdExpSetSmall.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpSetSmall.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpSetSmall.Location = New System.Drawing.Point(109, 121)
+        Me.cmdExpSetSmall.Location = New System.Drawing.Point(145, 149)
+        Me.cmdExpSetSmall.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpSetSmall.Name = "cmdExpSetSmall"
         Me.cmdExpSetSmall.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpSetSmall.Size = New System.Drawing.Size(67, 55)
+        Me.cmdExpSetSmall.Size = New System.Drawing.Size(89, 68)
         Me.cmdExpSetSmall.TabIndex = 58
         Me.cmdExpSetSmall.Text = "Small Debug Screen"
-        Me.cmdExpSetSmall.UseVisualStyleBackColor = false
+        Me.cmdExpSetSmall.UseVisualStyleBackColor = False
         '
         'cmdExpSetDefault
         '
         Me.cmdExpSetDefault.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpSetDefault.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpSetDefault.Location = New System.Drawing.Point(33, 121)
+        Me.cmdExpSetDefault.Location = New System.Drawing.Point(44, 149)
+        Me.cmdExpSetDefault.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpSetDefault.Name = "cmdExpSetDefault"
         Me.cmdExpSetDefault.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpSetDefault.Size = New System.Drawing.Size(67, 55)
+        Me.cmdExpSetDefault.Size = New System.Drawing.Size(89, 68)
         Me.cmdExpSetDefault.TabIndex = 57
         Me.cmdExpSetDefault.Text = "Primary Full Screen"
-        Me.cmdExpSetDefault.UseVisualStyleBackColor = false
+        Me.cmdExpSetDefault.UseVisualStyleBackColor = False
         '
         'cmdExpResize
         '
         Me.cmdExpResize.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpResize.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpResize.Location = New System.Drawing.Point(109, 30)
+        Me.cmdExpResize.Location = New System.Drawing.Point(145, 37)
+        Me.cmdExpResize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpResize.Name = "cmdExpResize"
         Me.cmdExpResize.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpResize.Size = New System.Drawing.Size(67, 21)
+        Me.cmdExpResize.Size = New System.Drawing.Size(89, 26)
         Me.cmdExpResize.TabIndex = 52
         Me.cmdExpResize.Text = "Arrange"
-        Me.cmdExpResize.UseVisualStyleBackColor = false
+        Me.cmdExpResize.UseVisualStyleBackColor = False
         '
         'txtExpLeft
         '
-        Me.txtExpLeft.AcceptsReturn = true
+        Me.txtExpLeft.AcceptsReturn = True
         Me.txtExpLeft.AutoCompleteCustomSource.AddRange(New String() {"0", "800", "1280", "1922"})
         Me.txtExpLeft.BackColor = System.Drawing.SystemColors.Window
         Me.txtExpLeft.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtExpLeft.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtExpLeft.Location = New System.Drawing.Point(55, 20)
+        Me.txtExpLeft.Location = New System.Drawing.Point(73, 25)
+        Me.txtExpLeft.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtExpLeft.MaxLength = 10
         Me.txtExpLeft.Name = "txtExpLeft"
         Me.txtExpLeft.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtExpLeft.Size = New System.Drawing.Size(44, 20)
+        Me.txtExpLeft.Size = New System.Drawing.Size(57, 22)
         Me.txtExpLeft.TabIndex = 40
         Me.txtExpLeft.Text = "XXX"
         Me.txtExpLeft.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtExpWidth
         '
-        Me.txtExpWidth.AcceptsReturn = true
+        Me.txtExpWidth.AcceptsReturn = True
         Me.txtExpWidth.BackColor = System.Drawing.SystemColors.Window
         Me.txtExpWidth.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtExpWidth.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtExpWidth.Location = New System.Drawing.Point(56, 44)
+        Me.txtExpWidth.Location = New System.Drawing.Point(75, 54)
+        Me.txtExpWidth.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtExpWidth.MaxLength = 10
         Me.txtExpWidth.Name = "txtExpWidth"
         Me.txtExpWidth.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtExpWidth.Size = New System.Drawing.Size(44, 20)
+        Me.txtExpWidth.Size = New System.Drawing.Size(57, 22)
         Me.txtExpWidth.TabIndex = 41
         Me.txtExpWidth.Text = "XXX"
         Me.txtExpWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtExpTop
         '
-        Me.txtExpTop.AcceptsReturn = true
+        Me.txtExpTop.AcceptsReturn = True
         Me.txtExpTop.BackColor = System.Drawing.SystemColors.Window
         Me.txtExpTop.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtExpTop.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtExpTop.Location = New System.Drawing.Point(56, 68)
+        Me.txtExpTop.Location = New System.Drawing.Point(75, 84)
+        Me.txtExpTop.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtExpTop.MaxLength = 10
         Me.txtExpTop.Name = "txtExpTop"
         Me.txtExpTop.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtExpTop.Size = New System.Drawing.Size(44, 20)
+        Me.txtExpTop.Size = New System.Drawing.Size(57, 22)
         Me.txtExpTop.TabIndex = 42
         Me.txtExpTop.Text = "XXX"
         Me.txtExpTop.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtExpHeight
         '
-        Me.txtExpHeight.AcceptsReturn = true
+        Me.txtExpHeight.AcceptsReturn = True
         Me.txtExpHeight.BackColor = System.Drawing.SystemColors.Window
         Me.txtExpHeight.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtExpHeight.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtExpHeight.Location = New System.Drawing.Point(56, 92)
+        Me.txtExpHeight.Location = New System.Drawing.Point(75, 113)
+        Me.txtExpHeight.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtExpHeight.MaxLength = 10
         Me.txtExpHeight.Name = "txtExpHeight"
         Me.txtExpHeight.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtExpHeight.Size = New System.Drawing.Size(44, 20)
+        Me.txtExpHeight.Size = New System.Drawing.Size(57, 22)
         Me.txtExpHeight.TabIndex = 43
         Me.txtExpHeight.Text = "XXX"
         Me.txtExpHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -3035,85 +3189,91 @@
         '
         Me.cmdExpGetSize.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpGetSize.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpGetSize.Location = New System.Drawing.Point(109, 55)
+        Me.cmdExpGetSize.Location = New System.Drawing.Point(145, 68)
+        Me.cmdExpGetSize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpGetSize.Name = "cmdExpGetSize"
         Me.cmdExpGetSize.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpGetSize.Size = New System.Drawing.Size(67, 21)
+        Me.cmdExpGetSize.Size = New System.Drawing.Size(89, 26)
         Me.cmdExpGetSize.TabIndex = 51
         Me.cmdExpGetSize.Text = "Get"
-        Me.cmdExpGetSize.UseVisualStyleBackColor = false
+        Me.cmdExpGetSize.UseVisualStyleBackColor = False
         '
         'cmdExpSetSize
         '
         Me.cmdExpSetSize.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpSetSize.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpSetSize.Location = New System.Drawing.Point(109, 80)
+        Me.cmdExpSetSize.Location = New System.Drawing.Point(145, 98)
+        Me.cmdExpSetSize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpSetSize.Name = "cmdExpSetSize"
         Me.cmdExpSetSize.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpSetSize.Size = New System.Drawing.Size(67, 21)
+        Me.cmdExpSetSize.Size = New System.Drawing.Size(89, 26)
         Me.cmdExpSetSize.TabIndex = 50
         Me.cmdExpSetSize.Text = "Set"
-        Me.cmdExpSetSize.UseVisualStyleBackColor = false
+        Me.cmdExpSetSize.UseVisualStyleBackColor = False
         '
         '_lblExp_0
         '
         Me._lblExp_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblExp_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblExp.SetIndex(Me._lblExp_0, CType(0,Short))
-        Me._lblExp_0.Location = New System.Drawing.Point(21, 24)
+        Me.lblExp.SetIndex(Me._lblExp_0, CType(0, Short))
+        Me._lblExp_0.Location = New System.Drawing.Point(28, 30)
+        Me._lblExp_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblExp_0.Name = "_lblExp_0"
         Me._lblExp_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblExp_0.Size = New System.Drawing.Size(28, 11)
+        Me._lblExp_0.Size = New System.Drawing.Size(37, 14)
         Me._lblExp_0.TabIndex = 56
         Me._lblExp_0.Text = "Left:"
         Me._lblExp_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblExp_1
         '
-        Me._lblExp_1.AutoSize = true
+        Me._lblExp_1.AutoSize = True
         Me._lblExp_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblExp_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblExp.SetIndex(Me._lblExp_1, CType(1,Short))
-        Me._lblExp_1.Location = New System.Drawing.Point(12, 48)
+        Me.lblExp.SetIndex(Me._lblExp_1, CType(1, Short))
+        Me._lblExp_1.Location = New System.Drawing.Point(16, 59)
+        Me._lblExp_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblExp_1.Name = "_lblExp_1"
         Me._lblExp_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblExp_1.Size = New System.Drawing.Size(38, 13)
+        Me._lblExp_1.Size = New System.Drawing.Size(48, 17)
         Me._lblExp_1.TabIndex = 55
         Me._lblExp_1.Text = "Width:"
         Me._lblExp_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblExp_2
         '
-        Me._lblExp_2.AutoSize = true
+        Me._lblExp_2.AutoSize = True
         Me._lblExp_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblExp_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblExp.SetIndex(Me._lblExp_2, CType(2,Short))
-        Me._lblExp_2.Location = New System.Drawing.Point(21, 72)
+        Me.lblExp.SetIndex(Me._lblExp_2, CType(2, Short))
+        Me._lblExp_2.Location = New System.Drawing.Point(28, 89)
+        Me._lblExp_2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblExp_2.Name = "_lblExp_2"
         Me._lblExp_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblExp_2.Size = New System.Drawing.Size(29, 13)
+        Me._lblExp_2.Size = New System.Drawing.Size(37, 17)
         Me._lblExp_2.TabIndex = 54
         Me._lblExp_2.Text = "Top:"
         Me._lblExp_2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblExp_3
         '
-        Me._lblExp_3.AutoSize = true
+        Me._lblExp_3.AutoSize = True
         Me._lblExp_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblExp_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblExp.SetIndex(Me._lblExp_3, CType(3,Short))
-        Me._lblExp_3.Location = New System.Drawing.Point(9, 96)
+        Me.lblExp.SetIndex(Me._lblExp_3, CType(3, Short))
+        Me._lblExp_3.Location = New System.Drawing.Point(12, 118)
+        Me._lblExp_3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblExp_3.Name = "_lblExp_3"
         Me._lblExp_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblExp_3.Size = New System.Drawing.Size(41, 13)
+        Me._lblExp_3.Size = New System.Drawing.Size(53, 17)
         Me._lblExp_3.TabIndex = 53
         Me._lblExp_3.Text = "Height:"
         Me._lblExp_3.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Frame3
         '
-        Me.Frame3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Frame3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Frame3.Controls.Add(Me.OexpMode)
         Me.Frame3.Controls.Add(Me.lstExpFlags)
         Me.Frame3.Controls.Add(Me.chkAlwaysOnTop)
@@ -3126,138 +3286,150 @@
         Me.Frame3.Controls.Add(Me.cmdExpEndScreen)
         Me.Frame3.Controls.Add(Me.chkOverrideExpMode)
         Me.Frame3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Frame3.Location = New System.Drawing.Point(199, 13)
+        Me.Frame3.Location = New System.Drawing.Point(265, 16)
+        Me.Frame3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Frame3.Name = "Frame3"
+        Me.Frame3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Frame3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Frame3.Size = New System.Drawing.Size(302, 374)
+        Me.Frame3.Size = New System.Drawing.Size(403, 460)
         Me.Frame3.TabIndex = 57
-        Me.Frame3.TabStop = false
+        Me.Frame3.TabStop = False
         Me.Frame3.Text = "Screen control:"
         '
         'lstExpFlags
         '
-        Me.lstExpFlags.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lstExpFlags.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lstExpFlags.Cursor = System.Windows.Forms.Cursors.Default
         Me.lstExpFlags.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lstExpFlags.IntegralHeight = false
-        Me.lstExpFlags.Location = New System.Drawing.Point(8, 40)
+        Me.lstExpFlags.IntegralHeight = False
+        Me.lstExpFlags.Location = New System.Drawing.Point(11, 49)
+        Me.lstExpFlags.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lstExpFlags.Name = "lstExpFlags"
         Me.lstExpFlags.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lstExpFlags.Size = New System.Drawing.Size(286, 208)
+        Me.lstExpFlags.Size = New System.Drawing.Size(380, 255)
         Me.lstExpFlags.TabIndex = 231
         '
         'chkAlwaysOnTop
         '
         Me.chkAlwaysOnTop.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkAlwaysOnTop.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkAlwaysOnTop.Location = New System.Drawing.Point(11, 20)
+        Me.chkAlwaysOnTop.Location = New System.Drawing.Point(15, 25)
+        Me.chkAlwaysOnTop.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkAlwaysOnTop.Name = "chkAlwaysOnTop"
         Me.chkAlwaysOnTop.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkAlwaysOnTop.Size = New System.Drawing.Size(109, 20)
+        Me.chkAlwaysOnTop.Size = New System.Drawing.Size(145, 25)
         Me.chkAlwaysOnTop.TabIndex = 84
         Me.chkAlwaysOnTop.Text = "Always on top"
-        Me.chkAlwaysOnTop.UseVisualStyleBackColor = false
+        Me.chkAlwaysOnTop.UseVisualStyleBackColor = False
         '
         'cmdExpBlankScreen
         '
         Me.cmdExpBlankScreen.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdExpBlankScreen.Enabled = false
+        Me.cmdExpBlankScreen.Enabled = False
         Me.cmdExpBlankScreen.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpBlankScreen.Location = New System.Drawing.Point(6, 295)
+        Me.cmdExpBlankScreen.Location = New System.Drawing.Point(8, 363)
+        Me.cmdExpBlankScreen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpBlankScreen.Name = "cmdExpBlankScreen"
         Me.cmdExpBlankScreen.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpBlankScreen.Size = New System.Drawing.Size(90, 21)
+        Me.cmdExpBlankScreen.Size = New System.Drawing.Size(120, 26)
         Me.cmdExpBlankScreen.TabIndex = 64
         Me.cmdExpBlankScreen.Text = "Blank"
-        Me.cmdExpBlankScreen.UseVisualStyleBackColor = false
+        Me.cmdExpBlankScreen.UseVisualStyleBackColor = False
         '
         'cmdExpHide
         '
         Me.cmdExpHide.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdExpHide.Enabled = false
+        Me.cmdExpHide.Enabled = False
         Me.cmdExpHide.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpHide.Location = New System.Drawing.Point(194, 295)
+        Me.cmdExpHide.Location = New System.Drawing.Point(259, 363)
+        Me.cmdExpHide.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpHide.Name = "cmdExpHide"
         Me.cmdExpHide.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpHide.Size = New System.Drawing.Size(90, 21)
+        Me.cmdExpHide.Size = New System.Drawing.Size(120, 26)
         Me.cmdExpHide.TabIndex = 63
         Me.cmdExpHide.Text = "Hide"
-        Me.cmdExpHide.UseVisualStyleBackColor = false
+        Me.cmdExpHide.UseVisualStyleBackColor = False
         '
         'cmdExpShow
         '
         Me.cmdExpShow.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdExpShow.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpShow.Location = New System.Drawing.Point(6, 255)
+        Me.cmdExpShow.Location = New System.Drawing.Point(8, 314)
+        Me.cmdExpShow.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpShow.Name = "cmdExpShow"
         Me.cmdExpShow.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpShow.Size = New System.Drawing.Size(189, 33)
+        Me.cmdExpShow.Size = New System.Drawing.Size(252, 41)
         Me.cmdExpShow.TabIndex = 62
         Me.cmdExpShow.Text = "Init && Show"
-        Me.cmdExpShow.UseVisualStyleBackColor = false
+        Me.cmdExpShow.UseVisualStyleBackColor = False
         '
         'cmdExpStartScreen
         '
         Me.cmdExpStartScreen.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdExpStartScreen.Enabled = false
+        Me.cmdExpStartScreen.Enabled = False
         Me.cmdExpStartScreen.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpStartScreen.Location = New System.Drawing.Point(100, 295)
+        Me.cmdExpStartScreen.Location = New System.Drawing.Point(133, 363)
+        Me.cmdExpStartScreen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpStartScreen.Name = "cmdExpStartScreen"
         Me.cmdExpStartScreen.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpStartScreen.Size = New System.Drawing.Size(90, 21)
+        Me.cmdExpStartScreen.Size = New System.Drawing.Size(120, 26)
         Me.cmdExpStartScreen.TabIndex = 61
         Me.cmdExpStartScreen.Text = "Start"
-        Me.cmdExpStartScreen.UseVisualStyleBackColor = false
+        Me.cmdExpStartScreen.UseVisualStyleBackColor = False
         '
         'cmdExpStimScreen
         '
         Me.cmdExpStimScreen.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdExpStimScreen.Enabled = false
+        Me.cmdExpStimScreen.Enabled = False
         Me.cmdExpStimScreen.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpStimScreen.Location = New System.Drawing.Point(6, 319)
+        Me.cmdExpStimScreen.Location = New System.Drawing.Point(8, 393)
+        Me.cmdExpStimScreen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpStimScreen.Name = "cmdExpStimScreen"
         Me.cmdExpStimScreen.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpStimScreen.Size = New System.Drawing.Size(90, 21)
+        Me.cmdExpStimScreen.Size = New System.Drawing.Size(120, 26)
         Me.cmdExpStimScreen.TabIndex = 60
         Me.cmdExpStimScreen.Text = "Stimulation"
-        Me.cmdExpStimScreen.UseVisualStyleBackColor = false
+        Me.cmdExpStimScreen.UseVisualStyleBackColor = False
         '
         'cmdExpNextScreen
         '
         Me.cmdExpNextScreen.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdExpNextScreen.Enabled = false
+        Me.cmdExpNextScreen.Enabled = False
         Me.cmdExpNextScreen.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpNextScreen.Location = New System.Drawing.Point(100, 319)
+        Me.cmdExpNextScreen.Location = New System.Drawing.Point(133, 393)
+        Me.cmdExpNextScreen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpNextScreen.Name = "cmdExpNextScreen"
         Me.cmdExpNextScreen.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpNextScreen.Size = New System.Drawing.Size(90, 21)
+        Me.cmdExpNextScreen.Size = New System.Drawing.Size(120, 26)
         Me.cmdExpNextScreen.TabIndex = 59
         Me.cmdExpNextScreen.Text = "Next/Feedback"
-        Me.cmdExpNextScreen.UseVisualStyleBackColor = false
+        Me.cmdExpNextScreen.UseVisualStyleBackColor = False
         '
         'cmdExpEndScreen
         '
         Me.cmdExpEndScreen.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdExpEndScreen.Enabled = false
+        Me.cmdExpEndScreen.Enabled = False
         Me.cmdExpEndScreen.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpEndScreen.Location = New System.Drawing.Point(194, 319)
+        Me.cmdExpEndScreen.Location = New System.Drawing.Point(259, 393)
+        Me.cmdExpEndScreen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdExpEndScreen.Name = "cmdExpEndScreen"
         Me.cmdExpEndScreen.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdExpEndScreen.Size = New System.Drawing.Size(90, 21)
+        Me.cmdExpEndScreen.Size = New System.Drawing.Size(120, 26)
         Me.cmdExpEndScreen.TabIndex = 58
         Me.cmdExpEndScreen.Text = "End"
-        Me.cmdExpEndScreen.UseVisualStyleBackColor = false
+        Me.cmdExpEndScreen.UseVisualStyleBackColor = False
         '
         'cmbHUI
         '
         Me.cmbHUI.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbHUI.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbHUI.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbHUI.Location = New System.Drawing.Point(8, 350)
+        Me.cmbHUI.Location = New System.Drawing.Point(11, 431)
+        Me.cmbHUI.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbHUI.Name = "cmbHUI"
         Me.cmbHUI.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbHUI.Size = New System.Drawing.Size(185, 21)
+        Me.cmbHUI.Size = New System.Drawing.Size(245, 24)
         Me.cmbHUI.TabIndex = 163
         '
         'tabChannels
@@ -3277,58 +3449,64 @@
         Me.tabChannels.Controls.Add(Me.fraAcousticL)
         Me.tabChannels.Controls.Add(Me.fraAcousticR)
         Me.tabChannels.Location = New System.Drawing.Point(4, 40)
+        Me.tabChannels.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabChannels.Name = "tabChannels"
-        Me.tabChannels.Size = New System.Drawing.Size(514, 430)
+        Me.tabChannels.Size = New System.Drawing.Size(688, 539)
         Me.tabChannels.TabIndex = 5
         Me.tabChannels.Text = "Signal"
-        Me.tabChannels.UseVisualStyleBackColor = true
+        Me.tabChannels.UseVisualStyleBackColor = True
         '
         'cmdElDelL
         '
         Me.cmdElDelL.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdElDelL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdElDelL.Location = New System.Drawing.Point(217, 33)
+        Me.cmdElDelL.Location = New System.Drawing.Point(289, 41)
+        Me.cmdElDelL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdElDelL.Name = "cmdElDelL"
         Me.cmdElDelL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdElDelL.Size = New System.Drawing.Size(14, 19)
+        Me.cmdElDelL.Size = New System.Drawing.Size(19, 23)
         Me.cmdElDelL.TabIndex = 203
         Me.cmdElDelL.Text = "-"
-        Me.cmdElDelL.UseVisualStyleBackColor = false
+        Me.cmdElDelL.UseVisualStyleBackColor = False
         '
         'fraSignalR
         '
         Me.fraSignalR.Controls.Add(Me.txtPhDurR)
         Me.fraSignalR.Controls.Add(Me.lblPhDurR)
         Me.fraSignalR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraSignalR.Location = New System.Drawing.Point(270, 261)
+        Me.fraSignalR.Location = New System.Drawing.Point(360, 321)
+        Me.fraSignalR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraSignalR.Name = "fraSignalR"
+        Me.fraSignalR.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraSignalR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraSignalR.Size = New System.Drawing.Size(170, 77)
+        Me.fraSignalR.Size = New System.Drawing.Size(227, 95)
         Me.fraSignalR.TabIndex = 200
-        Me.fraSignalR.TabStop = false
+        Me.fraSignalR.TabStop = False
         '
         'txtPhDurR
         '
-        Me.txtPhDurR.AcceptsReturn = true
+        Me.txtPhDurR.AcceptsReturn = True
         Me.txtPhDurR.BackColor = System.Drawing.SystemColors.Window
         Me.txtPhDurR.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtPhDurR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtPhDurR.Location = New System.Drawing.Point(16, 16)
+        Me.txtPhDurR.Location = New System.Drawing.Point(21, 20)
+        Me.txtPhDurR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPhDurR.MaxLength = 10
         Me.txtPhDurR.Name = "txtPhDurR"
         Me.txtPhDurR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtPhDurR.Size = New System.Drawing.Size(53, 20)
+        Me.txtPhDurR.Size = New System.Drawing.Size(69, 22)
         Me.txtPhDurR.TabIndex = 110
         '
         'lblPhDurR
         '
-        Me.lblPhDurR.AutoSize = true
+        Me.lblPhDurR.AutoSize = True
         Me.lblPhDurR.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPhDurR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPhDurR.Location = New System.Drawing.Point(32, 40)
+        Me.lblPhDurR.Location = New System.Drawing.Point(43, 49)
+        Me.lblPhDurR.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPhDurR.Name = "lblPhDurR"
         Me.lblPhDurR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblPhDurR.Size = New System.Drawing.Size(24, 13)
+        Me.lblPhDurR.Size = New System.Drawing.Size(30, 17)
         Me.lblPhDurR.TabIndex = 201
         Me.lblPhDurR.Text = "- / -"
         Me.lblPhDurR.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3337,50 +3515,53 @@
         '
         Me.cmdElDelR.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdElDelR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdElDelR.Location = New System.Drawing.Point(316, 33)
+        Me.cmdElDelR.Location = New System.Drawing.Point(421, 41)
+        Me.cmdElDelR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdElDelR.Name = "cmdElDelR"
         Me.cmdElDelR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdElDelR.Size = New System.Drawing.Size(14, 19)
+        Me.cmdElDelR.Size = New System.Drawing.Size(19, 23)
         Me.cmdElDelR.TabIndex = 204
         Me.cmdElDelR.Text = "-"
-        Me.cmdElDelR.UseVisualStyleBackColor = false
+        Me.cmdElDelR.UseVisualStyleBackColor = False
         '
         'cmdElAddR
         '
         Me.cmdElAddR.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdElAddR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdElAddR.Location = New System.Drawing.Point(316, 11)
+        Me.cmdElAddR.Location = New System.Drawing.Point(421, 14)
+        Me.cmdElAddR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdElAddR.Name = "cmdElAddR"
         Me.cmdElAddR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdElAddR.Size = New System.Drawing.Size(14, 19)
+        Me.cmdElAddR.Size = New System.Drawing.Size(19, 23)
         Me.cmdElAddR.TabIndex = 205
         Me.cmdElAddR.Text = "+"
-        Me.cmdElAddR.UseVisualStyleBackColor = false
+        Me.cmdElAddR.UseVisualStyleBackColor = False
         '
         'cmdElAddL
         '
         Me.cmdElAddL.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdElAddL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.cmdElAddL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdElAddL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdElAddL.Location = New System.Drawing.Point(217, 11)
+        Me.cmdElAddL.Location = New System.Drawing.Point(289, 14)
         Me.cmdElAddL.Margin = New System.Windows.Forms.Padding(0)
         Me.cmdElAddL.Name = "cmdElAddL"
         Me.cmdElAddL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdElAddL.Size = New System.Drawing.Size(14, 19)
+        Me.cmdElAddL.Size = New System.Drawing.Size(19, 23)
         Me.cmdElAddL.TabIndex = 202
         Me.cmdElAddL.Text = "+"
-        Me.cmdElAddL.UseVisualStyleBackColor = false
+        Me.cmdElAddL.UseVisualStyleBackColor = False
         '
         'lblSignal
         '
-        Me.lblSignal.AutoSize = true
+        Me.lblSignal.AutoSize = True
         Me.lblSignal.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblSignal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblSignal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSignal.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblSignal.Location = New System.Drawing.Point(16, 22)
+        Me.lblSignal.Location = New System.Drawing.Point(21, 27)
+        Me.lblSignal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSignal.Name = "lblSignal"
         Me.lblSignal.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblSignal.Size = New System.Drawing.Size(162, 20)
+        Me.lblSignal.Size = New System.Drawing.Size(198, 25)
         Me.lblSignal.TabIndex = 142
         Me.lblSignal.Text = "Electrode/Channel:"
         Me.lblSignal.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3390,10 +3571,11 @@
         Me.cmbElL.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbElL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbElL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbElL.Location = New System.Drawing.Point(180, 22)
+        Me.cmbElL.Location = New System.Drawing.Point(240, 27)
+        Me.cmbElL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbElL.Name = "cmbElL"
         Me.cmbElL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbElL.Size = New System.Drawing.Size(37, 21)
+        Me.cmbElL.Size = New System.Drawing.Size(48, 24)
         Me.cmbElL.TabIndex = 130
         '
         'cmbElR
@@ -3401,10 +3583,11 @@
         Me.cmbElR.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbElR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbElR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbElR.Location = New System.Drawing.Point(279, 22)
+        Me.cmbElR.Location = New System.Drawing.Point(372, 27)
+        Me.cmbElR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbElR.Name = "cmbElR"
         Me.cmbElR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbElR.Size = New System.Drawing.Size(37, 21)
+        Me.cmbElR.Size = New System.Drawing.Size(48, 24)
         Me.cmbElR.TabIndex = 143
         '
         'fraSignalL
@@ -3414,34 +3597,38 @@
         Me.fraSignalL.Controls.Add(Me.lblPhDurQuantized)
         Me.fraSignalL.Controls.Add(Me.lblPhDurL)
         Me.fraSignalL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraSignalL.Location = New System.Drawing.Point(22, 261)
+        Me.fraSignalL.Location = New System.Drawing.Point(29, 321)
+        Me.fraSignalL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraSignalL.Name = "fraSignalL"
+        Me.fraSignalL.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraSignalL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraSignalL.Size = New System.Drawing.Size(240, 77)
+        Me.fraSignalL.Size = New System.Drawing.Size(320, 95)
         Me.fraSignalL.TabIndex = 196
-        Me.fraSignalL.TabStop = false
+        Me.fraSignalL.TabStop = False
         '
         'txtPhDurL
         '
-        Me.txtPhDurL.AcceptsReturn = true
+        Me.txtPhDurL.AcceptsReturn = True
         Me.txtPhDurL.BackColor = System.Drawing.SystemColors.Window
         Me.txtPhDurL.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtPhDurL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtPhDurL.Location = New System.Drawing.Point(169, 16)
+        Me.txtPhDurL.Location = New System.Drawing.Point(225, 20)
+        Me.txtPhDurL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPhDurL.MaxLength = 10
         Me.txtPhDurL.Name = "txtPhDurL"
         Me.txtPhDurL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtPhDurL.Size = New System.Drawing.Size(53, 20)
+        Me.txtPhDurL.Size = New System.Drawing.Size(69, 22)
         Me.txtPhDurL.TabIndex = 103
         '
         'lblPhDur
         '
         Me.lblPhDur.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPhDur.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPhDur.Location = New System.Drawing.Point(6, 20)
+        Me.lblPhDur.Location = New System.Drawing.Point(8, 25)
+        Me.lblPhDur.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPhDur.Name = "lblPhDur"
         Me.lblPhDur.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblPhDur.Size = New System.Drawing.Size(158, 13)
+        Me.lblPhDur.Size = New System.Drawing.Size(211, 16)
         Me.lblPhDur.TabIndex = 199
         Me.lblPhDur.Text = "Phase duration: [us]:"
         Me.lblPhDur.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3450,23 +3637,25 @@
         '
         Me.lblPhDurQuantized.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPhDurQuantized.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPhDurQuantized.Location = New System.Drawing.Point(50, 40)
+        Me.lblPhDurQuantized.Location = New System.Drawing.Point(67, 49)
+        Me.lblPhDurQuantized.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPhDurQuantized.Name = "lblPhDurQuantized"
         Me.lblPhDurQuantized.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblPhDurQuantized.Size = New System.Drawing.Size(114, 29)
+        Me.lblPhDurQuantized.Size = New System.Drawing.Size(152, 36)
         Me.lblPhDurQuantized.TabIndex = 198
         Me.lblPhDurQuantized.Text = "Quantized: [samples]: [us]: "
         Me.lblPhDurQuantized.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lblPhDurL
         '
-        Me.lblPhDurL.AutoSize = true
+        Me.lblPhDurL.AutoSize = True
         Me.lblPhDurL.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPhDurL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPhDurL.Location = New System.Drawing.Point(182, 40)
+        Me.lblPhDurL.Location = New System.Drawing.Point(243, 49)
+        Me.lblPhDurL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPhDurL.Name = "lblPhDurL"
         Me.lblPhDurL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblPhDurL.Size = New System.Drawing.Size(24, 13)
+        Me.lblPhDurL.Size = New System.Drawing.Size(30, 17)
         Me.lblPhDurL.TabIndex = 197
         Me.lblPhDurL.Text = "- / -"
         Me.lblPhDurL.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3485,22 +3674,25 @@
         Me.fraElectricalL.Controls.Add(Me.lblDynamicL)
         Me.fraElectricalL.Controls.Add(Me.lblLevelL)
         Me.fraElectricalL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraElectricalL.Location = New System.Drawing.Point(22, 46)
+        Me.fraElectricalL.Location = New System.Drawing.Point(29, 57)
+        Me.fraElectricalL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraElectricalL.Name = "fraElectricalL"
+        Me.fraElectricalL.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraElectricalL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraElectricalL.Size = New System.Drawing.Size(240, 209)
+        Me.fraElectricalL.Size = New System.Drawing.Size(320, 257)
         Me.fraElectricalL.TabIndex = 65
-        Me.fraElectricalL.TabStop = false
+        Me.fraElectricalL.TabStop = False
         Me.fraElectricalL.Text = "Left:"
         '
         'sldL
         '
         Me.sldL.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.sldL.Location = New System.Drawing.Point(184, 20)
+        Me.sldL.Location = New System.Drawing.Point(245, 25)
+        Me.sldL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.sldL.Maximum = 127
         Me.sldL.Name = "sldL"
         Me.sldL.Orientation = System.Windows.Forms.Orientation.Vertical
-        Me.sldL.Size = New System.Drawing.Size(45, 157)
+        Me.sldL.Size = New System.Drawing.Size(56, 193)
         Me.sldL.TabIndex = 84
         Me.sldL.TickFrequency = 10
         Me.sldL.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -3510,22 +3702,24 @@
         '
         Me.cmbRangeL.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbRangeL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRangeL.Enabled = false
+        Me.cmbRangeL.Enabled = False
         Me.cmbRangeL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbRangeL.Location = New System.Drawing.Point(184, 180)
+        Me.cmbRangeL.Location = New System.Drawing.Point(245, 222)
+        Me.cmbRangeL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbRangeL.Name = "cmbRangeL"
         Me.cmbRangeL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbRangeL.Size = New System.Drawing.Size(37, 21)
+        Me.cmbRangeL.Size = New System.Drawing.Size(48, 24)
         Me.cmbRangeL.TabIndex = 66
         '
         'Label17
         '
         Me.Label17.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label17.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label17.Location = New System.Drawing.Point(42, 132)
+        Me.Label17.Location = New System.Drawing.Point(56, 162)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label17.Size = New System.Drawing.Size(37, 20)
+        Me.Label17.Size = New System.Drawing.Size(49, 25)
         Me.Label17.TabIndex = 83
         Me.Label17.Text = "THR"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3534,10 +3728,11 @@
         '
         Me._Label3_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label3_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label3_2.Location = New System.Drawing.Point(18, 102)
+        Me._Label3_2.Location = New System.Drawing.Point(24, 126)
+        Me._Label3_2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label3_2.Name = "_Label3_2"
         Me._Label3_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label3_2.Size = New System.Drawing.Size(61, 16)
+        Me._Label3_2.Size = New System.Drawing.Size(81, 20)
         Me._Label3_2.TabIndex = 82
         Me._Label3_2.Text = "Dyn. range"
         Me._Label3_2.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3545,12 +3740,13 @@
         'Label16
         '
         Me.Label16.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label16.Location = New System.Drawing.Point(107, 178)
+        Me.Label16.Location = New System.Drawing.Point(143, 219)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label16.Size = New System.Drawing.Size(69, 20)
+        Me.Label16.Size = New System.Drawing.Size(92, 25)
         Me.Label16.TabIndex = 81
         Me.Label16.Text = "Range:"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3559,10 +3755,11 @@
         '
         Me.Label7.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label7.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Label7.Location = New System.Drawing.Point(32, 72)
+        Me.Label7.Location = New System.Drawing.Point(43, 89)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label7.Size = New System.Drawing.Size(45, 24)
+        Me.Label7.Size = New System.Drawing.Size(60, 30)
         Me.Label7.TabIndex = 80
         Me.Label7.Text = "Amp"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3571,10 +3768,11 @@
         '
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label1.Location = New System.Drawing.Point(42, 36)
+        Me.Label1.Location = New System.Drawing.Point(56, 44)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label1.Size = New System.Drawing.Size(37, 20)
+        Me.Label1.Size = New System.Drawing.Size(49, 25)
         Me.Label1.TabIndex = 79
         Me.Label1.Text = "MCL"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3585,10 +3783,11 @@
         Me.lblMCLL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblMCLL.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblMCLL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblMCLL.Location = New System.Drawing.Point(82, 32)
+        Me.lblMCLL.Location = New System.Drawing.Point(109, 39)
+        Me.lblMCLL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMCLL.Name = "lblMCLL"
         Me.lblMCLL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblMCLL.Size = New System.Drawing.Size(84, 29)
+        Me.lblMCLL.Size = New System.Drawing.Size(112, 36)
         Me.lblMCLL.TabIndex = 78
         Me.lblMCLL.Text = "XXX"
         Me.lblMCLL.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3599,10 +3798,11 @@
         Me.lblTHRL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblTHRL.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblTHRL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTHRL.Location = New System.Drawing.Point(82, 128)
+        Me.lblTHRL.Location = New System.Drawing.Point(109, 158)
+        Me.lblTHRL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTHRL.Name = "lblTHRL"
         Me.lblTHRL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTHRL.Size = New System.Drawing.Size(84, 29)
+        Me.lblTHRL.Size = New System.Drawing.Size(112, 36)
         Me.lblTHRL.TabIndex = 77
         Me.lblTHRL.Text = "XXX"
         Me.lblTHRL.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3613,10 +3813,11 @@
         Me.lblDynamicL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblDynamicL.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblDynamicL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblDynamicL.Location = New System.Drawing.Point(82, 100)
+        Me.lblDynamicL.Location = New System.Drawing.Point(109, 123)
+        Me.lblDynamicL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDynamicL.Name = "lblDynamicL"
         Me.lblDynamicL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblDynamicL.Size = New System.Drawing.Size(84, 21)
+        Me.lblDynamicL.Size = New System.Drawing.Size(112, 26)
         Me.lblDynamicL.TabIndex = 76
         Me.lblDynamicL.Text = "XXX"
         Me.lblDynamicL.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3627,10 +3828,11 @@
         Me.lblLevelL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblLevelL.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblLevelL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblLevelL.Location = New System.Drawing.Point(82, 68)
+        Me.lblLevelL.Location = New System.Drawing.Point(109, 84)
+        Me.lblLevelL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblLevelL.Name = "lblLevelL"
         Me.lblLevelL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblLevelL.Size = New System.Drawing.Size(84, 29)
+        Me.lblLevelL.Size = New System.Drawing.Size(112, 36)
         Me.lblLevelL.TabIndex = 72
         Me.lblLevelL.Text = "XXX"
         Me.lblLevelL.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3644,22 +3846,25 @@
         Me.fraElectricalR.Controls.Add(Me.lblMCLR)
         Me.fraElectricalR.Controls.Add(Me.lblLevelR)
         Me.fraElectricalR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraElectricalR.Location = New System.Drawing.Point(270, 46)
+        Me.fraElectricalR.Location = New System.Drawing.Point(360, 57)
+        Me.fraElectricalR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraElectricalR.Name = "fraElectricalR"
+        Me.fraElectricalR.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraElectricalR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraElectricalR.Size = New System.Drawing.Size(170, 209)
+        Me.fraElectricalR.Size = New System.Drawing.Size(227, 257)
         Me.fraElectricalR.TabIndex = 68
-        Me.fraElectricalR.TabStop = false
+        Me.fraElectricalR.TabStop = False
         Me.fraElectricalR.Text = "Right:"
         '
         'sldR
         '
         Me.sldR.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.sldR.Location = New System.Drawing.Point(16, 20)
+        Me.sldR.Location = New System.Drawing.Point(21, 25)
+        Me.sldR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.sldR.Maximum = 127
         Me.sldR.Name = "sldR"
         Me.sldR.Orientation = System.Windows.Forms.Orientation.Vertical
-        Me.sldR.Size = New System.Drawing.Size(45, 157)
+        Me.sldR.Size = New System.Drawing.Size(56, 193)
         Me.sldR.TabIndex = 76
         Me.sldR.TickFrequency = 8
         Me.sldR.Value = 8
@@ -3668,12 +3873,13 @@
         '
         Me.cmbRangeR.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbRangeR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbRangeR.Enabled = false
+        Me.cmbRangeR.Enabled = False
         Me.cmbRangeR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbRangeR.Location = New System.Drawing.Point(16, 180)
+        Me.cmbRangeR.Location = New System.Drawing.Point(21, 222)
+        Me.cmbRangeR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbRangeR.Name = "cmbRangeR"
         Me.cmbRangeR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbRangeR.Size = New System.Drawing.Size(37, 21)
+        Me.cmbRangeR.Size = New System.Drawing.Size(48, 24)
         Me.cmbRangeR.TabIndex = 69
         '
         'lblDynamicR
@@ -3682,10 +3888,11 @@
         Me.lblDynamicR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblDynamicR.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblDynamicR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblDynamicR.Location = New System.Drawing.Point(61, 100)
+        Me.lblDynamicR.Location = New System.Drawing.Point(81, 123)
+        Me.lblDynamicR.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDynamicR.Name = "lblDynamicR"
         Me.lblDynamicR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblDynamicR.Size = New System.Drawing.Size(84, 21)
+        Me.lblDynamicR.Size = New System.Drawing.Size(112, 26)
         Me.lblDynamicR.TabIndex = 75
         Me.lblDynamicR.Text = "XXX"
         Me.lblDynamicR.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3696,10 +3903,11 @@
         Me.lblTHRR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblTHRR.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblTHRR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTHRR.Location = New System.Drawing.Point(61, 128)
+        Me.lblTHRR.Location = New System.Drawing.Point(81, 158)
+        Me.lblTHRR.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTHRR.Name = "lblTHRR"
         Me.lblTHRR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTHRR.Size = New System.Drawing.Size(84, 29)
+        Me.lblTHRR.Size = New System.Drawing.Size(112, 36)
         Me.lblTHRR.TabIndex = 74
         Me.lblTHRR.Text = "XXX"
         Me.lblTHRR.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3710,10 +3918,11 @@
         Me.lblMCLR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblMCLR.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblMCLR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblMCLR.Location = New System.Drawing.Point(61, 32)
+        Me.lblMCLR.Location = New System.Drawing.Point(81, 39)
+        Me.lblMCLR.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMCLR.Name = "lblMCLR"
         Me.lblMCLR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblMCLR.Size = New System.Drawing.Size(84, 29)
+        Me.lblMCLR.Size = New System.Drawing.Size(112, 36)
         Me.lblMCLR.TabIndex = 73
         Me.lblMCLR.Text = "XXX"
         Me.lblMCLR.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3724,10 +3933,11 @@
         Me.lblLevelR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.lblLevelR.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblLevelR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblLevelR.Location = New System.Drawing.Point(61, 68)
+        Me.lblLevelR.Location = New System.Drawing.Point(81, 84)
+        Me.lblLevelR.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblLevelR.Name = "lblLevelR"
         Me.lblLevelR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblLevelR.Size = New System.Drawing.Size(84, 29)
+        Me.lblLevelR.Size = New System.Drawing.Size(112, 36)
         Me.lblLevelR.TabIndex = 71
         Me.lblLevelR.Text = "XXX"
         Me.lblLevelR.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -3747,100 +3957,109 @@
         Me.fraAcousticL.Controls.Add(Me.lblCenterFreq)
         Me.fraAcousticL.Controls.Add(Me.lblBandwidth)
         Me.fraAcousticL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraAcousticL.Location = New System.Drawing.Point(8, 94)
+        Me.fraAcousticL.Location = New System.Drawing.Point(11, 116)
+        Me.fraAcousticL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAcousticL.Name = "fraAcousticL"
+        Me.fraAcousticL.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAcousticL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraAcousticL.Size = New System.Drawing.Size(240, 209)
+        Me.fraAcousticL.Size = New System.Drawing.Size(320, 257)
         Me.fraAcousticL.TabIndex = 145
-        Me.fraAcousticL.TabStop = false
+        Me.fraAcousticL.TabStop = False
         Me.fraAcousticL.Text = "Left:"
         '
         'txtMCLL
         '
-        Me.txtMCLL.AcceptsReturn = true
+        Me.txtMCLL.AcceptsReturn = True
         Me.txtMCLL.BackColor = System.Drawing.SystemColors.Window
         Me.txtMCLL.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtMCLL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtMCLL.Location = New System.Drawing.Point(169, 168)
+        Me.txtMCLL.Location = New System.Drawing.Point(225, 207)
+        Me.txtMCLL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtMCLL.MaxLength = 10
         Me.txtMCLL.Name = "txtMCLL"
         Me.txtMCLL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtMCLL.Size = New System.Drawing.Size(53, 20)
+        Me.txtMCLL.Size = New System.Drawing.Size(69, 22)
         Me.txtMCLL.TabIndex = 102
         '
         'txtTHRL
         '
-        Me.txtTHRL.AcceptsReturn = true
+        Me.txtTHRL.AcceptsReturn = True
         Me.txtTHRL.BackColor = System.Drawing.SystemColors.Window
         Me.txtTHRL.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtTHRL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtTHRL.Location = New System.Drawing.Point(169, 144)
+        Me.txtTHRL.Location = New System.Drawing.Point(225, 177)
+        Me.txtTHRL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtTHRL.MaxLength = 10
         Me.txtTHRL.Name = "txtTHRL"
         Me.txtTHRL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtTHRL.Size = New System.Drawing.Size(53, 20)
+        Me.txtTHRL.Size = New System.Drawing.Size(69, 22)
         Me.txtTHRL.TabIndex = 101
         '
         'txtAmpL
         '
-        Me.txtAmpL.AcceptsReturn = true
+        Me.txtAmpL.AcceptsReturn = True
         Me.txtAmpL.BackColor = System.Drawing.SystemColors.Window
         Me.txtAmpL.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtAmpL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtAmpL.Location = New System.Drawing.Point(169, 48)
+        Me.txtAmpL.Location = New System.Drawing.Point(225, 59)
+        Me.txtAmpL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtAmpL.MaxLength = 10
         Me.txtAmpL.Name = "txtAmpL"
         Me.txtAmpL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtAmpL.Size = New System.Drawing.Size(53, 20)
+        Me.txtAmpL.Size = New System.Drawing.Size(69, 22)
         Me.txtAmpL.TabIndex = 97
         '
         'txtSPLOffsetL
         '
-        Me.txtSPLOffsetL.AcceptsReturn = true
+        Me.txtSPLOffsetL.AcceptsReturn = True
         Me.txtSPLOffsetL.BackColor = System.Drawing.SystemColors.Window
         Me.txtSPLOffsetL.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtSPLOffsetL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtSPLOffsetL.Location = New System.Drawing.Point(169, 72)
+        Me.txtSPLOffsetL.Location = New System.Drawing.Point(225, 89)
+        Me.txtSPLOffsetL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSPLOffsetL.MaxLength = 10
         Me.txtSPLOffsetL.Name = "txtSPLOffsetL"
         Me.txtSPLOffsetL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtSPLOffsetL.Size = New System.Drawing.Size(53, 20)
+        Me.txtSPLOffsetL.Size = New System.Drawing.Size(69, 22)
         Me.txtSPLOffsetL.TabIndex = 98
         '
         'txtCenterFreqL
         '
-        Me.txtCenterFreqL.AcceptsReturn = true
+        Me.txtCenterFreqL.AcceptsReturn = True
         Me.txtCenterFreqL.BackColor = System.Drawing.SystemColors.Window
         Me.txtCenterFreqL.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtCenterFreqL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtCenterFreqL.Location = New System.Drawing.Point(169, 96)
+        Me.txtCenterFreqL.Location = New System.Drawing.Point(225, 118)
+        Me.txtCenterFreqL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCenterFreqL.MaxLength = 10
         Me.txtCenterFreqL.Name = "txtCenterFreqL"
         Me.txtCenterFreqL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtCenterFreqL.Size = New System.Drawing.Size(53, 20)
+        Me.txtCenterFreqL.Size = New System.Drawing.Size(69, 22)
         Me.txtCenterFreqL.TabIndex = 99
         '
         'txtBandwidthL
         '
-        Me.txtBandwidthL.AcceptsReturn = true
+        Me.txtBandwidthL.AcceptsReturn = True
         Me.txtBandwidthL.BackColor = System.Drawing.SystemColors.Window
         Me.txtBandwidthL.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtBandwidthL.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtBandwidthL.Location = New System.Drawing.Point(169, 120)
+        Me.txtBandwidthL.Location = New System.Drawing.Point(225, 148)
+        Me.txtBandwidthL.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtBandwidthL.MaxLength = 10
         Me.txtBandwidthL.Name = "txtBandwidthL"
         Me.txtBandwidthL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtBandwidthL.Size = New System.Drawing.Size(53, 20)
+        Me.txtBandwidthL.Size = New System.Drawing.Size(69, 22)
         Me.txtBandwidthL.TabIndex = 100
         '
         'lblMCL
         '
         Me.lblMCL.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblMCL.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblMCL.Location = New System.Drawing.Point(6, 172)
+        Me.lblMCL.Location = New System.Drawing.Point(8, 212)
+        Me.lblMCL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMCL.Name = "lblMCL"
         Me.lblMCL.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblMCL.Size = New System.Drawing.Size(158, 13)
+        Me.lblMCL.Size = New System.Drawing.Size(211, 16)
         Me.lblMCL.TabIndex = 160
         Me.lblMCL.Text = "MCL [dB]:"
         Me.lblMCL.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3849,10 +4068,11 @@
         '
         Me.lblTHR.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblTHR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTHR.Location = New System.Drawing.Point(6, 148)
+        Me.lblTHR.Location = New System.Drawing.Point(8, 182)
+        Me.lblTHR.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTHR.Name = "lblTHR"
         Me.lblTHR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTHR.Size = New System.Drawing.Size(158, 13)
+        Me.lblTHR.Size = New System.Drawing.Size(211, 16)
         Me.lblTHR.TabIndex = 159
         Me.lblTHR.Text = "THR [dB]:"
         Me.lblTHR.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3861,10 +4081,11 @@
         '
         Me.lblAmp.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblAmp.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAmp.Location = New System.Drawing.Point(6, 52)
+        Me.lblAmp.Location = New System.Drawing.Point(8, 64)
+        Me.lblAmp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAmp.Name = "lblAmp"
         Me.lblAmp.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblAmp.Size = New System.Drawing.Size(158, 13)
+        Me.lblAmp.Size = New System.Drawing.Size(211, 16)
         Me.lblAmp.TabIndex = 155
         Me.lblAmp.Text = "Amplitude [dB FS]:"
         Me.lblAmp.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3873,10 +4094,11 @@
         '
         Me.lblSPLOffset.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblSPLOffset.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblSPLOffset.Location = New System.Drawing.Point(6, 76)
+        Me.lblSPLOffset.Location = New System.Drawing.Point(8, 94)
+        Me.lblSPLOffset.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSPLOffset.Name = "lblSPLOffset"
         Me.lblSPLOffset.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblSPLOffset.Size = New System.Drawing.Size(158, 13)
+        Me.lblSPLOffset.Size = New System.Drawing.Size(211, 16)
         Me.lblSPLOffset.TabIndex = 152
         Me.lblSPLOffset.Text = "FS to SPL offset [dB]:"
         Me.lblSPLOffset.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3885,10 +4107,11 @@
         '
         Me.lblCenterFreq.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblCenterFreq.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblCenterFreq.Location = New System.Drawing.Point(6, 100)
+        Me.lblCenterFreq.Location = New System.Drawing.Point(8, 123)
+        Me.lblCenterFreq.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCenterFreq.Name = "lblCenterFreq"
         Me.lblCenterFreq.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblCenterFreq.Size = New System.Drawing.Size(158, 13)
+        Me.lblCenterFreq.Size = New System.Drawing.Size(211, 16)
         Me.lblCenterFreq.TabIndex = 150
         Me.lblCenterFreq.Text = "Center frequency [Hz]:"
         Me.lblCenterFreq.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3897,10 +4120,11 @@
         '
         Me.lblBandwidth.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblBandwidth.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblBandwidth.Location = New System.Drawing.Point(6, 124)
+        Me.lblBandwidth.Location = New System.Drawing.Point(8, 153)
+        Me.lblBandwidth.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBandwidth.Name = "lblBandwidth"
         Me.lblBandwidth.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblBandwidth.Size = New System.Drawing.Size(158, 13)
+        Me.lblBandwidth.Size = New System.Drawing.Size(211, 16)
         Me.lblBandwidth.TabIndex = 148
         Me.lblBandwidth.Text = "Bandwidth [Hz]:"
         Me.lblBandwidth.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -3914,90 +4138,98 @@
         Me.fraAcousticR.Controls.Add(Me.txtCenterFreqR)
         Me.fraAcousticR.Controls.Add(Me.txtBandwidthR)
         Me.fraAcousticR.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraAcousticR.Location = New System.Drawing.Point(270, 46)
+        Me.fraAcousticR.Location = New System.Drawing.Point(360, 57)
+        Me.fraAcousticR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAcousticR.Name = "fraAcousticR"
+        Me.fraAcousticR.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAcousticR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraAcousticR.Size = New System.Drawing.Size(170, 209)
+        Me.fraAcousticR.Size = New System.Drawing.Size(227, 257)
         Me.fraAcousticR.TabIndex = 144
-        Me.fraAcousticR.TabStop = false
+        Me.fraAcousticR.TabStop = False
         Me.fraAcousticR.Text = "Right:"
         '
         'txtMCLR
         '
-        Me.txtMCLR.AcceptsReturn = true
+        Me.txtMCLR.AcceptsReturn = True
         Me.txtMCLR.BackColor = System.Drawing.SystemColors.Window
         Me.txtMCLR.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtMCLR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtMCLR.Location = New System.Drawing.Point(16, 168)
+        Me.txtMCLR.Location = New System.Drawing.Point(21, 207)
+        Me.txtMCLR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtMCLR.MaxLength = 10
         Me.txtMCLR.Name = "txtMCLR"
         Me.txtMCLR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtMCLR.Size = New System.Drawing.Size(53, 20)
+        Me.txtMCLR.Size = New System.Drawing.Size(69, 22)
         Me.txtMCLR.TabIndex = 109
         '
         'txtTHRR
         '
-        Me.txtTHRR.AcceptsReturn = true
+        Me.txtTHRR.AcceptsReturn = True
         Me.txtTHRR.BackColor = System.Drawing.SystemColors.Window
         Me.txtTHRR.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtTHRR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtTHRR.Location = New System.Drawing.Point(16, 144)
+        Me.txtTHRR.Location = New System.Drawing.Point(21, 177)
+        Me.txtTHRR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtTHRR.MaxLength = 10
         Me.txtTHRR.Name = "txtTHRR"
         Me.txtTHRR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtTHRR.Size = New System.Drawing.Size(53, 20)
+        Me.txtTHRR.Size = New System.Drawing.Size(69, 22)
         Me.txtTHRR.TabIndex = 108
         '
         'txtAmpR
         '
-        Me.txtAmpR.AcceptsReturn = true
+        Me.txtAmpR.AcceptsReturn = True
         Me.txtAmpR.BackColor = System.Drawing.SystemColors.Window
         Me.txtAmpR.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtAmpR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtAmpR.Location = New System.Drawing.Point(16, 48)
+        Me.txtAmpR.Location = New System.Drawing.Point(21, 59)
+        Me.txtAmpR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtAmpR.MaxLength = 10
         Me.txtAmpR.Name = "txtAmpR"
         Me.txtAmpR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtAmpR.Size = New System.Drawing.Size(53, 20)
+        Me.txtAmpR.Size = New System.Drawing.Size(69, 22)
         Me.txtAmpR.TabIndex = 104
         '
         'txtSPLOffsetR
         '
-        Me.txtSPLOffsetR.AcceptsReturn = true
+        Me.txtSPLOffsetR.AcceptsReturn = True
         Me.txtSPLOffsetR.BackColor = System.Drawing.SystemColors.Window
         Me.txtSPLOffsetR.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtSPLOffsetR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtSPLOffsetR.Location = New System.Drawing.Point(16, 72)
+        Me.txtSPLOffsetR.Location = New System.Drawing.Point(21, 89)
+        Me.txtSPLOffsetR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSPLOffsetR.MaxLength = 10
         Me.txtSPLOffsetR.Name = "txtSPLOffsetR"
         Me.txtSPLOffsetR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtSPLOffsetR.Size = New System.Drawing.Size(53, 20)
+        Me.txtSPLOffsetR.Size = New System.Drawing.Size(69, 22)
         Me.txtSPLOffsetR.TabIndex = 105
         '
         'txtCenterFreqR
         '
-        Me.txtCenterFreqR.AcceptsReturn = true
+        Me.txtCenterFreqR.AcceptsReturn = True
         Me.txtCenterFreqR.BackColor = System.Drawing.SystemColors.Window
         Me.txtCenterFreqR.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtCenterFreqR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtCenterFreqR.Location = New System.Drawing.Point(16, 96)
+        Me.txtCenterFreqR.Location = New System.Drawing.Point(21, 118)
+        Me.txtCenterFreqR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCenterFreqR.MaxLength = 10
         Me.txtCenterFreqR.Name = "txtCenterFreqR"
         Me.txtCenterFreqR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtCenterFreqR.Size = New System.Drawing.Size(53, 20)
+        Me.txtCenterFreqR.Size = New System.Drawing.Size(69, 22)
         Me.txtCenterFreqR.TabIndex = 106
         '
         'txtBandwidthR
         '
-        Me.txtBandwidthR.AcceptsReturn = true
+        Me.txtBandwidthR.AcceptsReturn = True
         Me.txtBandwidthR.BackColor = System.Drawing.SystemColors.Window
         Me.txtBandwidthR.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtBandwidthR.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtBandwidthR.Location = New System.Drawing.Point(16, 120)
+        Me.txtBandwidthR.Location = New System.Drawing.Point(21, 148)
+        Me.txtBandwidthR.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtBandwidthR.MaxLength = 10
         Me.txtBandwidthR.Name = "txtBandwidthR"
         Me.txtBandwidthR.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtBandwidthR.Size = New System.Drawing.Size(53, 20)
+        Me.txtBandwidthR.Size = New System.Drawing.Size(69, 22)
         Me.txtBandwidthR.TabIndex = 107
         '
         'tabAudio
@@ -4019,16 +4251,17 @@
         Me.tabAudio.Controls.Add(Me.fraAudioDACLeft)
         Me.tabAudio.Controls.Add(Me.fraAudioDACRight)
         Me.tabAudio.Location = New System.Drawing.Point(4, 40)
+        Me.tabAudio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabAudio.Name = "tabAudio"
-        Me.tabAudio.Size = New System.Drawing.Size(514, 430)
+        Me.tabAudio.Size = New System.Drawing.Size(688, 539)
         Me.tabAudio.TabIndex = 6
         Me.tabAudio.Text = "Audio"
-        Me.tabAudio.UseVisualStyleBackColor = true
+        Me.tabAudio.UseVisualStyleBackColor = True
         '
         '_fraAudioDither_1
         '
-        Me._fraAudioDither_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._fraAudioDither_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._fraAudioDither_1.Controls.Add(Me.sldAudioDitherAmp_1)
         Me._fraAudioDither_1.Controls.Add(Me._txtAudioDitherPar1_1)
         Me._fraAudioDither_1.Controls.Add(Me._cmbAudioDither_1)
@@ -4040,42 +4273,46 @@
         Me._fraAudioDither_1.Controls.Add(Me.Label46)
         Me._fraAudioDither_1.Controls.Add(Me._lblAudioDitherAmp_1)
         Me._fraAudioDither_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraAudioDither.SetIndex(Me._fraAudioDither_1, CType(1,Short))
-        Me._fraAudioDither_1.Location = New System.Drawing.Point(3, 187)
+        Me.fraAudioDither.SetIndex(Me._fraAudioDither_1, CType(1, Short))
+        Me._fraAudioDither_1.Location = New System.Drawing.Point(4, 230)
+        Me._fraAudioDither_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraAudioDither_1.Name = "_fraAudioDither_1"
+        Me._fraAudioDither_1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraAudioDither_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._fraAudioDither_1.Size = New System.Drawing.Size(483, 73)
+        Me._fraAudioDither_1.Size = New System.Drawing.Size(644, 90)
         Me._fraAudioDither_1.TabIndex = 184
-        Me._fraAudioDither_1.TabStop = false
+        Me._fraAudioDither_1.TabStop = False
         Me._fraAudioDither_1.Text = "Synthesizer B:"
         '
         'sldAudioDitherAmp_1
         '
-        Me.sldAudioDitherAmp_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.sldAudioDitherAmp_1.AutoSize = false
+        Me.sldAudioDitherAmp_1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.sldAudioDitherAmp_1.AutoSize = False
         Me.sldAudioDitherAmp_1.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.sldAudioDitherAmp_1.Location = New System.Drawing.Point(13, 44)
+        Me.sldAudioDitherAmp_1.Location = New System.Drawing.Point(17, 54)
+        Me.sldAudioDitherAmp_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.sldAudioDitherAmp_1.Maximum = 1000
         Me.sldAudioDitherAmp_1.Name = "sldAudioDitherAmp_1"
-        Me.sldAudioDitherAmp_1.Size = New System.Drawing.Size(314, 24)
+        Me.sldAudioDitherAmp_1.Size = New System.Drawing.Size(419, 30)
         Me.sldAudioDitherAmp_1.TabIndex = 227
         Me.sldAudioDitherAmp_1.TickFrequency = 10
         Me.sldAudioDitherAmp_1.TickStyle = System.Windows.Forms.TickStyle.None
         '
         '_txtAudioDitherPar1_1
         '
-        Me._txtAudioDitherPar1_1.AcceptsReturn = true
-        Me._txtAudioDitherPar1_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtAudioDitherPar1_1.AcceptsReturn = True
+        Me._txtAudioDitherPar1_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtAudioDitherPar1_1.BackColor = System.Drawing.SystemColors.Window
         Me._txtAudioDitherPar1_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtAudioDitherPar1_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtAudioDitherPar1.SetIndex(Me._txtAudioDitherPar1_1, CType(1,Short))
-        Me._txtAudioDitherPar1_1.Location = New System.Drawing.Point(406, 8)
+        Me.txtAudioDitherPar1.SetIndex(Me._txtAudioDitherPar1_1, CType(1, Short))
+        Me._txtAudioDitherPar1_1.Location = New System.Drawing.Point(541, 10)
+        Me._txtAudioDitherPar1_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtAudioDitherPar1_1.MaxLength = 10
         Me._txtAudioDitherPar1_1.Name = "_txtAudioDitherPar1_1"
         Me._txtAudioDitherPar1_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtAudioDitherPar1_1.Size = New System.Drawing.Size(61, 20)
+        Me._txtAudioDitherPar1_1.Size = New System.Drawing.Size(80, 22)
         Me._txtAudioDitherPar1_1.TabIndex = 225
         '
         '_cmbAudioDither_1
@@ -4083,80 +4320,86 @@
         Me._cmbAudioDither_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmbAudioDither_1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me._cmbAudioDither_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbAudioDither.SetIndex(Me._cmbAudioDither_1, CType(1,Short))
-        Me._cmbAudioDither_1.Location = New System.Drawing.Point(21, 20)
+        Me.cmbAudioDither.SetIndex(Me._cmbAudioDither_1, CType(1, Short))
+        Me._cmbAudioDither_1.Location = New System.Drawing.Point(28, 25)
+        Me._cmbAudioDither_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmbAudioDither_1.Name = "_cmbAudioDither_1"
         Me._cmbAudioDither_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmbAudioDither_1.Size = New System.Drawing.Size(73, 21)
+        Me._cmbAudioDither_1.Size = New System.Drawing.Size(96, 24)
         Me._cmbAudioDither_1.TabIndex = 188
         '
         '_txtAudioDitherLC_1
         '
-        Me._txtAudioDitherLC_1.AcceptsReturn = true
-        Me._txtAudioDitherLC_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtAudioDitherLC_1.AcceptsReturn = True
+        Me._txtAudioDitherLC_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtAudioDitherLC_1.BackColor = System.Drawing.SystemColors.Window
         Me._txtAudioDitherLC_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtAudioDitherLC_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtAudioDitherLC.SetIndex(Me._txtAudioDitherLC_1, CType(1,Short))
-        Me._txtAudioDitherLC_1.Location = New System.Drawing.Point(406, 28)
+        Me.txtAudioDitherLC.SetIndex(Me._txtAudioDitherLC_1, CType(1, Short))
+        Me._txtAudioDitherLC_1.Location = New System.Drawing.Point(541, 34)
+        Me._txtAudioDitherLC_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtAudioDitherLC_1.MaxLength = 10
         Me._txtAudioDitherLC_1.Name = "_txtAudioDitherLC_1"
         Me._txtAudioDitherLC_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtAudioDitherLC_1.Size = New System.Drawing.Size(61, 20)
+        Me._txtAudioDitherLC_1.Size = New System.Drawing.Size(80, 22)
         Me._txtAudioDitherLC_1.TabIndex = 186
         '
         '_txtAudioDitherHC_1
         '
-        Me._txtAudioDitherHC_1.AcceptsReturn = true
-        Me._txtAudioDitherHC_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtAudioDitherHC_1.AcceptsReturn = True
+        Me._txtAudioDitherHC_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtAudioDitherHC_1.BackColor = System.Drawing.SystemColors.Window
         Me._txtAudioDitherHC_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtAudioDitherHC_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtAudioDitherHC.SetIndex(Me._txtAudioDitherHC_1, CType(1,Short))
-        Me._txtAudioDitherHC_1.Location = New System.Drawing.Point(406, 48)
+        Me.txtAudioDitherHC.SetIndex(Me._txtAudioDitherHC_1, CType(1, Short))
+        Me._txtAudioDitherHC_1.Location = New System.Drawing.Point(541, 59)
+        Me._txtAudioDitherHC_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtAudioDitherHC_1.MaxLength = 10
         Me._txtAudioDitherHC_1.Name = "_txtAudioDitherHC_1"
         Me._txtAudioDitherHC_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtAudioDitherHC_1.Size = New System.Drawing.Size(61, 20)
+        Me._txtAudioDitherHC_1.Size = New System.Drawing.Size(80, 22)
         Me._txtAudioDitherHC_1.TabIndex = 187
         '
         '_lblAudio_7
         '
-        Me._lblAudio_7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lblAudio_7.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lblAudio_7.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_7.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_7, CType(7,Short))
-        Me._lblAudio_7.Location = New System.Drawing.Point(333, 12)
+        Me.lblAudio.SetIndex(Me._lblAudio_7, CType(7, Short))
+        Me._lblAudio_7.Location = New System.Drawing.Point(444, 15)
+        Me._lblAudio_7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_7.Name = "_lblAudio_7"
         Me._lblAudio_7.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_7.Size = New System.Drawing.Size(64, 13)
+        Me._lblAudio_7.Size = New System.Drawing.Size(85, 16)
         Me._lblAudio_7.TabIndex = 226
         Me._lblAudio_7.Text = "Par1:"
         Me._lblAudio_7.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblAudio_8
         '
-        Me._lblAudio_8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lblAudio_8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lblAudio_8.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_8.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_8, CType(8,Short))
-        Me._lblAudio_8.Location = New System.Drawing.Point(326, 30)
+        Me.lblAudio.SetIndex(Me._lblAudio_8, CType(8, Short))
+        Me._lblAudio_8.Location = New System.Drawing.Point(435, 37)
+        Me._lblAudio_8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_8.Name = "_lblAudio_8"
         Me._lblAudio_8.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_8.Size = New System.Drawing.Size(79, 13)
+        Me._lblAudio_8.Size = New System.Drawing.Size(105, 16)
         Me._lblAudio_8.TabIndex = 192
         Me._lblAudio_8.Text = "Low Cut [Hz]:"
         '
         '_lblAudio_9
         '
-        Me._lblAudio_9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lblAudio_9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lblAudio_9.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_9.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_9, CType(9,Short))
-        Me._lblAudio_9.Location = New System.Drawing.Point(324, 51)
+        Me.lblAudio.SetIndex(Me._lblAudio_9, CType(9, Short))
+        Me._lblAudio_9.Location = New System.Drawing.Point(432, 63)
+        Me._lblAudio_9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_9.Name = "_lblAudio_9"
         Me._lblAudio_9.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_9.Size = New System.Drawing.Size(74, 13)
+        Me._lblAudio_9.Size = New System.Drawing.Size(99, 16)
         Me._lblAudio_9.TabIndex = 191
         Me._lblAudio_9.Text = "High Cut [Hz]:"
         '
@@ -4164,32 +4407,34 @@
         '
         Me.Label46.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label46.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label46.Location = New System.Drawing.Point(106, 28)
+        Me.Label46.Location = New System.Drawing.Point(141, 34)
+        Me.Label46.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label46.Name = "Label46"
         Me.Label46.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label46.Size = New System.Drawing.Size(77, 20)
+        Me.Label46.Size = New System.Drawing.Size(103, 25)
         Me.Label46.TabIndex = 190
         Me.Label46.Text = "Amp [dB FS]:"
         '
         '_lblAudioDitherAmp_1
         '
-        Me._lblAudioDitherAmp_1.AutoSize = true
+        Me._lblAudioDitherAmp_1.AutoSize = True
         Me._lblAudioDitherAmp_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblAudioDitherAmp_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblAudioDitherAmp_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAudioDitherAmp_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudioDitherAmp.SetIndex(Me._lblAudioDitherAmp_1, CType(1,Short))
-        Me._lblAudioDitherAmp_1.Location = New System.Drawing.Point(184, 28)
+        Me.lblAudioDitherAmp.SetIndex(Me._lblAudioDitherAmp_1, CType(1, Short))
+        Me._lblAudioDitherAmp_1.Location = New System.Drawing.Point(245, 34)
+        Me._lblAudioDitherAmp_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudioDitherAmp_1.Name = "_lblAudioDitherAmp_1"
         Me._lblAudioDitherAmp_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudioDitherAmp_1.Size = New System.Drawing.Size(39, 13)
+        Me._lblAudioDitherAmp_1.Size = New System.Drawing.Size(48, 17)
         Me._lblAudioDitherAmp_1.TabIndex = 189
         Me._lblAudioDitherAmp_1.Text = "XXXX"
         Me._lblAudioDitherAmp_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_fraAudioDither_0
         '
-        Me._fraAudioDither_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._fraAudioDither_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._fraAudioDither_0.Controls.Add(Me.sldAudioDitherAmp_0)
         Me._fraAudioDither_0.Controls.Add(Me._txtAudioDitherPar1_0)
         Me._fraAudioDither_0.Controls.Add(Me._txtAudioDitherLC_0)
@@ -4201,72 +4446,78 @@
         Me._fraAudioDither_0.Controls.Add(Me._lblAudio_6)
         Me._fraAudioDither_0.Controls.Add(Me._lblAudio_5)
         Me._fraAudioDither_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraAudioDither.SetIndex(Me._fraAudioDither_0, CType(0,Short))
-        Me._fraAudioDither_0.Location = New System.Drawing.Point(3, 111)
+        Me.fraAudioDither.SetIndex(Me._fraAudioDither_0, CType(0, Short))
+        Me._fraAudioDither_0.Location = New System.Drawing.Point(4, 137)
+        Me._fraAudioDither_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraAudioDither_0.Name = "_fraAudioDither_0"
+        Me._fraAudioDither_0.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraAudioDither_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._fraAudioDither_0.Size = New System.Drawing.Size(483, 73)
+        Me._fraAudioDither_0.Size = New System.Drawing.Size(644, 90)
         Me._fraAudioDither_0.TabIndex = 175
-        Me._fraAudioDither_0.TabStop = false
+        Me._fraAudioDither_0.TabStop = False
         Me._fraAudioDither_0.Text = "Synthesizer A:"
         '
         'sldAudioDitherAmp_0
         '
-        Me.sldAudioDitherAmp_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.sldAudioDitherAmp_0.AutoSize = false
+        Me.sldAudioDitherAmp_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.sldAudioDitherAmp_0.AutoSize = False
         Me.sldAudioDitherAmp_0.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.sldAudioDitherAmp_0.Location = New System.Drawing.Point(13, 44)
+        Me.sldAudioDitherAmp_0.Location = New System.Drawing.Point(17, 54)
+        Me.sldAudioDitherAmp_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.sldAudioDitherAmp_0.Maximum = 1000
         Me.sldAudioDitherAmp_0.Name = "sldAudioDitherAmp_0"
-        Me.sldAudioDitherAmp_0.Size = New System.Drawing.Size(314, 24)
+        Me.sldAudioDitherAmp_0.Size = New System.Drawing.Size(419, 30)
         Me.sldAudioDitherAmp_0.TabIndex = 225
         Me.sldAudioDitherAmp_0.TickFrequency = 10
         Me.sldAudioDitherAmp_0.TickStyle = System.Windows.Forms.TickStyle.None
         '
         '_txtAudioDitherPar1_0
         '
-        Me._txtAudioDitherPar1_0.AcceptsReturn = true
-        Me._txtAudioDitherPar1_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtAudioDitherPar1_0.AcceptsReturn = True
+        Me._txtAudioDitherPar1_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtAudioDitherPar1_0.BackColor = System.Drawing.SystemColors.Window
         Me._txtAudioDitherPar1_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtAudioDitherPar1_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtAudioDitherPar1.SetIndex(Me._txtAudioDitherPar1_0, CType(0,Short))
-        Me._txtAudioDitherPar1_0.Location = New System.Drawing.Point(406, 8)
+        Me.txtAudioDitherPar1.SetIndex(Me._txtAudioDitherPar1_0, CType(0, Short))
+        Me._txtAudioDitherPar1_0.Location = New System.Drawing.Point(541, 10)
+        Me._txtAudioDitherPar1_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtAudioDitherPar1_0.MaxLength = 10
         Me._txtAudioDitherPar1_0.Name = "_txtAudioDitherPar1_0"
         Me._txtAudioDitherPar1_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtAudioDitherPar1_0.Size = New System.Drawing.Size(61, 20)
+        Me._txtAudioDitherPar1_0.Size = New System.Drawing.Size(80, 22)
         Me._txtAudioDitherPar1_0.TabIndex = 223
         '
         '_txtAudioDitherLC_0
         '
-        Me._txtAudioDitherLC_0.AcceptsReturn = true
-        Me._txtAudioDitherLC_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtAudioDitherLC_0.AcceptsReturn = True
+        Me._txtAudioDitherLC_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtAudioDitherLC_0.BackColor = System.Drawing.SystemColors.Window
         Me._txtAudioDitherLC_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtAudioDitherLC_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtAudioDitherLC.SetIndex(Me._txtAudioDitherLC_0, CType(0,Short))
-        Me._txtAudioDitherLC_0.Location = New System.Drawing.Point(406, 28)
+        Me.txtAudioDitherLC.SetIndex(Me._txtAudioDitherLC_0, CType(0, Short))
+        Me._txtAudioDitherLC_0.Location = New System.Drawing.Point(541, 34)
+        Me._txtAudioDitherLC_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtAudioDitherLC_0.MaxLength = 10
         Me._txtAudioDitherLC_0.Name = "_txtAudioDitherLC_0"
         Me._txtAudioDitherLC_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtAudioDitherLC_0.Size = New System.Drawing.Size(61, 20)
+        Me._txtAudioDitherLC_0.Size = New System.Drawing.Size(80, 22)
         Me._txtAudioDitherLC_0.TabIndex = 178
         '
         '_txtAudioDitherHC_0
         '
-        Me._txtAudioDitherHC_0.AcceptsReturn = true
-        Me._txtAudioDitherHC_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtAudioDitherHC_0.AcceptsReturn = True
+        Me._txtAudioDitherHC_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtAudioDitherHC_0.BackColor = System.Drawing.SystemColors.Window
         Me._txtAudioDitherHC_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtAudioDitherHC_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtAudioDitherHC.SetIndex(Me._txtAudioDitherHC_0, CType(0,Short))
-        Me._txtAudioDitherHC_0.Location = New System.Drawing.Point(406, 48)
+        Me.txtAudioDitherHC.SetIndex(Me._txtAudioDitherHC_0, CType(0, Short))
+        Me._txtAudioDitherHC_0.Location = New System.Drawing.Point(541, 59)
+        Me._txtAudioDitherHC_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtAudioDitherHC_0.MaxLength = 10
         Me._txtAudioDitherHC_0.Name = "_txtAudioDitherHC_0"
         Me._txtAudioDitherHC_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtAudioDitherHC_0.Size = New System.Drawing.Size(61, 20)
+        Me._txtAudioDitherHC_0.Size = New System.Drawing.Size(80, 22)
         Me._txtAudioDitherHC_0.TabIndex = 177
         '
         '_cmbAudioDither_0
@@ -4274,40 +4525,43 @@
         Me._cmbAudioDither_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmbAudioDither_0.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me._cmbAudioDither_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbAudioDither.SetIndex(Me._cmbAudioDither_0, CType(0,Short))
-        Me._cmbAudioDither_0.Location = New System.Drawing.Point(21, 20)
+        Me.cmbAudioDither.SetIndex(Me._cmbAudioDither_0, CType(0, Short))
+        Me._cmbAudioDither_0.Location = New System.Drawing.Point(28, 25)
+        Me._cmbAudioDither_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmbAudioDither_0.Name = "_cmbAudioDither_0"
         Me._cmbAudioDither_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmbAudioDither_0.Size = New System.Drawing.Size(73, 21)
+        Me._cmbAudioDither_0.Size = New System.Drawing.Size(96, 24)
         Me._cmbAudioDither_0.TabIndex = 176
         '
         '_lblAudio_4
         '
-        Me._lblAudio_4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lblAudio_4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lblAudio_4.BackColor = System.Drawing.Color.Transparent
         Me._lblAudio_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_4, CType(4,Short))
-        Me._lblAudio_4.Location = New System.Drawing.Point(326, 12)
+        Me.lblAudio.SetIndex(Me._lblAudio_4, CType(4, Short))
+        Me._lblAudio_4.Location = New System.Drawing.Point(435, 15)
+        Me._lblAudio_4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_4.Name = "_lblAudio_4"
         Me._lblAudio_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_4.Size = New System.Drawing.Size(71, 13)
+        Me._lblAudio_4.Size = New System.Drawing.Size(95, 16)
         Me._lblAudio_4.TabIndex = 224
         Me._lblAudio_4.Text = "Par1:"
         Me._lblAudio_4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblAudioDitherAmp_0
         '
-        Me._lblAudioDitherAmp_0.AutoSize = true
+        Me._lblAudioDitherAmp_0.AutoSize = True
         Me._lblAudioDitherAmp_0.BackColor = System.Drawing.Color.Transparent
         Me._lblAudioDitherAmp_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblAudioDitherAmp_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblAudioDitherAmp_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAudioDitherAmp_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudioDitherAmp.SetIndex(Me._lblAudioDitherAmp_0, CType(0,Short))
-        Me._lblAudioDitherAmp_0.Location = New System.Drawing.Point(184, 28)
+        Me.lblAudioDitherAmp.SetIndex(Me._lblAudioDitherAmp_0, CType(0, Short))
+        Me._lblAudioDitherAmp_0.Location = New System.Drawing.Point(245, 34)
+        Me._lblAudioDitherAmp_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudioDitherAmp_0.Name = "_lblAudioDitherAmp_0"
         Me._lblAudioDitherAmp_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudioDitherAmp_0.Size = New System.Drawing.Size(39, 13)
+        Me._lblAudioDitherAmp_0.Size = New System.Drawing.Size(48, 17)
         Me._lblAudioDitherAmp_0.TabIndex = 183
         Me._lblAudioDitherAmp_0.Text = "XXXX"
         Me._lblAudioDitherAmp_0.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -4317,152 +4571,163 @@
         Me.Label35.BackColor = System.Drawing.Color.Transparent
         Me.Label35.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label35.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label35.Location = New System.Drawing.Point(106, 28)
+        Me.Label35.Location = New System.Drawing.Point(141, 34)
+        Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label35.Name = "Label35"
         Me.Label35.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label35.Size = New System.Drawing.Size(77, 20)
+        Me.Label35.Size = New System.Drawing.Size(103, 25)
         Me.Label35.TabIndex = 182
         Me.Label35.Text = "Amp [dB FS]:"
         '
         '_lblAudio_6
         '
-        Me._lblAudio_6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lblAudio_6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lblAudio_6.BackColor = System.Drawing.Color.Transparent
         Me._lblAudio_6.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_6.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_6, CType(6,Short))
-        Me._lblAudio_6.Location = New System.Drawing.Point(325, 52)
+        Me.lblAudio.SetIndex(Me._lblAudio_6, CType(6, Short))
+        Me._lblAudio_6.Location = New System.Drawing.Point(433, 64)
+        Me._lblAudio_6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_6.Name = "_lblAudio_6"
         Me._lblAudio_6.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_6.Size = New System.Drawing.Size(80, 16)
+        Me._lblAudio_6.Size = New System.Drawing.Size(107, 20)
         Me._lblAudio_6.TabIndex = 181
         Me._lblAudio_6.Text = "High Cut [Hz]:"
         '
         '_lblAudio_5
         '
-        Me._lblAudio_5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lblAudio_5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lblAudio_5.BackColor = System.Drawing.Color.Transparent
         Me._lblAudio_5.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_5, CType(5,Short))
-        Me._lblAudio_5.Location = New System.Drawing.Point(327, 31)
+        Me.lblAudio.SetIndex(Me._lblAudio_5, CType(5, Short))
+        Me._lblAudio_5.Location = New System.Drawing.Point(436, 38)
+        Me._lblAudio_5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_5.Name = "_lblAudio_5"
         Me._lblAudio_5.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_5.Size = New System.Drawing.Size(75, 13)
+        Me._lblAudio_5.Size = New System.Drawing.Size(100, 16)
         Me._lblAudio_5.TabIndex = 180
         Me._lblAudio_5.Text = "Low Cut [Hz]:"
         '
         'txtFadeOut
         '
-        Me.txtFadeOut.AcceptsReturn = true
+        Me.txtFadeOut.AcceptsReturn = True
         Me.txtFadeOut.BackColor = System.Drawing.SystemColors.Window
         Me.txtFadeOut.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtFadeOut.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtFadeOut.Location = New System.Drawing.Point(299, 47)
+        Me.txtFadeOut.Location = New System.Drawing.Point(399, 58)
+        Me.txtFadeOut.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtFadeOut.MaxLength = 10
         Me.txtFadeOut.Name = "txtFadeOut"
         Me.txtFadeOut.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtFadeOut.Size = New System.Drawing.Size(53, 20)
+        Me.txtFadeOut.Size = New System.Drawing.Size(69, 22)
         Me.txtFadeOut.TabIndex = 114
         '
         'txtFadeIn
         '
-        Me.txtFadeIn.AcceptsReturn = true
+        Me.txtFadeIn.AcceptsReturn = True
         Me.txtFadeIn.BackColor = System.Drawing.SystemColors.Window
         Me.txtFadeIn.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtFadeIn.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtFadeIn.Location = New System.Drawing.Point(119, 47)
+        Me.txtFadeIn.Location = New System.Drawing.Point(159, 58)
+        Me.txtFadeIn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtFadeIn.MaxLength = 10
         Me.txtFadeIn.Name = "txtFadeIn"
         Me.txtFadeIn.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtFadeIn.Size = New System.Drawing.Size(53, 20)
+        Me.txtFadeIn.Size = New System.Drawing.Size(69, 22)
         Me.txtFadeIn.TabIndex = 113
         '
         'txtResolution
         '
-        Me.txtResolution.AcceptsReturn = true
+        Me.txtResolution.AcceptsReturn = True
         Me.txtResolution.BackColor = System.Drawing.SystemColors.Window
         Me.txtResolution.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtResolution.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtResolution.Location = New System.Drawing.Point(319, 19)
+        Me.txtResolution.Location = New System.Drawing.Point(425, 23)
+        Me.txtResolution.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtResolution.MaxLength = 10
         Me.txtResolution.Name = "txtResolution"
         Me.txtResolution.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtResolution.Size = New System.Drawing.Size(33, 20)
+        Me.txtResolution.Size = New System.Drawing.Size(43, 22)
         Me.txtResolution.TabIndex = 112
         '
         'txtSamplingRate
         '
-        Me.txtSamplingRate.AcceptsReturn = true
+        Me.txtSamplingRate.AcceptsReturn = True
         Me.txtSamplingRate.BackColor = System.Drawing.SystemColors.Window
         Me.txtSamplingRate.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtSamplingRate.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtSamplingRate.Location = New System.Drawing.Point(119, 19)
+        Me.txtSamplingRate.Location = New System.Drawing.Point(159, 23)
+        Me.txtSamplingRate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtSamplingRate.MaxLength = 10
         Me.txtSamplingRate.Name = "txtSamplingRate"
         Me.txtSamplingRate.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtSamplingRate.Size = New System.Drawing.Size(81, 20)
+        Me.txtSamplingRate.Size = New System.Drawing.Size(107, 22)
         Me.txtSamplingRate.TabIndex = 111
         '
         '_lblAudio_3
         '
         Me._lblAudio_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_3, CType(3,Short))
-        Me._lblAudio_3.Location = New System.Drawing.Point(212, 51)
+        Me.lblAudio.SetIndex(Me._lblAudio_3, CType(3, Short))
+        Me._lblAudio_3.Location = New System.Drawing.Point(283, 63)
+        Me._lblAudio_3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_3.Name = "_lblAudio_3"
         Me._lblAudio_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_3.Size = New System.Drawing.Size(78, 13)
+        Me._lblAudio_3.Size = New System.Drawing.Size(104, 16)
         Me._lblAudio_3.TabIndex = 165
         Me._lblAudio_3.Text = "Fade Out [ms]:"
         Me._lblAudio_3.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblAudio_2
         '
-        Me._lblAudio_2.AutoSize = true
+        Me._lblAudio_2.AutoSize = True
         Me._lblAudio_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_2, CType(2,Short))
-        Me._lblAudio_2.Location = New System.Drawing.Point(48, 51)
+        Me.lblAudio.SetIndex(Me._lblAudio_2, CType(2, Short))
+        Me._lblAudio_2.Location = New System.Drawing.Point(64, 63)
+        Me._lblAudio_2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_2.Name = "_lblAudio_2"
         Me._lblAudio_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_2.Size = New System.Drawing.Size(68, 13)
+        Me._lblAudio_2.Size = New System.Drawing.Size(89, 17)
         Me._lblAudio_2.TabIndex = 164
         Me._lblAudio_2.Text = "Fade In [ms]:"
         Me._lblAudio_2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblAudio_1
         '
-        Me._lblAudio_1.AutoSize = true
+        Me._lblAudio_1.AutoSize = True
         Me._lblAudio_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_1, CType(1,Short))
-        Me._lblAudio_1.Location = New System.Drawing.Point(233, 22)
+        Me.lblAudio.SetIndex(Me._lblAudio_1, CType(1, Short))
+        Me._lblAudio_1.Location = New System.Drawing.Point(311, 27)
+        Me._lblAudio_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_1.Name = "_lblAudio_1"
         Me._lblAudio_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_1.Size = New System.Drawing.Size(80, 13)
+        Me._lblAudio_1.Size = New System.Drawing.Size(106, 17)
         Me._lblAudio_1.TabIndex = 128
         Me._lblAudio_1.Text = "Resolution [bit]:"
         Me._lblAudio_1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         '_lblAudio_0
         '
-        Me._lblAudio_0.AutoSize = true
+        Me._lblAudio_0.AutoSize = True
         Me._lblAudio_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblAudio_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblAudio.SetIndex(Me._lblAudio_0, CType(0,Short))
-        Me._lblAudio_0.Location = New System.Drawing.Point(20, 23)
+        Me.lblAudio.SetIndex(Me._lblAudio_0, CType(0, Short))
+        Me._lblAudio_0.Location = New System.Drawing.Point(27, 28)
+        Me._lblAudio_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblAudio_0.Name = "_lblAudio_0"
         Me._lblAudio_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblAudio_0.Size = New System.Drawing.Size(96, 13)
+        Me._lblAudio_0.Size = New System.Drawing.Size(128, 17)
         Me._lblAudio_0.TabIndex = 127
         Me._lblAudio_0.Text = "Sampling rate [Hz]:"
         Me._lblAudio_0.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'fraVocBox
         '
-        Me.fraVocBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.fraVocBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.fraVocBox.Controls.Add(Me.facScaletxt)
         Me.fraVocBox.Controls.Add(Me.facScalelbl)
         Me.fraVocBox.Controls.Add(Me.NoiseVoc)
@@ -4470,12 +4735,14 @@
         Me.fraVocBox.Controls.Add(Me.facScalelbl2)
         Me.fraVocBox.Controls.Add(Me.facScaletxt2)
         Me.fraVocBox.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraVocBox.Location = New System.Drawing.Point(358, 15)
+        Me.fraVocBox.Location = New System.Drawing.Point(477, 18)
+        Me.fraVocBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraVocBox.Name = "fraVocBox"
+        Me.fraVocBox.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraVocBox.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraVocBox.Size = New System.Drawing.Size(128, 84)
+        Me.fraVocBox.Size = New System.Drawing.Size(171, 103)
         Me.fraVocBox.TabIndex = 225
-        Me.fraVocBox.TabStop = false
+        Me.fraVocBox.TabStop = False
         Me.fraVocBox.Text = "Vocoder Type:"
         '
         'facScaletxt
@@ -4483,87 +4750,93 @@
         Me.facScaletxt.BackColor = System.Drawing.Color.Transparent
         Me.facScaletxt.Cursor = System.Windows.Forms.Cursors.Default
         Me.facScaletxt.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.facScaletxt.Location = New System.Drawing.Point(6, 60)
+        Me.facScaletxt.Location = New System.Drawing.Point(8, 74)
+        Me.facScaletxt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.facScaletxt.Name = "facScaletxt"
         Me.facScaletxt.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.facScaletxt.Size = New System.Drawing.Size(75, 13)
+        Me.facScaletxt.Size = New System.Drawing.Size(100, 16)
         Me.facScaletxt.TabIndex = 220
         Me.facScaletxt.Text = "Scaling Factor"
         '
         'facScalelbl
         '
-        Me.facScalelbl.AcceptsReturn = true
-        Me.facScalelbl.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.facScalelbl.AcceptsReturn = True
+        Me.facScalelbl.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.facScalelbl.BackColor = System.Drawing.SystemColors.Window
         Me.facScalelbl.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.facScalelbl.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.facScalelbl.Location = New System.Drawing.Point(82, 57)
+        Me.facScalelbl.Location = New System.Drawing.Point(109, 70)
+        Me.facScalelbl.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.facScalelbl.MaxLength = 10
         Me.facScalelbl.Name = "facScalelbl"
         Me.facScalelbl.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.facScalelbl.Size = New System.Drawing.Size(40, 20)
+        Me.facScalelbl.Size = New System.Drawing.Size(52, 22)
         Me.facScalelbl.TabIndex = 219
         '
         'NoiseVoc
         '
-        Me.NoiseVoc.AutoSize = true
+        Me.NoiseVoc.AutoSize = True
         Me.NoiseVoc.Cursor = System.Windows.Forms.Cursors.Default
         Me.NoiseVoc.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.NoiseVoc.Location = New System.Drawing.Point(6, 16)
+        Me.NoiseVoc.Location = New System.Drawing.Point(8, 20)
+        Me.NoiseVoc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.NoiseVoc.Name = "NoiseVoc"
         Me.NoiseVoc.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.NoiseVoc.Size = New System.Drawing.Size(95, 17)
+        Me.NoiseVoc.Size = New System.Drawing.Size(122, 21)
         Me.NoiseVoc.TabIndex = 212
-        Me.NoiseVoc.TabStop = true
+        Me.NoiseVoc.TabStop = True
         Me.NoiseVoc.Text = "Noise Vocoder"
-        Me.NoiseVoc.UseVisualStyleBackColor = false
+        Me.NoiseVoc.UseVisualStyleBackColor = False
         '
         'GetVoc
         '
         Me.GetVoc.Cursor = System.Windows.Forms.Cursors.Default
         Me.GetVoc.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GetVoc.Location = New System.Drawing.Point(6, 35)
+        Me.GetVoc.Location = New System.Drawing.Point(8, 43)
+        Me.GetVoc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GetVoc.Name = "GetVoc"
         Me.GetVoc.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GetVoc.Size = New System.Drawing.Size(100, 19)
+        Me.GetVoc.Size = New System.Drawing.Size(133, 23)
         Me.GetVoc.TabIndex = 211
-        Me.GetVoc.TabStop = true
+        Me.GetVoc.TabStop = True
         Me.GetVoc.Text = "GET Vocoder"
-        Me.GetVoc.UseVisualStyleBackColor = false
+        Me.GetVoc.UseVisualStyleBackColor = False
         '
         'facScalelbl2
         '
-        Me.facScalelbl2.AcceptsReturn = true
-        Me.facScalelbl2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.facScalelbl2.AcceptsReturn = True
+        Me.facScalelbl2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.facScalelbl2.BackColor = System.Drawing.SystemColors.Window
         Me.facScalelbl2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.facScalelbl2.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.facScalelbl2.Location = New System.Drawing.Point(485, 337)
+        Me.facScalelbl2.Location = New System.Drawing.Point(647, 415)
+        Me.facScalelbl2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.facScalelbl2.MaxLength = 10
         Me.facScalelbl2.Name = "facScalelbl2"
         Me.facScalelbl2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.facScalelbl2.Size = New System.Drawing.Size(61, 20)
+        Me.facScalelbl2.Size = New System.Drawing.Size(80, 22)
         Me.facScalelbl2.TabIndex = 226
         '
         'facScaletxt2
         '
-        Me.facScaletxt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.facScaletxt2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.facScaletxt2.BackColor = System.Drawing.Color.Transparent
         Me.facScaletxt2.Cursor = System.Windows.Forms.Cursors.Default
         Me.facScaletxt2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.facScaletxt2.Location = New System.Drawing.Point(305, 28)
+        Me.facScaletxt2.Location = New System.Drawing.Point(407, 34)
+        Me.facScaletxt2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.facScaletxt2.Name = "facScaletxt2"
         Me.facScaletxt2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.facScaletxt2.Size = New System.Drawing.Size(71, 13)
+        Me.facScaletxt2.Size = New System.Drawing.Size(95, 16)
         Me.facScaletxt2.TabIndex = 226
         Me.facScaletxt2.Text = "Scaling Factor"
         Me.facScaletxt2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'fraAudioDACMulti
         '
-        Me.fraAudioDACMulti.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.fraAudioDACMulti.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.fraAudioDACMulti.Controls.Add(Me.cmdAudioSynthAllA)
         Me.fraAudioDACMulti.Controls.Add(Me.cmdAudioSynthAllB)
         Me.fraAudioDACMulti.Controls.Add(Me.cmdAudioSynthDis)
@@ -4572,91 +4845,99 @@
         Me.fraAudioDACMulti.Controls.Add(Me._optAudioSynthDAC_1)
         Me.fraAudioDACMulti.Controls.Add(Me._optAudioSynthDAC_2)
         Me.fraAudioDACMulti.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraAudioDACMulti.Location = New System.Drawing.Point(3, 263)
+        Me.fraAudioDACMulti.Location = New System.Drawing.Point(4, 324)
+        Me.fraAudioDACMulti.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAudioDACMulti.Name = "fraAudioDACMulti"
+        Me.fraAudioDACMulti.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAudioDACMulti.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraAudioDACMulti.Size = New System.Drawing.Size(483, 148)
+        Me.fraAudioDACMulti.Size = New System.Drawing.Size(644, 182)
         Me.fraAudioDACMulti.TabIndex = 209
-        Me.fraAudioDACMulti.TabStop = false
+        Me.fraAudioDACMulti.TabStop = False
         Me.fraAudioDACMulti.Text = "Channel:"
         '
         'cmdAudioSynthAllA
         '
         Me.cmdAudioSynthAllA.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdAudioSynthAllA.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdAudioSynthAllA.Location = New System.Drawing.Point(344, 31)
+        Me.cmdAudioSynthAllA.Location = New System.Drawing.Point(459, 38)
+        Me.cmdAudioSynthAllA.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdAudioSynthAllA.Name = "cmdAudioSynthAllA"
         Me.cmdAudioSynthAllA.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdAudioSynthAllA.Size = New System.Drawing.Size(116, 22)
+        Me.cmdAudioSynthAllA.Size = New System.Drawing.Size(155, 27)
         Me.cmdAudioSynthAllA.TabIndex = 224
         Me.cmdAudioSynthAllA.Text = "Synth A: All Channels"
-        Me.cmdAudioSynthAllA.UseVisualStyleBackColor = false
+        Me.cmdAudioSynthAllA.UseVisualStyleBackColor = False
         '
         'cmdAudioSynthAllB
         '
         Me.cmdAudioSynthAllB.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdAudioSynthAllB.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdAudioSynthAllB.Location = New System.Drawing.Point(344, 56)
+        Me.cmdAudioSynthAllB.Location = New System.Drawing.Point(459, 69)
+        Me.cmdAudioSynthAllB.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdAudioSynthAllB.Name = "cmdAudioSynthAllB"
         Me.cmdAudioSynthAllB.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdAudioSynthAllB.Size = New System.Drawing.Size(116, 22)
+        Me.cmdAudioSynthAllB.Size = New System.Drawing.Size(155, 27)
         Me.cmdAudioSynthAllB.TabIndex = 223
         Me.cmdAudioSynthAllB.Text = "Synth B: All Channels"
-        Me.cmdAudioSynthAllB.UseVisualStyleBackColor = false
+        Me.cmdAudioSynthAllB.UseVisualStyleBackColor = False
         '
         'cmdAudioSynthDis
         '
         Me.cmdAudioSynthDis.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdAudioSynthDis.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdAudioSynthDis.Location = New System.Drawing.Point(250, 16)
+        Me.cmdAudioSynthDis.Location = New System.Drawing.Point(333, 20)
+        Me.cmdAudioSynthDis.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdAudioSynthDis.Name = "cmdAudioSynthDis"
         Me.cmdAudioSynthDis.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdAudioSynthDis.Size = New System.Drawing.Size(90, 63)
+        Me.cmdAudioSynthDis.Size = New System.Drawing.Size(120, 78)
         Me.cmdAudioSynthDis.TabIndex = 222
         Me.cmdAudioSynthDis.Text = "Disable All Channels"
-        Me.cmdAudioSynthDis.UseVisualStyleBackColor = false
+        Me.cmdAudioSynthDis.UseVisualStyleBackColor = False
         '
         '_optAudioSynthDAC_0
         '
         Me._optAudioSynthDAC_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioSynthDAC_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioSynthDAC.SetIndex(Me._optAudioSynthDAC_0, CType(0,Short))
-        Me._optAudioSynthDAC_0.Location = New System.Drawing.Point(185, 21)
+        Me.optAudioSynthDAC.SetIndex(Me._optAudioSynthDAC_0, CType(0, Short))
+        Me._optAudioSynthDAC_0.Location = New System.Drawing.Point(247, 26)
+        Me._optAudioSynthDAC_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioSynthDAC_0.Name = "_optAudioSynthDAC_0"
         Me._optAudioSynthDAC_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioSynthDAC_0.Size = New System.Drawing.Size(77, 17)
+        Me._optAudioSynthDAC_0.Size = New System.Drawing.Size(103, 21)
         Me._optAudioSynthDAC_0.TabIndex = 212
-        Me._optAudioSynthDAC_0.TabStop = true
+        Me._optAudioSynthDAC_0.TabStop = True
         Me._optAudioSynthDAC_0.Text = "Disabled"
-        Me._optAudioSynthDAC_0.UseVisualStyleBackColor = false
+        Me._optAudioSynthDAC_0.UseVisualStyleBackColor = False
         '
         '_optAudioSynthDAC_1
         '
         Me._optAudioSynthDAC_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioSynthDAC_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioSynthDAC.SetIndex(Me._optAudioSynthDAC_1, CType(1,Short))
-        Me._optAudioSynthDAC_1.Location = New System.Drawing.Point(185, 39)
+        Me.optAudioSynthDAC.SetIndex(Me._optAudioSynthDAC_1, CType(1, Short))
+        Me._optAudioSynthDAC_1.Location = New System.Drawing.Point(247, 48)
+        Me._optAudioSynthDAC_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioSynthDAC_1.Name = "_optAudioSynthDAC_1"
         Me._optAudioSynthDAC_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioSynthDAC_1.Size = New System.Drawing.Size(66, 19)
+        Me._optAudioSynthDAC_1.Size = New System.Drawing.Size(88, 23)
         Me._optAudioSynthDAC_1.TabIndex = 211
-        Me._optAudioSynthDAC_1.TabStop = true
+        Me._optAudioSynthDAC_1.TabStop = True
         Me._optAudioSynthDAC_1.Text = "Synth A"
-        Me._optAudioSynthDAC_1.UseVisualStyleBackColor = false
+        Me._optAudioSynthDAC_1.UseVisualStyleBackColor = False
         '
         '_optAudioSynthDAC_2
         '
         Me._optAudioSynthDAC_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioSynthDAC_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioSynthDAC.SetIndex(Me._optAudioSynthDAC_2, CType(2,Short))
-        Me._optAudioSynthDAC_2.Location = New System.Drawing.Point(185, 58)
+        Me.optAudioSynthDAC.SetIndex(Me._optAudioSynthDAC_2, CType(2, Short))
+        Me._optAudioSynthDAC_2.Location = New System.Drawing.Point(247, 71)
+        Me._optAudioSynthDAC_2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioSynthDAC_2.Name = "_optAudioSynthDAC_2"
         Me._optAudioSynthDAC_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioSynthDAC_2.Size = New System.Drawing.Size(66, 19)
+        Me._optAudioSynthDAC_2.Size = New System.Drawing.Size(88, 23)
         Me._optAudioSynthDAC_2.TabIndex = 210
-        Me._optAudioSynthDAC_2.TabStop = true
+        Me._optAudioSynthDAC_2.TabStop = True
         Me._optAudioSynthDAC_2.Text = "Synth B"
-        Me._optAudioSynthDAC_2.UseVisualStyleBackColor = false
+        Me._optAudioSynthDAC_2.UseVisualStyleBackColor = False
         '
         'fraAudioDACLeft
         '
@@ -4664,55 +4945,60 @@
         Me.fraAudioDACLeft.Controls.Add(Me._optAudioDitherLeft_1)
         Me.fraAudioDACLeft.Controls.Add(Me._optAudioDitherLeft_2)
         Me.fraAudioDACLeft.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraAudioDACLeft.Location = New System.Drawing.Point(3, 263)
+        Me.fraAudioDACLeft.Location = New System.Drawing.Point(4, 324)
+        Me.fraAudioDACLeft.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAudioDACLeft.Name = "fraAudioDACLeft"
+        Me.fraAudioDACLeft.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAudioDACLeft.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraAudioDACLeft.Size = New System.Drawing.Size(121, 81)
+        Me.fraAudioDACLeft.Size = New System.Drawing.Size(161, 100)
         Me.fraAudioDACLeft.TabIndex = 218
-        Me.fraAudioDACLeft.TabStop = false
+        Me.fraAudioDACLeft.TabStop = False
         Me.fraAudioDACLeft.Text = "Channel Left:"
         '
         '_optAudioDitherLeft_0
         '
         Me._optAudioDitherLeft_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioDitherLeft_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioDitherLeft.SetIndex(Me._optAudioDitherLeft_0, CType(0,Short))
-        Me._optAudioDitherLeft_0.Location = New System.Drawing.Point(16, 20)
+        Me.optAudioDitherLeft.SetIndex(Me._optAudioDitherLeft_0, CType(0, Short))
+        Me._optAudioDitherLeft_0.Location = New System.Drawing.Point(21, 25)
+        Me._optAudioDitherLeft_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioDitherLeft_0.Name = "_optAudioDitherLeft_0"
         Me._optAudioDitherLeft_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioDitherLeft_0.Size = New System.Drawing.Size(68, 18)
+        Me._optAudioDitherLeft_0.Size = New System.Drawing.Size(91, 22)
         Me._optAudioDitherLeft_0.TabIndex = 221
-        Me._optAudioDitherLeft_0.TabStop = true
+        Me._optAudioDitherLeft_0.TabStop = True
         Me._optAudioDitherLeft_0.Text = "Disabled"
-        Me._optAudioDitherLeft_0.UseVisualStyleBackColor = false
+        Me._optAudioDitherLeft_0.UseVisualStyleBackColor = False
         '
         '_optAudioDitherLeft_1
         '
         Me._optAudioDitherLeft_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioDitherLeft_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioDitherLeft.SetIndex(Me._optAudioDitherLeft_1, CType(1,Short))
-        Me._optAudioDitherLeft_1.Location = New System.Drawing.Point(16, 38)
+        Me.optAudioDitherLeft.SetIndex(Me._optAudioDitherLeft_1, CType(1, Short))
+        Me._optAudioDitherLeft_1.Location = New System.Drawing.Point(21, 47)
+        Me._optAudioDitherLeft_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioDitherLeft_1.Name = "_optAudioDitherLeft_1"
         Me._optAudioDitherLeft_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioDitherLeft_1.Size = New System.Drawing.Size(68, 18)
+        Me._optAudioDitherLeft_1.Size = New System.Drawing.Size(91, 22)
         Me._optAudioDitherLeft_1.TabIndex = 220
-        Me._optAudioDitherLeft_1.TabStop = true
+        Me._optAudioDitherLeft_1.TabStop = True
         Me._optAudioDitherLeft_1.Text = "Synth A"
-        Me._optAudioDitherLeft_1.UseVisualStyleBackColor = false
+        Me._optAudioDitherLeft_1.UseVisualStyleBackColor = False
         '
         '_optAudioDitherLeft_2
         '
         Me._optAudioDitherLeft_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioDitherLeft_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioDitherLeft.SetIndex(Me._optAudioDitherLeft_2, CType(2,Short))
-        Me._optAudioDitherLeft_2.Location = New System.Drawing.Point(16, 56)
+        Me.optAudioDitherLeft.SetIndex(Me._optAudioDitherLeft_2, CType(2, Short))
+        Me._optAudioDitherLeft_2.Location = New System.Drawing.Point(21, 69)
+        Me._optAudioDitherLeft_2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioDitherLeft_2.Name = "_optAudioDitherLeft_2"
         Me._optAudioDitherLeft_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioDitherLeft_2.Size = New System.Drawing.Size(68, 17)
+        Me._optAudioDitherLeft_2.Size = New System.Drawing.Size(91, 21)
         Me._optAudioDitherLeft_2.TabIndex = 219
-        Me._optAudioDitherLeft_2.TabStop = true
+        Me._optAudioDitherLeft_2.TabStop = True
         Me._optAudioDitherLeft_2.Text = "Synth B"
-        Me._optAudioDitherLeft_2.UseVisualStyleBackColor = false
+        Me._optAudioDitherLeft_2.UseVisualStyleBackColor = False
         '
         'fraAudioDACRight
         '
@@ -4720,55 +5006,60 @@
         Me.fraAudioDACRight.Controls.Add(Me._optAudioDitherRight_1)
         Me.fraAudioDACRight.Controls.Add(Me._optAudioDitherRight_0)
         Me.fraAudioDACRight.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraAudioDACRight.Location = New System.Drawing.Point(132, 263)
+        Me.fraAudioDACRight.Location = New System.Drawing.Point(176, 324)
+        Me.fraAudioDACRight.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAudioDACRight.Name = "fraAudioDACRight"
+        Me.fraAudioDACRight.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraAudioDACRight.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraAudioDACRight.Size = New System.Drawing.Size(125, 81)
+        Me.fraAudioDACRight.Size = New System.Drawing.Size(167, 100)
         Me.fraAudioDACRight.TabIndex = 214
-        Me.fraAudioDACRight.TabStop = false
+        Me.fraAudioDACRight.TabStop = False
         Me.fraAudioDACRight.Text = "Channel Right:"
         '
         '_optAudioDitherRight_2
         '
         Me._optAudioDitherRight_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioDitherRight_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioDitherRight.SetIndex(Me._optAudioDitherRight_2, CType(2,Short))
-        Me._optAudioDitherRight_2.Location = New System.Drawing.Point(24, 55)
+        Me.optAudioDitherRight.SetIndex(Me._optAudioDitherRight_2, CType(2, Short))
+        Me._optAudioDitherRight_2.Location = New System.Drawing.Point(32, 68)
+        Me._optAudioDitherRight_2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioDitherRight_2.Name = "_optAudioDitherRight_2"
         Me._optAudioDitherRight_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioDitherRight_2.Size = New System.Drawing.Size(73, 19)
+        Me._optAudioDitherRight_2.Size = New System.Drawing.Size(97, 23)
         Me._optAudioDitherRight_2.TabIndex = 217
-        Me._optAudioDitherRight_2.TabStop = true
+        Me._optAudioDitherRight_2.TabStop = True
         Me._optAudioDitherRight_2.Text = "Synth B"
-        Me._optAudioDitherRight_2.UseVisualStyleBackColor = false
+        Me._optAudioDitherRight_2.UseVisualStyleBackColor = False
         '
         '_optAudioDitherRight_1
         '
         Me._optAudioDitherRight_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioDitherRight_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioDitherRight.SetIndex(Me._optAudioDitherRight_1, CType(1,Short))
-        Me._optAudioDitherRight_1.Location = New System.Drawing.Point(24, 38)
+        Me.optAudioDitherRight.SetIndex(Me._optAudioDitherRight_1, CType(1, Short))
+        Me._optAudioDitherRight_1.Location = New System.Drawing.Point(32, 47)
+        Me._optAudioDitherRight_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioDitherRight_1.Name = "_optAudioDitherRight_1"
         Me._optAudioDitherRight_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioDitherRight_1.Size = New System.Drawing.Size(65, 18)
+        Me._optAudioDitherRight_1.Size = New System.Drawing.Size(87, 22)
         Me._optAudioDitherRight_1.TabIndex = 216
-        Me._optAudioDitherRight_1.TabStop = true
+        Me._optAudioDitherRight_1.TabStop = True
         Me._optAudioDitherRight_1.Text = "Synth A"
-        Me._optAudioDitherRight_1.UseVisualStyleBackColor = false
+        Me._optAudioDitherRight_1.UseVisualStyleBackColor = False
         '
         '_optAudioDitherRight_0
         '
         Me._optAudioDitherRight_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._optAudioDitherRight_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.optAudioDitherRight.SetIndex(Me._optAudioDitherRight_0, CType(0,Short))
-        Me._optAudioDitherRight_0.Location = New System.Drawing.Point(24, 20)
+        Me.optAudioDitherRight.SetIndex(Me._optAudioDitherRight_0, CType(0, Short))
+        Me._optAudioDitherRight_0.Location = New System.Drawing.Point(32, 25)
+        Me._optAudioDitherRight_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._optAudioDitherRight_0.Name = "_optAudioDitherRight_0"
         Me._optAudioDitherRight_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._optAudioDitherRight_0.Size = New System.Drawing.Size(76, 18)
+        Me._optAudioDitherRight_0.Size = New System.Drawing.Size(101, 22)
         Me._optAudioDitherRight_0.TabIndex = 215
-        Me._optAudioDitherRight_0.TabStop = true
+        Me._optAudioDitherRight_0.TabStop = True
         Me._optAudioDitherRight_0.Text = "Disabled"
-        Me._optAudioDitherRight_0.UseVisualStyleBackColor = false
+        Me._optAudioDitherRight_0.UseVisualStyleBackColor = False
         '
         'tabProcedure
         '
@@ -4797,20 +5088,22 @@
         Me.tabProcedure.Controls.Add(Me.txtBreak)
         Me.tabProcedure.Controls.Add(Me.cmbBreak)
         Me.tabProcedure.Location = New System.Drawing.Point(4, 40)
+        Me.tabProcedure.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabProcedure.Name = "tabProcedure"
-        Me.tabProcedure.Size = New System.Drawing.Size(514, 430)
+        Me.tabProcedure.Size = New System.Drawing.Size(688, 539)
         Me.tabProcedure.TabIndex = 7
         Me.tabProcedure.Text = "Procedure"
-        Me.tabProcedure.UseVisualStyleBackColor = true
+        Me.tabProcedure.UseVisualStyleBackColor = True
         '
         'txtExperimentItemRange
         '
         Me.txtExperimentItemRange.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtExperimentItemRange.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.txtExperimentItemRange.Location = New System.Drawing.Point(50, 236)
+        Me.txtExperimentItemRange.Location = New System.Drawing.Point(67, 290)
+        Me.txtExperimentItemRange.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.txtExperimentItemRange.Name = "txtExperimentItemRange"
         Me.txtExperimentItemRange.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtExperimentItemRange.Size = New System.Drawing.Size(278, 13)
+        Me.txtExperimentItemRange.Size = New System.Drawing.Size(371, 16)
         Me.txtExperimentItemRange.TabIndex = 175
         Me.txtExperimentItemRange.Text = "Experiment Item Range: All Items"
         '
@@ -4818,23 +5111,25 @@
         '
         Me.lblPreStimVisuOffset.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPreStimVisuOffset.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPreStimVisuOffset.Location = New System.Drawing.Point(2, 90)
+        Me.lblPreStimVisuOffset.Location = New System.Drawing.Point(3, 111)
+        Me.lblPreStimVisuOffset.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPreStimVisuOffset.Name = "lblPreStimVisuOffset"
         Me.lblPreStimVisuOffset.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblPreStimVisuOffset.Size = New System.Drawing.Size(174, 13)
+        Me.lblPreStimVisuOffset.Size = New System.Drawing.Size(232, 16)
         Me.lblPreStimVisuOffset.TabIndex = 122
         Me.lblPreStimVisuOffset.Text = "Pre-Stimulus Visual Offset:"
         Me.lblPreStimVisuOffset.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lblExpType
         '
-        Me.lblExpType.AutoSize = true
+        Me.lblExpType.AutoSize = True
         Me.lblExpType.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblExpType.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblExpType.Location = New System.Drawing.Point(36, 30)
+        Me.lblExpType.Location = New System.Drawing.Point(48, 37)
+        Me.lblExpType.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblExpType.Name = "lblExpType"
         Me.lblExpType.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblExpType.Size = New System.Drawing.Size(89, 13)
+        Me.lblExpType.Size = New System.Drawing.Size(118, 17)
         Me.lblExpType.TabIndex = 123
         Me.lblExpType.Text = "Experiment Type:"
         Me.lblExpType.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -4843,23 +5138,25 @@
         '
         Me.lblInterStimBreak.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblInterStimBreak.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblInterStimBreak.Location = New System.Drawing.Point(2, 119)
+        Me.lblInterStimBreak.Location = New System.Drawing.Point(3, 146)
+        Me.lblInterStimBreak.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblInterStimBreak.Name = "lblInterStimBreak"
         Me.lblInterStimBreak.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblInterStimBreak.Size = New System.Drawing.Size(174, 13)
+        Me.lblInterStimBreak.Size = New System.Drawing.Size(232, 16)
         Me.lblInterStimBreak.TabIndex = 124
         Me.lblInterStimBreak.Text = "Interstimulus break:"
         Me.lblInterStimBreak.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lblItemRepetition
         '
-        Me.lblItemRepetition.AutoSize = true
+        Me.lblItemRepetition.AutoSize = True
         Me.lblItemRepetition.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblItemRepetition.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblItemRepetition.Location = New System.Drawing.Point(187, 307)
+        Me.lblItemRepetition.Location = New System.Drawing.Point(249, 378)
+        Me.lblItemRepetition.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblItemRepetition.Name = "lblItemRepetition"
         Me.lblItemRepetition.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblItemRepetition.Size = New System.Drawing.Size(110, 13)
+        Me.lblItemRepetition.Size = New System.Drawing.Size(145, 17)
         Me.lblItemRepetition.TabIndex = 125
         Me.lblItemRepetition.Text = "Repetitions per block:"
         Me.lblItemRepetition.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -4868,11 +5165,12 @@
         '
         Me._lblStimOffset_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblStimOffset_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblStimOffset.SetIndex(Me._lblStimOffset_2, CType(2,Short))
-        Me._lblStimOffset_2.Location = New System.Drawing.Point(52, 167)
+        Me.lblStimOffset.SetIndex(Me._lblStimOffset_2, CType(2, Short))
+        Me._lblStimOffset_2.Location = New System.Drawing.Point(69, 206)
+        Me._lblStimOffset_2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblStimOffset_2.Name = "_lblStimOffset_2"
         Me._lblStimOffset_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblStimOffset_2.Size = New System.Drawing.Size(101, 13)
+        Me._lblStimOffset_2.Size = New System.Drawing.Size(135, 16)
         Me._lblStimOffset_2.TabIndex = 126
         Me._lblStimOffset_2.Text = "Stimulus Offset:"
         Me._lblStimOffset_2.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -4881,10 +5179,11 @@
         '
         Me.lblPreStimBreak.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPreStimBreak.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPreStimBreak.Location = New System.Drawing.Point(2, 70)
+        Me.lblPreStimBreak.Location = New System.Drawing.Point(3, 86)
+        Me.lblPreStimBreak.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPreStimBreak.Name = "lblPreStimBreak"
         Me.lblPreStimBreak.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblPreStimBreak.Size = New System.Drawing.Size(174, 13)
+        Me.lblPreStimBreak.Size = New System.Drawing.Size(232, 16)
         Me.lblPreStimBreak.TabIndex = 3
         Me.lblPreStimBreak.Text = "Prestimulus break:"
         Me.lblPreStimBreak.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -4893,109 +5192,118 @@
         '
         Me.lblPostStimVisuOffset.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPostStimVisuOffset.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPostStimVisuOffset.Location = New System.Drawing.Point(2, 139)
+        Me.lblPostStimVisuOffset.Location = New System.Drawing.Point(3, 171)
+        Me.lblPostStimVisuOffset.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPostStimVisuOffset.Name = "lblPostStimVisuOffset"
         Me.lblPostStimVisuOffset.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblPostStimVisuOffset.Size = New System.Drawing.Size(174, 13)
+        Me.lblPostStimVisuOffset.Size = New System.Drawing.Size(232, 16)
         Me.lblPostStimVisuOffset.TabIndex = 169
         Me.lblPostStimVisuOffset.Text = "Post-Stimulus Visual Offset:"
         Me.lblPostStimVisuOffset.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'lblStimOffsetU
         '
-        Me.lblStimOffsetU.AutoSize = true
+        Me.lblStimOffsetU.AutoSize = True
         Me.lblStimOffsetU.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblStimOffsetU.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblStimOffsetU.Location = New System.Drawing.Point(275, 167)
+        Me.lblStimOffsetU.Location = New System.Drawing.Point(367, 206)
+        Me.lblStimOffsetU.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblStimOffsetU.Name = "lblStimOffsetU"
         Me.lblStimOffsetU.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblStimOffsetU.Size = New System.Drawing.Size(18, 13)
+        Me.lblStimOffsetU.Size = New System.Drawing.Size(23, 17)
         Me.lblStimOffsetU.TabIndex = 170
         Me.lblStimOffsetU.Text = "us"
         '
         '_lblPreStimBreakU_0
         '
-        Me._lblPreStimBreakU_0.AutoSize = true
+        Me._lblPreStimBreakU_0.AutoSize = True
         Me._lblPreStimBreakU_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblPreStimBreakU_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPreStimBreakU.SetIndex(Me._lblPreStimBreakU_0, CType(0,Short))
-        Me._lblPreStimBreakU_0.Location = New System.Drawing.Point(243, 71)
+        Me.lblPreStimBreakU.SetIndex(Me._lblPreStimBreakU_0, CType(0, Short))
+        Me._lblPreStimBreakU_0.Location = New System.Drawing.Point(324, 87)
+        Me._lblPreStimBreakU_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblPreStimBreakU_0.Name = "_lblPreStimBreakU_0"
         Me._lblPreStimBreakU_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblPreStimBreakU_0.Size = New System.Drawing.Size(20, 13)
+        Me._lblPreStimBreakU_0.Size = New System.Drawing.Size(26, 17)
         Me._lblPreStimBreakU_0.TabIndex = 171
         Me._lblPreStimBreakU_0.Text = "ms"
         '
         '_lblPreStimVisuOffsetU_1
         '
-        Me._lblPreStimVisuOffsetU_1.AutoSize = true
+        Me._lblPreStimVisuOffsetU_1.AutoSize = True
         Me._lblPreStimVisuOffsetU_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblPreStimVisuOffsetU_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPreStimVisuOffsetU.SetIndex(Me._lblPreStimVisuOffsetU_1, CType(1,Short))
-        Me._lblPreStimVisuOffsetU_1.Location = New System.Drawing.Point(243, 91)
+        Me.lblPreStimVisuOffsetU.SetIndex(Me._lblPreStimVisuOffsetU_1, CType(1, Short))
+        Me._lblPreStimVisuOffsetU_1.Location = New System.Drawing.Point(324, 112)
+        Me._lblPreStimVisuOffsetU_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblPreStimVisuOffsetU_1.Name = "_lblPreStimVisuOffsetU_1"
         Me._lblPreStimVisuOffsetU_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblPreStimVisuOffsetU_1.Size = New System.Drawing.Size(20, 13)
+        Me._lblPreStimVisuOffsetU_1.Size = New System.Drawing.Size(26, 17)
         Me._lblPreStimVisuOffsetU_1.TabIndex = 172
         Me._lblPreStimVisuOffsetU_1.Text = "ms"
         '
         '_lblInterStimBreakU_2
         '
-        Me._lblInterStimBreakU_2.AutoSize = true
+        Me._lblInterStimBreakU_2.AutoSize = True
         Me._lblInterStimBreakU_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblInterStimBreakU_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblInterStimBreakU.SetIndex(Me._lblInterStimBreakU_2, CType(2,Short))
-        Me._lblInterStimBreakU_2.Location = New System.Drawing.Point(243, 119)
+        Me.lblInterStimBreakU.SetIndex(Me._lblInterStimBreakU_2, CType(2, Short))
+        Me._lblInterStimBreakU_2.Location = New System.Drawing.Point(324, 146)
+        Me._lblInterStimBreakU_2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblInterStimBreakU_2.Name = "_lblInterStimBreakU_2"
         Me._lblInterStimBreakU_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblInterStimBreakU_2.Size = New System.Drawing.Size(20, 13)
+        Me._lblInterStimBreakU_2.Size = New System.Drawing.Size(26, 17)
         Me._lblInterStimBreakU_2.TabIndex = 173
         Me._lblInterStimBreakU_2.Text = "ms"
         '
         '_lblPostStimVisuOffsetU_3
         '
-        Me._lblPostStimVisuOffsetU_3.AutoSize = true
+        Me._lblPostStimVisuOffsetU_3.AutoSize = True
         Me._lblPostStimVisuOffsetU_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblPostStimVisuOffsetU_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPostStimVisuOffsetU.SetIndex(Me._lblPostStimVisuOffsetU_3, CType(3,Short))
-        Me._lblPostStimVisuOffsetU_3.Location = New System.Drawing.Point(243, 139)
+        Me.lblPostStimVisuOffsetU.SetIndex(Me._lblPostStimVisuOffsetU_3, CType(3, Short))
+        Me._lblPostStimVisuOffsetU_3.Location = New System.Drawing.Point(324, 171)
+        Me._lblPostStimVisuOffsetU_3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblPostStimVisuOffsetU_3.Name = "_lblPostStimVisuOffsetU_3"
         Me._lblPostStimVisuOffsetU_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblPostStimVisuOffsetU_3.Size = New System.Drawing.Size(20, 13)
+        Me._lblPostStimVisuOffsetU_3.Size = New System.Drawing.Size(26, 17)
         Me._lblPostStimVisuOffsetU_3.TabIndex = 174
         Me._lblPostStimVisuOffsetU_3.Text = "ms"
         '
         'chkBreak
         '
-        Me.chkBreak.CausesValidation = false
-        Me.chkBreak.Checked = true
+        Me.chkBreak.CausesValidation = False
+        Me.chkBreak.Checked = True
         Me.chkBreak.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkBreak.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkBreak.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkBreak.Location = New System.Drawing.Point(65, 270)
+        Me.chkBreak.Location = New System.Drawing.Point(87, 332)
+        Me.chkBreak.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkBreak.Name = "chkBreak"
         Me.chkBreak.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkBreak.Size = New System.Drawing.Size(117, 19)
+        Me.chkBreak.Size = New System.Drawing.Size(156, 23)
         Me.chkBreak.TabIndex = 137
         Me.chkBreak.Text = "Make a break after "
-        Me.chkBreak.UseVisualStyleBackColor = false
+        Me.chkBreak.UseVisualStyleBackColor = False
         '
         'tabVariables
         '
         Me.tabVariables.Controls.Add(Me.SplitContainer2)
         Me.tabVariables.Location = New System.Drawing.Point(4, 40)
+        Me.tabVariables.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabVariables.Name = "tabVariables"
-        Me.tabVariables.Size = New System.Drawing.Size(514, 430)
+        Me.tabVariables.Size = New System.Drawing.Size(688, 539)
         Me.tabVariables.TabIndex = 8
         Me.tabVariables.Text = "Variables"
-        Me.tabVariables.UseVisualStyleBackColor = true
+        Me.tabVariables.UseVisualStyleBackColor = True
         '
         'SplitContainer2
         '
-        Me.SplitContainer2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.SplitContainer2.Location = New System.Drawing.Point(3, 3)
+        Me.SplitContainer2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SplitContainer2.Location = New System.Drawing.Point(4, 4)
+        Me.SplitContainer2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SplitContainer2.Name = "SplitContainer2"
         Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
@@ -5010,61 +5318,67 @@
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.SplitContainer1)
         Me.SplitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SplitContainer2.Size = New System.Drawing.Size(508, 424)
-        Me.SplitContainer2.SplitterDistance = 212
+        Me.SplitContainer2.Size = New System.Drawing.Size(677, 522)
+        Me.SplitContainer2.SplitterDistance = 261
+        Me.SplitContainer2.SplitterWidth = 5
         Me.SplitContainer2.TabIndex = 295
         '
         'txtVariablesDescr
         '
-        Me.txtVariablesDescr.AcceptsReturn = true
-        Me.txtVariablesDescr.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtVariablesDescr.AcceptsReturn = True
+        Me.txtVariablesDescr.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtVariablesDescr.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtVariablesDescr.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtVariablesDescr.Location = New System.Drawing.Point(12, 109)
+        Me.txtVariablesDescr.Location = New System.Drawing.Point(16, 134)
+        Me.txtVariablesDescr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtVariablesDescr.MaxLength = 0
-        Me.txtVariablesDescr.Multiline = true
+        Me.txtVariablesDescr.Multiline = True
         Me.txtVariablesDescr.Name = "txtVariablesDescr"
-        Me.txtVariablesDescr.ReadOnly = true
+        Me.txtVariablesDescr.ReadOnly = True
         Me.txtVariablesDescr.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtVariablesDescr.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtVariablesDescr.Size = New System.Drawing.Size(488, 85)
+        Me.txtVariablesDescr.Size = New System.Drawing.Size(649, 104)
         Me.txtVariablesDescr.TabIndex = 194
         Me.txtVariablesDescr.Text = "Text1"
         '
         'Label22
         '
-        Me.Label22.AutoSize = true
+        Me.Label22.AutoSize = True
         Me.Label22.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label22.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label22.Location = New System.Drawing.Point(3, 8)
+        Me.Label22.Location = New System.Drawing.Point(4, 10)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label22.Size = New System.Drawing.Size(53, 13)
+        Me.Label22.Size = New System.Drawing.Size(71, 17)
         Me.Label22.TabIndex = 158
         Me.Label22.Text = "Variables:"
         Me.Label22.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'cmbVariables
         '
-        Me.cmbVariables.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.cmbVariables.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbVariables.BackColor = System.Drawing.SystemColors.Window
         Me.cmbVariables.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbVariables.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbVariables.Location = New System.Drawing.Point(62, 8)
+        Me.cmbVariables.ItemHeight = 16
+        Me.cmbVariables.Location = New System.Drawing.Point(83, 10)
+        Me.cmbVariables.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbVariables.Name = "cmbVariables"
         Me.cmbVariables.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbVariables.Size = New System.Drawing.Size(438, 95)
+        Me.cmbVariables.Size = New System.Drawing.Size(583, 116)
         Me.cmbVariables.TabIndex = 292
         '
         'SplitContainer1
         '
-        Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me.SplitContainer1.IsSplitterFixed = true
-        Me.SplitContainer1.Location = New System.Drawing.Point(6, 3)
+        Me.SplitContainer1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.SplitContainer1.IsSplitterFixed = True
+        Me.SplitContainer1.Location = New System.Drawing.Point(8, 4)
+        Me.SplitContainer1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -5087,52 +5401,57 @@
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.Label50)
         Me.SplitContainer1.Panel2.Controls.Add(Me.txtVariablesFlags)
-        Me.SplitContainer1.Size = New System.Drawing.Size(499, 202)
-        Me.SplitContainer1.SplitterDistance = 309
+        Me.SplitContainer1.Size = New System.Drawing.Size(665, 249)
+        Me.SplitContainer1.SplitterDistance = 411
+        Me.SplitContainer1.SplitterWidth = 5
         Me.SplitContainer1.TabIndex = 294
         '
         'txtVariables
         '
-        Me.txtVariables.AcceptsReturn = true
-        Me.txtVariables.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtVariables.AcceptsReturn = True
+        Me.txtVariables.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtVariables.BackColor = System.Drawing.SystemColors.Window
         Me.txtVariables.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtVariables.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtVariables.Location = New System.Drawing.Point(6, 6)
+        Me.txtVariables.Location = New System.Drawing.Point(8, 7)
+        Me.txtVariables.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtVariables.MaxLength = 0
         Me.txtVariables.Name = "txtVariables"
         Me.txtVariables.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtVariables.Size = New System.Drawing.Size(228, 20)
+        Me.txtVariables.Size = New System.Drawing.Size(302, 22)
         Me.txtVariables.TabIndex = 146
         '
         '_lstVariables_0
         '
-        Me._lstVariables_0.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._lstVariables_0.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._lstVariables_0.BackColor = System.Drawing.SystemColors.Window
         Me._lstVariables_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lstVariables_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lstVariables.SetIndex(Me._lstVariables_0, CType(0,Short))
-        Me._lstVariables_0.Location = New System.Drawing.Point(6, 51)
+        Me.lstVariables.SetIndex(Me._lstVariables_0, CType(0, Short))
+        Me._lstVariables_0.ItemHeight = 16
+        Me._lstVariables_0.Location = New System.Drawing.Point(8, 63)
+        Me._lstVariables_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._lstVariables_0.Name = "_lstVariables_0"
         Me._lstVariables_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lstVariables_0.Size = New System.Drawing.Size(196, 147)
+        Me._lstVariables_0.Size = New System.Drawing.Size(259, 180)
         Me._lstVariables_0.TabIndex = 149
-        Me._lstVariables_0.Visible = false
+        Me._lstVariables_0.Visible = False
         '
         'lblVarValues
         '
-        Me.lblVarValues.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
-        Me.lblVarValues.AutoSize = true
+        Me.lblVarValues.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblVarValues.AutoSize = True
         Me.lblVarValues.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblVarValues.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblVarValues.Location = New System.Drawing.Point(3, 30)
+        Me.lblVarValues.Location = New System.Drawing.Point(4, 37)
+        Me.lblVarValues.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVarValues.Name = "lblVarValues"
         Me.lblVarValues.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblVarValues.Size = New System.Drawing.Size(42, 13)
+        Me.lblVarValues.Size = New System.Drawing.Size(55, 17)
         Me.lblVarValues.TabIndex = 121
         Me.lblVarValues.Text = "Values:"
         '
@@ -5140,75 +5459,80 @@
         '
         Me.Label50.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label50.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label50.Location = New System.Drawing.Point(6, 30)
+        Me.Label50.Location = New System.Drawing.Point(8, 37)
+        Me.Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label50.Name = "Label50"
         Me.Label50.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label50.Size = New System.Drawing.Size(85, 13)
+        Me.Label50.Size = New System.Drawing.Size(113, 16)
         Me.Label50.TabIndex = 193
         Me.Label50.Text = "Restrictions:"
         '
         'txtVariablesFlags
         '
-        Me.txtVariablesFlags.AcceptsReturn = true
-        Me.txtVariablesFlags.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.txtVariablesFlags.AcceptsReturn = True
+        Me.txtVariablesFlags.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtVariablesFlags.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtVariablesFlags.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtVariablesFlags.Location = New System.Drawing.Point(9, 51)
+        Me.txtVariablesFlags.Location = New System.Drawing.Point(12, 63)
+        Me.txtVariablesFlags.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtVariablesFlags.MaxLength = 0
-        Me.txtVariablesFlags.Multiline = true
+        Me.txtVariablesFlags.Multiline = True
         Me.txtVariablesFlags.Name = "txtVariablesFlags"
-        Me.txtVariablesFlags.ReadOnly = true
+        Me.txtVariablesFlags.ReadOnly = True
         Me.txtVariablesFlags.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtVariablesFlags.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtVariablesFlags.Size = New System.Drawing.Size(172, 147)
+        Me.txtVariablesFlags.Size = New System.Drawing.Size(229, 180)
         Me.txtVariablesFlags.TabIndex = 195
         Me.txtVariablesFlags.Text = "Text1"
         '
         'tabConstants
         '
-        Me.tabConstants.AutoScroll = true
+        Me.tabConstants.AutoScroll = True
         Me.tabConstants.Controls.Add(Me._cmdConstCmd_0)
         Me.tabConstants.Controls.Add(Me._txtConstValue_0)
         Me.tabConstants.Controls.Add(Me._lblConstUnit_0)
         Me.tabConstants.Controls.Add(Me._lblConstName_0)
         Me.tabConstants.Location = New System.Drawing.Point(4, 40)
+        Me.tabConstants.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabConstants.Name = "tabConstants"
-        Me.tabConstants.Size = New System.Drawing.Size(514, 430)
+        Me.tabConstants.Size = New System.Drawing.Size(688, 539)
         Me.tabConstants.TabIndex = 9
         Me.tabConstants.Text = "Constants"
-        Me.tabConstants.UseVisualStyleBackColor = true
+        Me.tabConstants.UseVisualStyleBackColor = True
         '
         '_txtConstValue_0
         '
-        Me._txtConstValue_0.AcceptsReturn = true
-        Me._txtConstValue_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._txtConstValue_0.AcceptsReturn = True
+        Me._txtConstValue_0.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._txtConstValue_0.BackColor = System.Drawing.SystemColors.Window
         Me._txtConstValue_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtConstValue_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtConstValue.SetIndex(Me._txtConstValue_0, CType(0,Short))
-        Me._txtConstValue_0.Location = New System.Drawing.Point(230, 21)
+        Me.txtConstValue.SetIndex(Me._txtConstValue_0, CType(0, Short))
+        Me._txtConstValue_0.Location = New System.Drawing.Point(307, 26)
+        Me._txtConstValue_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtConstValue_0.MaxLength = 0
-        Me._txtConstValue_0.MinimumSize = New System.Drawing.Size(40, 4)
+        Me._txtConstValue_0.MinimumSize = New System.Drawing.Size(52, 4)
         Me._txtConstValue_0.Name = "_txtConstValue_0"
         Me._txtConstValue_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtConstValue_0.Size = New System.Drawing.Size(151, 20)
+        Me._txtConstValue_0.Size = New System.Drawing.Size(200, 22)
         Me._txtConstValue_0.TabIndex = 167
         Me._txtConstValue_0.Text = "value"
         '
         '_lblConstUnit_0
         '
-        Me._lblConstUnit_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-        Me._lblConstUnit_0.AutoSize = true
+        Me._lblConstUnit_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me._lblConstUnit_0.AutoSize = True
         Me._lblConstUnit_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblConstUnit_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblConstUnit.SetIndex(Me._lblConstUnit_0, CType(0,Short))
-        Me._lblConstUnit_0.Location = New System.Drawing.Point(413, 24)
+        Me.lblConstUnit.SetIndex(Me._lblConstUnit_0, CType(0, Short))
+        Me._lblConstUnit_0.Location = New System.Drawing.Point(551, 30)
+        Me._lblConstUnit_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblConstUnit_0.Name = "_lblConstUnit_0"
         Me._lblConstUnit_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblConstUnit_0.Size = New System.Drawing.Size(29, 13)
+        Me._lblConstUnit_0.Size = New System.Drawing.Size(38, 17)
         Me._lblConstUnit_0.TabIndex = 168
         Me._lblConstUnit_0.Text = "units"
         '
@@ -5216,11 +5540,12 @@
         '
         Me._lblConstName_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblConstName_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblConstName.SetIndex(Me._lblConstName_0, CType(0,Short))
-        Me._lblConstName_0.Location = New System.Drawing.Point(19, 24)
+        Me.lblConstName.SetIndex(Me._lblConstName_0, CType(0, Short))
+        Me._lblConstName_0.Location = New System.Drawing.Point(25, 30)
+        Me._lblConstName_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblConstName_0.Name = "_lblConstName_0"
         Me._lblConstName_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblConstName_0.Size = New System.Drawing.Size(205, 14)
+        Me._lblConstName_0.Size = New System.Drawing.Size(273, 17)
         Me._lblConstName_0.TabIndex = 166
         Me._lblConstName_0.Text = "constant name:"
         Me._lblConstName_0.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -5232,11 +5557,12 @@
         Me.tabTracker.Controls.Add(Me._fraTrackerSensor_1)
         Me.tabTracker.Controls.Add(Me.chkTrackerSaveData)
         Me.tabTracker.Location = New System.Drawing.Point(4, 40)
+        Me.tabTracker.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabTracker.Name = "tabTracker"
-        Me.tabTracker.Size = New System.Drawing.Size(514, 430)
+        Me.tabTracker.Size = New System.Drawing.Size(688, 539)
         Me.tabTracker.TabIndex = 10
         Me.tabTracker.Text = "Tracker"
-        Me.tabTracker.UseVisualStyleBackColor = true
+        Me.tabTracker.UseVisualStyleBackColor = True
         '
         'fraTrackerSettings
         '
@@ -5250,22 +5576,25 @@
         Me.fraTrackerSettings.Controls.Add(Me.lblTrackerRepRateUnits)
         Me.fraTrackerSettings.Controls.Add(Me.lblTrackerPosScalingUnits)
         Me.fraTrackerSettings.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraTrackerSettings.Location = New System.Drawing.Point(14, 20)
+        Me.fraTrackerSettings.Location = New System.Drawing.Point(19, 25)
+        Me.fraTrackerSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraTrackerSettings.Name = "fraTrackerSettings"
+        Me.fraTrackerSettings.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fraTrackerSettings.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.fraTrackerSettings.Size = New System.Drawing.Size(458, 73)
+        Me.fraTrackerSettings.Size = New System.Drawing.Size(611, 90)
         Me.fraTrackerSettings.TabIndex = 237
-        Me.fraTrackerSettings.TabStop = false
+        Me.fraTrackerSettings.TabStop = False
         '
         'cmbTrackerRepRate
         '
         Me.cmbTrackerRepRate.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbTrackerRepRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTrackerRepRate.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbTrackerRepRate.Location = New System.Drawing.Point(92, 28)
+        Me.cmbTrackerRepRate.Location = New System.Drawing.Point(123, 34)
+        Me.cmbTrackerRepRate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbTrackerRepRate.Name = "cmbTrackerRepRate"
         Me.cmbTrackerRepRate.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbTrackerRepRate.Size = New System.Drawing.Size(49, 21)
+        Me.cmbTrackerRepRate.Size = New System.Drawing.Size(64, 24)
         Me.cmbTrackerRepRate.TabIndex = 240
         '
         'cmbTrackerPosScaling
@@ -5273,46 +5602,50 @@
         Me.cmbTrackerPosScaling.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbTrackerPosScaling.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTrackerPosScaling.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbTrackerPosScaling.Location = New System.Drawing.Point(300, 28)
+        Me.cmbTrackerPosScaling.Location = New System.Drawing.Point(400, 34)
+        Me.cmbTrackerPosScaling.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbTrackerPosScaling.Name = "cmbTrackerPosScaling"
         Me.cmbTrackerPosScaling.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbTrackerPosScaling.Size = New System.Drawing.Size(53, 21)
+        Me.cmbTrackerPosScaling.Size = New System.Drawing.Size(69, 24)
         Me.cmbTrackerPosScaling.TabIndex = 239
         '
         'chkTrackerUse
         '
         Me.chkTrackerUse.Cursor = System.Windows.Forms.Cursors.Default
-        Me.chkTrackerUse.Location = New System.Drawing.Point(16, 0)
+        Me.chkTrackerUse.Location = New System.Drawing.Point(21, 0)
+        Me.chkTrackerUse.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkTrackerUse.Name = "chkTrackerUse"
         Me.chkTrackerUse.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkTrackerUse.Size = New System.Drawing.Size(89, 17)
+        Me.chkTrackerUse.Size = New System.Drawing.Size(119, 21)
         Me.chkTrackerUse.TabIndex = 238
         Me.chkTrackerUse.Text = "Use Tracker"
-        Me.chkTrackerUse.UseVisualStyleBackColor = false
+        Me.chkTrackerUse.UseVisualStyleBackColor = False
         '
         'lblTrackerTimeOut
         '
-        Me.lblTrackerTimeOut.AutoSize = true
+        Me.lblTrackerTimeOut.AutoSize = True
         Me.lblTrackerTimeOut.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblTrackerTimeOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.lblTrackerTimeOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTrackerTimeOut.ForeColor = System.Drawing.Color.Red
-        Me.lblTrackerTimeOut.Location = New System.Drawing.Point(168, 52)
+        Me.lblTrackerTimeOut.Location = New System.Drawing.Point(224, 64)
+        Me.lblTrackerTimeOut.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTrackerTimeOut.Name = "lblTrackerTimeOut"
         Me.lblTrackerTimeOut.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTrackerTimeOut.Size = New System.Drawing.Size(58, 13)
+        Me.lblTrackerTimeOut.Size = New System.Drawing.Size(74, 17)
         Me.lblTrackerTimeOut.TabIndex = 274
         Me.lblTrackerTimeOut.Text = "Time Out"
-        Me.lblTrackerTimeOut.Visible = false
+        Me.lblTrackerTimeOut.Visible = False
         '
         'lblTrackerUse
         '
         Me.lblTrackerUse.BackColor = System.Drawing.SystemColors.Control
         Me.lblTrackerUse.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblTrackerUse.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerUse.Location = New System.Drawing.Point(8, 0)
+        Me.lblTrackerUse.Location = New System.Drawing.Point(11, 0)
+        Me.lblTrackerUse.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTrackerUse.Name = "lblTrackerUse"
         Me.lblTrackerUse.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTrackerUse.Size = New System.Drawing.Size(33, 17)
+        Me.lblTrackerUse.Size = New System.Drawing.Size(44, 21)
         Me.lblTrackerUse.TabIndex = 273
         Me.lblTrackerUse.Text = "      "
         '
@@ -5320,10 +5653,11 @@
         '
         Me.lblTrackerRepRate.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblTrackerRepRate.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerRepRate.Location = New System.Drawing.Point(8, 32)
+        Me.lblTrackerRepRate.Location = New System.Drawing.Point(11, 39)
+        Me.lblTrackerRepRate.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTrackerRepRate.Name = "lblTrackerRepRate"
         Me.lblTrackerRepRate.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTrackerRepRate.Size = New System.Drawing.Size(77, 13)
+        Me.lblTrackerRepRate.Size = New System.Drawing.Size(103, 16)
         Me.lblTrackerRepRate.TabIndex = 244
         Me.lblTrackerRepRate.Text = "Repetition Rate:"
         Me.lblTrackerRepRate.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -5332,10 +5666,11 @@
         '
         Me.lblTrackerPosScaling.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblTrackerPosScaling.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerPosScaling.Location = New System.Drawing.Point(216, 32)
+        Me.lblTrackerPosScaling.Location = New System.Drawing.Point(288, 39)
+        Me.lblTrackerPosScaling.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTrackerPosScaling.Name = "lblTrackerPosScaling"
         Me.lblTrackerPosScaling.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTrackerPosScaling.Size = New System.Drawing.Size(78, 13)
+        Me.lblTrackerPosScaling.Size = New System.Drawing.Size(104, 16)
         Me.lblTrackerPosScaling.TabIndex = 243
         Me.lblTrackerPosScaling.Text = "Position Scaling:"
         Me.lblTrackerPosScaling.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -5344,10 +5679,11 @@
         '
         Me.lblTrackerRepRateUnits.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblTrackerRepRateUnits.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerRepRateUnits.Location = New System.Drawing.Point(144, 32)
+        Me.lblTrackerRepRateUnits.Location = New System.Drawing.Point(192, 39)
+        Me.lblTrackerRepRateUnits.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTrackerRepRateUnits.Name = "lblTrackerRepRateUnits"
         Me.lblTrackerRepRateUnits.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTrackerRepRateUnits.Size = New System.Drawing.Size(82, 13)
+        Me.lblTrackerRepRateUnits.Size = New System.Drawing.Size(109, 16)
         Me.lblTrackerRepRateUnits.TabIndex = 242
         Me.lblTrackerRepRateUnits.Text = "values/s:"
         '
@@ -5355,10 +5691,11 @@
         '
         Me.lblTrackerPosScalingUnits.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblTrackerPosScalingUnits.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerPosScalingUnits.Location = New System.Drawing.Point(356, 32)
+        Me.lblTrackerPosScalingUnits.Location = New System.Drawing.Point(475, 39)
+        Me.lblTrackerPosScalingUnits.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTrackerPosScalingUnits.Name = "lblTrackerPosScalingUnits"
         Me.lblTrackerPosScalingUnits.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblTrackerPosScalingUnits.Size = New System.Drawing.Size(45, 13)
+        Me.lblTrackerPosScalingUnits.Size = New System.Drawing.Size(60, 16)
         Me.lblTrackerPosScalingUnits.TabIndex = 241
         Me.lblTrackerPosScalingUnits.Text = "inch"
         '
@@ -5384,27 +5721,30 @@
         Me._fraTrackerSensor_0.Controls.Add(Me._lblTrackerX_0)
         Me._fraTrackerSensor_0.Controls.Add(Me._lblTrackerLabA_0)
         Me._fraTrackerSensor_0.Controls.Add(Me._lblTrackerLabX_0)
-        Me._fraTrackerSensor_0.Enabled = false
+        Me._fraTrackerSensor_0.Enabled = False
         Me._fraTrackerSensor_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraTrackerSensor.SetIndex(Me._fraTrackerSensor_0, CType(0,Short))
-        Me._fraTrackerSensor_0.Location = New System.Drawing.Point(14, 124)
+        Me.fraTrackerSensor.SetIndex(Me._fraTrackerSensor_0, CType(0, Short))
+        Me._fraTrackerSensor_0.Location = New System.Drawing.Point(19, 153)
+        Me._fraTrackerSensor_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraTrackerSensor_0.Name = "_fraTrackerSensor_0"
+        Me._fraTrackerSensor_0.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraTrackerSensor_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._fraTrackerSensor_0.Size = New System.Drawing.Size(458, 77)
+        Me._fraTrackerSensor_0.Size = New System.Drawing.Size(611, 95)
         Me._fraTrackerSensor_0.TabIndex = 245
-        Me._fraTrackerSensor_0.TabStop = false
+        Me._fraTrackerSensor_0.TabStop = False
         Me._fraTrackerSensor_0.Text = "Sensor 0:"
         '
         '_lblTrackerR_Range_0
         '
         Me._lblTrackerR_Range_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerR_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerR_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerR_Range_0.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerRRange.SetIndex(Me._lblTrackerR_Range_0, CType(0,Short))
-        Me._lblTrackerR_Range_0.Location = New System.Drawing.Point(269, 57)
+        Me.lblTrackerRRange.SetIndex(Me._lblTrackerR_Range_0, CType(0, Short))
+        Me._lblTrackerR_Range_0.Location = New System.Drawing.Point(359, 70)
+        Me._lblTrackerR_Range_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerR_Range_0.Name = "_lblTrackerR_Range_0"
         Me._lblTrackerR_Range_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerR_Range_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerR_Range_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerR_Range_0.TabIndex = 292
         Me._lblTrackerR_Range_0.Text = "0"
         Me._lblTrackerR_Range_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5412,13 +5752,14 @@
         '_lblTrackerY_Range_0
         '
         Me._lblTrackerY_Range_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerY_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerY_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerY_Range_0.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerYRange.SetIndex(Me._lblTrackerY_Range_0, CType(0,Short))
-        Me._lblTrackerY_Range_0.Location = New System.Drawing.Point(46, 57)
+        Me.lblTrackerYRange.SetIndex(Me._lblTrackerY_Range_0, CType(0, Short))
+        Me._lblTrackerY_Range_0.Location = New System.Drawing.Point(61, 70)
+        Me._lblTrackerY_Range_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerY_Range_0.Name = "_lblTrackerY_Range_0"
         Me._lblTrackerY_Range_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerY_Range_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerY_Range_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerY_Range_0.TabIndex = 293
         Me._lblTrackerY_Range_0.Text = "0"
         Me._lblTrackerY_Range_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5426,13 +5767,14 @@
         '_lblTrackerZ_Range_0
         '
         Me._lblTrackerZ_Range_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerZ_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerZ_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerZ_Range_0.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerZRange.SetIndex(Me._lblTrackerZ_Range_0, CType(0,Short))
-        Me._lblTrackerZ_Range_0.Location = New System.Drawing.Point(87, 57)
+        Me.lblTrackerZRange.SetIndex(Me._lblTrackerZ_Range_0, CType(0, Short))
+        Me._lblTrackerZ_Range_0.Location = New System.Drawing.Point(116, 70)
+        Me._lblTrackerZ_Range_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerZ_Range_0.Name = "_lblTrackerZ_Range_0"
         Me._lblTrackerZ_Range_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerZ_Range_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerZ_Range_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerZ_Range_0.TabIndex = 292
         Me._lblTrackerZ_Range_0.Text = "0"
         Me._lblTrackerZ_Range_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5440,13 +5782,14 @@
         '_lblTrackerX_Range_0
         '
         Me._lblTrackerX_Range_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerX_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerX_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerX_Range_0.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerXRange.SetIndex(Me._lblTrackerX_Range_0, CType(0,Short))
-        Me._lblTrackerX_Range_0.Location = New System.Drawing.Point(6, 57)
+        Me.lblTrackerXRange.SetIndex(Me._lblTrackerX_Range_0, CType(0, Short))
+        Me._lblTrackerX_Range_0.Location = New System.Drawing.Point(8, 70)
+        Me._lblTrackerX_Range_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerX_Range_0.Name = "_lblTrackerX_Range_0"
         Me._lblTrackerX_Range_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerX_Range_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerX_Range_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerX_Range_0.TabIndex = 291
         Me._lblTrackerX_Range_0.Text = "0"
         Me._lblTrackerX_Range_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5454,13 +5797,14 @@
         '_lblTrackerE_Range_0
         '
         Me._lblTrackerE_Range_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerE_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerE_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerE_Range_0.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerERange.SetIndex(Me._lblTrackerE_Range_0, CType(0,Short))
-        Me._lblTrackerE_Range_0.Location = New System.Drawing.Point(218, 57)
+        Me.lblTrackerERange.SetIndex(Me._lblTrackerE_Range_0, CType(0, Short))
+        Me._lblTrackerE_Range_0.Location = New System.Drawing.Point(291, 70)
+        Me._lblTrackerE_Range_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerE_Range_0.Name = "_lblTrackerE_Range_0"
         Me._lblTrackerE_Range_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerE_Range_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerE_Range_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerE_Range_0.TabIndex = 290
         Me._lblTrackerE_Range_0.Text = "0"
         Me._lblTrackerE_Range_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5468,13 +5812,14 @@
         '_lblTrackerA_Range_0
         '
         Me._lblTrackerA_Range_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerA_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerA_Range_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerA_Range_0.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerARange.SetIndex(Me._lblTrackerA_Range_0, CType(0,Short))
-        Me._lblTrackerA_Range_0.Location = New System.Drawing.Point(157, 57)
+        Me.lblTrackerARange.SetIndex(Me._lblTrackerA_Range_0, CType(0, Short))
+        Me._lblTrackerA_Range_0.Location = New System.Drawing.Point(209, 70)
+        Me._lblTrackerA_Range_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerA_Range_0.Name = "_lblTrackerA_Range_0"
         Me._lblTrackerA_Range_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerA_Range_0.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerA_Range_0.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerA_Range_0.TabIndex = 289
         Me._lblTrackerA_Range_0.Text = "0"
         Me._lblTrackerA_Range_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5483,38 +5828,41 @@
         '
         Me._cmdTrackerSetOffset_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdTrackerSetOffset_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdTrackerSetOffset.SetIndex(Me._cmdTrackerSetOffset_0, CType(0,Short))
-        Me._cmdTrackerSetOffset_0.Location = New System.Drawing.Point(359, 40)
+        Me.cmdTrackerSetOffset.SetIndex(Me._cmdTrackerSetOffset_0, CType(0, Short))
+        Me._cmdTrackerSetOffset_0.Location = New System.Drawing.Point(479, 49)
+        Me._cmdTrackerSetOffset_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdTrackerSetOffset_0.Name = "_cmdTrackerSetOffset_0"
         Me._cmdTrackerSetOffset_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdTrackerSetOffset_0.Size = New System.Drawing.Size(75, 21)
+        Me._cmdTrackerSetOffset_0.Size = New System.Drawing.Size(100, 26)
         Me._cmdTrackerSetOffset_0.TabIndex = 288
         Me._cmdTrackerSetOffset_0.Text = "Set Offset..."
-        Me._cmdTrackerSetOffset_0.UseVisualStyleBackColor = false
+        Me._cmdTrackerSetOffset_0.UseVisualStyleBackColor = False
         '
         '_cmdTrackerSetValues_0
         '
         Me._cmdTrackerSetValues_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdTrackerSetValues_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdTrackerSetValues.SetIndex(Me._cmdTrackerSetValues_0, CType(0,Short))
-        Me._cmdTrackerSetValues_0.Location = New System.Drawing.Point(359, 16)
+        Me.cmdTrackerSetValues.SetIndex(Me._cmdTrackerSetValues_0, CType(0, Short))
+        Me._cmdTrackerSetValues_0.Location = New System.Drawing.Point(479, 20)
+        Me._cmdTrackerSetValues_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdTrackerSetValues_0.Name = "_cmdTrackerSetValues_0"
         Me._cmdTrackerSetValues_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdTrackerSetValues_0.Size = New System.Drawing.Size(75, 21)
+        Me._cmdTrackerSetValues_0.Size = New System.Drawing.Size(100, 26)
         Me._cmdTrackerSetValues_0.TabIndex = 247
         Me._cmdTrackerSetValues_0.Text = "Set Values..."
-        Me._cmdTrackerSetValues_0.UseVisualStyleBackColor = false
+        Me._cmdTrackerSetValues_0.UseVisualStyleBackColor = False
         '
         '_lblTrackerLabR_0
         '
         Me._lblTrackerLabR_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabR_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabR_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabR_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabR.SetIndex(Me._lblTrackerLabR_0, CType(0,Short))
-        Me._lblTrackerLabR_0.Location = New System.Drawing.Point(279, 20)
+        Me.lblTrackerLabR.SetIndex(Me._lblTrackerLabR_0, CType(0, Short))
+        Me._lblTrackerLabR_0.Location = New System.Drawing.Point(372, 25)
+        Me._lblTrackerLabR_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabR_0.Name = "_lblTrackerLabR_0"
         Me._lblTrackerLabR_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabR_0.Size = New System.Drawing.Size(31, 13)
+        Me._lblTrackerLabR_0.Size = New System.Drawing.Size(41, 16)
         Me._lblTrackerLabR_0.TabIndex = 253
         Me._lblTrackerLabR_0.Text = "Roll"
         Me._lblTrackerLabR_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5522,13 +5870,14 @@
         '_lblTrackerLabE_0
         '
         Me._lblTrackerLabE_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabE_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabE_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabE_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabE.SetIndex(Me._lblTrackerLabE_0, CType(0,Short))
-        Me._lblTrackerLabE_0.Location = New System.Drawing.Point(215, 20)
+        Me.lblTrackerLabE.SetIndex(Me._lblTrackerLabE_0, CType(0, Short))
+        Me._lblTrackerLabE_0.Location = New System.Drawing.Point(287, 25)
+        Me._lblTrackerLabE_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabE_0.Name = "_lblTrackerLabE_0"
         Me._lblTrackerLabE_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabE_0.Size = New System.Drawing.Size(64, 13)
+        Me._lblTrackerLabE_0.Size = New System.Drawing.Size(85, 16)
         Me._lblTrackerLabE_0.TabIndex = 252
         Me._lblTrackerLabE_0.Text = "Elevation"
         Me._lblTrackerLabE_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5536,13 +5885,14 @@
         '_lblTrackerLabZ_0
         '
         Me._lblTrackerLabZ_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabZ_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabZ_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabZ_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabZ.SetIndex(Me._lblTrackerLabZ_0, CType(0,Short))
-        Me._lblTrackerLabZ_0.Location = New System.Drawing.Point(97, 20)
+        Me.lblTrackerLabZ.SetIndex(Me._lblTrackerLabZ_0, CType(0, Short))
+        Me._lblTrackerLabZ_0.Location = New System.Drawing.Point(129, 25)
+        Me._lblTrackerLabZ_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabZ_0.Name = "_lblTrackerLabZ_0"
         Me._lblTrackerLabZ_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabZ_0.Size = New System.Drawing.Size(33, 13)
+        Me._lblTrackerLabZ_0.Size = New System.Drawing.Size(44, 16)
         Me._lblTrackerLabZ_0.TabIndex = 251
         Me._lblTrackerLabZ_0.Text = "Z"
         Me._lblTrackerLabZ_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5550,13 +5900,14 @@
         '_lblTrackerLabY_0
         '
         Me._lblTrackerLabY_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabY_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabY_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabY_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabY.SetIndex(Me._lblTrackerLabY_0, CType(0,Short))
-        Me._lblTrackerLabY_0.Location = New System.Drawing.Point(56, 20)
+        Me.lblTrackerLabY.SetIndex(Me._lblTrackerLabY_0, CType(0, Short))
+        Me._lblTrackerLabY_0.Location = New System.Drawing.Point(75, 25)
+        Me._lblTrackerLabY_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabY_0.Name = "_lblTrackerLabY_0"
         Me._lblTrackerLabY_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabY_0.Size = New System.Drawing.Size(33, 13)
+        Me._lblTrackerLabY_0.Size = New System.Drawing.Size(44, 16)
         Me._lblTrackerLabY_0.TabIndex = 250
         Me._lblTrackerLabY_0.Text = "Y"
         Me._lblTrackerLabY_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5564,13 +5915,14 @@
         '_lblTrackerLabA_0
         '
         Me._lblTrackerLabA_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabA_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabA_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabA_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabA.SetIndex(Me._lblTrackerLabA_0, CType(0,Short))
-        Me._lblTrackerLabA_0.Location = New System.Drawing.Point(156, 20)
+        Me.lblTrackerLabA.SetIndex(Me._lblTrackerLabA_0, CType(0, Short))
+        Me._lblTrackerLabA_0.Location = New System.Drawing.Point(208, 25)
+        Me._lblTrackerLabA_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabA_0.Name = "_lblTrackerLabA_0"
         Me._lblTrackerLabA_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabA_0.Size = New System.Drawing.Size(58, 17)
+        Me._lblTrackerLabA_0.Size = New System.Drawing.Size(77, 21)
         Me._lblTrackerLabA_0.TabIndex = 248
         Me._lblTrackerLabA_0.Text = "Azimuth"
         Me._lblTrackerLabA_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5578,13 +5930,14 @@
         '_lblTrackerLabX_0
         '
         Me._lblTrackerLabX_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabX_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabX_0.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabX_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabX.SetIndex(Me._lblTrackerLabX_0, CType(0,Short))
-        Me._lblTrackerLabX_0.Location = New System.Drawing.Point(16, 20)
+        Me.lblTrackerLabX.SetIndex(Me._lblTrackerLabX_0, CType(0, Short))
+        Me._lblTrackerLabX_0.Location = New System.Drawing.Point(21, 25)
+        Me._lblTrackerLabX_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabX_0.Name = "_lblTrackerLabX_0"
         Me._lblTrackerLabX_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabX_0.Size = New System.Drawing.Size(33, 13)
+        Me._lblTrackerLabX_0.Size = New System.Drawing.Size(44, 16)
         Me._lblTrackerLabX_0.TabIndex = 246
         Me._lblTrackerLabX_0.Text = "X"
         Me._lblTrackerLabX_0.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5611,27 +5964,30 @@
         Me._fraTrackerSensor_1.Controls.Add(Me._lblTrackerA_1)
         Me._fraTrackerSensor_1.Controls.Add(Me._lblTrackerE_1)
         Me._fraTrackerSensor_1.Controls.Add(Me._lblTrackerR_1)
-        Me._fraTrackerSensor_1.Enabled = false
+        Me._fraTrackerSensor_1.Enabled = False
         Me._fraTrackerSensor_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraTrackerSensor.SetIndex(Me._fraTrackerSensor_1, CType(1,Short))
-        Me._fraTrackerSensor_1.Location = New System.Drawing.Point(14, 204)
+        Me.fraTrackerSensor.SetIndex(Me._fraTrackerSensor_1, CType(1, Short))
+        Me._fraTrackerSensor_1.Location = New System.Drawing.Point(19, 251)
+        Me._fraTrackerSensor_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraTrackerSensor_1.Name = "_fraTrackerSensor_1"
+        Me._fraTrackerSensor_1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraTrackerSensor_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._fraTrackerSensor_1.Size = New System.Drawing.Size(458, 77)
+        Me._fraTrackerSensor_1.Size = New System.Drawing.Size(611, 95)
         Me._fraTrackerSensor_1.TabIndex = 259
-        Me._fraTrackerSensor_1.TabStop = false
+        Me._fraTrackerSensor_1.TabStop = False
         Me._fraTrackerSensor_1.Text = "Sensor 1:"
         '
         '_lblTrackerR_Range_1
         '
         Me._lblTrackerR_Range_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerR_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerR_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerR_Range_1.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerRRange.SetIndex(Me._lblTrackerR_Range_1, CType(1,Short))
-        Me._lblTrackerR_Range_1.Location = New System.Drawing.Point(269, 57)
+        Me.lblTrackerRRange.SetIndex(Me._lblTrackerR_Range_1, CType(1, Short))
+        Me._lblTrackerR_Range_1.Location = New System.Drawing.Point(359, 70)
+        Me._lblTrackerR_Range_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerR_Range_1.Name = "_lblTrackerR_Range_1"
         Me._lblTrackerR_Range_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerR_Range_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerR_Range_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerR_Range_1.TabIndex = 297
         Me._lblTrackerR_Range_1.Text = "0"
         Me._lblTrackerR_Range_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5639,13 +5995,14 @@
         '_lblTrackerY_Range_1
         '
         Me._lblTrackerY_Range_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerY_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerY_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerY_Range_1.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerYRange.SetIndex(Me._lblTrackerY_Range_1, CType(1,Short))
-        Me._lblTrackerY_Range_1.Location = New System.Drawing.Point(46, 57)
+        Me.lblTrackerYRange.SetIndex(Me._lblTrackerY_Range_1, CType(1, Short))
+        Me._lblTrackerY_Range_1.Location = New System.Drawing.Point(61, 70)
+        Me._lblTrackerY_Range_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerY_Range_1.Name = "_lblTrackerY_Range_1"
         Me._lblTrackerY_Range_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerY_Range_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerY_Range_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerY_Range_1.TabIndex = 299
         Me._lblTrackerY_Range_1.Text = "0"
         Me._lblTrackerY_Range_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5653,13 +6010,14 @@
         '_lblTrackerZ_Range_1
         '
         Me._lblTrackerZ_Range_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerZ_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerZ_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerZ_Range_1.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerZRange.SetIndex(Me._lblTrackerZ_Range_1, CType(1,Short))
-        Me._lblTrackerZ_Range_1.Location = New System.Drawing.Point(87, 57)
+        Me.lblTrackerZRange.SetIndex(Me._lblTrackerZ_Range_1, CType(1, Short))
+        Me._lblTrackerZ_Range_1.Location = New System.Drawing.Point(116, 70)
+        Me._lblTrackerZ_Range_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerZ_Range_1.Name = "_lblTrackerZ_Range_1"
         Me._lblTrackerZ_Range_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerZ_Range_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerZ_Range_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerZ_Range_1.TabIndex = 298
         Me._lblTrackerZ_Range_1.Text = "0"
         Me._lblTrackerZ_Range_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5667,13 +6025,14 @@
         '_lblTrackerX_Range_1
         '
         Me._lblTrackerX_Range_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerX_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerX_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerX_Range_1.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerXRange.SetIndex(Me._lblTrackerX_Range_1, CType(1,Short))
-        Me._lblTrackerX_Range_1.Location = New System.Drawing.Point(6, 57)
+        Me.lblTrackerXRange.SetIndex(Me._lblTrackerX_Range_1, CType(1, Short))
+        Me._lblTrackerX_Range_1.Location = New System.Drawing.Point(8, 70)
+        Me._lblTrackerX_Range_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerX_Range_1.Name = "_lblTrackerX_Range_1"
         Me._lblTrackerX_Range_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerX_Range_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerX_Range_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerX_Range_1.TabIndex = 296
         Me._lblTrackerX_Range_1.Text = "0"
         Me._lblTrackerX_Range_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5681,13 +6040,14 @@
         '_lblTrackerE_Range_1
         '
         Me._lblTrackerE_Range_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerE_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerE_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerE_Range_1.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerERange.SetIndex(Me._lblTrackerE_Range_1, CType(1,Short))
-        Me._lblTrackerE_Range_1.Location = New System.Drawing.Point(218, 57)
+        Me.lblTrackerERange.SetIndex(Me._lblTrackerE_Range_1, CType(1, Short))
+        Me._lblTrackerE_Range_1.Location = New System.Drawing.Point(291, 70)
+        Me._lblTrackerE_Range_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerE_Range_1.Name = "_lblTrackerE_Range_1"
         Me._lblTrackerE_Range_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerE_Range_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerE_Range_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerE_Range_1.TabIndex = 295
         Me._lblTrackerE_Range_1.Text = "0"
         Me._lblTrackerE_Range_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5695,13 +6055,14 @@
         '_lblTrackerA_Range_1
         '
         Me._lblTrackerA_Range_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerA_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerA_Range_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerA_Range_1.ForeColor = System.Drawing.Color.Gray
-        Me.lblTrackerARange.SetIndex(Me._lblTrackerA_Range_1, CType(1,Short))
-        Me._lblTrackerA_Range_1.Location = New System.Drawing.Point(157, 57)
+        Me.lblTrackerARange.SetIndex(Me._lblTrackerA_Range_1, CType(1, Short))
+        Me._lblTrackerA_Range_1.Location = New System.Drawing.Point(209, 70)
+        Me._lblTrackerA_Range_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerA_Range_1.Name = "_lblTrackerA_Range_1"
         Me._lblTrackerA_Range_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerA_Range_1.Size = New System.Drawing.Size(53, 13)
+        Me._lblTrackerA_Range_1.Size = New System.Drawing.Size(71, 16)
         Me._lblTrackerA_Range_1.TabIndex = 294
         Me._lblTrackerA_Range_1.Text = "0"
         Me._lblTrackerA_Range_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5710,38 +6071,41 @@
         '
         Me._cmdTrackerSetOffset_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdTrackerSetOffset_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdTrackerSetOffset.SetIndex(Me._cmdTrackerSetOffset_1, CType(1,Short))
-        Me._cmdTrackerSetOffset_1.Location = New System.Drawing.Point(359, 40)
+        Me.cmdTrackerSetOffset.SetIndex(Me._cmdTrackerSetOffset_1, CType(1, Short))
+        Me._cmdTrackerSetOffset_1.Location = New System.Drawing.Point(479, 49)
+        Me._cmdTrackerSetOffset_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdTrackerSetOffset_1.Name = "_cmdTrackerSetOffset_1"
         Me._cmdTrackerSetOffset_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdTrackerSetOffset_1.Size = New System.Drawing.Size(75, 21)
+        Me._cmdTrackerSetOffset_1.Size = New System.Drawing.Size(100, 26)
         Me._cmdTrackerSetOffset_1.TabIndex = 287
         Me._cmdTrackerSetOffset_1.Text = "Set Offset..."
-        Me._cmdTrackerSetOffset_1.UseVisualStyleBackColor = false
+        Me._cmdTrackerSetOffset_1.UseVisualStyleBackColor = False
         '
         '_cmdTrackerSetValues_1
         '
         Me._cmdTrackerSetValues_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdTrackerSetValues_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdTrackerSetValues.SetIndex(Me._cmdTrackerSetValues_1, CType(1,Short))
-        Me._cmdTrackerSetValues_1.Location = New System.Drawing.Point(359, 16)
+        Me.cmdTrackerSetValues.SetIndex(Me._cmdTrackerSetValues_1, CType(1, Short))
+        Me._cmdTrackerSetValues_1.Location = New System.Drawing.Point(479, 20)
+        Me._cmdTrackerSetValues_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdTrackerSetValues_1.Name = "_cmdTrackerSetValues_1"
         Me._cmdTrackerSetValues_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdTrackerSetValues_1.Size = New System.Drawing.Size(75, 21)
+        Me._cmdTrackerSetValues_1.Size = New System.Drawing.Size(100, 26)
         Me._cmdTrackerSetValues_1.TabIndex = 260
         Me._cmdTrackerSetValues_1.Text = "Set Values..."
-        Me._cmdTrackerSetValues_1.UseVisualStyleBackColor = false
+        Me._cmdTrackerSetValues_1.UseVisualStyleBackColor = False
         '
         '_lblTrackerLabX_1
         '
         Me._lblTrackerLabX_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabX_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabX_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabX_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabX.SetIndex(Me._lblTrackerLabX_1, CType(1,Short))
-        Me._lblTrackerLabX_1.Location = New System.Drawing.Point(16, 20)
+        Me.lblTrackerLabX.SetIndex(Me._lblTrackerLabX_1, CType(1, Short))
+        Me._lblTrackerLabX_1.Location = New System.Drawing.Point(21, 25)
+        Me._lblTrackerLabX_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabX_1.Name = "_lblTrackerLabX_1"
         Me._lblTrackerLabX_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabX_1.Size = New System.Drawing.Size(33, 13)
+        Me._lblTrackerLabX_1.Size = New System.Drawing.Size(44, 16)
         Me._lblTrackerLabX_1.TabIndex = 272
         Me._lblTrackerLabX_1.Text = "X"
         Me._lblTrackerLabX_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5749,13 +6113,14 @@
         '_lblTrackerLabA_1
         '
         Me._lblTrackerLabA_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabA_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabA_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabA_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabA.SetIndex(Me._lblTrackerLabA_1, CType(1,Short))
-        Me._lblTrackerLabA_1.Location = New System.Drawing.Point(156, 20)
+        Me.lblTrackerLabA.SetIndex(Me._lblTrackerLabA_1, CType(1, Short))
+        Me._lblTrackerLabA_1.Location = New System.Drawing.Point(208, 25)
+        Me._lblTrackerLabA_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabA_1.Name = "_lblTrackerLabA_1"
         Me._lblTrackerLabA_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabA_1.Size = New System.Drawing.Size(58, 13)
+        Me._lblTrackerLabA_1.Size = New System.Drawing.Size(77, 16)
         Me._lblTrackerLabA_1.TabIndex = 271
         Me._lblTrackerLabA_1.Text = "Azimuth"
         Me._lblTrackerLabA_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5763,13 +6128,14 @@
         '_lblTrackerLabY_1
         '
         Me._lblTrackerLabY_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabY_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabY_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabY_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabY.SetIndex(Me._lblTrackerLabY_1, CType(1,Short))
-        Me._lblTrackerLabY_1.Location = New System.Drawing.Point(56, 20)
+        Me.lblTrackerLabY.SetIndex(Me._lblTrackerLabY_1, CType(1, Short))
+        Me._lblTrackerLabY_1.Location = New System.Drawing.Point(75, 25)
+        Me._lblTrackerLabY_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabY_1.Name = "_lblTrackerLabY_1"
         Me._lblTrackerLabY_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabY_1.Size = New System.Drawing.Size(33, 13)
+        Me._lblTrackerLabY_1.Size = New System.Drawing.Size(44, 16)
         Me._lblTrackerLabY_1.TabIndex = 269
         Me._lblTrackerLabY_1.Text = "Y"
         Me._lblTrackerLabY_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5777,13 +6143,14 @@
         '_lblTrackerLabZ_1
         '
         Me._lblTrackerLabZ_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabZ_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabZ_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabZ_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabZ.SetIndex(Me._lblTrackerLabZ_1, CType(1,Short))
-        Me._lblTrackerLabZ_1.Location = New System.Drawing.Point(97, 20)
+        Me.lblTrackerLabZ.SetIndex(Me._lblTrackerLabZ_1, CType(1, Short))
+        Me._lblTrackerLabZ_1.Location = New System.Drawing.Point(129, 25)
+        Me._lblTrackerLabZ_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabZ_1.Name = "_lblTrackerLabZ_1"
         Me._lblTrackerLabZ_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabZ_1.Size = New System.Drawing.Size(33, 13)
+        Me._lblTrackerLabZ_1.Size = New System.Drawing.Size(44, 16)
         Me._lblTrackerLabZ_1.TabIndex = 268
         Me._lblTrackerLabZ_1.Text = "Z"
         Me._lblTrackerLabZ_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5791,13 +6158,14 @@
         '_lblTrackerLabE_1
         '
         Me._lblTrackerLabE_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabE_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabE_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabE_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabE.SetIndex(Me._lblTrackerLabE_1, CType(1,Short))
-        Me._lblTrackerLabE_1.Location = New System.Drawing.Point(218, 20)
+        Me.lblTrackerLabE.SetIndex(Me._lblTrackerLabE_1, CType(1, Short))
+        Me._lblTrackerLabE_1.Location = New System.Drawing.Point(291, 25)
+        Me._lblTrackerLabE_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabE_1.Name = "_lblTrackerLabE_1"
         Me._lblTrackerLabE_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabE_1.Size = New System.Drawing.Size(61, 17)
+        Me._lblTrackerLabE_1.Size = New System.Drawing.Size(81, 21)
         Me._lblTrackerLabE_1.TabIndex = 267
         Me._lblTrackerLabE_1.Text = "Elevation"
         Me._lblTrackerLabE_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5805,13 +6173,14 @@
         '_lblTrackerLabR_1
         '
         Me._lblTrackerLabR_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblTrackerLabR_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me._lblTrackerLabR_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblTrackerLabR_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTrackerLabR.SetIndex(Me._lblTrackerLabR_1, CType(1,Short))
-        Me._lblTrackerLabR_1.Location = New System.Drawing.Point(279, 20)
+        Me.lblTrackerLabR.SetIndex(Me._lblTrackerLabR_1, CType(1, Short))
+        Me._lblTrackerLabR_1.Location = New System.Drawing.Point(372, 25)
+        Me._lblTrackerLabR_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._lblTrackerLabR_1.Name = "_lblTrackerLabR_1"
         Me._lblTrackerLabR_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblTrackerLabR_1.Size = New System.Drawing.Size(31, 17)
+        Me._lblTrackerLabR_1.Size = New System.Drawing.Size(41, 21)
         Me._lblTrackerLabR_1.TabIndex = 266
         Me._lblTrackerLabR_1.Text = "Roll"
         Me._lblTrackerLabR_1.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -5820,13 +6189,14 @@
         '
         Me.chkTrackerSaveData.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkTrackerSaveData.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkTrackerSaveData.Location = New System.Drawing.Point(18, 100)
+        Me.chkTrackerSaveData.Location = New System.Drawing.Point(24, 123)
+        Me.chkTrackerSaveData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkTrackerSaveData.Name = "chkTrackerSaveData"
         Me.chkTrackerSaveData.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkTrackerSaveData.Size = New System.Drawing.Size(197, 17)
+        Me.chkTrackerSaveData.Size = New System.Drawing.Size(263, 21)
         Me.chkTrackerSaveData.TabIndex = 281
         Me.chkTrackerSaveData.Text = "Save data to a file"
-        Me.chkTrackerSaveData.UseVisualStyleBackColor = false
+        Me.chkTrackerSaveData.UseVisualStyleBackColor = False
         '
         'tabVirtualWorld
         '
@@ -5844,183 +6214,200 @@
         Me.tabVirtualWorld.Controls.Add(Me._cmdViWoSendParameters_0)
         Me.tabVirtualWorld.Controls.Add(Me._cmdViWoSendParameters_1)
         Me.tabVirtualWorld.Location = New System.Drawing.Point(4, 40)
+        Me.tabVirtualWorld.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tabVirtualWorld.Name = "tabVirtualWorld"
-        Me.tabVirtualWorld.Size = New System.Drawing.Size(514, 430)
+        Me.tabVirtualWorld.Size = New System.Drawing.Size(688, 539)
         Me.tabVirtualWorld.TabIndex = 11
         Me.tabVirtualWorld.Text = "ViWo"
-        Me.tabVirtualWorld.UseVisualStyleBackColor = true
+        Me.tabVirtualWorld.UseVisualStyleBackColor = True
         '
         '_fraViWoParameter_3
         '
-        Me._fraViWoParameter_3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._fraViWoParameter_3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._fraViWoParameter_3.Controls.Add(Me._txtViWoPar_0)
         Me._fraViWoParameter_3.Controls.Add(Me._txtViWoPar_3)
         Me._fraViWoParameter_3.Controls.Add(Me._txtViWoPar_2)
         Me._fraViWoParameter_3.Controls.Add(Me._txtViWoPar_1)
         Me._fraViWoParameter_3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraViWoParameter.SetIndex(Me._fraViWoParameter_3, CType(3,Short))
-        Me._fraViWoParameter_3.Location = New System.Drawing.Point(285, 170)
+        Me.fraViWoParameter.SetIndex(Me._fraViWoParameter_3, CType(3, Short))
+        Me._fraViWoParameter_3.Location = New System.Drawing.Point(380, 209)
+        Me._fraViWoParameter_3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraViWoParameter_3.Name = "_fraViWoParameter_3"
+        Me._fraViWoParameter_3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraViWoParameter_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._fraViWoParameter_3.Size = New System.Drawing.Size(181, 117)
+        Me._fraViWoParameter_3.Size = New System.Drawing.Size(241, 144)
         Me._fraViWoParameter_3.TabIndex = 305
-        Me._fraViWoParameter_3.TabStop = false
+        Me._fraViWoParameter_3.TabStop = False
         Me._fraViWoParameter_3.Text = "Parameters:"
         '
         '_txtViWoPar_0
         '
-        Me._txtViWoPar_0.AcceptsReturn = true
+        Me._txtViWoPar_0.AcceptsReturn = True
         Me._txtViWoPar_0.BackColor = System.Drawing.SystemColors.Window
         Me._txtViWoPar_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtViWoPar_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoPar.SetIndex(Me._txtViWoPar_0, CType(0,Short))
-        Me._txtViWoPar_0.Location = New System.Drawing.Point(56, 16)
+        Me.txtViWoPar.SetIndex(Me._txtViWoPar_0, CType(0, Short))
+        Me._txtViWoPar_0.Location = New System.Drawing.Point(75, 20)
+        Me._txtViWoPar_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtViWoPar_0.MaxLength = 0
         Me._txtViWoPar_0.Name = "_txtViWoPar_0"
         Me._txtViWoPar_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtViWoPar_0.Size = New System.Drawing.Size(77, 20)
+        Me._txtViWoPar_0.Size = New System.Drawing.Size(101, 22)
         Me._txtViWoPar_0.TabIndex = 302
         '
         '_txtViWoPar_3
         '
-        Me._txtViWoPar_3.AcceptsReturn = true
+        Me._txtViWoPar_3.AcceptsReturn = True
         Me._txtViWoPar_3.BackColor = System.Drawing.SystemColors.Window
         Me._txtViWoPar_3.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtViWoPar_3.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoPar.SetIndex(Me._txtViWoPar_3, CType(3,Short))
-        Me._txtViWoPar_3.Location = New System.Drawing.Point(56, 91)
+        Me.txtViWoPar.SetIndex(Me._txtViWoPar_3, CType(3, Short))
+        Me._txtViWoPar_3.Location = New System.Drawing.Point(75, 112)
+        Me._txtViWoPar_3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtViWoPar_3.MaxLength = 0
         Me._txtViWoPar_3.Name = "_txtViWoPar_3"
         Me._txtViWoPar_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtViWoPar_3.Size = New System.Drawing.Size(77, 20)
+        Me._txtViWoPar_3.Size = New System.Drawing.Size(101, 22)
         Me._txtViWoPar_3.TabIndex = 305
         '
         '_txtViWoPar_2
         '
-        Me._txtViWoPar_2.AcceptsReturn = true
+        Me._txtViWoPar_2.AcceptsReturn = True
         Me._txtViWoPar_2.BackColor = System.Drawing.SystemColors.Window
         Me._txtViWoPar_2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtViWoPar_2.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoPar.SetIndex(Me._txtViWoPar_2, CType(2,Short))
-        Me._txtViWoPar_2.Location = New System.Drawing.Point(56, 66)
+        Me.txtViWoPar.SetIndex(Me._txtViWoPar_2, CType(2, Short))
+        Me._txtViWoPar_2.Location = New System.Drawing.Point(75, 81)
+        Me._txtViWoPar_2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtViWoPar_2.MaxLength = 0
         Me._txtViWoPar_2.Name = "_txtViWoPar_2"
         Me._txtViWoPar_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtViWoPar_2.Size = New System.Drawing.Size(77, 20)
+        Me._txtViWoPar_2.Size = New System.Drawing.Size(101, 22)
         Me._txtViWoPar_2.TabIndex = 304
         '
         '_txtViWoPar_1
         '
-        Me._txtViWoPar_1.AcceptsReturn = true
+        Me._txtViWoPar_1.AcceptsReturn = True
         Me._txtViWoPar_1.BackColor = System.Drawing.SystemColors.Window
         Me._txtViWoPar_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtViWoPar_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoPar.SetIndex(Me._txtViWoPar_1, CType(1,Short))
-        Me._txtViWoPar_1.Location = New System.Drawing.Point(56, 41)
+        Me.txtViWoPar.SetIndex(Me._txtViWoPar_1, CType(1, Short))
+        Me._txtViWoPar_1.Location = New System.Drawing.Point(75, 50)
+        Me._txtViWoPar_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtViWoPar_1.MaxLength = 0
         Me._txtViWoPar_1.Name = "_txtViWoPar_1"
         Me._txtViWoPar_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtViWoPar_1.Size = New System.Drawing.Size(77, 20)
+        Me._txtViWoPar_1.Size = New System.Drawing.Size(101, 22)
         Me._txtViWoPar_1.TabIndex = 303
         '
         '_fraViWoParameter_0
         '
-        Me._fraViWoParameter_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._fraViWoParameter_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._fraViWoParameter_0.Controls.Add(Me.txtViWoInteger)
         Me._fraViWoParameter_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraViWoParameter.SetIndex(Me._fraViWoParameter_0, CType(0,Short))
-        Me._fraViWoParameter_0.Location = New System.Drawing.Point(290, 144)
+        Me.fraViWoParameter.SetIndex(Me._fraViWoParameter_0, CType(0, Short))
+        Me._fraViWoParameter_0.Location = New System.Drawing.Point(387, 177)
+        Me._fraViWoParameter_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraViWoParameter_0.Name = "_fraViWoParameter_0"
+        Me._fraViWoParameter_0.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraViWoParameter_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._fraViWoParameter_0.Size = New System.Drawing.Size(181, 117)
+        Me._fraViWoParameter_0.Size = New System.Drawing.Size(241, 144)
         Me._fraViWoParameter_0.TabIndex = 296
-        Me._fraViWoParameter_0.TabStop = false
+        Me._fraViWoParameter_0.TabStop = False
         Me._fraViWoParameter_0.Text = "Number/String:"
         '
         'txtViWoInteger
         '
-        Me.txtViWoInteger.AcceptsReturn = true
+        Me.txtViWoInteger.AcceptsReturn = True
         Me.txtViWoInteger.BackColor = System.Drawing.SystemColors.Window
         Me.txtViWoInteger.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtViWoInteger.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoInteger.Location = New System.Drawing.Point(12, 48)
+        Me.txtViWoInteger.Location = New System.Drawing.Point(16, 59)
+        Me.txtViWoInteger.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtViWoInteger.MaxLength = 0
         Me.txtViWoInteger.Name = "txtViWoInteger"
         Me.txtViWoInteger.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtViWoInteger.Size = New System.Drawing.Size(157, 20)
+        Me.txtViWoInteger.Size = New System.Drawing.Size(208, 22)
         Me.txtViWoInteger.TabIndex = 297
         '
         '_fraViWoParameter_2
         '
-        Me._fraViWoParameter_2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._fraViWoParameter_2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._fraViWoParameter_2.Controls.Add(Me._txtViWoPosition_2)
         Me._fraViWoParameter_2.Controls.Add(Me._txtViWoPosition_1)
         Me._fraViWoParameter_2.Controls.Add(Me._txtViWoPosition_0)
         Me._fraViWoParameter_2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraViWoParameter.SetIndex(Me._fraViWoParameter_2, CType(2,Short))
-        Me._fraViWoParameter_2.Location = New System.Drawing.Point(314, 146)
+        Me.fraViWoParameter.SetIndex(Me._fraViWoParameter_2, CType(2, Short))
+        Me._fraViWoParameter_2.Location = New System.Drawing.Point(419, 180)
+        Me._fraViWoParameter_2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraViWoParameter_2.Name = "_fraViWoParameter_2"
+        Me._fraViWoParameter_2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraViWoParameter_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._fraViWoParameter_2.Size = New System.Drawing.Size(181, 117)
+        Me._fraViWoParameter_2.Size = New System.Drawing.Size(241, 144)
         Me._fraViWoParameter_2.TabIndex = 301
-        Me._fraViWoParameter_2.TabStop = false
+        Me._fraViWoParameter_2.TabStop = False
         Me._fraViWoParameter_2.Text = "Position:"
         '
         '_txtViWoPosition_2
         '
-        Me._txtViWoPosition_2.AcceptsReturn = true
+        Me._txtViWoPosition_2.AcceptsReturn = True
         Me._txtViWoPosition_2.BackColor = System.Drawing.SystemColors.Window
         Me._txtViWoPosition_2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtViWoPosition_2.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoPosition.SetIndex(Me._txtViWoPosition_2, CType(2,Short))
-        Me._txtViWoPosition_2.Location = New System.Drawing.Point(56, 80)
+        Me.txtViWoPosition.SetIndex(Me._txtViWoPosition_2, CType(2, Short))
+        Me._txtViWoPosition_2.Location = New System.Drawing.Point(75, 98)
+        Me._txtViWoPosition_2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtViWoPosition_2.MaxLength = 0
         Me._txtViWoPosition_2.Name = "_txtViWoPosition_2"
         Me._txtViWoPosition_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtViWoPosition_2.Size = New System.Drawing.Size(77, 20)
+        Me._txtViWoPosition_2.Size = New System.Drawing.Size(101, 22)
         Me._txtViWoPosition_2.TabIndex = 304
         '
         '_txtViWoPosition_1
         '
-        Me._txtViWoPosition_1.AcceptsReturn = true
+        Me._txtViWoPosition_1.AcceptsReturn = True
         Me._txtViWoPosition_1.BackColor = System.Drawing.SystemColors.Window
         Me._txtViWoPosition_1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtViWoPosition_1.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoPosition.SetIndex(Me._txtViWoPosition_1, CType(1,Short))
-        Me._txtViWoPosition_1.Location = New System.Drawing.Point(56, 49)
+        Me.txtViWoPosition.SetIndex(Me._txtViWoPosition_1, CType(1, Short))
+        Me._txtViWoPosition_1.Location = New System.Drawing.Point(75, 60)
+        Me._txtViWoPosition_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtViWoPosition_1.MaxLength = 0
         Me._txtViWoPosition_1.Name = "_txtViWoPosition_1"
         Me._txtViWoPosition_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtViWoPosition_1.Size = New System.Drawing.Size(77, 20)
+        Me._txtViWoPosition_1.Size = New System.Drawing.Size(101, 22)
         Me._txtViWoPosition_1.TabIndex = 303
         '
         '_txtViWoPosition_0
         '
-        Me._txtViWoPosition_0.AcceptsReturn = true
+        Me._txtViWoPosition_0.AcceptsReturn = True
         Me._txtViWoPosition_0.BackColor = System.Drawing.SystemColors.Window
         Me._txtViWoPosition_0.Cursor = System.Windows.Forms.Cursors.IBeam
         Me._txtViWoPosition_0.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoPosition.SetIndex(Me._txtViWoPosition_0, CType(0,Short))
-        Me._txtViWoPosition_0.Location = New System.Drawing.Point(56, 20)
+        Me.txtViWoPosition.SetIndex(Me._txtViWoPosition_0, CType(0, Short))
+        Me._txtViWoPosition_0.Location = New System.Drawing.Point(75, 25)
+        Me._txtViWoPosition_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._txtViWoPosition_0.MaxLength = 0
         Me._txtViWoPosition_0.Name = "_txtViWoPosition_0"
         Me._txtViWoPosition_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._txtViWoPosition_0.Size = New System.Drawing.Size(77, 20)
+        Me._txtViWoPosition_0.Size = New System.Drawing.Size(101, 22)
         Me._txtViWoPosition_0.TabIndex = 302
         '
         '_fraViWoParameter_1
         '
-        Me._fraViWoParameter_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._fraViWoParameter_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._fraViWoParameter_1.Controls.Add(Me.cmdViWoColor)
         Me._fraViWoParameter_1.Controls.Add(Me.shpViWoColor)
         Me._fraViWoParameter_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.fraViWoParameter.SetIndex(Me._fraViWoParameter_1, CType(1,Short))
-        Me._fraViWoParameter_1.Location = New System.Drawing.Point(291, 144)
+        Me.fraViWoParameter.SetIndex(Me._fraViWoParameter_1, CType(1, Short))
+        Me._fraViWoParameter_1.Location = New System.Drawing.Point(388, 177)
+        Me._fraViWoParameter_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraViWoParameter_1.Name = "_fraViWoParameter_1"
+        Me._fraViWoParameter_1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._fraViWoParameter_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._fraViWoParameter_1.Size = New System.Drawing.Size(181, 117)
+        Me._fraViWoParameter_1.Size = New System.Drawing.Size(241, 144)
         Me._fraViWoParameter_1.TabIndex = 298
-        Me._fraViWoParameter_1.TabStop = false
+        Me._fraViWoParameter_1.TabStop = False
         Me._fraViWoParameter_1.Text = "Color:"
         '
         'cmdViWoColor
@@ -6028,31 +6415,34 @@
         Me.cmdViWoColor.BackColor = System.Drawing.SystemColors.Control
         Me.cmdViWoColor.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdViWoColor.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdViWoColor.Location = New System.Drawing.Point(60, 68)
+        Me.cmdViWoColor.Location = New System.Drawing.Point(80, 84)
+        Me.cmdViWoColor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmdViWoColor.Name = "cmdViWoColor"
         Me.cmdViWoColor.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdViWoColor.Size = New System.Drawing.Size(65, 21)
+        Me.cmdViWoColor.Size = New System.Drawing.Size(87, 26)
         Me.cmdViWoColor.TabIndex = 299
         Me.cmdViWoColor.Text = "Choose"
-        Me.cmdViWoColor.UseVisualStyleBackColor = false
+        Me.cmdViWoColor.UseVisualStyleBackColor = False
         '
         'shpViWoColor
         '
         Me.shpViWoColor.BackColor = System.Drawing.SystemColors.Window
         Me.shpViWoColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.shpViWoColor.Location = New System.Drawing.Point(76, 28)
+        Me.shpViWoColor.Location = New System.Drawing.Point(101, 34)
+        Me.shpViWoColor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.shpViWoColor.Name = "shpViWoColor"
-        Me.shpViWoColor.Size = New System.Drawing.Size(33, 29)
+        Me.shpViWoColor.Size = New System.Drawing.Size(43, 35)
         Me.shpViWoColor.TabIndex = 300
         '
         '_Label8_0
         '
         Me._Label8_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label8_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label8_0.Location = New System.Drawing.Point(354, 32)
+        Me._Label8_0.Location = New System.Drawing.Point(472, 39)
+        Me._Label8_0.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label8_0.Name = "_Label8_0"
         Me._Label8_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label8_0.Size = New System.Drawing.Size(70, 13)
+        Me._Label8_0.Size = New System.Drawing.Size(93, 16)
         Me._Label8_0.TabIndex = 285
         Me._Label8_0.Text = "Head [ms]:"
         Me._Label8_0.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -6061,10 +6451,11 @@
         '
         Me._Label8_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._Label8_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._Label8_1.Location = New System.Drawing.Point(352, 52)
+        Me._Label8_1.Location = New System.Drawing.Point(469, 64)
+        Me._Label8_1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me._Label8_1.Name = "_Label8_1"
         Me._Label8_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._Label8_1.Size = New System.Drawing.Size(72, 13)
+        Me._Label8_1.Size = New System.Drawing.Size(96, 16)
         Me._Label8_1.TabIndex = 286
         Me._Label8_1.Text = "Pointer [ms]:"
         Me._Label8_1.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -6073,95 +6464,104 @@
         '
         Me.chkViWoSendData.Cursor = System.Windows.Forms.Cursors.Default
         Me.chkViWoSendData.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkViWoSendData.Location = New System.Drawing.Point(17, 28)
+        Me.chkViWoSendData.Location = New System.Drawing.Point(23, 34)
+        Me.chkViWoSendData.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkViWoSendData.Name = "chkViWoSendData"
         Me.chkViWoSendData.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.chkViWoSendData.Size = New System.Drawing.Size(250, 25)
+        Me.chkViWoSendData.Size = New System.Drawing.Size(333, 31)
         Me.chkViWoSendData.TabIndex = 282
         Me.chkViWoSendData.Text = "Send Tracker Data. Use Average windows:"
-        Me.chkViWoSendData.UseVisualStyleBackColor = false
+        Me.chkViWoSendData.UseVisualStyleBackColor = False
         '
         'txtViWoAvgHead
         '
-        Me.txtViWoAvgHead.AcceptsReturn = true
+        Me.txtViWoAvgHead.AcceptsReturn = True
         Me.txtViWoAvgHead.BackColor = System.Drawing.SystemColors.Window
         Me.txtViWoAvgHead.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtViWoAvgHead.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoAvgHead.Location = New System.Drawing.Point(430, 28)
+        Me.txtViWoAvgHead.Location = New System.Drawing.Point(573, 34)
+        Me.txtViWoAvgHead.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtViWoAvgHead.MaxLength = 10
         Me.txtViWoAvgHead.Name = "txtViWoAvgHead"
         Me.txtViWoAvgHead.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtViWoAvgHead.Size = New System.Drawing.Size(41, 20)
+        Me.txtViWoAvgHead.Size = New System.Drawing.Size(53, 22)
         Me.txtViWoAvgHead.TabIndex = 283
         '
         'txtViWoAvgPointer
         '
-        Me.txtViWoAvgPointer.AcceptsReturn = true
+        Me.txtViWoAvgPointer.AcceptsReturn = True
         Me.txtViWoAvgPointer.BackColor = System.Drawing.SystemColors.Window
         Me.txtViWoAvgPointer.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtViWoAvgPointer.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtViWoAvgPointer.Location = New System.Drawing.Point(430, 48)
+        Me.txtViWoAvgPointer.Location = New System.Drawing.Point(573, 59)
+        Me.txtViWoAvgPointer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtViWoAvgPointer.MaxLength = 10
         Me.txtViWoAvgPointer.Name = "txtViWoAvgPointer"
         Me.txtViWoAvgPointer.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtViWoAvgPointer.Size = New System.Drawing.Size(41, 20)
+        Me.txtViWoAvgPointer.Size = New System.Drawing.Size(53, 22)
         Me.txtViWoAvgPointer.TabIndex = 284
         '
         'lstViWoWorlds
         '
-        Me.lstViWoWorlds.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lstViWoWorlds.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lstViWoWorlds.Cursor = System.Windows.Forms.Cursors.Default
         Me.lstViWoWorlds.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lstViWoWorlds.Location = New System.Drawing.Point(28, 76)
+        Me.lstViWoWorlds.ItemHeight = 16
+        Me.lstViWoWorlds.Location = New System.Drawing.Point(37, 94)
+        Me.lstViWoWorlds.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lstViWoWorlds.Name = "lstViWoWorlds"
         Me.lstViWoWorlds.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lstViWoWorlds.Size = New System.Drawing.Size(444, 43)
+        Me.lstViWoWorlds.Size = New System.Drawing.Size(591, 52)
         Me.lstViWoWorlds.TabIndex = 294
         '
         'lstViWoParameters
         '
-        Me.lstViWoParameters.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.lstViWoParameters.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lstViWoParameters.Cursor = System.Windows.Forms.Cursors.Default
         Me.lstViWoParameters.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.lstViWoParameters.Location = New System.Drawing.Point(28, 144)
+        Me.lstViWoParameters.ItemHeight = 16
+        Me.lstViWoParameters.Location = New System.Drawing.Point(37, 177)
+        Me.lstViWoParameters.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.lstViWoParameters.Name = "lstViWoParameters"
-        Me.lstViWoParameters.Size = New System.Drawing.Size(256, 212)
+        Me.lstViWoParameters.Size = New System.Drawing.Size(340, 260)
         Me.lstViWoParameters.TabIndex = 295
         '
         '_cmdViWoSendParameters_0
         '
-        Me._cmdViWoSendParameters_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdViWoSendParameters_0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdViWoSendParameters_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdViWoSendParameters_0.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdViWoSendParameters.SetIndex(Me._cmdViWoSendParameters_0, CType(0,Short))
-        Me._cmdViWoSendParameters_0.Location = New System.Drawing.Point(338, 312)
+        Me.cmdViWoSendParameters.SetIndex(Me._cmdViWoSendParameters_0, CType(0, Short))
+        Me._cmdViWoSendParameters_0.Location = New System.Drawing.Point(451, 384)
+        Me._cmdViWoSendParameters_0.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdViWoSendParameters_0.Name = "_cmdViWoSendParameters_0"
         Me._cmdViWoSendParameters_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdViWoSendParameters_0.Size = New System.Drawing.Size(109, 21)
+        Me._cmdViWoSendParameters_0.Size = New System.Drawing.Size(145, 26)
         Me._cmdViWoSendParameters_0.TabIndex = 306
         Me._cmdViWoSendParameters_0.Text = "Send to ViWo"
-        Me._cmdViWoSendParameters_0.UseVisualStyleBackColor = false
+        Me._cmdViWoSendParameters_0.UseVisualStyleBackColor = False
         '
         '_cmdViWoSendParameters_1
         '
-        Me._cmdViWoSendParameters_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me._cmdViWoSendParameters_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me._cmdViWoSendParameters_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._cmdViWoSendParameters_1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdViWoSendParameters.SetIndex(Me._cmdViWoSendParameters_1, CType(1,Short))
-        Me._cmdViWoSendParameters_1.Location = New System.Drawing.Point(338, 336)
+        Me.cmdViWoSendParameters.SetIndex(Me._cmdViWoSendParameters_1, CType(1, Short))
+        Me._cmdViWoSendParameters_1.Location = New System.Drawing.Point(451, 414)
+        Me._cmdViWoSendParameters_1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me._cmdViWoSendParameters_1.Name = "_cmdViWoSendParameters_1"
         Me._cmdViWoSendParameters_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdViWoSendParameters_1.Size = New System.Drawing.Size(109, 21)
+        Me._cmdViWoSendParameters_1.Size = New System.Drawing.Size(145, 26)
         Me._cmdViWoSendParameters_1.TabIndex = 307
         Me._cmdViWoSendParameters_1.Text = "Send to MIDI"
-        Me._cmdViWoSendParameters_1.UseVisualStyleBackColor = false
+        Me._cmdViWoSendParameters_1.UseVisualStyleBackColor = False
         '
         'Label3
         '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
@@ -6283,8 +6683,8 @@
         '
         'TextBox1
         '
-        Me.TextBox1.AcceptsReturn = true
-        Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.TextBox1.AcceptsReturn = True
+        Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox1.BackColor = System.Drawing.SystemColors.Window
         Me.TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TextBox1.ForeColor = System.Drawing.SystemColors.WindowText
@@ -6292,24 +6692,25 @@
         Me.TextBox1.MaxLength = 10
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TextBox1.Size = New System.Drawing.Size(61, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(61, 22)
         Me.TextBox1.TabIndex = 225
         '
         'frmSettings
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.cmdCancel
-        Me.ClientSize = New System.Drawing.Size(554, 561)
+        Me.ClientSize = New System.Drawing.Size(739, 690)
         Me.Controls.Add(Me.PanelBottom)
         Me.Controls.Add(Me.tabSettings)
         Me.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
-        Me.KeyPreview = true
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Location = New System.Drawing.Point(307, 336)
-        Me.MinimizeBox = false
-        Me.MinimumSize = New System.Drawing.Size(570, 600)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(754, 728)
         Me.Name = "frmSettings"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.ShowInTaskbar = false

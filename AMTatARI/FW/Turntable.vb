@@ -42,9 +42,6 @@ Module Turntable
 
     ' Imperial College turntable
     Private ttSend As Net.Sockets.UdpClient
-    Private ttAddress As String = "192.168.0.255"
-    Private ttPort As Integer = 6000
-    Public ttSpeed As Double = 1
     Private ttMoving As Boolean = False
 
     <DllImport("ELFANT-V0.9.7.dll", CallingConvention:=CallingConvention.StdCall)> _
@@ -221,7 +218,7 @@ SubError:
             Case 3 ' Custom turntable Imperial College (work in progress)
 
                 ' connect to UDP
-                frmMain.SetStatus("Connecting to Turntable at 192.168.0.255:6000...")
+                frmMain.SetStatus("Connecting to Turntable at " & ttAddress & ", port " & TStr(ttPort) & "...")
                 If Not IsNothing(ttSend) Then ttSend = Nothing
                 Try
                     ttSend = New Net.Sockets.UdpClient()
@@ -311,6 +308,7 @@ SubError:
                 gsngTTAngle = -1
                 gblnTTInitialized = False
                 frmMain.labelTTcalibrated.Text = "No"
+                frmMain.labelTTcalibrated.BackColor = Color.Red
                 Return 0
 
         End Select
@@ -331,6 +329,14 @@ SubError:
         gsngTTAngle = angle
         gblnTTInitialized = True
         frmMain.labelTTcalibrated.Text = "Yes"
+        frmMain.labelTTcalibrated.BackColor = Color.Lime
+        Dim az As Double = Math.Round((360 + gsngTTAngle) Mod 360, 1)
+        frmMain.labelTTaz.Text = TStr(az)
+        If az = 0 Then
+            frmMain.labelTTaz.BackColor = Color.Lime
+        Else
+            frmMain.labelTTaz.BackColor = SystemColors.Control
+        End If
 
     End Sub
 

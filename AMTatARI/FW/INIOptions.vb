@@ -657,6 +657,12 @@ Module INIOptions
                 gblnTrackerSimulation = CBool(Val(szValue))
             Case "tracker settings interval"
                 glTrackerSettingsInterval = CInt(Val(szValue))
+            Case "motive project file"
+                motiveFile = szValue
+            Case "motive osc streamer executable file"
+                OSCstreamerFile = szValue
+            Case "motive udp port"
+                motiveUDPport = CInt(Val(szValue))
                 'Case "tracker in viwo"
                 '    gblnTrackerInWiVo = CBool(Val(szValue))
                 ' Turntable
@@ -674,6 +680,12 @@ Module INIOptions
                 glTT4aBrakeTimer = cint(Val(szValue))
             Case "turntable four audio prerotation"
                 gblnAllowPreRotation = CBool(Val(szValue))
+            Case "turntable ip address"
+                ttAddress = szValue
+            Case "turntable port"
+                ttPort = CInt(Val(szValue))
+            Case "turntable speed"
+                ttSpeed = Val(szValue)
 
                 ' ViWo
             Case "viwo address"
@@ -836,6 +848,9 @@ Module INIOptions
         WriteLine("Tracker Sensor Count", TStr(glTrackerSensorCount))
         WriteLine("Tracker Simulation", TStr(CInt(gblnTrackerSimulation)))
         WriteLine("Tracker Settings Interval", TStr(glTrackerSettingsInterval))
+        WriteLine("Motive Project File", motiveFile)
+        WriteLine("Motive OSC Streamer Executable File", OSCstreamerFile)
+        WriteLine("Motive UDP Port", TStr(motiveUDPport))
         'WriteLine("Tracker in ViWo", TStr(CInt(gblnTrackerInWiVo)))
         ' turntable
         WriteLine("Turntable Mode", TStr(glttMode))
@@ -845,6 +860,9 @@ Module INIOptions
         WriteLine("Turntable Four Audio Offset", TStr(gsngTT4AOffset))
         WriteLine("Turntable Four Audio Brake Timer", TStr(glTT4aBrakeTimer))
         WriteLine("Turntable Four Audio PreRotation", TStr(CInt(gblnAllowPreRotation)))
+        WriteLine("Turntable IP Address", ttAddress)
+        WriteLine("Turntable Port", TStr(ttPort))
+        WriteLine("Turntable Speed", TStr(ttSpeed))
 
         ' ViWo
         If gszViWoAddress <> "" Then WriteLine("ViWo Address", gszViWoAddress)
