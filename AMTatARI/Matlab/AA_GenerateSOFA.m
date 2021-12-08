@@ -44,7 +44,7 @@ for i=1:numel(isdList)
 end
 
 %% Calculate HRIRs
-itemlist = readtable(itemlistfile);
+itemlist = readtable(itemlistfile,'Delimiter',',');
 indAz = find(~isnan(itemlist.Azimuth)); % ignore rows without defined azimuth
 numAz = numel(indAz);
 count = 1;
@@ -73,7 +73,7 @@ for i=1:numAz
         lat(j) = srcList(ind,3)*fs/1e6; % in samples
         % NOTE: in this version, the initial offset is counted as part of
         % the IR length. The end offset is not used.
-        ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1));
+        ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1)) - 1000; % NOTE: harcoded the -1000 for a test
         %iend=int32(swlen+(ISD(j))+lat(j)+irLen+irOffset(2)-1);
         iend = ibeg + irLen - 1;
         for ch=1:2
@@ -182,6 +182,8 @@ for i=1:numel(targetFs)
     if saveRaw
         if tFs ~= fs
             h_re = resample(h,tFs,fs);
+        else
+            h_re = h;
         end
         Obj.Data.IR=shiftdim(h_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Raw_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
