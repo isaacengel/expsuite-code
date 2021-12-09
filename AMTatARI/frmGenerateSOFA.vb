@@ -12,8 +12,8 @@ Public Class frmGenerateSOFA
         Dim saveEQ As Integer = CInt(CheckBoxEQ.Checked)
         Dim saveITD As Integer = CInt(CheckBoxITD.Checked)
         Dim save3DTI As Integer = CInt(CheckBox3DTI.Checked)
-        INISettings.WriteFile(STIM.WorkDir & "\" & settingsFile)
-        ItemList.Save(STIM.WorkDir & "\" & itemListFile)
+        ' INISettings.WriteFile(STIM.WorkDir & "\" & settingsFile)
+        ' ItemList.Save(STIM.WorkDir & "\" & itemListFile)
         Button1.Enabled = False
         Dim targetFs As String = "["
         If CheckBox44kHz.Checked Then

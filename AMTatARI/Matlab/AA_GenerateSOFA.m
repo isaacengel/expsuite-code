@@ -75,9 +75,7 @@ for i=1:numAz
         warning('Could not find files for azimuth %d. Skipping...',az)
         continue
     end
-    % Plot
-    figure, AKp(ir,'et2d','fs',fs)
-    title(sofaname,'interpreter','none')
+    
     % Separate HRIRs
     for j=1:numEl
         ind = srcList(:,2)==el(j);
@@ -253,16 +251,7 @@ end
 
 %% Plots
 if doplots
-    quickplotHRTF(h,fs)
-    sgtitle('Raw HRTF')
-    if saveEQ
-        quickplotHRTF(heq,fs);
-        sgtitle('HRTF after EQ')
-    end
-    if saveITD || save3DTI
-        quickplotHRTF(halign,fs)
-        sgtitle('HRIRs after EQ+alignment')
-    end
+    AA_QuickPlotIR(sofaname,workdir,settingsfile,itemlistfile)
 end
 
 end

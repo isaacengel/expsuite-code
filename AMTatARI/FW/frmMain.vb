@@ -1414,6 +1414,13 @@ SubInitTracker:
         lstStatus.Visible = True
         ' lock work dir
         If Not (gblnSilentMode) Then FileOpen(98, STIM.WorkDir & "\stimlog.csv", OpenMode.Random, OpenAccess.Read, OpenShare.Shared)
+
+        ' save settings and item list files
+        Dim settingsFile As String = "settings.AMTatARI"
+        Dim itemListFile As String = "itemlist.itl.csv"
+        INISettings.WriteFile(STIM.WorkDir & "\" & settingsFile)
+        ItemList.Save(STIM.WorkDir & "\" & itemListFile)
+
         SetUIReady()
         Return
 
@@ -5697,6 +5704,18 @@ SubNotTracking:
         labelYaw.Text = "-"
         labelPitch.Text = "-"
         labelRoll.Text = "-"
+    End Sub
+
+    Private Sub cmdShowPlots_Click(sender As Object, e As EventArgs) Handles cmdShowPlots.Click
+
+        Dim settingsFile As String = "settings.AMTatARI"
+        Dim itemListFile As String = "itemlist.itl.csv"
+        ' INISettings.WriteFile(STIM.WorkDir & "\" & settingsFile)
+        ' ItemList.Save(STIM.WorkDir & "\" & itemListFile)
+        cmdShowPlots.Enabled = False
+        Result.QuickPlotIR(settingsFile, itemListFile)
+        cmdShowPlots.Enabled = True
+
     End Sub
 
     'Private Sub dgvItemList_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dgvItemList.KeyPress

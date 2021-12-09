@@ -134,10 +134,10 @@
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.cmdItemUndo = New System.Windows.Forms.Button()
         Me.cmdItemMoveDown = New System.Windows.Forms.Button()
@@ -332,6 +332,7 @@
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblItemList = New System.Windows.Forms.Label()
         Me.tmrTracker = New System.Windows.Forms.Timer(Me.components)
+        Me.cmdShowPlots = New System.Windows.Forms.Button()
         Me.popupMenuStrip.SuspendLayout()
         Me.tbToolBar.SuspendLayout()
         Me.sbStatusBar.SuspendLayout()
@@ -959,7 +960,7 @@
         Me.lblItemNr.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.lblItemNr.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblItemNr.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblItemNr.Location = New System.Drawing.Point(0, 237)
+        Me.lblItemNr.Location = New System.Drawing.Point(0, 245)
         Me.lblItemNr.Margin = New System.Windows.Forms.Padding(4, 0, 4, 6)
         Me.lblItemNr.Name = "lblItemNr"
         Me.lblItemNr.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -1107,10 +1108,10 @@
         Me.tbToolBar.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.tbToolBar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tbButtonNew, Me.tbButtonLoad, Me.tbButtonSaveAs, Me.ToolStripSeparator1, Me.tbButtonLoadItemList, Me.tbButtonSaveItemList, Me.ToolStripSeparator2, Me.tbButtonSettings, Me.tbButtonOptions, Me.ToolStripSeparator4, Me.tbButtonConnect, Me.ToolStripSeparator3, Me.tbButtonShowStimulus, Me.tbButtonSnapshot})
         Me.tbToolBar.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
-        Me.tbToolBar.Location = New System.Drawing.Point(0, 30)
+        Me.tbToolBar.Location = New System.Drawing.Point(0, 28)
         Me.tbToolBar.Name = "tbToolBar"
         Me.tbToolBar.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.tbToolBar.Size = New System.Drawing.Size(1168, 31)
+        Me.tbToolBar.Size = New System.Drawing.Size(1168, 25)
         Me.tbToolBar.TabIndex = 18
         '
         'imlToolbarIcons
@@ -1163,7 +1164,7 @@
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'tbButtonLoadItemList
         '
@@ -1189,7 +1190,7 @@
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Padding = New System.Windows.Forms.Padding(5)
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
         '
         'tbButtonSettings
         '
@@ -1214,7 +1215,7 @@
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 25)
         '
         'tbButtonConnect
         '
@@ -1232,7 +1233,7 @@
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 31)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 25)
         '
         'tbButtonShowStimulus
         '
@@ -1357,14 +1358,14 @@
         Me.MainMenu1.Location = New System.Drawing.Point(0, 0)
         Me.MainMenu1.Name = "MainMenu1"
         Me.MainMenu1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
-        Me.MainMenu1.Size = New System.Drawing.Size(1168, 30)
+        Me.MainMenu1.Size = New System.Drawing.Size(1168, 28)
         Me.MainMenu1.TabIndex = 61
         '
         'mnuFile
         '
         Me.mnuFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuFileNew, Me.mnuFileLoad, Me.mnuFileSaveAs, Me.mnuFileBar0, Me.mnuItemClearList, Me.mnuItemLoadList, Me.mnuItemAppend, Me.mnuItemSaveListAs, Me.mnuFileBar1, Me.mnuBackupLogFileAs, Me.mnuQuickSave, Me.mnuFileBar2, Me.mnuFileExit})
         Me.mnuFile.Name = "mnuFile"
-        Me.mnuFile.Size = New System.Drawing.Size(46, 26)
+        Me.mnuFile.Size = New System.Drawing.Size(46, 24)
         Me.mnuFile.Text = "&File"
         '
         'mnuFileNew
@@ -1454,7 +1455,7 @@
         '
         Me.mnuItemEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuItemUndo, Me.mnuEditBar1, Me.mnuItemCopy, Me.mnuItemPaste, Me.mnuItemClearCells, Me.mnuItemInsert, Me.mnuItemDuplicateBlock, Me.mnuItemDel, Me.mnuItemShuffleBlock, Me.mnuFillAutomatically, Me.mnuItemEditBar1, Me.mnuItemSetExperimentBlock, Me.mnuItemRenumber, Me.mnuOptColWidth})
         Me.mnuItemEdit.Name = "mnuItemEdit"
-        Me.mnuItemEdit.Size = New System.Drawing.Size(49, 26)
+        Me.mnuItemEdit.Size = New System.Drawing.Size(49, 24)
         Me.mnuItemEdit.Text = "&Edit"
         '
         'mnuItemUndo
@@ -1550,7 +1551,7 @@
         '
         Me.mnuView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuViewStimulus, Me.mnuSTIMLogList, Me.mnuRemoteMonitor, Me.mnuBar3, Me.mnuViewSettings, Me.mnuBar2, Me.mnuViewOptions})
         Me.mnuView.Name = "mnuView"
-        Me.mnuView.Size = New System.Drawing.Size(55, 26)
+        Me.mnuView.Size = New System.Drawing.Size(55, 24)
         Me.mnuView.Text = "&View"
         '
         'mnuViewStimulus
@@ -1653,7 +1654,7 @@
         '
         Me.mnuExp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConnectOutput, Me.mnuItemStimulateSelected, Me.mnuBarRun1, Me.mnuStartExp, Me.mnuStartExpAtItem, Me.mnuExpContinue, Me.mnuBarRun2, Me.mnuSnapshot, Me.mnuLevelDancer})
         Me.mnuExp.Name = "mnuExp"
-        Me.mnuExp.Size = New System.Drawing.Size(48, 26)
+        Me.mnuExp.Size = New System.Drawing.Size(48, 24)
         Me.mnuExp.Text = "&Run"
         '
         'mnuConnectOutput
@@ -1716,7 +1717,7 @@
         '
         Me.mnuHelp.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuHelpShortcuts, Me.FlagsToolStripMenuItem, Me.mnuCheckForUpdates, Me.mnuExpSuiteOnSourceforge, Me.OpenDocumentationFolderToolStripMenuItem, Me.HistoryToolStripMenuItem, Me.CreditsToolStripMenuItem, Me.mnuHelpAbout})
         Me.mnuHelp.Name = "mnuHelp"
-        Me.mnuHelp.Size = New System.Drawing.Size(55, 26)
+        Me.mnuHelp.Size = New System.Drawing.Size(55, 24)
         Me.mnuHelp.Text = "&Help"
         '
         'mnuHelpShortcuts
@@ -1807,6 +1808,7 @@
         '
         'PanelBottom
         '
+        Me.PanelBottom.Controls.Add(Me.cmdShowPlots)
         Me.PanelBottom.Controls.Add(Me.cmdGenerateSOFA)
         Me.PanelBottom.Controls.Add(Me.cmdInitButton)
         Me.PanelBottom.Controls.Add(Me.GroupBox2)
@@ -1844,11 +1846,11 @@
         Me.cmdGenerateSOFA.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdGenerateSOFA.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdGenerateSOFA.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdGenerateSOFA.Location = New System.Drawing.Point(905, 154)
+        Me.cmdGenerateSOFA.Location = New System.Drawing.Point(987, 154)
         Me.cmdGenerateSOFA.Margin = New System.Windows.Forms.Padding(4)
         Me.cmdGenerateSOFA.Name = "cmdGenerateSOFA"
         Me.cmdGenerateSOFA.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdGenerateSOFA.Size = New System.Drawing.Size(148, 62)
+        Me.cmdGenerateSOFA.Size = New System.Drawing.Size(93, 62)
         Me.cmdGenerateSOFA.TabIndex = 61
         Me.cmdGenerateSOFA.Text = "Generate SOFA files"
         Me.cmdGenerateSOFA.UseVisualStyleBackColor = False
@@ -2159,7 +2161,7 @@
         Me.PanelTop.Controls.Add(Me.lstLog)
         Me.PanelTop.Controls.Add(Me.PanelGeneral)
         Me.PanelTop.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelTop.Location = New System.Drawing.Point(0, 61)
+        Me.PanelTop.Location = New System.Drawing.Point(0, 53)
         Me.PanelTop.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelTop.Name = "PanelTop"
         Me.PanelTop.Size = New System.Drawing.Size(1168, 127)
@@ -2189,10 +2191,10 @@
         Me.PanelItemList.Controls.Add(Me.PanelItemListRight)
         Me.PanelItemList.Controls.Add(Me.PanelItemListTop)
         Me.PanelItemList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelItemList.Location = New System.Drawing.Point(0, 188)
+        Me.PanelItemList.Location = New System.Drawing.Point(0, 180)
         Me.PanelItemList.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelItemList.Name = "PanelItemList"
-        Me.PanelItemList.Size = New System.Drawing.Size(1168, 342)
+        Me.PanelItemList.Size = New System.Drawing.Size(1168, 350)
         Me.PanelItemList.TabIndex = 64
         '
         'dgvItemList
@@ -2201,44 +2203,44 @@
         Me.dgvItemList.AllowUserToDeleteRows = False
         Me.dgvItemList.AllowUserToOrderColumns = True
         Me.dgvItemList.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightYellow
-        Me.dgvItemList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.LightYellow
+        Me.dgvItemList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvItemList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvItemList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvItemList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgvItemList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvItemList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvItemList.Enabled = False
         Me.dgvItemList.Location = New System.Drawing.Point(0, 70)
         Me.dgvItemList.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvItemList.Name = "dgvItemList"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvItemList.RowHeadersWidth = 30
         Me.dgvItemList.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvItemList.Size = New System.Drawing.Size(1088, 268)
+        Me.dgvItemList.Size = New System.Drawing.Size(1088, 276)
         Me.dgvItemList.TabIndex = 57
         '
         'PanelItemListRight
@@ -2255,7 +2257,7 @@
         Me.PanelItemListRight.Location = New System.Drawing.Point(1088, 70)
         Me.PanelItemListRight.Margin = New System.Windows.Forms.Padding(4)
         Me.PanelItemListRight.Name = "PanelItemListRight"
-        Me.PanelItemListRight.Size = New System.Drawing.Size(76, 268)
+        Me.PanelItemListRight.Size = New System.Drawing.Size(76, 276)
         Me.PanelItemListRight.TabIndex = 60
         '
         'PanelItemListTop
@@ -2302,6 +2304,22 @@
         '
         Me.tmrTracker.Enabled = True
         Me.tmrTracker.Interval = 200
+        '
+        'cmdShowPlots
+        '
+        Me.cmdShowPlots.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdShowPlots.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdShowPlots.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdShowPlots.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdShowPlots.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.cmdShowPlots.Location = New System.Drawing.Point(879, 154)
+        Me.cmdShowPlots.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmdShowPlots.Name = "cmdShowPlots"
+        Me.cmdShowPlots.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdShowPlots.Size = New System.Drawing.Size(93, 62)
+        Me.cmdShowPlots.TabIndex = 62
+        Me.cmdShowPlots.Text = "Show plots"
+        Me.cmdShowPlots.UseVisualStyleBackColor = False
         '
         'frmMain
         '
@@ -2430,5 +2448,6 @@
     Public WithEvents lblTTShow As Label
     Public WithEvents cmdGenerateSOFA As Button
     Friend WithEvents tmrTracker As Timer
+    Public WithEvents cmdShowPlots As Button
 #End Region
 End Class

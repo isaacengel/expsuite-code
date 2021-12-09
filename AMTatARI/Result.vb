@@ -32,6 +32,25 @@ Module Result
         frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
     End Sub
 
+    Public Sub QuickPlotIR(settingsFile As String, stimListFile As String)
+        If Not gblnOutputStable Then
+            MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+        Dim StartTime As DateTime = System.DateTime.Now 'calculation time
+        STIM.Matlab("AA_SOFAstart;")
+        STIM.Matlab("this_dir = cd; amt_start(); cd(this_dir);")
+        Dim szErr As String = STIM.Matlab("AA_QuickPlotIR('" & STIM.WorkDir & "','" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & ");")
+        If Len(szErr) > 0 Then
+            MsgBox(szErr, MsgBoxStyle.Critical, "Showing plots")
+            frmMain.SetStatus("Error(s) showing plots")
+        Else
+            MsgBox("Successfully showed plots!", MsgBoxStyle.Information, "Showing plots")
+        End If
+        frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
+
+    End Sub
+
     Public Sub Execute(ByRef lIndex As Integer)
 		Dim szX As String
         'Dim lRowBeg, lRowEnd As Integer
