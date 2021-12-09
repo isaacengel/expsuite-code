@@ -6,6 +6,12 @@ r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc 
 gain = 30; % in dB; TODO: input this as a parameter
 ears = {'Left','Right'};
 
+% To save figures
+figdir = [workdir,'/plots'];
+if ~isfolder(figdir)
+    mkdir(figdir)
+end
+
 %% Load settings
 
 settings = AA_ReadSettingsFile(settingsfile);
@@ -98,9 +104,13 @@ for i=1:numAz
         close(fig)
         continue
     end
+    
+    % Save figure
+%     savefig(fig,sprintf('%s/%s_Az%0.3d_Raw',figdir,plotname,az))
+    saveas(fig,sprintf('%s/%s_Az%0.3d_Raw.png',figdir,plotname,az))
 
     % Separate HRIRs and plot
-    figure('pos',[21.8000 83.4000 1.1176e+03 340.8000])
+    fig = figure('pos',[21.8000 83.4000 1.1176e+03 340.8000]);
     colors = parula(numEl+1);
     for j=1:numEl
         ind = srcList(:,2)==el(j);
@@ -138,6 +148,10 @@ for i=1:numAz
     
     title(sprintf('%s, Aligned IRs, Az=%d°, %s (time)',plotname,az,ears{ch}),'interpreter','none')
     
+    % Save figure
+%     savefig(fig,sprintf('%s/%s_Az%0.3d_AlignedIRs',figdir,plotname,az))
+    saveas(fig,sprintf('%s/%s_Az%0.3d_AlignedIRs.png',figdir,plotname,az))
+    
 end
 
 %% Window HRIRs
@@ -151,6 +165,10 @@ clear hwin
 quickplotHRTF(h,fs)
 ndirs = size(h,2);
 sgtitle(sprintf('%s, all %d HRIRs after applying window and gain',plotname,ndirs),'interpreter','none')
+
+% Save figure
+% savefig(gcf,sprintf('%s/%s_AllIRs',figdir,plotname))
+saveas(gcf,sprintf('%s/%s_AllIRs.png',figdir,plotname))
 
 end
 
