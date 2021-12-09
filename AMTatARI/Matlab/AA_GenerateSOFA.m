@@ -130,7 +130,7 @@ clear hwin
 
 %% Equalise by reference measurement
 
-if saveEQ || saveITD || save3DTI
+if saveEQ 
     s = load(referencefile);
     ref_el = s.el;
     ref_eq = s.eq;
@@ -143,6 +143,7 @@ if saveEQ || saveITD || save3DTI
 
     heq = zeros(irLen,ndirs,2);
     count = 0;
+    show_warning = 0;
     for i=1:numel(ref_el) 
         ind = ref_el(i) == el;
         count = count + sum(ind);
@@ -155,21 +156,25 @@ if saveEQ || saveITD || save3DTI
         nrgwin = sum(abs(heq(:,ind,:)).^2,'all');
         nrgloss = 1-nrgwin/nrg;
         if nrgloss>0.02
-            warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
-            figure
-            subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
-            subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
-            subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
-            subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
-            sgtitle(sprintf('el=%d',ref_el(i)))
+            show_warning = 1;
+%             warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
+%             figure
+%             subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
+%             subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
+%             subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
+%             subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
+%             sgtitle(sprintf('el=%d',ref_el(i)))
         end
-    end   
-    
+    end
+    if show_warning == 1
+        warning('More than 2%% of the HRTF energy was lost when windowing after equalisation. Maybe something went wrong.')
+    end
+
 end
 
 %% Equalise by reference measurement (minimum phase version)
 
-if saveEQmp
+if saveEQmp || saveITD || save3DTI
     
     s = load(referencefile);
     ref_el = s.el;
@@ -188,6 +193,7 @@ if saveEQmp
 
     heqmp = zeros(irLen,ndirs,2);
     count = 0;
+    show_warning = 0;
     for i=1:numel(ref_el) 
         ind = ref_el(i) == el;
         count = count + sum(ind);
@@ -199,15 +205,20 @@ if saveEQmp
         nrgwin = sum(abs(heq(:,ind,:)).^2,'all');
         nrgloss = 1-nrgwin/nrg;
         if nrgloss>0.02
-            warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
-            figure
-            subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
-            subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
-            subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
-            subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
-            sgtitle(sprintf('el=%d',ref_el(i)))
+            show_warning = 1;
+%             warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
+%             figure
+%             subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
+%             subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
+%             subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
+%             subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
+%             sgtitle(sprintf('el=%d',ref_el(i)))
         end
-    end   
+    end  
+    
+    if show_warning == 1
+        warning('More than 2%% of the HRTF energy was lost when windowing after min-phase equalisation. Maybe something went wrong.')
+    end
     
 end
 
@@ -248,8 +259,8 @@ pos(:,2) = el;
 if saveITD || save3DTI
 
     pad = round(0.0006*fs); % 0.6ms padding (empirically set)
-    halign = zeros(size(heq));
-    [~,onset_seconds] = itdestimator(permute(heq,[2,3,1]),'fs',fs,'threshlvl',-10);
+    halign = zeros(size(heqmp));
+    [~,onset_seconds] = itdestimator(permute(heqmp,[2,3,1]),'fs',fs,'threshlvl',-10);
     onset_samples = round(onset_seconds*fs);
     for i=1:ndirs
         for ch=1:2
@@ -286,6 +297,12 @@ for i=1:numel(targetFs)
             figure, SOFAplotHRTF(newobj,'MagHorizontal');
             title(sprintf('Magnitude Horizontal plane: %s Raw %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_Raw_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            quickplotHRTF(h_re,fs)
+            sgtitle(sprintf('%s_Raw_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
+            saveas(gcf,sprintf('%s/%s_Raw_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            quickplotITD(h_re,pos,fs)
+            title(sprintf('%s_Raw_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
+            saveas(gcf,sprintf('%s/%s_Raw_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
         end
     end
 
@@ -306,6 +323,12 @@ for i=1:numel(targetFs)
             figure, SOFAplotHRTF(newobj,'MagHorizontal');
             title(sprintf('Magnitude Horizontal plane: %s EQ %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_EQ_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            quickplotHRTF(heq_re,fs)
+            sgtitle(sprintf('%s_EQ_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(heq_re,2)),'interpreter','none')
+            saveas(gcf,sprintf('%s/%s_EQ_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            quickplotITD(heq_re,pos,fs)
+            title(sprintf('%s_EQ_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
+            saveas(gcf,sprintf('%s/%s_EQ_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
         end
     end
     
@@ -326,6 +349,12 @@ for i=1:numel(targetFs)
             figure, SOFAplotHRTF(newobj,'MagHorizontal');
             title(sprintf('Magnitude Horizontal plane: %s EQmp %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_EQmp_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            quickplotHRTF(heqmp_re,fs)
+            sgtitle(sprintf('%s_EQmp_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(heqmp_re,2)),'interpreter','none')
+            saveas(gcf,sprintf('%s/%s_EQmp_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            quickplotITD(heqmp_re,pos,fs)
+            title(sprintf('%s_EQmp_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
+            saveas(gcf,sprintf('%s/%s_EQmp_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
         end
     end
 
@@ -346,6 +375,12 @@ for i=1:numel(targetFs)
             figure, SOFAplotHRTF(newobj,'MagHorizontal');
             title(sprintf('Magnitude Horizontal plane: %s Aligned %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_Aligned_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            quickplotHRTF(halign_re,fs)
+            sgtitle(sprintf('%s_Aligned_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(halign_re,2)),'interpreter','none')
+            saveas(gcf,sprintf('%s/%s_Aligned_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            quickplotITD(halign_re,pos,fs)
+            title(sprintf('%s_Aligned_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
+            saveas(gcf,sprintf('%s/%s_Aligned_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
         end
     end
 
@@ -367,4 +402,59 @@ end
     %AA_QuickPlotIR(sofaname,workdir,settingsfile,itemlistfile)
 %end
 
+end
+
+%% Aux functions
+
+function quickplotHRTF(h,fs)
+    H = ffth(h);
+    nfreqs = size(H,1);
+    irLen = size(h,1);
+    f = linspace(0,fs/2,nfreqs).';
+    t = 1000*(0:(irLen-1))/fs; % in ms
+    havg = mean(abs(h),2);
+    Hmag_avg = mean(abs(H),2); % avg across directions
+    figure('pos',[7.4000 48.2000 808.8000 606.4000])
+    subplot(2,2,1), plot([nan nan],[nan nan],'k','LineWidth',2), hold on
+    plot(t,db(abs(h(:,:,1))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), title('Left HRIRs (time)')
+    plot(t,db(havg(:,:,1)),'k','LineWidth',2)
+    legend('Mean')
+    grid on, xlim([0 irLen/fs*1000]), ylim([-70, -10])
+    xlabel('Time (ms)'), ylabel('Amplitude (dB)')
+    subplot(2,2,2), plot(t,db(abs(h(:,:,2))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
+    plot(t,db(havg(:,:,2)),'k','LineWidth',2), title('Right HRIRs (time)')
+    grid on, xlim([0 irLen/fs*1000]), ylim([-70, -10])
+    xlabel('Time (ms)'), ylabel('Amplitude (dB)')
+    subplot(2,2,3), semilogx(f,db(abs(H(:,:,1))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
+    semilogx(f,db(Hmag_avg(:,:,1)),'k','LineWidth',2), title('Left HRIRs (mag. spectra)')
+    grid on, xlim([f(2) fs/2]), ylim([-45, 15])
+    xlabel('Frequency (Hz)'), ylabel('Amplitude (dB)')
+    subplot(2,2,4), semilogx(f,db(abs(H(:,:,2))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
+    semilogx(f,db(Hmag_avg(:,:,2)),'k','LineWidth',2),title('Right HRIRs (mag. spectra)')
+    grid on, xlim([f(2) fs/2]), ylim([-45, 15])
+    xlabel('Frequency (Hz)'), ylabel('Amplitude (dB)')
+end
+
+function quickplotITD(h,pos,fs)
+    itd = itdestimator(permute(h,[2,3,1]),'fs',fs,'threshlvl',-10);
+    az = pos(:,1);
+    el = pos(:,2);
+    unique_el = sort(unique(el));
+    leg = {};
+    colors = parula(numel(unique_el)+1);
+    figure('pos',[42 79 560 420])
+    for i=1:numel(unique_el)
+        curr_el = unique_el(i);
+        ind = find(abs(el-curr_el)<0.1);
+        [~,order] = sort(az(ind));
+        ind = ind(order);
+        curr_az = az(ind);
+        curr_itd = itd(ind);
+        plot(curr_az,curr_itd,'color',colors(i,:)), hold on
+        leg{i} = strcat('El=',num2str(curr_el),'°');
+    end
+    grid on, ylim([-8e-4 8e-4])
+    legend(leg,'fontsize',6,'location','se')
+    title('ITD')
+    xlabel('Azimuth (°)'), ylabel('t (s)')
 end
