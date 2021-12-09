@@ -49,4 +49,9 @@ Public Class frmGenerateSOFA
         End If
     End Sub
 
+    Private Sub WhenOpening() Handles Me.Load
+        Dim str() As String = STIM.WorkDir.Split("\"c)
+        TextBoxSofaname.Text = str(UBound(str))
+    End Sub
+
 End Class

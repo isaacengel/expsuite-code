@@ -40,7 +40,8 @@ Module Result
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start(); cd(this_dir);")
-        Dim szErr As String = STIM.Matlab("AA_QuickPlotIR('" & STIM.WorkDir & "','" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & ");")
+        Dim str() As String = STIM.WorkDir.Split("\"c)
+        Dim szErr As String = STIM.Matlab("AA_QuickPlotIR('" & str(UBound(str)) & "','" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & "');")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Showing plots")
             frmMain.SetStatus("Error(s) showing plots")

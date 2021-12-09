@@ -102,7 +102,6 @@ Partial Class frmGenerateSOFA
         Me.TextBoxSofaname.Name = "TextBoxSofaname"
         Me.TextBoxSofaname.Size = New System.Drawing.Size(160, 20)
         Me.TextBoxSofaname.TabIndex = 6
-        Me.TextBoxSofaname.Text = "MyHRTF"
         '
         'Label1
         '

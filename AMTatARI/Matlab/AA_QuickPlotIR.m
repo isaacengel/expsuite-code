@@ -22,9 +22,6 @@ irLen = round(settings.irLen*fs/1e3); % in samples
 irOffset = round(settings.irOffset*fs/1e3); % in samples
 clear settings
 
-% irLen = 512; % fixed to 512 samples in this version
-% irOffset = [1 0]*fs/1e3; % end offset not used in this version
-
 %% Window settings (TODO: consider assymetrical window or longer fade out)
 fadelen = 32;
 t = linspace(0,pi/2,fadelen).';
@@ -100,7 +97,6 @@ for i=1:numAz
     end
     % If files were not found, skip this azimuth
     if size(ir,2) < 2
-        warning('Could not find files for azimuth %d. Skipping...',az)
         close(fig)
         continue
     end
@@ -117,7 +113,7 @@ for i=1:numAz
         lat(j) = srcList(ind,3)*fs/1e6; % in samples
         % NOTE: in this version, the initial offset is counted as part of
         % the IR length. The end offset is not used.
-        ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1)); % NOTE: harcoded the -1000 for a test
+        ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1));
         %iend=int32(swlen+(ISD(j))+lat(j)+irLen+irOffset(2)-1);
         iend = ibeg + irLen - 1;
         for ch=1:2
@@ -127,7 +123,6 @@ for i=1:numAz
         
         % Plots
         AKp(ir(ibeg-extralength_plot:iend+extralength_plot,ch),'et2d','fs',fs,'c',colors(j,:)), hold on
-%         AKp(h(:,count,ch),'et2d','fs',fs,'c',colors(j,:)), hold on
         
         count = count+1;
     end
@@ -202,11 +197,3 @@ function quickplotHRTF(h,fs)
     grid on, xlim([f(2) fs/2]), ylim([-45, 15])
     xlabel('Frequency (Hz)'), ylabel('Amplitude (dB)')
 end
-
-% function quickplotHRIR(h,fs)
-%     figure('pos',[5 145.8000 1040 447.2000])
-%     subplot(2,2,1), AKp(h(:,:,1),'et2d','fs',fs),title('Left'),hold on
-%     subplot(2,2,2), AKp(h(:,:,2),'et2d','fs',fs),title('Right'),hold on
-%     subplot(2,2,3), AKp(h(:,:,1),'m2d','fs',fs),hold on
-%     subplot(2,2,4), AKp(h(:,:,2),'m2d','fs',fs),hold on
-% end

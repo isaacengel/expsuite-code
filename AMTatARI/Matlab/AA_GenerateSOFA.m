@@ -8,6 +8,12 @@ function AA_GenerateSOFA(sofaname,workdir,settingsfile,itemlistfile,referencefil
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
 gain = 30; % in dB; TODO: input this as a parameter
 
+% To save figures
+figdir = [workdir,'/plots'];
+if ~isfolder(figdir)
+    mkdir(figdir)
+end
+
 %% Load settings
 
 settings = AA_ReadSettingsFile(settingsfile);
@@ -72,7 +78,6 @@ for i=1:numAz
     end
     % If files were not found, skip this azimuth
     if size(ir,2) < 2
-        warning('Could not find files for azimuth %d. Skipping...',az)
         continue
     end
     
@@ -93,6 +98,10 @@ for i=1:numAz
     end
 end
 
+if size(h,2) < numAz*numEl
+    warning('Some azimuths were skipped because the recordings were not found.')
+end
+
 %% Get directions into a nice format
 ndirs = size(h,2);
 az = pos(:,1);
@@ -111,7 +120,7 @@ nrg = sum(abs(h(:)).^2);
 nrgwin = sum(abs(hwin(:)).^2);
 nrgloss = 1-nrgwin/nrg;
 if nrgloss>0.01
-    warning('Energy loss was %0.2f%%. Maybe the windowing went wrong',nrgloss*100)
+    warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
 end
 
 % Apply gain
@@ -208,6 +217,7 @@ for i=1:numel(targetFs)
         if doplots
             figure, SOFAplotHRTF(newobj,'MagHorizontal');
             title(sprintf('Magnitude Horizontal plane: %s Raw %0.2dkHz',sofaname,round(tFs/1000)));
+            saveas(gcf,sprintf('%s/%s_Raw_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
         end
     end
 
@@ -221,6 +231,7 @@ for i=1:numel(targetFs)
         if doplots
             figure, SOFAplotHRTF(newobj,'MagHorizontal');
             title(sprintf('Magnitude Horizontal plane: %s EQ %0.2dkHz',sofaname,round(tFs/1000)));
+            saveas(gcf,sprintf('%s/%s_EQ_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
         end
     end
 
@@ -234,6 +245,7 @@ for i=1:numel(targetFs)
         if doplots
             figure, SOFAplotHRTF(newobj,'MagHorizontal');
             title(sprintf('Magnitude Horizontal plane: %s Aligned %0.2dkHz',sofaname,round(tFs/1000)));
+            saveas(gcf,sprintf('%s/%s_Aligned_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
         end
     end
 
@@ -255,40 +267,3 @@ if doplots
 end
 
 end
-
-%% Aux functions
-
-function quickplotHRTF(h,fs)
-    H = ffth(h);
-    nfreqs = size(H,1);
-    irLen = size(h,1);
-    f = linspace(0,fs/2,nfreqs).';
-    t = 1000*(0:(irLen-1))/fs; % in ms
-    havg = mean(abs(h),2);
-    Hmag_avg = mean(abs(H),2); % avg across directions
-    figure('pos',[7.4000 48.2000 808.8000 606.4000])
-    subplot(2,2,1), plot(t,db(abs(h(:,:,1))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
-    plot(t,db(havg(:,:,1)),'k','LineWidth',2), title('Energy decay (Left)')
-    grid on, xlim([0 irLen/fs*1000]), ylim([-70, -10])
-    xlabel('Time (ms)'), ylabel('Amplitude (dB)')
-    subplot(2,2,2), plot(t,db(abs(h(:,:,2))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
-    plot(t,db(havg(:,:,2)),'k','LineWidth',2), title('Energy decay (Right)')
-    grid on, xlim([0 irLen/fs*1000]), ylim([-70, -10])
-    xlabel('Time (ms)'), ylabel('Amplitude (dB)')
-    subplot(2,2,3), semilogx(f,db(abs(H(:,:,1))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
-    semilogx(f,db(Hmag_avg(:,:,1)),'k','LineWidth',2), title('Magnitude spectrum (Left)')
-    grid on, xlim([f(2) fs/2]), ylim([-45, 15])
-    xlabel('Frequency (Hz)'), ylabel('Amplitude (dB)')
-    subplot(2,2,4), semilogx(f,db(abs(H(:,:,2))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
-    semilogx(f,db(Hmag_avg(:,:,2)),'k','LineWidth',2), title('Magnitude spectrum (Right)')
-    grid on, xlim([f(2) fs/2]), ylim([-45, 15])
-    xlabel('Frequency (Hz)'), ylabel('Amplitude (dB)')
-end
-
-% function quickplotHRIR(h,fs)
-%     figure('pos',[5 145.8000 1040 447.2000])
-%     subplot(2,2,1), AKp(h(:,:,1),'et2d','fs',fs),title('Left'),hold on
-%     subplot(2,2,2), AKp(h(:,:,2),'et2d','fs',fs),title('Right'),hold on
-%     subplot(2,2,3), AKp(h(:,:,1),'m2d','fs',fs),hold on
-%     subplot(2,2,4), AKp(h(:,:,2),'m2d','fs',fs),hold on
-% end
