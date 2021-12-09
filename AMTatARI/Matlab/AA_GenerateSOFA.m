@@ -1,9 +1,8 @@
-function AA_GenerateSOFA(sofaname,workdir,settingsfile,itemlistfile,referencefile,doplots,saveRaw,saveEQ,saveITD,save3DTI,targetFs)
+function AA_GenerateSOFA(sofaname,workdir,settingsfile,itemlistfile,referencefile,doplots,saveRaw,saveEQ,saveEQmp,saveITD,save3DTI,targetFs)
 
 % Process recorded sweeps into SOFA files.
 % This replaces all the VisualBasic code from the IRToolbox, and can be run
 % from Matlab directly
-
 
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
 gain = 30; % in dB; TODO: input this as a parameter
@@ -24,8 +23,14 @@ irLen = round(settings.irLen*fs/1e3); % in samples
 irOffset = round(settings.irOffset*fs/1e3); % in samples
 clear settings
 
-% irLen = 512; % fixed to 512 samples in this version
-% irOffset = [1 0]*fs/1e3; % end offset not used in this version
+%% Window settings
+fadelenin = 16;
+fadelenout = 128;
+tin = linspace(0,pi/2,fadelenin).';
+tout = linspace(0,pi/2,fadelenout).';
+fadein = sin(tin).^2;
+fadeout = cos(tout).^2;
+win = [fadein; ones(irLen-fadelenin-fadelenout,1); fadeout];
 
 %% Load sweep files
 sweepfile = [workdir,'/expsweep.wav'];
@@ -108,11 +113,7 @@ az = pos(:,1);
 el = pos(:,2);
 
 %% Window HRIRs
-fadelen = 32;
-t = linspace(0,pi/2,fadelen).';
-fadein = sin(t).^2;
-fadeout = cos(t).^2;
-win = [fadein; ones(irLen-2*fadelen,1); fadeout];
+
 hwin = win.*h(1:irLen,:,:);
 
 % Check energy loss
@@ -133,24 +134,87 @@ if saveEQ || saveITD || save3DTI
     s = load(referencefile);
     ref_el = s.el;
     ref_eq = s.eq;
+    ref_delay = s.delay;
     clear s
     
     convlen = irLen+size(ref_eq,1)-1;
     nfft = 2^nextpow2(convlen);
+    safety = 64; % 64 samples at 96kHz is around 0.67 ms which is enough to cover the head diameter and some more
 
     heq = zeros(irLen,ndirs,2);
+    count = 0;
     for i=1:numel(ref_el) 
         ind = ref_el(i) == el;
+        count = count + sum(ind);
         tmp = iffth( ffth(h(:,ind,:),nfft) .* ffth(ref_eq(:,i,:),nfft) );
-        win = [ones(irLen-fadelen,1); fadeout];
+        tmp = circshift(tmp,-ref_delay+safety);
         heq(:,ind,:) = win.*tmp(1:irLen,:,:);
+
+        % Check energy loss
+        nrg = sum(abs(tmp).^2,'all');
+        nrgwin = sum(abs(heq(:,ind,:)).^2,'all');
+        nrgloss = 1-nrgwin/nrg;
+        if nrgloss>0.02
+            warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
+            figure
+            subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
+            subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
+            subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
+            subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
+            sgtitle(sprintf('el=%d',ref_el(i)))
+        end
     end   
     
 end
 
+%% Equalise by reference measurement (minimum phase version)
+
+if saveEQmp
+    
+    s = load(referencefile);
+    ref_el = s.el;
+    ref_eq = s.eq;
+    clear s
+    
+    winhann = hann(size(ref_eq,1));
+    padlen = 2^16;
+    ref_eq_pad = [zeros((padlen-size(ref_eq,1))/2,size(ref_eq,2),size(ref_eq,3));winhann.*ref_eq;zeros((padlen-size(ref_eq,1))/2,size(ref_eq,2),size(ref_eq,3))];
+    ref_EQ = ffth(ref_eq_pad);
+    ref_EQmp = makeMinPhase(abs(ref_EQ));
+    ref_eqmp = iffth(ref_EQmp);
+    
+    convlen = irLen+size(ref_eqmp,1)-1;
+    nfft = 2^nextpow2(convlen);
+
+    heqmp = zeros(irLen,ndirs,2);
+    count = 0;
+    for i=1:numel(ref_el) 
+        ind = ref_el(i) == el;
+        count = count + sum(ind);
+        tmp = iffth( ffth(h(:,ind,:),nfft) .* ffth(ref_eqmp(:,i,:),nfft) );
+        heqmp(:,ind,:) = win.*tmp(1:irLen,:,:);
+
+        % Check energy loss
+        nrg = sum(abs(tmp).^2,'all');
+        nrgwin = sum(abs(heq(:,ind,:)).^2,'all');
+        nrgloss = 1-nrgwin/nrg;
+        if nrgloss>0.02
+            warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
+            figure
+            subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
+            subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
+            subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
+            subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
+            sgtitle(sprintf('el=%d',ref_el(i)))
+        end
+    end   
+    
+end
+
+
 %% Ensure that all elevations are between -90 and 90
 ind = el>90;
-az(ind) = mod(az(ind)+180,360);
+az(ind) = mod(az(ind)+180,360); % azimuth is inverted (turntable =/= speakers)
 el(ind) = 180-el(ind);
 pos(:,1) = az;
 pos(:,2) = el;
@@ -212,6 +276,10 @@ for i=1:numel(targetFs)
         else
             h_re = h;
         end
+        % Zero-pad to next multiple of two
+        hlen = 2^nextpow2(size(h_re,1));
+        h_re = [h_re;zeros(hlen-size(h_re,1),size(h_re,2),size(h_re,3))];
+        % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Raw_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
@@ -225,7 +293,13 @@ for i=1:numel(targetFs)
     if saveEQ
         if tFs ~= fs
             heq_re = resample(heq,tFs,fs);
+        else
+            heq_re = heq;
         end
+        % Zero-pad to next multiple of two
+        hlen = 2^nextpow2(size(heq_re,1));
+        heq_re = [heq_re;zeros(hlen-size(heq_re,1),size(heq_re,2),size(heq_re,3))];
+        % Save SOFA
         Obj.Data.IR=shiftdim(heq_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_EQ_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
@@ -234,12 +308,38 @@ for i=1:numel(targetFs)
             saveas(gcf,sprintf('%s/%s_EQ_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
         end
     end
+    
+    % Equalised minimum phase
+    if saveEQmp
+        if tFs ~= fs
+            heqmp_re = resample(heqmp,tFs,fs);
+        else
+            heqmp_re = heqmp;
+        end
+        % Zero-pad to next multiple of two
+        hlen = 2^nextpow2(size(heqmp_re,1));
+        heqmp_re = [heqmp_re;zeros(hlen-size(heqmp_re,1),size(heqmp_re,2),size(heqmp_re,3))];
+        % Save SOFA
+        Obj.Data.IR=shiftdim(heqmp_re,1);
+        newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_EQmp_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
+        if doplots
+            figure, SOFAplotHRTF(newobj,'MagHorizontal');
+            title(sprintf('Magnitude Horizontal plane: %s EQmp %0.2dkHz',sofaname,round(tFs/1000)));
+            saveas(gcf,sprintf('%s/%s_EQmp_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+        end
+    end
 
     % Aligned
     if saveITD || save3DTI
         if tFs ~= fs
             halign_re = resample(halign,tFs,fs);
+        else
+            halign_re = halign;
         end
+        % Zero-pad to next multiple of two
+        hlen = 2^nextpow2(size(halign_re,1));
+        halign_re = [halign_re;zeros(hlen-size(halign_re,1),size(halign_re,2),size(halign_re,3))];
+        % Save SOFA
         Obj.Data.IR=shiftdim(halign_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Aligned_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
@@ -262,8 +362,9 @@ for i=1:numel(targetFs)
 end
 
 %% Plots
-if doplots
-    AA_QuickPlotIR(sofaname,workdir,settingsfile,itemlistfile)
-end
+% NOTE: in the current version it takes too long (3 plots per azimuth)
+%if doplots
+    %AA_QuickPlotIR(sofaname,workdir,settingsfile,itemlistfile)
+%end
 
 end

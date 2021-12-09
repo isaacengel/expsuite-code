@@ -22,12 +22,14 @@ irLen = round(settings.irLen*fs/1e3); % in samples
 irOffset = round(settings.irOffset*fs/1e3); % in samples
 clear settings
 
-%% Window settings (TODO: consider assymetrical window or longer fade out)
-fadelen = 32;
-t = linspace(0,pi/2,fadelen).';
-fadein = sin(t).^2;
-fadeout = cos(t).^2;
-win = [fadein; ones(irLen-2*fadelen,1); fadeout];
+%% Window settings
+fadelenin = 16;
+fadelenout = 128;
+tin = linspace(0,pi/2,fadelenin).';
+tout = linspace(0,pi/2,fadelenout).';
+fadein = sin(tin).^2;
+fadeout = cos(tout).^2;
+win = [fadein; ones(irLen-fadelenin-fadelenout,1); fadeout];
 
 %% Load sweep files
 sweepfile = [workdir,'/expsweep.wav'];
@@ -106,7 +108,7 @@ for i=1:numAz
     saveas(fig,sprintf('%s/%s_Az%0.3d_Raw.png',figdir,plotname,az))
 
     % Separate HRIRs and plot
-    fig = figure('pos',[21.8000 83.4000 1.1176e+03 340.8000]);
+    fig = figure('pos',[21.8000 83.4000 1.1176e+03 600]);
     colors = parula(numEl+1);
     for j=1:numEl
         ind = srcList(:,2)==el(j);
@@ -118,30 +120,33 @@ for i=1:numAz
         iend = ibeg + irLen - 1;
         for ch=1:2
             h(:,count,ch)=ir(ibeg:iend,ch);
+            subplot(2,1,ch)
+            AKp(ir(ibeg-extralength_plot:iend+extralength_plot,ch),'et2d','fs',fs,'c',colors(j,:)), hold on
         end
         pos(count,:) = [az,el(j),r];
-        
-        % Plots
-        AKp(ir(ibeg-extralength_plot:iend+extralength_plot,ch),'et2d','fs',fs,'c',colors(j,:)), hold on
-        
+       
         count = count+1;
     end
     
-    yyaxis('right')
+    % Plot window and show title
     winplot = [zeros(extralength_plot,1);win;zeros(extralength_plot,1)];
-    plot([(0:irLen+2*extralength_plot-1)*1000/fs],winplot,'r-.','LineWidth',1.5)
-    ax = gca; ax.YAxis(2).Color = 'r';
-    ylabel('Window amplitude')
-   
+    for ch=1:2
+        subplot(2,1,ch),yyaxis('right')
+        plot([(0:irLen+2*extralength_plot-1)*1000/fs],winplot,'r-.','LineWidth',1.5)
+        ax = gca; ax.YAxis(2).Color = 'r';
+        ylabel('Window amplitude')
+        title(sprintf('%s',ears{ch}))
+    end
+    
     % Legend
     leg = {};
     for j=1:numEl
         leg{j} = strcat('El=',num2str(el(j)),'°');
     end
     leg{numEl+1} = 'Window';
-    legend(leg,'FontSize',6,'Position',[0.0078 0.1063 0.0714 0.8342])
+    legend(leg,'FontSize',6,'Position',[0.0067 0.2775 0.0720 0.4738])
     
-    title(sprintf('%s, Aligned IRs, Az=%d°, %s (time)',plotname,az,ears{ch}),'interpreter','none')
+    sgtitle(sprintf('%s, Aligned IRs, Az=%d° (time)',plotname,az),'interpreter','none')
     
     % Save figure
 %     savefig(fig,sprintf('%s/%s_Az%0.3d_AlignedIRs',figdir,plotname,az))
