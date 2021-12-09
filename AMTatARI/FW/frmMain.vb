@@ -1636,6 +1636,7 @@ SubEnd:
         cmdStartExp.Enabled = gblnOutputStable And dgvItemList.Enabled And Not gblnExperiment  'And Not gblnRemoteClientConnected
         cmdInitButton.Enabled = Not gblnExperiment And gblnOutputStable
         cmdGenerateSOFA.Enabled = Not gblnExperiment And gblnOutputStable
+        cmdShowPlots.Enabled = Not gblnExperiment And gblnOutputStable
 
         szX = "Start Experiment"
         If glExperimentStartItem >= 0 And glExperimentEndItem >= 0 Then
