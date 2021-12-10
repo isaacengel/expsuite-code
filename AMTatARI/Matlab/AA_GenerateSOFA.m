@@ -5,7 +5,7 @@ function AA_GenerateSOFA(sofaname,workdir,settingsfile,itemlistfile,referencefil
 % from Matlab directly
 
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
-gain = 30; % in dB; TODO: input this as a parameter
+gain = 10; % in dB; TODO: input this as a parameter
 
 % To save figures
 figdir = [workdir,'/plots'];

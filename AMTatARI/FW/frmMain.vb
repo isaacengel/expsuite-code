@@ -1421,6 +1421,9 @@ SubInitTracker:
         INISettings.WriteFile(STIM.WorkDir & "\" & settingsFile)
         ItemList.Save(STIM.WorkDir & "\" & itemListFile)
 
+        ' copy script to generate sofa to the new folder
+        Result.CopyScriptToGenerateSOFA()
+
         SetUIReady()
         Return
 

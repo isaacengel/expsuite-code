@@ -52,6 +52,17 @@ Module Result
 
     End Sub
 
+    Public Sub CopyScriptToGenerateSOFA()
+        If Not gblnOutputStable Then
+            MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+
+        STIM.Matlab("str = which('run_this_to_generate_sofa');")
+        STIM.Matlab("copyfile(str,'.');")
+
+    End Sub
+
     Public Sub Execute(ByRef lIndex As Integer)
 		Dim szX As String
         'Dim lRowBeg, lRowEnd As Integer
