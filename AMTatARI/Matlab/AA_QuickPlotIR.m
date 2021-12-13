@@ -3,7 +3,7 @@ function AA_QuickPlotIR(plotname,workdir,settingsfile,itemlistfile)
 % Shows a bunch of plots of the recorded IR as a sanity check.
 
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
-gain = 30; % in dB; TODO: input this as a parameter
+gain = 0; % in dB; TODO: input this as a parameter
 ears = {'Left','Right'};
 
 % To save figures
@@ -76,14 +76,18 @@ for i=1:numAz
             continue
         end
         [x,fs_] = audioread(file); % read recording
+        if max(abs(x(:))) >= 1
+            warning('The microphone clipped! Please reduce the microphone gain on the audio interface and repeat the measurments')
+        end
+        x = x.*db2mag(gain); % apply gain
         assert(fs==fs_,'Sampling frequency mismatch!')
         
         % Plots
         subplot(3,2,ch), AKp(x,'et2d','fs',fs)
-        title(sprintf('Raw recording, %s (time)',ears{ch})), ylim([-100 0])
+        title(sprintf('Raw recording, %s (time)',ears{ch})), ylim([-70 0])
         fvec = linspace(0,fs/2,2048);
         subplot(3,2,2+ch), spectrogram(x,1024,32,fvec,fs,'yaxis')
-        cax = caxis; caxis([cax(2)-70 cax(2)]) % adjust color axis
+        caxis([-120 -40]) % adjust color axis
         title(sprintf('Raw recording, %s (spectrogram)',ears{ch}))
         
         convlen = size(x,1) + swlen - 1;
@@ -93,7 +97,7 @@ for i=1:numAz
         
         % Plots
         subplot(3,2,4+ch), AKp(ir(:,ch),'et2d','fs',fs)
-        title(sprintf('IR, %s (time)',ears{ch})), ylim([-140 -40])
+        title(sprintf('IR, %s (time)',ears{ch})), ylim([-120 -20])
         sgtitle(sprintf('%s, Raw recordings and IRs, Az=%d°',plotname,az),'interpreter','none')
         
     end
@@ -131,7 +135,8 @@ for i=1:numAz
     % Plot window and show title
     winplot = [zeros(extralength_plot,1);win;zeros(extralength_plot,1)];
     for ch=1:2
-        subplot(2,1,ch),yyaxis('right')
+        subplot(2,1,ch), ylim([-120 -20])
+        yyaxis('right')
         plot([(0:irLen+2*extralength_plot-1)*1000/fs],winplot,'r-.','LineWidth',1.5)
         ax = gca; ax.YAxis(2).Color = 'r';
         ylabel('Window amplitude')
@@ -156,11 +161,7 @@ end
 
 %% Window HRIRs
 
-hwin = win.*h(1:irLen,:,:);
-
-% Apply gain
-h = hwin.*db2mag(gain);
-clear hwin
+h = win.*h(1:irLen,:,:);
 
 quickplotHRTF(h,fs)
 ndirs = size(h,2);
@@ -187,18 +188,18 @@ function quickplotHRTF(h,fs)
     plot(t,db(abs(h(:,:,1))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), title('Left HRIRs (time)')
     plot(t,db(havg(:,:,1)),'k','LineWidth',2)
     legend('Mean')
-    grid on, xlim([0 irLen/fs*1000]), ylim([-70, -10])
+    grid on, xlim([0 irLen/fs*1000]), ylim([-120, -20])
     xlabel('Time (ms)'), ylabel('Amplitude (dB)')
     subplot(2,2,2), plot(t,db(abs(h(:,:,2))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
     plot(t,db(havg(:,:,2)),'k','LineWidth',2), title('Right HRIRs (time)')
-    grid on, xlim([0 irLen/fs*1000]), ylim([-70, -10])
+    grid on, xlim([0 irLen/fs*1000]), ylim([-120, -20])
     xlabel('Time (ms)'), ylabel('Amplitude (dB)')
     subplot(2,2,3), semilogx(f,db(abs(H(:,:,1))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
     semilogx(f,db(Hmag_avg(:,:,1)),'k','LineWidth',2), title('Left HRIRs (mag. spectra)')
-    grid on, xlim([f(2) fs/2]), ylim([-45, 15])
+    grid on, xlim([f(2) fs/2]), ylim([-60, 0])
     xlabel('Frequency (Hz)'), ylabel('Amplitude (dB)')
     subplot(2,2,4), semilogx(f,db(abs(H(:,:,2))),'Color',[0.4 0.4 0.4],'LineWidth',0.5), hold on
     semilogx(f,db(Hmag_avg(:,:,2)),'k','LineWidth',2),title('Right HRIRs (mag. spectra)')
-    grid on, xlim([f(2) fs/2]), ylim([-45, 15])
+    grid on, xlim([f(2) fs/2]), ylim([-60, 0])
     xlabel('Frequency (Hz)'), ylabel('Amplitude (dB)')
 end

@@ -5,7 +5,7 @@ function AA_GenerateSOFA(sofaname,workdir,settingsfile,itemlistfile,referencefil
 % from Matlab directly
 
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
-gain = 10; % in dB; TODO: input this as a parameter
+gain = 0; % in dB; TODO: input this as a parameter
 
 % To save figures
 figdir = [workdir,'/plots'];
@@ -75,6 +75,9 @@ for i=1:numAz
             continue
         end
         [x,fs_] = audioread(file); % read recording
+        if max(abs(x(:))) >= 1
+            warning('The microphone clipped for Az=%d! Consider reducing the microphone gain and repeating the measurement.',itemlist.Azimuth(row))
+        end
         assert(fs==fs_,'Sampling frequency mismatch!')
         convlen = size(x,1) + swlen - 1;
         nfft = 2^nextpow2(convlen);
@@ -294,8 +297,10 @@ for i=1:numel(targetFs)
         Obj.Data.IR=shiftdim(h_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Raw_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
-            figure, SOFAplotHRTF(newobj,'MagHorizontal');
-            title(sprintf('Magnitude Horizontal plane: %s Raw %0.2dkHz',sofaname,round(tFs/1000)));
+            figure('pos',[10.6000 63.4000 695.2000 284.8000])
+            subplot(1,2,1), SOFAplotHRTF(newobj,'MagHorizontal', 1); xlim([0 20000]), ylim([-180 180]), title('Left')
+            subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
+            sgtitle(sprintf('Magnitude Horizontal plane: %s Raw %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_Raw_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
             quickplotHRTF(h_re,fs)
             sgtitle(sprintf('%s_Raw_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
@@ -320,8 +325,10 @@ for i=1:numel(targetFs)
         Obj.Data.IR=shiftdim(heq_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_EQ_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
-            figure, SOFAplotHRTF(newobj,'MagHorizontal');
-            title(sprintf('Magnitude Horizontal plane: %s EQ %0.2dkHz',sofaname,round(tFs/1000)));
+            figure('pos',[10.6000 63.4000 695.2000 284.8000])
+            subplot(1,2,1), SOFAplotHRTF(newobj,'MagHorizontal', 1); xlim([0 20000]), ylim([-180 180]), title('Left')
+            subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
+            sgtitle(sprintf('Magnitude Horizontal plane: %s EQ %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_EQ_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
             quickplotHRTF(heq_re,fs)
             sgtitle(sprintf('%s_EQ_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(heq_re,2)),'interpreter','none')
@@ -346,8 +353,10 @@ for i=1:numel(targetFs)
         Obj.Data.IR=shiftdim(heqmp_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_EQmp_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
-            figure, SOFAplotHRTF(newobj,'MagHorizontal');
-            title(sprintf('Magnitude Horizontal plane: %s EQmp %0.2dkHz',sofaname,round(tFs/1000)));
+            figure('pos',[10.6000 63.4000 695.2000 284.8000])
+            subplot(1,2,1), SOFAplotHRTF(newobj,'MagHorizontal', 1); xlim([0 20000]), ylim([-180 180]), title('Left')
+            subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
+            sgitle(sprintf('Magnitude Horizontal plane: %s EQmp %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_EQmp_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
             quickplotHRTF(heqmp_re,fs)
             sgtitle(sprintf('%s_EQmp_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(heqmp_re,2)),'interpreter','none')
@@ -372,8 +381,10 @@ for i=1:numel(targetFs)
         Obj.Data.IR=shiftdim(halign_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Aligned_%0.2dkHz.sofa',workdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
-            figure, SOFAplotHRTF(newobj,'MagHorizontal');
-            title(sprintf('Magnitude Horizontal plane: %s Aligned %0.2dkHz',sofaname,round(tFs/1000)));
+            figure('pos',[10.6000 63.4000 695.2000 284.8000])
+            subplot(1,2,1), SOFAplotHRTF(newobj,'MagHorizontal', 1); xlim([0 20000]), ylim([-180 180]), title('Left')
+            subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
+            sgtitle(sprintf('Magnitude Horizontal plane: %s Aligned %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_Aligned_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
             quickplotHRTF(halign_re,fs)
             sgtitle(sprintf('%s_Aligned_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(halign_re,2)),'interpreter','none')
