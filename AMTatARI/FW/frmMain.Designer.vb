@@ -297,6 +297,7 @@
         Me.mnuHelpAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.lstLog = New System.Windows.Forms.ListBox()
         Me.PanelBottom = New System.Windows.Forms.Panel()
+        Me.cmdShowPlots = New System.Windows.Forms.Button()
         Me.cmdGenerateSOFA = New System.Windows.Forms.Button()
         Me.cmdInitButton = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -332,7 +333,6 @@
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblItemList = New System.Windows.Forms.Label()
         Me.tmrTracker = New System.Windows.Forms.Timer(Me.components)
-        Me.cmdShowPlots = New System.Windows.Forms.Button()
         Me.popupMenuStrip.SuspendLayout()
         Me.tbToolBar.SuspendLayout()
         Me.sbStatusBar.SuspendLayout()
@@ -1839,6 +1839,22 @@
         Me.PanelBottom.Size = New System.Drawing.Size(1168, 292)
         Me.PanelBottom.TabIndex = 58
         '
+        'cmdShowPlots
+        '
+        Me.cmdShowPlots.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdShowPlots.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdShowPlots.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdShowPlots.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdShowPlots.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.cmdShowPlots.Location = New System.Drawing.Point(879, 154)
+        Me.cmdShowPlots.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmdShowPlots.Name = "cmdShowPlots"
+        Me.cmdShowPlots.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdShowPlots.Size = New System.Drawing.Size(93, 62)
+        Me.cmdShowPlots.TabIndex = 62
+        Me.cmdShowPlots.Text = "Initial check"
+        Me.cmdShowPlots.UseVisualStyleBackColor = False
+        '
         'cmdGenerateSOFA
         '
         Me.cmdGenerateSOFA.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -2304,22 +2320,6 @@
         '
         Me.tmrTracker.Enabled = True
         Me.tmrTracker.Interval = 200
-        '
-        'cmdShowPlots
-        '
-        Me.cmdShowPlots.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdShowPlots.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdShowPlots.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdShowPlots.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdShowPlots.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdShowPlots.Location = New System.Drawing.Point(879, 154)
-        Me.cmdShowPlots.Margin = New System.Windows.Forms.Padding(4)
-        Me.cmdShowPlots.Name = "cmdShowPlots"
-        Me.cmdShowPlots.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdShowPlots.Size = New System.Drawing.Size(93, 62)
-        Me.cmdShowPlots.TabIndex = 62
-        Me.cmdShowPlots.Text = "Show plots"
-        Me.cmdShowPlots.UseVisualStyleBackColor = False
         '
         'frmMain
         '

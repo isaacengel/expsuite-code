@@ -1,6 +1,12 @@
-function AA_QuickPlotIR(plotname,workdir,settingsfile,itemlistfile)
+function AA_QuickPlotIR(plotname,workdir,settingsfile,itemlistfile,varargin)
 
 % Shows a bunch of plots of the recorded IR as a sanity check.
+
+% Parse optional inputs
+p = inputParser;
+addParameter(p,'extralength',[250 250]) 
+parse(p,varargin{:})
+extralength_plot = p.Results.extralength;
 
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
 gain = 0; % in dB; TODO: input this as a parameter
@@ -54,7 +60,7 @@ for i=1:numel(isdList)
 end
 
 %% Calculate HRIRs
-extralength_plot = 250; % samples
+% extralength_plot = [250 250]; % samples
 itemlist = readtable(itemlistfile,'Delimiter',',');
 indAz = find(~isnan(itemlist.Azimuth)); % ignore rows without defined azimuth
 numAz = numel(indAz);
@@ -125,7 +131,7 @@ for i=1:numAz
         for ch=1:2
             h(:,count,ch)=ir(ibeg:iend,ch);
             subplot(2,1,ch)
-            AKp(ir(ibeg-extralength_plot:iend+extralength_plot,ch),'et2d','fs',fs,'c',colors(j,:)), hold on
+            AKp(ir(ibeg-extralength_plot(1):iend+extralength_plot(2),ch),'et2d','fs',fs,'c',colors(j,:)), hold on
         end
         pos(count,:) = [az,el(j),r];
        
@@ -133,11 +139,11 @@ for i=1:numAz
     end
     
     % Plot window and show title
-    winplot = [zeros(extralength_plot,1);win;zeros(extralength_plot,1)];
+    winplot = [zeros(extralength_plot(1),1);win;zeros(extralength_plot(2),1)];
     for ch=1:2
         subplot(2,1,ch), ylim([-120 -20])
         yyaxis('right')
-        plot([(0:irLen+2*extralength_plot-1)*1000/fs],winplot,'r-.','LineWidth',1.5)
+        plot([(0:irLen+extralength_plot(1)+extralength_plot(2)-1)*1000/fs],winplot,'r-.','LineWidth',1.5)
         ax = gca; ax.YAxis(2).Color = 'r';
         ylabel('Window amplitude')
         title(sprintf('%s',ears{ch}))

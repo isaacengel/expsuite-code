@@ -5717,7 +5717,8 @@ SubNotTracking:
         ' INISettings.WriteFile(STIM.WorkDir & "\" & settingsFile)
         ' ItemList.Save(STIM.WorkDir & "\" & itemListFile)
         cmdShowPlots.Enabled = False
-        Result.QuickPlotIR(settingsFile, itemListFile)
+        ' Result.QuickPlotIR(settingsFile, itemListFile)
+        Result.InitialCheck(settingsFile, itemListFile, -15, 5) ' TODO: set the last two parameters via settings
         cmdShowPlots.Enabled = True
 
     End Sub
