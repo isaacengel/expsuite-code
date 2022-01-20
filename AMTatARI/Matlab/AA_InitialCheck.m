@@ -16,6 +16,13 @@ if ~isfolder(figdir)
     mkdir(figdir)
 end
 
+if ischar(target_gain)
+    target_gain = str2num(target_gain);
+end
+if ischar(lr_dif)
+    lr_dif = str2num(lr_dif);
+end
+
 %% Load settings
 settings = AA_ReadSettingsFile(settingsfile);
 fs = settings.fs;

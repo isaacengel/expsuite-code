@@ -1,8 +1,11 @@
-function AA_QuickCompareHRTF(sofa1,sofa2,itdThresh,magThresh,freqRange)
+function AA_QuickCompareHRTF(sofaFile1,sofaFile2,itdThresh,magThresh,freqRange)
 
 %itdThresh = 200e-6; % itd delta threshold (s)
 %magThresh = 15; % low frequency magnitude threshold (dB)
 %freqRange = [200 1500]; % frequency range checked in the magnitude comparison
+
+sofa1 = SOFAload(sofaFile1);
+sofa2 = SOFAload(sofaFile2);
 
 [h1,fs,az,el] = sofa2hrtf(sofa1);
 [h2,fs_,az_,el_] = sofa2hrtf(sofa2);
@@ -33,5 +36,3 @@ itdD = abs(itd1-itd2);
 if any(abs(itdD) > itdThresh)
     error('Big ITD mismatch!')
 end
-
-disp('Finished. All OK!')

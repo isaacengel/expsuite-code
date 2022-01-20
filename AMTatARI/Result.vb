@@ -21,7 +21,7 @@ Module Result
         End If
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
-        STIM.Matlab("this_dir = cd; amt_start(); cd(this_dir);")
+        STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
         Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & "','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & save3DTI & "," & targetFs & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Generate SOFA files")
@@ -29,8 +29,14 @@ Module Result
         Else
             MsgBox("Successfully saved SOFA files!", MsgBoxStyle.Information, "Generate SOFA files")
         End If
-        If finalCheck > 0 Then
-            szErr = STIM.Matlab("AA_QuickCompareHRTF('Lorenzo_20211216_First_Raw_96kHz.sofa','" & sofaname & "_Raw_96kHz.sofa'," & itdThresh & "," & magThresh & "," freqRange & ");")
+        If finalCheck <> 0 Then
+            szErr = STIM.Matlab("AA_QuickCompareHRTF('Lorenzo_20211216_First_Raw_96kHz.sofa','" & sofaname & "_Raw_96kHz.sofa'," & itdThresh & "," & magThresh & "," & freqRange & ");")
+            If Len(szErr) > 0 Then
+                MsgBox(szErr, MsgBoxStyle.Critical, "Final SOFA check")
+                frmMain.SetStatus("Error(s) checking SOFA file")
+            Else
+                MsgBox("SOFA final check successful!", MsgBoxStyle.Information, "Final SOFA check")
+            End If
         End If
         frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
     End Sub
@@ -42,7 +48,7 @@ Module Result
         End If
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
-        STIM.Matlab("this_dir = cd; amt_start(); cd(this_dir);")
+        STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
         Dim str() As String = STIM.WorkDir.Split("\"c)
         Dim szErr As String = STIM.Matlab("AA_QuickPlotIR('" & str(UBound(str)) & "','" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & "');")
         If Len(szErr) > 0 Then
@@ -62,7 +68,7 @@ Module Result
         End If
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
-        STIM.Matlab("this_dir = cd; amt_start(); cd(this_dir);")
+        STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
         Dim str() As String = STIM.WorkDir.Split("\"c)
         Dim szErr As String = STIM.Matlab("AA_InitialCheck('" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & "','" & target_gain & "','" & lr_dif & "');")
         If Len(szErr) > 0 Then
