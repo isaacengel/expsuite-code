@@ -1,12 +1,28 @@
 function AA_QuickPlotIR(plotname,workdir,settingsfile,itemlistfile,varargin)
-
 % Shows a bunch of plots of the recorded IR as a sanity check.
+
+% If any parameter is missing, default to the typical value
+if ~exist('plotname','var')
+    plotname = split(pwd,filesep);
+    plotname = plotname{end};
+end
+if ~exist('workdir','var')
+    workdir = '.';
+end
+if ~exist('settingsfile','var')
+    settingsfile = 'settings.AMTatARI';
+end
+if ~exist('itemlistfile','var')
+    itemlistfile = 'itemlist.itl.csv';
+end
 
 % Parse optional inputs
 p = inputParser;
-addParameter(p,'extralength',[250 250]) 
+addParameter(p,'extralength',[250 250])
+addParameter(p,'indAz',1)
 parse(p,varargin{:})
 extralength_plot = p.Results.extralength;
+indAz = p.Results.indAz;
 
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
 gain = 0; % in dB; TODO: input this as a parameter
@@ -62,7 +78,9 @@ end
 %% Calculate HRIRs
 % extralength_plot = [250 250]; % samples
 itemlist = readtable(itemlistfile,'Delimiter',',');
-indAz = find(~isnan(itemlist.Azimuth)); % ignore rows without defined azimuth
+if isempty(indAz)
+    indAz = find(~isnan(itemlist.Azimuth)); % ignore rows without defined azimuth
+end
 numAz = numel(indAz);
 count = 1;
 pos = [];

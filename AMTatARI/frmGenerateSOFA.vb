@@ -4,8 +4,6 @@ Option Explicit On
 Public Class frmGenerateSOFA
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim sofaname As String = TextBoxSofaname.Text
-        Dim settingsFile As String = "settings.AMTatARI"
-        Dim itemListFile As String = "itemlist.itl.csv"
         Dim referenceFile As String = TextBoxRef.Text
         Dim doPlots As Integer = CInt(CheckBoxShowPlots.Checked)
         Dim saveRaw As Integer = CInt(CheckBoxRaw.Checked)
@@ -28,7 +26,7 @@ Public Class frmGenerateSOFA
             targetFs = targetFs & "96000 "
         End If
         targetFs = targetFs & "]"
-        Result.GenerateSOFA(sofaname, settingsFile, itemListFile, referenceFile, doPlots, saveRaw, saveEQ, saveEQmp, saveITD, save3DTI, targetFs, finalCheck, 0.0002, 15, "[200 1500]") ' TODO: set the last three parameters via settings
+        Result.GenerateSOFA(sofaname, referenceFile, doPlots, saveRaw, saveEQ, saveEQmp, saveITD, save3DTI, targetFs, finalCheck, 0.0002, 15, "[200 1500]") ' TODO: set the last three parameters via settings
         Button1.Enabled = True
         Me.Close()
     End Sub

@@ -518,17 +518,33 @@ Module EventsSettings
                 End With
                 With gconstExp(10)
                     .szName = "IR calculation: Flip azimuths at *5° elevation positions"
-                    .szDescription = "When performing the calculation of the impulse responses, flip azimuth values by 180° if elevation is in *5° positions. Examples:" & _
-                        vbCrLf &  "azi 0, ele 0" & vbTab &  "-> no change" & vbCrLf & "azi 0, ele 5" & vbTab &  "-> changed to azi 180, ele 5" & _
-                        vbCrLf &  "azi 0, ele 10" & vbTab &  "-> no change" & vbCrLf & "azi 0, ele 15" & vbTab &  "-> changed to azi 180, ele 15" & _
-                        vbCrLf &  "..."
+                    .szDescription = "When performing the calculation of the impulse responses, flip azimuth values by 180° if elevation is in *5° positions. Examples:" &
+                        vbCrLf & "azi 0, ele 0" & vbTab & "-> no change" & vbCrLf & "azi 0, ele 5" & vbTab & "-> changed to azi 180, ele 5" &
+                        vbCrLf & "azi 0, ele 10" & vbTab & "-> no change" & vbCrLf & "azi 0, ele 15" & vbTab & "-> changed to azi 180, ele 15" &
+                        vbCrLf & "..."
                     .szUnit = "0/1"
                     .Flags = FWintern.VariableFlags.vfNumeric Or FWintern.VariableFlags.vfInteger Or FWintern.VariableFlags.vfMin Or VariableFlags.vfMax
                     .dMin = 0
                     .dMax = 1
                     .varDefault = "1"
                 End With
-                For lX = 11 To UBound(gconstExp)
+                With gconstExp(11)
+                    .szName = "Initial IR check absolute threshold"
+                    .szDescription = "A warning will be shown after the initial IR check if the left or right peaks are below this threshold."
+                    .szUnit = "dB"
+                    .Flags = FWintern.VariableFlags.vfNumeric Or FWintern.VariableFlags.vfMax
+                    .dMax = 0
+                    .varDefault = "-32"
+                End With
+                With gconstExp(12)
+                    .szName = "Initial IR check left/right threshold"
+                    .szDescription = "A warning will be shown after the initial IR check if the difference between the left and right peaks is above this threshold."
+                    .szUnit = "dB"
+                    .Flags = FWintern.VariableFlags.vfNumeric Or FWintern.VariableFlags.vfMin
+                    .dMin = 0
+                    .varDefault = "10"
+                End With
+                For lX = 13 To UBound(gconstExp)
                     With gconstExp(lX)
                         .szName = "not used"
                         .szDescription = ""

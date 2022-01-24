@@ -1,8 +1,14 @@
 function AA_QuickCompareHRTF(sofaFile1,sofaFile2,itdThresh,magThresh,freqRange)
 
-%itdThresh = 200e-6; % itd delta threshold (s)
-%magThresh = 15; % low frequency magnitude threshold (dB)
-%freqRange = [200 1500]; % frequency range checked in the magnitude comparison
+if ~exist('itdThresh','var')
+    itdThresh = 200e-6; % itd delta threshold (s)
+end
+if ~exist('magThresh','var')
+    magThresh = 15; % low frequency magnitude threshold (dB)
+end
+if ~exist('freqRange','var')
+    freqRange = [200 1500]; % frequency range checked in the magnitude comparison
+end
 
 sofa1 = SOFAload(sofaFile1);
 sofa2 = SOFAload(sofaFile2);

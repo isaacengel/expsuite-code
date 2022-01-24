@@ -1,27 +1,29 @@
-function AA_InitialCheck(workdir,settingsfile,itemlistfile,target_gain,lr_dif,varargin)
+function AA_InitialCheck(workdir,settingsfile,itemlistfile,target_gain,lr_dif)
 
 % Initial check before HRTF measurement, to ensure mics/speakers are OK.
 % The check is run only on the first item of the list (first azimuth).
 
-% target_gain = -15; % minimum expected peak gain in dB for all IRs
-% lr_dif = 5; % maximum peak gain difference allowed between L and R channels
+% If any parameter is missing, default to the typical value
+if ~exist('workdir','var')
+    workdir = '.';
+end
+if ~exist('settingsfile','var')
+    settingsfile = 'settings.AMTatARI';
+end
+if ~exist('itemlistfile','var')
+    itemlistfile = 'itemlist.itl.csv';
+end
+if ~exist('target_gain','var')
+    target_gain = [];
+end
+if ~exist('lr_dif','var')
+    lr_dif = [];
+end
+
 extra_offset = 0.003; % extra length (s) included before and after each IR
 
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
 gain = 0; % in dB; TODO: input this as a parameter
-
-% To save figures
-figdir = [workdir,'/plots'];
-if ~isfolder(figdir)
-    mkdir(figdir)
-end
-
-if ischar(target_gain)
-    target_gain = str2num(target_gain);
-end
-if ischar(lr_dif)
-    lr_dif = str2num(lr_dif);
-end
 
 %% Load settings
 settings = AA_ReadSettingsFile(settingsfile);
@@ -30,7 +32,26 @@ isdList = settings.isdList;
 srcList = settings.srcList;
 irLen = round(settings.irLen*fs/1e3); % in samples
 irOffset = round(settings.irOffset*fs/1e3); % in samples
+target_gain_tmp = settings.initial_check_target_gain;
+lr_dif_tmp = settings.initial_check_lr_dif;
 clear settings
+
+% Check if these two have not been used as parameters
+if isempty(target_gain)
+    if ~isempty(target_gain_tmp)
+        target_gain = target_gain_tmp;
+    else
+        target_gain = -32; % default value
+    end
+end
+if isempty(lr_dif)
+    if ~isempty(lr_dif_tmp)
+        lr_dif = lr_dif_tmp;
+    else
+        lr_dif = 10; % default value
+    end
+end
+clear target_gain_tmp lr_dif_tmp
 
 %% Load sweep files
 sweepfile = [workdir,'/expsweep.wav'];
@@ -86,26 +107,27 @@ for ch=1:2
     ir(:,ch) = irtemp(1:convlen);
 end
 
-for j=1:numEl
-    ind = srcList(:,2)==el(j);
-    lat(j) = srcList(ind,3)*fs/1e6; % in samples
-    ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1)) - extra_offset;
-    iend = ibeg + irLen - 1 + extra_offset;
-    for ch=1:2
-        h(:,count,ch)=ir(ibeg:iend,ch);
-    end
-    pos(count,:) = [az,el(j),r];
-    count = count+1;
-end
+% for j=1:numEl
+%     ind = srcList(:,2)==el(j);
+%     lat(j) = srcList(ind,3)*fs/1e6; % in samples
+%     ibeg = int32(swlen+(ISD(j))+lat(j)-irOffset(1)) - extra_offset;
+%     iend = ibeg + irLen - 1 + 2*extra_offset;
+%     for ch=1:2
+%         h(:,count,ch)=ir(ibeg:iend,ch);
+%     end
+%     pos(count,:) = [az,el(j),r];
+%     count = count+1;
+% end
 
 % Check HRIR peak
-peaks = squeeze(db(max(abs(h),[],1)));
+% peaks = squeeze(db(max(abs(h),[],1)));
+peaks = db(max(abs(ir),[],1));
 err_msg = "";
 if any(peaks(:,1) < target_gain)
-    err_msg = sprintf("%sLeft mic: some IR peaks were below the target (<%ddB). Check mic and/or speakers.\n",err_msg,target_gain);
+    err_msg = sprintf("%sLeft mic: IR peak was lower than expected (<%ddB). Check mic and/or speakers.\n",err_msg,target_gain);
 end
 if any(peaks(:,2) < target_gain)
-    err_msg = sprintf("%sRight mic: some IR peaks were below the target (<%ddB). Check mic and/or speakers.\n",err_msg,target_gain);
+    err_msg = sprintf("%sRight mic: IR peak was lower than expected (<%ddB). Check mic and/or speakers.\n",err_msg,target_gain);
 end
 if any(abs(peaks(:,1)-peaks(:,2)) > lr_dif)
     err_msg = sprintf("%sL and R mics showed important gain differences (>%ddB). Check mics.\n",err_msg,lr_dif);

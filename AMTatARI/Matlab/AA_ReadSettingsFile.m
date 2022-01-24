@@ -49,3 +49,19 @@ settings.irOffset(2) = str2num(A(ind1,2));
 % Extract sampling rate
 ind = find(A(:,1)=="Sampling Rate");
 settings.fs = str2num(A(ind,2));
+
+% Extract initial check absolute threshold
+ind = find(A(:,1)=="Initial IR check absolute threshold");
+if ~isempty(ind)
+    settings.initial_check_target_gain = str2num(A(ind,2));
+else
+    settings.initial_check_target_gain = [];
+end
+
+% Extract initial check left/right threshold
+ind = find(A(:,1)=="Initial IR check left/right threshold");
+if ~isempty(ind)
+    settings.initial_check_lr_dif = str2num(A(ind,2));
+else
+    settings.initial_check_lr_dif = [];
+end

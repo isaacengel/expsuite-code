@@ -14,7 +14,7 @@ Module Result
 
     Public gIRFlags As IRFlags
 
-    Public Sub GenerateSOFA(sofaname As String, settingsFile As String, stimListFile As String, referenceFile As String, doPlots As Integer, saveRaw As Integer, saveEQ As Integer, saveEQmp As Integer, saveITD As Integer, save3DTI As Integer, targetFs As String, finalCheck As Integer, itdThresh As Double, magThresh As Double, freqRange As String)
+    Public Sub GenerateSOFA(sofaname As String, referenceFile As String, doPlots As Integer, saveRaw As Integer, saveEQ As Integer, saveEQmp As Integer, saveITD As Integer, save3DTI As Integer, targetFs As String, finalCheck As Integer, itdThresh As Double, magThresh As Double, freqRange As String)
         If Not gblnOutputStable Then
             MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
             Exit Sub
@@ -22,7 +22,7 @@ Module Result
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
-        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & "','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & save3DTI & "," & targetFs & ");")
+        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "',settings.AMTatARI,itemlist.itl.csv,'" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & save3DTI & "," & targetFs & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Generate SOFA files")
             frmMain.SetStatus("Error(s) generating SOFA files")
@@ -41,7 +41,7 @@ Module Result
         frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
     End Sub
 
-    Public Sub QuickPlotIR(settingsFile As String, stimListFile As String)
+    Public Sub QuickPlotIR()
         If Not gblnOutputStable Then
             MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
             Exit Sub
@@ -50,7 +50,7 @@ Module Result
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
         Dim str() As String = STIM.WorkDir.Split("\"c)
-        Dim szErr As String = STIM.Matlab("AA_QuickPlotIR('" & str(UBound(str)) & "','" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & "');")
+        Dim szErr As String = STIM.Matlab("AA_QuickPlotIR('" & str(UBound(str)) & "','" & STIM.WorkDir & "');")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Showing plots")
             frmMain.SetStatus("Error(s) showing plots")
@@ -61,7 +61,7 @@ Module Result
 
     End Sub
 
-    Public Sub InitialCheck(settingsFile As String, stimListFile As String, target_gain As Double, lr_dif As Double)
+    Public Sub InitialCheck()
         If Not gblnOutputStable Then
             MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
             Exit Sub
@@ -69,8 +69,10 @@ Module Result
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
+        ' Dim target_gain As Double = Val(gconstExp(11).varValue)
+        ' Dim lr_dif As Double = Val(gconstExp(12).varValue)
         Dim str() As String = STIM.WorkDir.Split("\"c)
-        Dim szErr As String = STIM.Matlab("AA_InitialCheck('" & STIM.WorkDir & "','" & settingsFile & "','" & stimListFile & "','" & target_gain & "','" & lr_dif & "');")
+        Dim szErr As String = STIM.Matlab("AA_InitialCheck('" & STIM.WorkDir & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Initial check")
             frmMain.SetStatus("Error in the initial check. Check microphones/speakers.")

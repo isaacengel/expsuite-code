@@ -134,10 +134,10 @@
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.cmdItemUndo = New System.Windows.Forms.Button()
         Me.cmdItemMoveDown = New System.Windows.Forms.Button()
@@ -333,6 +333,7 @@
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblItemList = New System.Windows.Forms.Label()
         Me.tmrTracker = New System.Windows.Forms.Timer(Me.components)
+        Me.cmdInitialCheck = New System.Windows.Forms.Button()
         Me.popupMenuStrip.SuspendLayout()
         Me.tbToolBar.SuspendLayout()
         Me.sbStatusBar.SuspendLayout()
@@ -1808,6 +1809,7 @@
         '
         'PanelBottom
         '
+        Me.PanelBottom.Controls.Add(Me.cmdInitialCheck)
         Me.PanelBottom.Controls.Add(Me.cmdShowPlots)
         Me.PanelBottom.Controls.Add(Me.cmdGenerateSOFA)
         Me.PanelBottom.Controls.Add(Me.cmdInitButton)
@@ -1846,13 +1848,13 @@
         Me.cmdShowPlots.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdShowPlots.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdShowPlots.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdShowPlots.Location = New System.Drawing.Point(879, 154)
+        Me.cmdShowPlots.Location = New System.Drawing.Point(879, 200)
         Me.cmdShowPlots.Margin = New System.Windows.Forms.Padding(4)
         Me.cmdShowPlots.Name = "cmdShowPlots"
         Me.cmdShowPlots.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdShowPlots.Size = New System.Drawing.Size(93, 62)
+        Me.cmdShowPlots.Size = New System.Drawing.Size(93, 41)
         Me.cmdShowPlots.TabIndex = 62
-        Me.cmdShowPlots.Text = "Initial check"
+        Me.cmdShowPlots.Text = "Show plots"
         Me.cmdShowPlots.UseVisualStyleBackColor = False
         '
         'cmdGenerateSOFA
@@ -1866,7 +1868,7 @@
         Me.cmdGenerateSOFA.Margin = New System.Windows.Forms.Padding(4)
         Me.cmdGenerateSOFA.Name = "cmdGenerateSOFA"
         Me.cmdGenerateSOFA.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdGenerateSOFA.Size = New System.Drawing.Size(93, 62)
+        Me.cmdGenerateSOFA.Size = New System.Drawing.Size(93, 87)
         Me.cmdGenerateSOFA.TabIndex = 61
         Me.cmdGenerateSOFA.Text = "Generate SOFA files"
         Me.cmdGenerateSOFA.UseVisualStyleBackColor = False
@@ -2219,41 +2221,41 @@
         Me.dgvItemList.AllowUserToDeleteRows = False
         Me.dgvItemList.AllowUserToOrderColumns = True
         Me.dgvItemList.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.LightYellow
-        Me.dgvItemList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightYellow
+        Me.dgvItemList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvItemList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvItemList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvItemList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvItemList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvItemList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvItemList.Enabled = False
         Me.dgvItemList.Location = New System.Drawing.Point(0, 70)
         Me.dgvItemList.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvItemList.Name = "dgvItemList"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvItemList.RowHeadersWidth = 30
         Me.dgvItemList.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvItemList.Size = New System.Drawing.Size(1088, 276)
@@ -2320,6 +2322,22 @@
         '
         Me.tmrTracker.Enabled = True
         Me.tmrTracker.Interval = 200
+        '
+        'cmdInitialCheck
+        '
+        Me.cmdInitialCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdInitialCheck.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdInitialCheck.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdInitialCheck.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdInitialCheck.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.cmdInitialCheck.Location = New System.Drawing.Point(879, 154)
+        Me.cmdInitialCheck.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmdInitialCheck.Name = "cmdInitialCheck"
+        Me.cmdInitialCheck.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdInitialCheck.Size = New System.Drawing.Size(93, 43)
+        Me.cmdInitialCheck.TabIndex = 63
+        Me.cmdInitialCheck.Text = "Initial check"
+        Me.cmdInitialCheck.UseVisualStyleBackColor = False
         '
         'frmMain
         '
@@ -2449,5 +2467,6 @@
     Public WithEvents cmdGenerateSOFA As Button
     Friend WithEvents tmrTracker As Timer
     Public WithEvents cmdShowPlots As Button
+    Public WithEvents cmdInitialCheck As Button
 #End Region
 End Class

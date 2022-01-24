@@ -1640,6 +1640,7 @@ SubEnd:
         cmdInitButton.Enabled = Not gblnExperiment And gblnOutputStable
         cmdGenerateSOFA.Enabled = Not gblnExperiment And gblnOutputStable
         cmdShowPlots.Enabled = Not gblnExperiment And gblnOutputStable
+        cmdInitialCheck.Enabled = Not gblnExperiment And gblnOutputStable
 
         szX = "Start Experiment"
         If glExperimentStartItem >= 0 And glExperimentEndItem >= 0 Then
@@ -5712,14 +5713,19 @@ SubNotTracking:
 
     Private Sub cmdShowPlots_Click(sender As Object, e As EventArgs) Handles cmdShowPlots.Click
 
-        Dim settingsFile As String = "settings.AMTatARI"
-        Dim itemListFile As String = "itemlist.itl.csv"
         ' INISettings.WriteFile(STIM.WorkDir & "\" & settingsFile)
         ' ItemList.Save(STIM.WorkDir & "\" & itemListFile)
         cmdShowPlots.Enabled = False
-        ' Result.QuickPlotIR(settingsFile, itemListFile)
-        Result.InitialCheck(settingsFile, itemListFile, -15, 5) ' TODO: set the last two parameters via settings
+        Result.QuickPlotIR()
         cmdShowPlots.Enabled = True
+
+    End Sub
+
+    Private Sub cmdInitialCheck_Click(sender As Object, e As EventArgs) Handles cmdInitialCheck.Click
+
+        cmdInitialCheck.Enabled = False
+        Result.InitialCheck()
+        cmdInitialCheck.Enabled = True
 
     End Sub
 

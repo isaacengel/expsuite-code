@@ -62,7 +62,7 @@ Module Events
         frmMain.SetResultList("Plot Records;Impulse Response Toolbox;Post Processing Toolbox")
 
         ' define constants
-        ReDim gconstExp(10)
+        ReDim gconstExp(12)
         With gconstExp(0)
             .szName = "Tracker: In Range Period"
             .szDescription = "Sets the minimal period, in which the tracker sensor must remain in range."
