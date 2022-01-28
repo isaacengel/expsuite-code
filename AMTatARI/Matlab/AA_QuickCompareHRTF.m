@@ -13,18 +13,25 @@ end
 sofa1 = SOFAload(sofaFile1);
 sofa2 = SOFAload(sofaFile2);
 
-[h1,fs,az,el] = sofa2hrtf(sofa1);
-[h2,fs_,az_,el_] = sofa2hrtf(sofa2);
+[h1,fs_ref,az,el] = sofa2hrtf(sofa1);
+[h2,fs,az_,el_] = sofa2hrtf(sofa2);
 
-assert(fs==fs_,'sampling rate mismatch!')
+% Resample if needed
+if fs~=fs_ref
+    h1 = resample(h1,fs,fs_ref);
+end
+
 assert(all(abs(az-az_)<0.01) && all(abs(el-el_)<0.01),'directions mismatch!')
-clear fs_ az_ el_
+clear fs_ref az_ el_
+
+% Zeropad if needed
+nfftlen = 2^nextpow2(max(size(h1,1),size(h2,1)));
 
 % Check low-freq magnitude delta
 % dtf1 = getDTF(h1,fs);
 % dtf2 = getDTF(h2,fs);
-H1 = ffth(h1);
-H2 = ffth(h2);
+H1 = ffth(h1,nfftlen);
+H2 = ffth(h2,nfftlen);
 nfreqs = size(H1,1);
 f = linspace(0,fs/2,nfreqs);
 ind = f>freqRange(1) & f<freqRange(2);
