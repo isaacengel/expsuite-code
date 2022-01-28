@@ -72,7 +72,7 @@ Module Result
         ' Dim target_gain As Double = Val(gconstExp(11).varValue)
         ' Dim lr_dif As Double = Val(gconstExp(12).varValue)
         Dim str() As String = STIM.WorkDir.Split("\"c)
-        Dim szErr As String = STIM.Matlab("AA_InitialCheck('" & STIM.WorkDir & ");")
+        Dim szErr As String = STIM.Matlab("AA_InitialCheck('" & STIM.WorkDir & "');")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Initial check")
             frmMain.SetStatus("Error in the initial check. Check microphones/speakers.")
