@@ -22,7 +22,7 @@ Module Result
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
-        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "',settings.AMTatARI,itemlist.itl.csv,'" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & save3DTI & "," & targetFs & ");")
+        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & save3DTI & "," & targetFs & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Generate SOFA files")
             frmMain.SetStatus("Error(s) generating SOFA files")
