@@ -4,7 +4,7 @@ if ~exist('itdThresh','var')
     itdThresh = 200e-6; % itd delta threshold (s)
 end
 if ~exist('magThresh','var')
-    magThresh = 15; % low frequency magnitude threshold (dB)
+    magThresh = 3; % low frequency magnitude threshold (dB)
 end
 if ~exist('freqRange','var')
     freqRange = [200 1500]; % frequency range checked in the magnitude comparison
@@ -36,7 +36,7 @@ nfreqs = size(H1,1);
 f = linspace(0,fs/2,nfreqs);
 ind = f>freqRange(1) & f<freqRange(2);
 magD = abs( db(abs(H1(ind,:,:))) - db(abs(H2(ind,:,:))) );
-if any(abs(magD(:)) > magThresh)
+if mean(magD(:,:,1),'all') > magThresh || mean(magD(:,:,2),'all') > magThresh
     error('Big low-frequency magnitude mismatch!')
 end
 
