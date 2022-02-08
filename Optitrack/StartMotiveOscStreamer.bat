@@ -1,0 +1,3 @@
+@ECHO OFF
+ECHO Starting Motive OSC Streamer at address 127.0.0.1:10001...
+.\MotiveOscStreamer.exe .\14CamerasSetup.ttp 127.0.0.1 10001
