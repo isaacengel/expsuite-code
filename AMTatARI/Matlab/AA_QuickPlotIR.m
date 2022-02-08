@@ -89,7 +89,11 @@ for i=1:numAz
     row = indAz(i);
     az = mod(360-itemlist.Azimuth(row),360); % source az = - turntable az
     id = itemlist.Index(row);
-    el = str2num(itemlist.Elevation{row});
+    if ~iscell(itemlist.Elevation)
+        el = itemlist.Elevation;
+    else
+        el = str2num(itemlist.Elevation{row});
+    end
     numEl = numel(el);
     fig = figure('pos',[14.6000 49.8000 798.4000 638.4000]);
     % Deconvolve
