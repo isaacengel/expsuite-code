@@ -507,8 +507,8 @@ SubStart:
             End If
             szRight = Create.CreateRecPrefix(lRow)
 
-            ' check if tracker is working
-            If Not Tracker.IsTracking() Then
+            ' check if tracker is working (only when azimuth is numeric, i.e. not in headphone measurements)
+            If IsNumeric(szAzimuth) And Not Tracker.IsTracking() Then
                 Dim Msg, Title As Object
                 Msg = "No tracker data has been received yet. The tracker won't be used in the measurements. Do you want to continue?"
                 Dim Style As MsgBoxStyle = CType(vbYesNo + vbCritical + vbDefaultButton2, MsgBoxStyle)
@@ -521,8 +521,8 @@ SubStart:
                 End If
             End If
 
-            ' check if turntable is initialised
-            If Not gblnTTInitialized Then
+            ' check if turntable is initialised (only when azimuth is numeric, i.e. not in headphone measurements)
+            If IsNumeric(szAzimuth) And Not gblnTTInitialized Then
                 Dim Msg, Title As Object
                 Msg = "Turntable was not initialized. If you continue, it will be assumed that it is at 0 degrees (not recommended). Do you want to continue?"
                 Dim Style As MsgBoxStyle = CType(vbYesNo + vbCritical + vbDefaultButton2, MsgBoxStyle)

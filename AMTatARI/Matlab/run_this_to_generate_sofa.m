@@ -20,3 +20,4 @@ thisdir = cd;
 amt_start();
 cd(thisdir);
 AA_GenerateSOFA(name,'.','settings.AMTatARI','itemlist.itl.csv',reference_eq,doplots,saveRaw,saveEQ,saveEQmp,saveITD,save3DTI,targetFs)
+AA_GenerateHpEQ(name,'.','settings.AMTatARI','itemlist.itl.csv',doplots,targetFs)

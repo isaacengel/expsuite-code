@@ -19,7 +19,7 @@ end
 % Parse optional inputs
 p = inputParser;
 addParameter(p,'extralength',[250 250])
-addParameter(p,'indAz',1)
+addParameter(p,'indAz',6)
 parse(p,varargin{:})
 extralength_plot = p.Results.extralength;
 indAz = p.Results.indAz;

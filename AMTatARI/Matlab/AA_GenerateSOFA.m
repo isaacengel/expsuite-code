@@ -95,7 +95,7 @@ for i=1:numAz
         lat(j) = srcList(ind,3)*fs/1e6; % in samples
         % NOTE: in this version, the initial offset is counted as part of
         % the IR length. The end offset is not used.
-        ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1)); % NOTE: harcoded the -1000 for a test
+        ibeg=int32(swlen+(ISD(j))+lat(j)-irOffset(1));
         %iend=int32(swlen+(ISD(j))+lat(j)+irLen+irOffset(2)-1);
         iend = ibeg + irLen - 1;
         for ch=1:2
@@ -106,14 +106,23 @@ for i=1:numAz
     end
 end
 
-if size(h,2) < numAz*numEl
-    warning('Some azimuths were skipped because the recordings were not found.')
+if size(h,2) == 0
+    warning('No HRTF recordings were found.')
+    return
+elseif size(h,2) < numAz*numEl
+    warning('Some azimuths were skipped because the corresponding HRTF recordings were not found.')
 end
 
-%% Get directions into a nice format
-ndirs = size(h,2);
+%% Remove redundant directions
 az = pos(:,1);
 el = pos(:,2);
+[lat,pol] = sph2hor(az,el);
+[~,ind] = unique([lat,pol],'rows');
+ind = sort(ind);
+h = h(:,ind,:);
+az = az(ind);
+el = el(ind);
+ndirs = size(h,2);
 
 %% Window HRIRs
 
