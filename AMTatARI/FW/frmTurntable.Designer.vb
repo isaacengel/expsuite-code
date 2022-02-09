@@ -84,20 +84,20 @@
         Me._cmdMoveValue_9 = New System.Windows.Forms.Button()
         Me._cmdMoveValue_10 = New System.Windows.Forms.Button()
         Me._cmdMoveValue_11 = New System.Windows.Forms.Button()
+        Me._cmdMoveValue_12 = New System.Windows.Forms.Button()
+        Me._cmdMoveValue_13 = New System.Windows.Forms.Button()
         Me.sbStatus = New System.Windows.Forms.StatusStrip()
         Me.sbStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.cmdPullBrake = New System.Windows.Forms.Button()
         Me.cmdGet = New System.Windows.Forms.Button()
         Me.tmrBrake = New System.Windows.Forms.Timer(Me.components)
         Me.tmrDelayed = New System.Windows.Forms.Timer(Me.components)
-        Me.txtReqSpeed = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.cmdSetSpeed = New System.Windows.Forms.Button()
-        Me._cmdMoveValue_12 = New System.Windows.Forms.Button()
-        Me._cmdMoveValue_13 = New System.Windows.Forms.Button()
+        Me.numReqSpeed = New System.Windows.Forms.NumericUpDown()
         CType(Me.cmdMoveValue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.sbStatus.SuspendLayout()
+        CType(Me.numReqSpeed, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         '_cmdMoveValue_5
@@ -538,6 +538,40 @@
         Me._cmdMoveValue_11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me._cmdMoveValue_11.UseVisualStyleBackColor = False
         '
+        '_cmdMoveValue_12
+        '
+        Me._cmdMoveValue_12.BackColor = System.Drawing.SystemColors.Control
+        Me._cmdMoveValue_12.Cursor = System.Windows.Forms.Cursors.Default
+        Me._cmdMoveValue_12.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._cmdMoveValue_12.Image = CType(resources.GetObject("_cmdMoveValue_12.Image"), System.Drawing.Image)
+        Me._cmdMoveValue_12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmdMoveValue.SetIndex(Me._cmdMoveValue_12, CType(12, Short))
+        Me._cmdMoveValue_12.Location = New System.Drawing.Point(42, 139)
+        Me._cmdMoveValue_12.Name = "_cmdMoveValue_12"
+        Me._cmdMoveValue_12.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._cmdMoveValue_12.Size = New System.Drawing.Size(55, 27)
+        Me._cmdMoveValue_12.TabIndex = 39
+        Me._cmdMoveValue_12.Text = "+90°"
+        Me._cmdMoveValue_12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me._cmdMoveValue_12.UseVisualStyleBackColor = False
+        '
+        '_cmdMoveValue_13
+        '
+        Me._cmdMoveValue_13.BackColor = System.Drawing.SystemColors.Control
+        Me._cmdMoveValue_13.Cursor = System.Windows.Forms.Cursors.Default
+        Me._cmdMoveValue_13.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._cmdMoveValue_13.Image = CType(resources.GetObject("_cmdMoveValue_13.Image"), System.Drawing.Image)
+        Me._cmdMoveValue_13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cmdMoveValue.SetIndex(Me._cmdMoveValue_13, CType(13, Short))
+        Me._cmdMoveValue_13.Location = New System.Drawing.Point(233, 139)
+        Me._cmdMoveValue_13.Name = "_cmdMoveValue_13"
+        Me._cmdMoveValue_13.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me._cmdMoveValue_13.Size = New System.Drawing.Size(53, 27)
+        Me._cmdMoveValue_13.TabIndex = 40
+        Me._cmdMoveValue_13.Text = "-90°"
+        Me._cmdMoveValue_13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me._cmdMoveValue_13.UseVisualStyleBackColor = False
+        '
         'sbStatus
         '
         Me.sbStatus.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbStatusLabel})
@@ -586,21 +620,6 @@
         '
         Me.tmrDelayed.Interval = 1000
         '
-        'txtReqSpeed
-        '
-        Me.txtReqSpeed.AcceptsReturn = True
-        Me.txtReqSpeed.BackColor = System.Drawing.SystemColors.Window
-        Me.txtReqSpeed.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtReqSpeed.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReqSpeed.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtReqSpeed.Location = New System.Drawing.Point(127, 94)
-        Me.txtReqSpeed.MaxLength = 0
-        Me.txtReqSpeed.Name = "txtReqSpeed"
-        Me.txtReqSpeed.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtReqSpeed.Size = New System.Drawing.Size(66, 35)
-        Me.txtReqSpeed.TabIndex = 33
-        Me.txtReqSpeed.Text = "0"
-        '
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.SystemColors.Control
@@ -611,7 +630,7 @@
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label3.Size = New System.Drawing.Size(103, 13)
         Me.Label3.TabIndex = 34
-        Me.Label3.Text = "Speeed:"
+        Me.Label3.Text = "Speed:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'Label4
@@ -628,52 +647,18 @@
         Me.Label4.Text = "°/s"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'cmdSetSpeed
+        'numReqSpeed
         '
-        Me.cmdSetSpeed.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdSetSpeed.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdSetSpeed.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdSetSpeed.Location = New System.Drawing.Point(227, 99)
-        Me.cmdSetSpeed.Name = "cmdSetSpeed"
-        Me.cmdSetSpeed.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdSetSpeed.Size = New System.Drawing.Size(35, 27)
-        Me.cmdSetSpeed.TabIndex = 36
-        Me.cmdSetSpeed.Text = "Set"
-        Me.cmdSetSpeed.UseVisualStyleBackColor = False
-        '
-        '_cmdMoveValue_12
-        '
-        Me._cmdMoveValue_12.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdMoveValue_12.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdMoveValue_12.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdMoveValue_12.Image = CType(resources.GetObject("_cmdMoveValue_12.Image"), System.Drawing.Image)
-        Me.cmdMoveValue.SetIndex(Me._cmdMoveValue_12, CType(12, Short))
-        Me._cmdMoveValue_12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me._cmdMoveValue_12.Location = New System.Drawing.Point(42, 139)
-        Me._cmdMoveValue_12.Name = "_cmdMoveValue_12"
-        Me._cmdMoveValue_12.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdMoveValue_12.Size = New System.Drawing.Size(55, 27)
-        Me._cmdMoveValue_12.TabIndex = 39
-        Me._cmdMoveValue_12.Text = "+90°"
-        Me._cmdMoveValue_12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me._cmdMoveValue_12.UseVisualStyleBackColor = False
-        '
-        '_cmdMoveValue_13
-        '
-        Me._cmdMoveValue_13.BackColor = System.Drawing.SystemColors.Control
-        Me._cmdMoveValue_13.Cursor = System.Windows.Forms.Cursors.Default
-        Me._cmdMoveValue_13.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._cmdMoveValue_13.Image = CType(resources.GetObject("_cmdMoveValue_13.Image"), System.Drawing.Image)
-        Me.cmdMoveValue.SetIndex(Me._cmdMoveValue_13, CType(13, Short))
-        Me._cmdMoveValue_13.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me._cmdMoveValue_13.Location = New System.Drawing.Point(233, 139)
-        Me._cmdMoveValue_13.Name = "_cmdMoveValue_13"
-        Me._cmdMoveValue_13.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._cmdMoveValue_13.Size = New System.Drawing.Size(53, 27)
-        Me._cmdMoveValue_13.TabIndex = 40
-        Me._cmdMoveValue_13.Text = "-90°"
-        Me._cmdMoveValue_13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me._cmdMoveValue_13.UseVisualStyleBackColor = False
+        Me.numReqSpeed.DecimalPlaces = 1
+        Me.numReqSpeed.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.numReqSpeed.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.numReqSpeed.Location = New System.Drawing.Point(127, 94)
+        Me.numReqSpeed.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.numReqSpeed.Minimum = New Decimal(New Integer() {5, 0, 0, 65536})
+        Me.numReqSpeed.Name = "numReqSpeed"
+        Me.numReqSpeed.Size = New System.Drawing.Size(66, 35)
+        Me.numReqSpeed.TabIndex = 41
+        Me.numReqSpeed.Value = New Decimal(New Integer() {2, 0, 0, 0})
         '
         'frmTurntable
         '
@@ -682,12 +667,11 @@
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(329, 341)
+        Me.Controls.Add(Me.numReqSpeed)
         Me.Controls.Add(Me._cmdMoveValue_13)
         Me.Controls.Add(Me._cmdMoveValue_12)
         Me.Controls.Add(Me._cmdMoveValue_11)
         Me.Controls.Add(Me._cmdMoveValue_10)
-        Me.Controls.Add(Me.txtReqSpeed)
-        Me.Controls.Add(Me.cmdSetSpeed)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me._cmdMoveValue_7)
@@ -724,16 +708,17 @@
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Location = New System.Drawing.Point(3, 22)
-        Me.MaximizeBox = false
-        Me.MinimizeBox = false
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmTurntable"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.ShowInTaskbar = false
+        Me.ShowInTaskbar = False
         Me.Text = "Turntable"
-        CType(Me.cmdMoveValue,System.ComponentModel.ISupportInitialize).EndInit
-        Me.sbStatus.ResumeLayout(false)
-        Me.sbStatus.PerformLayout
-        Me.ResumeLayout(false)
+        CType(Me.cmdMoveValue, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.sbStatus.ResumeLayout(False)
+        Me.sbStatus.PerformLayout()
+        CType(Me.numReqSpeed, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
         Me.PerformLayout
 
 End Sub
@@ -747,13 +732,12 @@ End Sub
     Public WithEvents _cmdMoveValue_8 As Button
     Public WithEvents _cmdMoveValue_9 As Button
     Friend WithEvents tmrDelayed As Timer
-    Public WithEvents txtReqSpeed As TextBox
     Public WithEvents Label3 As Label
     Public WithEvents Label4 As Label
-    Public WithEvents cmdSetSpeed As Button
     Public WithEvents _cmdMoveValue_10 As Button
     Public WithEvents _cmdMoveValue_11 As Button
     Public WithEvents _cmdMoveValue_12 As Button
     Public WithEvents _cmdMoveValue_13 As Button
+    Friend WithEvents numReqSpeed As NumericUpDown
 #End Region
 End Class

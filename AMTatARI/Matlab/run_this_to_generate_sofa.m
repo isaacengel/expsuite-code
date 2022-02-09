@@ -13,7 +13,7 @@ saveITD  = 0;       % Save time-aligned HRTF in SOFA format (0,1)
 save3DTI = 0;       % Save time-aligned HRTF in .3dti format (0,1)
 targetFs = 96000;   % Sampling frequency (Hz)
 
-reference_eq = '../reference_eq.mat'; % you usually don't want to change this
+reference_eq = '../Reference measurements/reference_eq.mat'; % you usually don't want to change this
 
 %% Run
 thisdir = cd;

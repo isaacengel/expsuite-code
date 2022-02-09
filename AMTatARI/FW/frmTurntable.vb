@@ -83,7 +83,9 @@ Friend Class frmTurntable
             End If
         Next
         TextBoxState(txtReqPos, False)
-        TextBoxState(txtReqSpeed, False)
+        ' TextBoxState(txtReqSpeed, False)
+        numReqSpeed.Enabled = False
+
     End Sub
 
     Private Sub UIReady()
@@ -103,7 +105,8 @@ Friend Class frmTurntable
             End If
         Next
         TextBoxState(txtReqPos, True)
-        TextBoxState(txtReqSpeed, True)
+        ' TextBoxState(txtReqSpeed, True)
+        numReqSpeed.Enabled = True
 
     End Sub
 
@@ -507,7 +510,8 @@ Skipped:
                 _cmdMoveValue_9.Visible = False ' move 360° cw
                 cmdPullBrake.Visible = False
                 cmdGet.Visible = False
-                txtReqSpeed.Enabled = False
+                ' txtReqSpeed.Enabled = False
+                numReqSpeed.Enabled = False
                 Me.Visible = True
                 Me.SetBounds(frmMain.Left, frmMain.Top, 0, 0, Windows.Forms.BoundsSpecified.X Or Windows.Forms.BoundsSpecified.Y)
                 ' reset if not initialized
@@ -564,7 +568,8 @@ Skipped:
                         szErr = MoveToAngle()
                     End If
                 End If
-                txtReqSpeed.Text = TStr(ttSpeed)
+                ' txtReqSpeed.Text = TStr(ttSpeed)
+                numReqSpeed.Value = CDec(ttSpeed)
                 'tmrRefresh.Enabled = True
 
         End Select
@@ -1166,34 +1171,21 @@ SubError:
 
         Debug.Print("Delayed timer triggered.")
         frmMain.SetStatus("Delayed timer triggered.") 'remove later
-       Turntable. DelayedMovementCommand
+        Turntable.DelayedMovementCommand
 
     End Sub
 
-    Private Sub cmdSetSpeed_Click(sender As Object, e As EventArgs) Handles cmdSetSpeed.Click
-        If Not IsNumeric(txtReqSpeed.Text) Then MsgBox("Input a valid numeric value between 0.5°/s and 4°/s",
-                                MsgBoxStyle.Critical, "Set speed") : Return
-        Dim sngX As Double = Val(txtReqSpeed.Text)
-        If sngX >= 0.5 And sngX <= 4 Then
-            Select Case glTTMode
+    Private Sub numReqSpeed_ValueChanged(sender As Object, e As EventArgs) Handles numReqSpeed.ValueChanged
 
-                Case 3 'Imperial
-                    ttSpeed = sngX
-                    txtReqSpeed.Text = TStr(ttSpeed)
-                    sbStatusLabel.Text = "Speed set to " & txtReqSpeed.Text & "°/s"
-
-                    If sngX > 2 Then
-                        MsgBox("Speeds higher than 2°/s might lead to inaccurate movements. They are fine to set the initial position of the turntable but be careful when using them during the actual measurements.", MsgBoxStyle.Information, "Set angle")
-                    End If
-
-            End Select
-
+        Dim sngX As Double = CDbl(numReqSpeed.Value)
+        If sngX >= 0.5 And sngX <= 5 Then
+            ttSpeed = sngX
+            sbStatusLabel.Text = "Speed set to " & TStr(ttSpeed) & "°/s"
         Else
-            MsgBox("Valid values: 0.5°/s to 4°/s", MsgBoxStyle.Critical, "Set speed")
-            txtReqSpeed.Text = TStr(ttSpeed)
+            MsgBox("Valid values: 0.5°/s to 5°/s", MsgBoxStyle.Critical, "Set speed")
+            numReqSpeed.Value = CDec(ttSpeed)
         End If
-
         UIReady()
-    End Sub
 
+    End Sub
 End Class

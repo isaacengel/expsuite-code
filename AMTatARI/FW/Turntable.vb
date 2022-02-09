@@ -588,10 +588,10 @@ SubError:
                 If lStep = 0 Then Return "" 'no movement necessary
 
                 ' set speed
-                Dim ttPeriod As Double = Math.Round(400 / ttSpeed)
+                ' Dim ttPeriod As Double = Math.Round(400 / ttSpeed)
 
                 ' prepare packet for speed
-                Dim bytBuf1() As Byte = OSC.PreparePacket("/Speed", {CInt(ttPeriod)})
+                Dim bytBuf1() As Byte = OSC.PreparePacket("/Speed", {ttSpeed}) ' {CInt(ttPeriod)})
 
                 ' send packet speed
                 Try

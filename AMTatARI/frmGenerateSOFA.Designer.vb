@@ -116,13 +116,13 @@ Partial Class frmGenerateSOFA
         '
         Me.TextBoxRef.Location = New System.Drawing.Point(113, 94)
         Me.TextBoxRef.Name = "TextBoxRef"
-        Me.TextBoxRef.Size = New System.Drawing.Size(328, 20)
+        Me.TextBoxRef.Size = New System.Drawing.Size(433, 20)
         Me.TextBoxRef.TabIndex = 8
-        Me.TextBoxRef.Text = "C:\Users\Admin\Documents\AMTatARI files\reference_eq.mat"
+        Me.TextBoxRef.Text = "C:\Users\Admin\Documents\AMTatARI files\Reference measurements\reference_eq.mat"
         '
         'ButtonBrowseRef
         '
-        Me.ButtonBrowseRef.Location = New System.Drawing.Point(448, 92)
+        Me.ButtonBrowseRef.Location = New System.Drawing.Point(552, 92)
         Me.ButtonBrowseRef.Name = "ButtonBrowseRef"
         Me.ButtonBrowseRef.Size = New System.Drawing.Size(31, 23)
         Me.ButtonBrowseRef.TabIndex = 9
@@ -204,7 +204,7 @@ Partial Class frmGenerateSOFA
         Me.GroupBox2.Controls.Add(Me.TextBoxRef)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 50)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(496, 171)
+        Me.GroupBox2.Size = New System.Drawing.Size(589, 171)
         Me.GroupBox2.TabIndex = 16
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Formats to export"
@@ -235,7 +235,7 @@ Partial Class frmGenerateSOFA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(520, 378)
+        Me.ClientSize = New System.Drawing.Size(629, 378)
         Me.Controls.Add(Me.CheckBoxFinalCheck)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
