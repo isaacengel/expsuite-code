@@ -116,6 +116,27 @@ end
 % Apply gain
 h = h.*db2mag(gain);
 
+%% Check that IR peak has a healthy SNR above noise floor
+SNRthresh = 60; % TODO; pass as parameter
+pad = round(0.0005 * fs); % look for the floor at 0.5ms before onset (empirically set)
+[peakL,onsL] = max(db(abs(h(:,:,1))),[],1);
+[peakR,onsR] = max(db(abs(h(:,:,2))),[],1);
+floorL = mean(db(abs(h(1:onsL-pad,:,1))),1);
+floorR = mean(db(abs(h(1:onsR-pad,:,2))),1);
+if any((peakL-floorL) < SNRthresh) || any((peakR-floorR) < SNRthresh)
+    figure('pos',[12 91 1065 420])
+    subplot(1,2,1), dummyplot = plot([nan nan],[nan nan],'k--','LineWidth',2); hold on
+    AKp(h(1:round(0.003*fs),:,1),'et2d','fs',fs), hold on
+    plot([0,3],[mean(peakL-SNRthresh),mean(peakL-SNRthresh)],'k--','LineWidth',2)
+    title('Left'), legend(dummyplot,{'Noise floor should be below this'},'location','se')
+    subplot(1,2,2), dummyplot = plot([nan nan],[nan nan],'k--','LineWidth',2); hold on
+    AKp(h(1:round(0.003*fs),:,2),'et2d','fs',fs), hold on
+    plot([0,3],[mean(peakR-SNRthresh),mean(peakR-SNRthresh)],'k--','LineWidth',2)
+    title('Right'), legend(dummyplot,{'Noise floor should be below this'},'location','se')
+    sgtitle('HRIR error: high noise before the onset!')
+    error('The noise floor before the onset is very high (see figure). Please check the microphones')
+end
+
 %% Remove redundant directions
 az = pos(:,1);
 el = pos(:,2);
@@ -134,7 +155,7 @@ hwin = win.*h(1:irLen,:,:);
 nrg = sum(abs(h(:)).^2);
 nrgwin = sum(abs(hwin(:)).^2);
 nrgloss = 1-nrgwin/nrg;
-if nrgloss>0.05 % TODO: improve
+if nrgloss>0.02 % TODO: improve
     warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
 end
 
@@ -158,7 +179,7 @@ if saveEQ
     for i=1:numel(ref_el) 
         ind = ref_el(i) == el;
         count = count + sum(ind);
-        tmp = iffth( ffth(h(:,ind,:),nfft) .* ffth(ref_eq(:,i,:),nfft) );
+        tmp = iffth( ffth(hwin(:,ind,:),nfft) .* ffth(ref_eq(:,i,:),nfft) );
         tmp = circshift(tmp,-ref_delay+safety);
         heq(:,ind,:) = win.*tmp(1:irLen,:,:);
 
@@ -168,13 +189,13 @@ if saveEQ
         nrgloss = 1-nrgwin/nrg;
         if nrgloss>0.02
             show_warning = 1;
-%             warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
-%             figure
-%             subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
-%             subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
-%             subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
-%             subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
-%             sgtitle(sprintf('el=%d',ref_el(i)))
+            warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
+            figure
+            subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
+            subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
+            subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
+            subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
+            sgtitle(sprintf('el=%d',ref_el(i)))
         end
     end
     if show_warning == 1
@@ -201,27 +222,27 @@ if saveEQmp
     for i=1:numel(ref_el) 
         ind = ref_el(i) == el;
         count = count + sum(ind);
-        tmp = iffth( ffth(h(:,ind,:),nfft) .* ffth(ref_eqmp(:,i,:),nfft) );
+        tmp = iffth( ffth(hwin(:,ind,:),nfft) .* ffth(ref_eqmp(:,i,:),nfft) );
         heqmp(:,ind,:) = win.*tmp(1:irLen,:,:);
 
         % Check energy loss
         nrg = sum(abs(tmp).^2,'all');
         nrgwin = sum(abs(heq(:,ind,:)).^2,'all');
         nrgloss = 1-nrgwin/nrg;
-        if nrgloss>0.05
+        if nrgloss>0.02
             show_warning = 1;
-%             warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
-%             figure
-%             subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
-%             subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
-%             subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
-%             subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
-%             sgtitle(sprintf('el=%d',ref_el(i)))
+            warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
+            figure
+            subplot(2,2,1), AKp(tmp(:,:,1),'et2d','fs',fs), title('Before window L')
+            subplot(2,2,2), AKp(tmp(:,:,2),'et2d','fs',fs), title('Before window R')
+            subplot(2,2,3), AKp(heq(:,ind,1),'et2d','fs',fs), title('After window L')
+            subplot(2,2,4), AKp(heq(:,ind,2),'et2d','fs',fs), title('After window R')
+            sgtitle(sprintf('el=%d',ref_el(i)))
         end
     end  
     
     if show_warning == 1
-        warning('More than 5% of the HRTF energy was lost when windowing after min-phase equalisation. Maybe something went wrong.')
+        warning('More than 2% of the HRTF energy was lost when windowing after min-phase equalisation. Maybe something went wrong.')
     end
     
 end
@@ -264,7 +285,7 @@ if saveITD
 
     pad = round(0.001*fs); % 1ms padding (empirically set)
 %     [~,onset_seconds] = itdestimator(permute(h,[2,3,1]),'MaxIACCe','fs',fs);
-    [~,onset_seconds] = itdestimator(permute(h,[2,3,1]),'fs',fs,'threshlvl',-10);
+    [~,delay_seconds] = itdestimator(permute(h,[2,3,1]),'fs',fs,'threshlvl',-10);
 
     hAlign = zeros(size(h));
     hwinAlign = zeros(size(hwin));
@@ -275,21 +296,21 @@ if saveITD
         heqmpAlign = zeros(size(heqmp));
     end
     
-    onset_samples = round(onset_seconds*fs);
+    delay = round(delay_seconds*fs);
+    delay = delay - pad;
     for i=1:ndirs
         for ch=1:2
-            shiftlen = pad-onset_samples(i,ch);
-            hAlign(:,i,ch) = circshift(h(:,i,ch),shiftlen,1);
-            hAlign(end+shiftlen+1:end,i,ch) = 0;
-            hwinAlign(:,i,ch) = circshift(hwin(:,i,ch),shiftlen,1);
-            hwinAlign(end+shiftlen+1:end,i,ch) = 0;
+            hAlign(:,i,ch) = circshift(h(:,i,ch),-delay(i,ch),1);
+            hAlign(end-delay(i,ch)+1:end,i,ch) = 0;
+            hwinAlign(:,i,ch) = circshift(hwin(:,i,ch),-delay(i,ch),1);
+            hwinAlign(end-delay(i,ch)+1:end,i,ch) = 0;
             if saveEQ
-                heqAlign(:,i,ch) = circshift(heq(:,i,ch),shiftlen,1);
-                heqAlign(end+shiftlen+1:end,i,ch) = 0;
+                heqAlign(:,i,ch) = circshift(heq(:,i,ch),-delay(i,ch),1);
+                heqAlign(end-delay(i,ch)+1:end,i,ch) = 0;
             end
             if saveEQmp
-                heqmpAlign(:,i,ch) = circshift(heqmp(:,i,ch),shiftlen,1);
-                heqmpAlign(end+shiftlen+1:end,i,ch) = 0;
+                heqmpAlign(:,i,ch) = circshift(heqmp(:,i,ch),-delay(i,ch),1);
+                heqmpAlign(end-delay(i,ch)+1:end,i,ch) = 0;
             end
         end
     end
@@ -301,7 +322,6 @@ end
 meta.pos = pos;
 stimPar.Version = '3.0.1'; % copied from AA_hM
 if saveITD
-    meta.onset_seconds = onset_seconds;
     scriptPath = which('AA_GenerateSOFA');
     exePath = ['"',scriptPath(1:end-17),'HRTF_SOFATo3DTI.exe"'];
 end
@@ -310,6 +330,7 @@ for i=1:numel(targetFs)
 
     tFs = targetFs(i);
     stimPar.SamplingRate = tFs;
+    delay_re = round(delay*tFs/fs);
     
     tFsdir = sprintf('%s/HRTF/%0.2dkHz',workdir,round(tFs/1000));
     if ~isfolder(tFsdir)
@@ -325,6 +346,7 @@ for i=1:numel(targetFs)
         end
         % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
+        meta.delay = [];
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Raw_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
             figure('pos',[10.6000 63.4000 695.2000 284.8000])
@@ -353,6 +375,7 @@ for i=1:numel(targetFs)
         end
         % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
+        meta.delay = delay_re;
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Raw_NoITD_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         % Save 3DTI
         system( sprintf('%s -i "%s/%s_Raw_NoITD_%0.2dkHz.sofa" -o "%s/%s_Raw_NoITD_%0.2dkHz.3dti-hrtf"',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
@@ -386,6 +409,7 @@ for i=1:numel(targetFs)
         h_re = [h_re;zeros(hlen-size(h_re,1),size(h_re,2),size(h_re,3))];
         % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
+        meta.delay = [];
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Windowed_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
             figure('pos',[10.6000 63.4000 695.2000 284.8000])
@@ -417,6 +441,7 @@ for i=1:numel(targetFs)
         h_re = [h_re;zeros(hlen-size(h_re,1),size(h_re,2),size(h_re,3))];
         % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
+        meta.delay = delay_re;
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Windowed_NoITD_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         % Save 3DTI
         system( sprintf('%s -i "%s/%s_Windowed_NoITD_%0.2dkHz.sofa" -o "%s/%s_Windowed_NoITD_%0.2dkHz.3dti-hrtf"',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
@@ -450,6 +475,7 @@ for i=1:numel(targetFs)
         h_re = [h_re;zeros(hlen-size(h_re,1),size(h_re,2),size(h_re,3))];
         % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
+        meta.delay = [];
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_FreeFieldComp_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
             figure('pos',[10.6000 63.4000 695.2000 284.8000])
@@ -481,6 +507,7 @@ for i=1:numel(targetFs)
         h_re = [h_re;zeros(hlen-size(h_re,1),size(h_re,2),size(h_re,3))];
         % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
+        meta.delay = delay_re;
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_FreeFieldComp_NoITD_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         % Save 3DTI
         system( sprintf('%s -i "%s/%s_FreeFieldComp_NoITD_%0.2dkHz.sofa" -o "%s/%s_FreeFieldComp_NoITD_%0.2dkHz.3dti-hrtf"',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
@@ -514,6 +541,7 @@ for i=1:numel(targetFs)
         h_re = [h_re;zeros(hlen-size(h_re,1),size(h_re,2),size(h_re,3))];
         % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
+        meta.delay = [];
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_FreeFieldCompMinPhase_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         if doplots
             figure('pos',[10.6000 63.4000 695.2000 284.8000])
@@ -545,6 +573,7 @@ for i=1:numel(targetFs)
         h_re = [h_re;zeros(hlen-size(h_re,1),size(h_re,2),size(h_re,3))];
         % Save SOFA
         Obj.Data.IR=shiftdim(h_re,1);
+        meta.delay = delay_re;
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         % Save 3DTI
         system( sprintf('%s -i "%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz.sofa" -o "%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz.3dti-hrtf"',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );

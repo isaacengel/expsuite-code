@@ -192,6 +192,7 @@ if doplots
     end
     sgtitle('Headphone response (all measurements + average)')
     saveas(gcf,sprintf('%s/%s_avg_headphone_response.png',figdir,sofaname))
+    close(gcf)
 end
       
 % Get HpEQ filter (minimum phase) for each ear
@@ -242,6 +243,7 @@ if doplots
     end
     sgtitle('Headphone response before and after EQ')
     saveas(gcf,sprintf('%s/%s_headphone_EQ.png',figdir,sofaname))
+    close(gcf)
 end
     
 eq_original = eq;

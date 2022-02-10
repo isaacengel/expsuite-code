@@ -96,7 +96,7 @@ nrgL = sum(h(:,:,1).^2,1);
 nrgR = sum(h(:,:,2).^2,1);
 dBdif = abs(10*log10(nrgL./nrgR));
 dBdif = mean(dBdif);
-threshold = 1; % TODO: pass as a parameter
+threshold = 2; % TODO: pass as a parameter
 if dBdif > threshold
     figure
     subplot(1,2,1),AKp(h(:,:,1),'et2d','fs',fs), title('Left')
@@ -113,10 +113,16 @@ pad = round(0.0005 * fs); % look for the floor at 0.5ms before onset (empiricall
 floorL = mean(db(abs(h(1:onsL-pad,:,1))),1);
 floorR = mean(db(abs(h(1:onsR-pad,:,2))),1);
 if any((peakL-floorL) < SNRthresh) || any((peakR-floorR) < SNRthresh)
-    figure
-    subplot(1,2,1),AKp(h(:,:,1),'et2d','fs',fs), title('Left')
-    subplot(1,2,2),AKp(h(:,:,2),'et2d','fs',fs), title('Right')
-    sgtitle('Headphone Impulse Responses: high noise error!')
+    figure('pos',[12 91 1065 420])
+    subplot(1,2,1), dummyplot = plot([nan nan],[nan nan],'k--','LineWidth',2); hold on
+    AKp(h(1:round(0.003*fs),:,1),'et2d','fs',fs), hold on
+    plot([0,3],[mean(peakL-SNRthresh),mean(peakL-SNRthresh)],'k--','LineWidth',2)
+    title('Left'), legend(dummyplot,{'Noise floor should be below this'},'location','se')
+    subplot(1,2,2), dummyplot = plot([nan nan],[nan nan],'k--','LineWidth',2); hold on
+    AKp(h(1:round(0.003*fs),:,2),'et2d','fs',fs), hold on
+    plot([0,3],[mean(peakR-SNRthresh),mean(peakR-SNRthresh)],'k--','LineWidth',2)
+    title('Right'), legend(dummyplot,{'Noise floor should be below this'},'location','se')
+    sgtitle('Headphone Impulse Responses error: high noise before the onset!')
     error('The noise floor before the onset is very high (see figure). Please check the microphones')
 end
 

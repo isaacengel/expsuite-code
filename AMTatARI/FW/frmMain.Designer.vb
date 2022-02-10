@@ -134,10 +134,10 @@
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.cmdItemUndo = New System.Windows.Forms.Button()
         Me.cmdItemMoveDown = New System.Windows.Forms.Button()
@@ -334,6 +334,7 @@
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblItemList = New System.Windows.Forms.Label()
         Me.tmrTracker = New System.Windows.Forms.Timer(Me.components)
+        Me.cmdSanityCheck = New System.Windows.Forms.Button()
         Me.popupMenuStrip.SuspendLayout()
         Me.tbToolBar.SuspendLayout()
         Me.sbStatusBar.SuspendLayout()
@@ -1763,6 +1764,7 @@
         '
         'PanelBottom
         '
+        Me.PanelBottom.Controls.Add(Me.cmdSanityCheck)
         Me.PanelBottom.Controls.Add(Me.cmdInitialCheck)
         Me.PanelBottom.Controls.Add(Me.cmdShowPlots)
         Me.PanelBottom.Controls.Add(Me.cmdGenerateSOFA)
@@ -1831,10 +1833,10 @@
         Me.cmdGenerateSOFA.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdGenerateSOFA.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdGenerateSOFA.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdGenerateSOFA.Location = New System.Drawing.Point(740, 125)
+        Me.cmdGenerateSOFA.Location = New System.Drawing.Point(740, 161)
         Me.cmdGenerateSOFA.Name = "cmdGenerateSOFA"
         Me.cmdGenerateSOFA.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdGenerateSOFA.Size = New System.Drawing.Size(70, 71)
+        Me.cmdGenerateSOFA.Size = New System.Drawing.Size(70, 35)
         Me.cmdGenerateSOFA.TabIndex = 61
         Me.cmdGenerateSOFA.Text = "Generate SOFA files"
         Me.cmdGenerateSOFA.UseVisualStyleBackColor = False
@@ -1863,9 +1865,9 @@
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.cmdTTShow)
         Me.GroupBox2.Location = New System.Drawing.Point(162, 128)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(184, 79)
         Me.GroupBox2.TabIndex = 59
         Me.GroupBox2.TabStop = False
@@ -1874,7 +1876,7 @@
         'labelTTaz
         '
         Me.labelTTaz.Location = New System.Drawing.Point(142, 19)
-        Me.labelTTaz.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelTTaz.Margin = New System.Windows.Forms.Padding(2)
         Me.labelTTaz.Name = "labelTTaz"
         Me.labelTTaz.ReadOnly = True
         Me.labelTTaz.Size = New System.Drawing.Size(37, 20)
@@ -1896,7 +1898,7 @@
         '
         Me.labelTTcalibrated.BackColor = System.Drawing.Color.Red
         Me.labelTTcalibrated.Location = New System.Drawing.Point(53, 19)
-        Me.labelTTcalibrated.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelTTcalibrated.Margin = New System.Windows.Forms.Padding(2)
         Me.labelTTcalibrated.Name = "labelTTcalibrated"
         Me.labelTTcalibrated.ReadOnly = True
         Me.labelTTcalibrated.Size = New System.Drawing.Size(37, 20)
@@ -1934,9 +1936,9 @@
         Me.GroupBox1.Controls.Add(Me.labelYaw)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(161, 11)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(186, 113)
         Me.GroupBox1.TabIndex = 58
         Me.GroupBox1.TabStop = False
@@ -1946,7 +1948,7 @@
         '
         Me.labelNcams.BackColor = System.Drawing.Color.Red
         Me.labelNcams.Location = New System.Drawing.Point(144, 20)
-        Me.labelNcams.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelNcams.Margin = New System.Windows.Forms.Padding(2)
         Me.labelNcams.Name = "labelNcams"
         Me.labelNcams.ReadOnly = True
         Me.labelNcams.Size = New System.Drawing.Size(37, 20)
@@ -1970,7 +1972,7 @@
         Me.labelTrackingYesNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelTrackingYesNo.ForeColor = System.Drawing.SystemColors.WindowText
         Me.labelTrackingYesNo.Location = New System.Drawing.Point(55, 20)
-        Me.labelTrackingYesNo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelTrackingYesNo.Margin = New System.Windows.Forms.Padding(2)
         Me.labelTrackingYesNo.Name = "labelTrackingYesNo"
         Me.labelTrackingYesNo.ReadOnly = True
         Me.labelTrackingYesNo.Size = New System.Drawing.Size(37, 19)
@@ -1991,7 +1993,7 @@
         'labelZ
         '
         Me.labelZ.Location = New System.Drawing.Point(144, 88)
-        Me.labelZ.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelZ.Margin = New System.Windows.Forms.Padding(2)
         Me.labelZ.Name = "labelZ"
         Me.labelZ.ReadOnly = True
         Me.labelZ.Size = New System.Drawing.Size(37, 20)
@@ -2012,7 +2014,7 @@
         'labelY
         '
         Me.labelY.Location = New System.Drawing.Point(144, 65)
-        Me.labelY.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelY.Margin = New System.Windows.Forms.Padding(2)
         Me.labelY.Name = "labelY"
         Me.labelY.ReadOnly = True
         Me.labelY.Size = New System.Drawing.Size(37, 20)
@@ -2033,7 +2035,7 @@
         'labelX
         '
         Me.labelX.Location = New System.Drawing.Point(144, 43)
-        Me.labelX.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelX.Margin = New System.Windows.Forms.Padding(2)
         Me.labelX.Name = "labelX"
         Me.labelX.ReadOnly = True
         Me.labelX.Size = New System.Drawing.Size(37, 20)
@@ -2054,7 +2056,7 @@
         'labelRoll
         '
         Me.labelRoll.Location = New System.Drawing.Point(55, 88)
-        Me.labelRoll.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelRoll.Margin = New System.Windows.Forms.Padding(2)
         Me.labelRoll.Name = "labelRoll"
         Me.labelRoll.ReadOnly = True
         Me.labelRoll.Size = New System.Drawing.Size(37, 20)
@@ -2075,7 +2077,7 @@
         'labelPitch
         '
         Me.labelPitch.Location = New System.Drawing.Point(55, 65)
-        Me.labelPitch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelPitch.Margin = New System.Windows.Forms.Padding(2)
         Me.labelPitch.Name = "labelPitch"
         Me.labelPitch.ReadOnly = True
         Me.labelPitch.Size = New System.Drawing.Size(37, 20)
@@ -2096,7 +2098,7 @@
         'labelYaw
         '
         Me.labelYaw.Location = New System.Drawing.Point(55, 42)
-        Me.labelYaw.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.labelYaw.Margin = New System.Windows.Forms.Padding(2)
         Me.labelYaw.Name = "labelYaw"
         Me.labelYaw.ReadOnly = True
         Me.labelYaw.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
@@ -2192,40 +2194,40 @@
         Me.dgvItemList.AllowUserToDeleteRows = False
         Me.dgvItemList.AllowUserToOrderColumns = True
         Me.dgvItemList.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.LightYellow
-        Me.dgvItemList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightYellow
+        Me.dgvItemList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvItemList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvItemList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvItemList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvItemList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvItemList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvItemList.Enabled = False
         Me.dgvItemList.Location = New System.Drawing.Point(0, 57)
         Me.dgvItemList.Name = "dgvItemList"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvItemList.RowHeadersWidth = 30
         Me.dgvItemList.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvItemList.Size = New System.Drawing.Size(815, 213)
@@ -2288,6 +2290,21 @@
         '
         Me.tmrTracker.Enabled = True
         Me.tmrTracker.Interval = 200
+        '
+        'cmdSanityCheck
+        '
+        Me.cmdSanityCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdSanityCheck.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdSanityCheck.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdSanityCheck.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdSanityCheck.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.cmdSanityCheck.Location = New System.Drawing.Point(740, 125)
+        Me.cmdSanityCheck.Name = "cmdSanityCheck"
+        Me.cmdSanityCheck.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdSanityCheck.Size = New System.Drawing.Size(70, 35)
+        Me.cmdSanityCheck.TabIndex = 64
+        Me.cmdSanityCheck.Text = "General check"
+        Me.cmdSanityCheck.UseVisualStyleBackColor = False
         '
         'frmMain
         '
@@ -2417,5 +2434,6 @@
     Friend WithEvents tmrTracker As Timer
     Public WithEvents cmdShowPlots As Button
     Public WithEvents cmdInitialCheck As Button
+    Public WithEvents cmdSanityCheck As Button
 #End Region
 End Class

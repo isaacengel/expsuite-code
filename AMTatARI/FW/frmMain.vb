@@ -5729,6 +5729,14 @@ SubNotTracking:
 
     End Sub
 
+    Private Sub cmdSanityCheck_Click(sender As Object, e As EventArgs) Handles cmdSanityCheck.Click
+
+        cmdInitialCheck.Enabled = False
+        Result.SanityCheck()
+        cmdInitialCheck.Enabled = True
+
+    End Sub
+
     'Private Sub dgvItemList_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dgvItemList.KeyPress
 
     '             'asdasd

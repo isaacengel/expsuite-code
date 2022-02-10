@@ -38,6 +38,10 @@ Obj.Data.IR = ObjSource.Data.IR;
 Obj.Data.SamplingRate = stimPar.SamplingRate;
 Obj.Data.SamplingRate_Units='Hertz';
 
+if isfield(meta,'delay') && ~isempty(meta.delay)
+    Obj.Data.Delay = meta.delay;
+end
+
 %% Fill with attributes
 if isfield(stimPar, 'SubjectID'), Obj.GLOBAL_ListenerShortName = stimPar.SubjectID; end
 % if isfield(stimPar,'Application')

@@ -22,6 +22,7 @@ Module Result
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
+        ' Generate SOFA
         Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveWin & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & targetFs & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Generate SOFA files")
@@ -29,8 +30,17 @@ Module Result
         Else
             MsgBox("Successfully saved SOFA files!", MsgBoxStyle.Information, "Generate SOFA files")
         End If
+        ' Generate HPEQ
+        szErr = STIM.Matlab("AA_GenerateHPEQ('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv'," & doPlots & "," & targetFs & ");")
+        If Len(szErr) > 0 Then
+            MsgBox(szErr, MsgBoxStyle.Critical, "Generate HPEQ files")
+            frmMain.SetStatus("Error(s) generating HPEQ files")
+        Else
+            MsgBox("Successfully saved HPEQ files!", MsgBoxStyle.Information, "Generate HPEQ files")
+        End If
+        ' Final check
         If finalCheck <> 0 Then
-            szErr = STIM.Matlab("AA_QuickCompareHRTF('Lorenzo_20211216_First_Raw_96kHz.sofa','" & sofaname & "_Raw_96kHz.sofa'," & itdThresh & "," & magThresh & "," & freqRange & ");")
+            szErr = STIM.Matlab("AA_QuickCompareHRTF('P0001_Raw_96kHz.sofa','HRTF\96kHz\" & sofaname & "_Raw_96kHz.sofa'," & itdThresh & "," & magThresh & "," & freqRange & ");")
             If Len(szErr) > 0 Then
                 MsgBox(szErr, MsgBoxStyle.Critical, "Final SOFA check")
                 frmMain.SetStatus("Error(s) checking SOFA file")
@@ -88,6 +98,23 @@ Module Result
         Else
             MsgBox("Initial check successful!", MsgBoxStyle.Information, "Initial check")
         End If
+        frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
+
+    End Sub
+
+    Public Sub SanityCheck()
+
+        If Not gblnOutputStable Then
+            MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+        Dim StartTime As DateTime = System.DateTime.Now 'calculation time
+        STIM.Matlab("AA_SOFAstart;")
+        STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
+        ' Dim target_gain As Double = Val(gconstExp(11).varValue)
+        ' Dim lr_dif As Double = Val(gconstExp(12).varValue)
+        Dim str() As String = STIM.WorkDir.Split("\"c)
+        Dim szErr As String = STIM.Matlab("AA_SanityCheck('" & STIM.WorkDir & "');")
         frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
 
     End Sub
