@@ -75,7 +75,7 @@ for i=1:numAz
             continue
         end
         [x,fs_] = audioread(file); % read recording
-        if max(abs(x(:))) >= 1
+        if max(abs(x(:))) >= 0.99
             warning('The microphone clipped for Az=%d! Consider reducing the microphone gain and repeating the measurement.',itemlist.Azimuth(row))
         end
         assert(fs==fs_,'Sampling frequency mismatch!')
@@ -134,7 +134,7 @@ hwin = win.*h(1:irLen,:,:);
 nrg = sum(abs(h(:)).^2);
 nrgwin = sum(abs(hwin(:)).^2);
 nrgloss = 1-nrgwin/nrg;
-if nrgloss>0.01
+if nrgloss>0.05 % TODO: improve
     warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
 end
 
@@ -208,7 +208,7 @@ if saveEQmp
         nrg = sum(abs(tmp).^2,'all');
         nrgwin = sum(abs(heq(:,ind,:)).^2,'all');
         nrgloss = 1-nrgwin/nrg;
-        if nrgloss>0.02
+        if nrgloss>0.05
             show_warning = 1;
 %             warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
 %             figure
@@ -221,7 +221,7 @@ if saveEQmp
     end  
     
     if show_warning == 1
-        warning('More than 2% of the HRTF energy was lost when windowing after min-phase equalisation. Maybe something went wrong.')
+        warning('More than 5% of the HRTF energy was lost when windowing after min-phase equalisation. Maybe something went wrong.')
     end
     
 end

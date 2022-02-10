@@ -7,7 +7,7 @@ clear
 dirnameL = 'C:\Users\Admin\Documents\AMTatARI files\Reference measurements\AMTatARI_20220208_174824_RefL';
 dirnameR = 'C:\Users\Admin\Documents\AMTatARI files\Reference measurements\AMTatARI_20220208_174548_RefR';
 sofaname = 'Reference';
-doplots = 0;
+doplots = 1;
 targetFs = 96000;
 elSp = [-45,-30:10:30,45:15:150,160:10:210,225]; % speaker elevations
 

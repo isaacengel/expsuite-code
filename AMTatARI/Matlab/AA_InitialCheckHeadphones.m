@@ -98,7 +98,27 @@ dBdif = abs(10*log10(nrgL./nrgR));
 dBdif = mean(dBdif);
 threshold = 1; % TODO: pass as a parameter
 if dBdif > threshold
-    error('Left and right channels show a difference of %0.2f dB. Please check the microphones',dBdif)
+    figure
+    subplot(1,2,1),AKp(h(:,:,1),'et2d','fs',fs), title('Left')
+    subplot(1,2,2),AKp(h(:,:,2),'et2d','fs',fs), title('Right')
+    sgtitle('Headphone Impulse Responses: large left/right mismatch!')
+    error('Left and right channels show a difference of %0.2f dB (see figure). Please check the microphones',dBdif)
 end
+
+% Check IR peak
+SNRthresh = 60; % TODO; pass as parameter
+pad = round(0.0005 * fs); % look for the floor at 0.5ms before onset (empirically set)
+[peakL,onsL] = max(db(abs(h(:,:,1))),[],1);
+[peakR,onsR] = max(db(abs(h(:,:,2))),[],1);
+floorL = mean(db(abs(h(1:onsL-pad,:,1))),1);
+floorR = mean(db(abs(h(1:onsR-pad,:,2))),1);
+if any((peakL-floorL) < SNRthresh) || any((peakR-floorR) < SNRthresh)
+    figure
+    subplot(1,2,1),AKp(h(:,:,1),'et2d','fs',fs), title('Left')
+    subplot(1,2,2),AKp(h(:,:,2),'et2d','fs',fs), title('Right')
+    sgtitle('Headphone Impulse Responses: high noise error!')
+    error('The noise floor before the onset is very high (see figure). Please check the microphones')
+end
+
 
     
