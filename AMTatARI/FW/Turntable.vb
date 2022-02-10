@@ -616,7 +616,7 @@ SubError:
                 End Try
 
                 'Dim ttSpeed As Double = 400 / (ttPeriod * 1000) ' degrees/ms, empirically calculated
-                Dim waitTime As Double = lStep / ttSpeed
+                Dim waitTime As Double = lStep / (ttSpeed * 0.9) + 0.2 ' adding some arbitrary amount of time since the turntable speed is not well calibrated atm (10 Feb 2022)
 
                 ttMoving = True
 

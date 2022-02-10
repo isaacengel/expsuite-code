@@ -10,8 +10,10 @@ sofaname = 'Reference';
 doplots = 0;
 targetFs = 96000;
 elSp = [-45,-30:10:30,45:15:150,160:10:210,225]; % speaker elevations
-AA_GenerateSOFA([sofaname,'_left'],dirnameL,[dirnameL,'\settings.AMTatARI'],[dirnameL,'\itemlist.itl.csv'],'',0,1,0,0,0,0,targetFs);
-AA_GenerateSOFA([sofaname,'_right'],dirnameR,[dirnameR,'\settings.AMTatARI'],[dirnameR,'\itemlist.itl.csv'],'',0,1,0,0,0,0,targetFs);
+
+disp('Please ignore the next two warnings:')
+AA_GenerateSOFA([sofaname,'_left'],dirnameL,[dirnameL,'\settings.AMTatARI'],[dirnameL,'\itemlist.itl.csv'],'',0,0,1,0,0,0,targetFs);
+AA_GenerateSOFA([sofaname,'_right'],dirnameR,[dirnameR,'\settings.AMTatARI'],[dirnameR,'\itemlist.itl.csv'],'',0,0,1,0,0,0,targetFs);
 
 if doplots
     AA_QuickPlotIR([sofaname,'_left'],dirnameL,[dirnameL,'\settings.AMTatARI'],[dirnameL,'\itemlist.itl.csv'],'indAz',1)
@@ -19,8 +21,8 @@ if doplots
 end
 
 % Load data
-SOFApathL = sprintf('%s/%s_Raw_%0.2dkHz.sofa',dirnameL,[sofaname,'_left'],round(targetFs/1000));
-SOFApathR = sprintf('%s/%s_Raw_%0.2dkHz.sofa',dirnameR,[sofaname,'_right'],round(targetFs/1000));
+SOFApathL = sprintf('%s/%s_Windowed_%0.2dkHz.sofa',dirnameL,[sofaname,'_left'],round(targetFs/1000));
+SOFApathR = sprintf('%s/%s_Windowed_%0.2dkHz.sofa',dirnameR,[sofaname,'_right'],round(targetFs/1000));
 SOFAobjL = SOFAload(SOFApathL);
 SOFAobjR = SOFAload(SOFApathR);
 [hL,fs,az,el] = sofa2hrtf(SOFAobjL);
@@ -94,8 +96,9 @@ frac = 0;
 T = avgAmp*ones(nfreqs,1); % target is a flat response
 for ch=1:2
     for i=1:nEl
-        [~,EQ(:,i,ch)] = autoreg_minphase(H(:,i,ch),T,fs,maxAmp,frac,flims);
+        [EQmp(:,i,ch),EQ(:,i,ch)] = autoreg_minphase(H(:,i,ch),T,fs,maxAmp,frac,flims);
         eq(:,i,ch) = iffth(EQ(:,i,ch));
+        eqmp(:,i,ch) = iffth(EQmp(:,i,ch));
     end
 end
 
@@ -125,6 +128,15 @@ subplot(3,2,4), AKp(eqwin(:,:,2),'m2d','fs',fs)
 subplot(3,2,5), AKp(eqwin(:,:,1),'pu2d','fs',fs)
 subplot(3,2,6), AKp(eqwin(:,:,2),'pu2d','fs',fs)
 sgtitle('EQ filter, shifted and windowed')
+
+figure
+subplot(3,2,1), AKp(eqmp(:,:,1),'et2d','fs',fs)
+subplot(3,2,2), AKp(eqmp(:,:,2),'et2d','fs',fs)
+subplot(3,2,3), AKp(eqmp(:,:,1),'m2d','fs',fs)
+subplot(3,2,4), AKp(eqmp(:,:,2),'m2d','fs',fs)
+subplot(3,2,5), AKp(eqmp(:,:,1),'pu2d','fs',fs)
+subplot(3,2,6), AKp(eqmp(:,:,2),'pu2d','fs',fs)
+sgtitle('EQ filter min phase')
 
 % Alternative shorter EQ filter
 % eqshort = circshift(eq,safety);
@@ -157,6 +169,8 @@ for ch=1:2
         nfft = 2^nextpow2(convlen);
         heq = iffth( ffth(h,nfft) .* ffth(eq,nfft) );
         heq = heq(1:convlen,:,:);
+        heqmp = iffth( ffth(h,nfft) .* ffth(eqmp,nfft) );
+        heqmp = heqmp(1:convlen,:,:);
         % time-shift back
         heq = circshift(heq,-delay+safety);
     end
@@ -171,6 +185,15 @@ subplot(3,2,5), AKp(heq(:,:,1),'p2d','fs',fs)
 subplot(3,2,6), AKp(heq(:,:,2),'p2d','fs',fs)
 sgtitle('Equalised measurement')
 
+figure
+subplot(3,2,1), AKp(heqmp(:,:,1),'et2d','fs',fs)
+subplot(3,2,2), AKp(heqmp(:,:,2),'et2d','fs',fs)
+subplot(3,2,3), AKp(heqmp(:,:,1),'m2d','fs',fs)
+subplot(3,2,4), AKp(heqmp(:,:,2),'m2d','fs',fs)
+subplot(3,2,5), AKp(heqmp(:,:,1),'p2d','fs',fs)
+subplot(3,2,6), AKp(heqmp(:,:,2),'p2d','fs',fs)
+sgtitle('Equalised measurement, min phase')
+
 % Window
 fadelenin = 16;
 fadelenout = 128;
@@ -181,6 +204,7 @@ fadeout = cos(tout).^2;
 irLen = size(h,1);
 win = [fadein; ones(irLen-fadelenin-fadelenout,1); fadeout];
 heqwin = win.*heq(1:irLen,:,:);
+heqmpwin = win.*heqmp(1:irLen,:,:);
 
 % Check energy loss
 nrg = sum(abs(heq).^2,'all');
@@ -199,10 +223,21 @@ subplot(3,2,5), AKp(heqwin(:,:,1),'p2d','fs',fs)
 subplot(3,2,6), AKp(heqwin(:,:,2),'p2d','fs',fs)
 sgtitle('Equalised measurement, after windowing')
 
+figure
+subplot(3,2,1), AKp(heqmpwin(:,:,1),'et2d','fs',fs)
+subplot(3,2,2), AKp(heqmpwin(:,:,2),'et2d','fs',fs)
+subplot(3,2,3), AKp(heqmpwin(:,:,1),'m2d','fs',fs)
+subplot(3,2,4), AKp(heqmpwin(:,:,2),'m2d','fs',fs)
+subplot(3,2,5), AKp(heqmpwin(:,:,1),'p2d','fs',fs)
+subplot(3,2,6), AKp(heqmpwin(:,:,2),'p2d','fs',fs)
+sgtitle('Equalised measurement, min phase, after windowing')
+
+
+
 %% Save
 elrad = el;
 el = elSp;
-save('reference_eq.mat','eq','el','delay')
+save('reference_eq.mat','eq','eqmp','el','delay')
 el = elrad;
 
 %% Aux functions

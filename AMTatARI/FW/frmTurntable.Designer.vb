@@ -658,7 +658,7 @@
         Me.numReqSpeed.Name = "numReqSpeed"
         Me.numReqSpeed.Size = New System.Drawing.Size(66, 35)
         Me.numReqSpeed.TabIndex = 41
-        Me.numReqSpeed.Value = New Decimal(New Integer() {2, 0, 0, 0})
+        Me.numReqSpeed.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'frmTurntable
         '

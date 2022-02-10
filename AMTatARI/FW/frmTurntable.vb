@@ -1175,7 +1175,7 @@ SubError:
 
     End Sub
 
-    Private Sub numReqSpeed_ValueChanged(sender As Object, e As EventArgs) Handles numReqSpeed.ValueChanged
+    Private Sub numReqSpeed_ValueChanged(sender As Object, e As EventArgs) Handles numReqSpeed.MouseUp
 
         Dim sngX As Double = CDbl(numReqSpeed.Value)
         If sngX >= 0.5 And sngX <= 5 Then

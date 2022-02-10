@@ -7,10 +7,10 @@ Public Class frmGenerateSOFA
         Dim referenceFile As String = TextBoxRef.Text
         Dim doPlots As Integer = CInt(CheckBoxShowPlots.Checked)
         Dim saveRaw As Integer = CInt(CheckBoxRaw.Checked)
+        Dim saveWin As Integer = CInt(CheckBoxWin.Checked)
         Dim saveEQ As Integer = CInt(CheckBoxEQ.Checked)
         Dim saveEQmp As Integer = CInt(CheckBoxEQmp.Checked)
         Dim saveITD As Integer = CInt(CheckBoxITD.Checked)
-        Dim save3DTI As Integer = CInt(CheckBox3DTI.Checked)
         Dim finalCheck As Integer = CInt(CheckBoxFinalCheck.Checked)
         ' INISettings.WriteFile(STIM.WorkDir & "\" & settingsFile)
         ' ItemList.Save(STIM.WorkDir & "\" & itemListFile)
@@ -26,7 +26,7 @@ Public Class frmGenerateSOFA
             targetFs = targetFs & "96000 "
         End If
         targetFs = targetFs & "]"
-        Result.GenerateSOFA(sofaname, referenceFile, doPlots, saveRaw, saveEQ, saveEQmp, saveITD, save3DTI, targetFs, finalCheck, 0.0002, 15, "[200 1500]") ' TODO: set the last three parameters via settings
+        Result.GenerateSOFA(sofaname, referenceFile, doPlots, saveRaw, saveWin, saveEQ, saveEQmp, saveITD, targetFs, finalCheck, 0.0002, 15, "[200 1500]") ' TODO: set the last three parameters via settings
         Button1.Enabled = True
         Me.Close()
     End Sub

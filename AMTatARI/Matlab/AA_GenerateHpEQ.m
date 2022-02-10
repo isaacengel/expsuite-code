@@ -253,6 +253,11 @@ for i=1:numel(targetFs)
 
     fs = targetFs(i);
     
+    tFsdir = sprintf('%s/HPEQ/%0.2dkHz',workdir,round(fs/1000));
+    if ~isfolder(tFsdir)
+        mkdir(tFsdir)
+    end
+    
     % Resample if needed
     if fs ~= fs_original
         eq = resample(eq_original,fs,fs_original);
@@ -263,7 +268,7 @@ for i=1:numel(targetFs)
     end
     
     % Save all IRs + avg (minimum phase) + EQ filter
-    filename = sprintf('%s/%s_headphoneEQ_%0.2dkHz',workdir,sofaname,round(fs/1000));
+    filename = sprintf('%s/%s_headphoneEQ_%0.2dkHz',tFsdir,sofaname,round(fs/1000));
     save(filename,'h','h_avg','h_avg_both','eq','eq_both','fs','fs_original')
     fprintf('Saved all heapdhone IRs and filters in %s.mat...\n',filename)
     audiowrite([filename,'.wav'],eq_both,fs,'BitsPerSample',32)

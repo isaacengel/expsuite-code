@@ -14,7 +14,7 @@ Module Result
 
     Public gIRFlags As IRFlags
 
-    Public Sub GenerateSOFA(sofaname As String, referenceFile As String, doPlots As Integer, saveRaw As Integer, saveEQ As Integer, saveEQmp As Integer, saveITD As Integer, save3DTI As Integer, targetFs As String, finalCheck As Integer, itdThresh As Double, magThresh As Double, freqRange As String)
+    Public Sub GenerateSOFA(sofaname As String, referenceFile As String, doPlots As Integer, saveRaw As Integer, saveWin As Integer, saveEQ As Integer, saveEQmp As Integer, saveITD As Integer, targetFs As String, finalCheck As Integer, itdThresh As Double, magThresh As Double, freqRange As String)
         If Not gblnOutputStable Then
             MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
             Exit Sub
@@ -22,7 +22,7 @@ Module Result
         Dim StartTime As DateTime = System.DateTime.Now 'calculation time
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
-        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & save3DTI & "," & targetFs & ");")
+        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveWin & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & targetFs & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Generate SOFA files")
             frmMain.SetStatus("Error(s) generating SOFA files")
@@ -50,7 +50,16 @@ Module Result
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
         Dim str() As String = STIM.WorkDir.Split("\"c)
-        Dim szErr As String = STIM.Matlab("AA_QuickPlotIR('" & str(UBound(str)) & "','" & STIM.WorkDir & "');")
+        Dim indAz As String = "["
+        Dim i As Integer
+        For i = 0 To ItemList.SelectedItems.Length - 1
+            indAz = indAz & CStr(ItemList.SelectedItems(i) + 1)
+            If i < ItemList.SelectedItems.Length - 1 Then
+                indAz = indAz & ","
+            End If
+        Next
+        indAz = indAz & "]"
+        Dim szErr As String = STIM.Matlab("AA_QuickPlotIR('" & str(UBound(str)) & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv','indAz'," & indAz & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Showing plots")
             frmMain.SetStatus("Error(s) showing plots")

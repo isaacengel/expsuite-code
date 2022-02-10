@@ -27,7 +27,6 @@ Partial Class frmGenerateSOFA
         Me.CheckBoxRaw = New System.Windows.Forms.CheckBox()
         Me.CheckBoxEQ = New System.Windows.Forms.CheckBox()
         Me.CheckBoxITD = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3DTI = New System.Windows.Forms.CheckBox()
         Me.TextBoxSofaname = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxRef = New System.Windows.Forms.TextBox()
@@ -41,6 +40,7 @@ Partial Class frmGenerateSOFA
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.CheckBoxEQmp = New System.Windows.Forms.CheckBox()
         Me.CheckBoxFinalCheck = New System.Windows.Forms.CheckBox()
+        Me.CheckBoxWin = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -61,40 +61,34 @@ Partial Class frmGenerateSOFA
         Me.CheckBoxRaw.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBoxRaw.Location = New System.Drawing.Point(11, 22)
         Me.CheckBoxRaw.Name = "CheckBoxRaw"
-        Me.CheckBoxRaw.Size = New System.Drawing.Size(117, 17)
+        Me.CheckBoxRaw.Size = New System.Drawing.Size(231, 17)
         Me.CheckBoxRaw.TabIndex = 1
-        Me.CheckBoxRaw.Text = "Raw HRTF (SOFA)"
+        Me.CheckBoxRaw.Text = "Raw HRTF, no window, 50 ms long (SOFA)"
         Me.CheckBoxRaw.UseVisualStyleBackColor = True
         '
         'CheckBoxEQ
         '
         Me.CheckBoxEQ.AutoSize = True
-        Me.CheckBoxEQ.Location = New System.Drawing.Point(11, 45)
+        Me.CheckBoxEQ.Checked = True
+        Me.CheckBoxEQ.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBoxEQ.Location = New System.Drawing.Point(11, 67)
         Me.CheckBoxEQ.Name = "CheckBoxEQ"
-        Me.CheckBoxEQ.Size = New System.Drawing.Size(268, 17)
+        Me.CheckBoxEQ.Size = New System.Drawing.Size(280, 17)
         Me.CheckBoxEQ.TabIndex = 2
-        Me.CheckBoxEQ.Text = "HRTF equalised by reference measurement (SOFA)"
+        Me.CheckBoxEQ.Text = "Windowed HRTF with free-field compensation (SOFA)"
         Me.CheckBoxEQ.UseVisualStyleBackColor = True
         '
         'CheckBoxITD
         '
         Me.CheckBoxITD.AutoSize = True
-        Me.CheckBoxITD.Location = New System.Drawing.Point(11, 120)
+        Me.CheckBoxITD.Checked = True
+        Me.CheckBoxITD.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBoxITD.Location = New System.Drawing.Point(11, 142)
         Me.CheckBoxITD.Name = "CheckBoxITD"
-        Me.CheckBoxITD.Size = New System.Drawing.Size(123, 17)
+        Me.CheckBoxITD.Size = New System.Drawing.Size(408, 17)
         Me.CheckBoxITD.TabIndex = 4
-        Me.CheckBoxITD.Text = "Time-aligned (SOFA)"
+        Me.CheckBoxITD.Text = "Generate time-aligned versions (no ITDs) of the above in SOFA and 3DTI formats"
         Me.CheckBoxITD.UseVisualStyleBackColor = True
-        '
-        'CheckBox3DTI
-        '
-        Me.CheckBox3DTI.AutoSize = True
-        Me.CheckBox3DTI.Location = New System.Drawing.Point(11, 143)
-        Me.CheckBox3DTI.Name = "CheckBox3DTI"
-        Me.CheckBox3DTI.Size = New System.Drawing.Size(154, 17)
-        Me.CheckBox3DTI.TabIndex = 5
-        Me.CheckBox3DTI.Text = "Time-aligned (.3DTI-HRTF)"
-        Me.CheckBox3DTI.UseVisualStyleBackColor = True
         '
         'TextBoxSofaname
         '
@@ -114,7 +108,7 @@ Partial Class frmGenerateSOFA
         '
         'TextBoxRef
         '
-        Me.TextBoxRef.Location = New System.Drawing.Point(113, 94)
+        Me.TextBoxRef.Location = New System.Drawing.Point(113, 116)
         Me.TextBoxRef.Name = "TextBoxRef"
         Me.TextBoxRef.Size = New System.Drawing.Size(433, 20)
         Me.TextBoxRef.TabIndex = 8
@@ -122,7 +116,7 @@ Partial Class frmGenerateSOFA
         '
         'ButtonBrowseRef
         '
-        Me.ButtonBrowseRef.Location = New System.Drawing.Point(552, 92)
+        Me.ButtonBrowseRef.Location = New System.Drawing.Point(552, 114)
         Me.ButtonBrowseRef.Name = "ButtonBrowseRef"
         Me.ButtonBrowseRef.Size = New System.Drawing.Size(31, 23)
         Me.ButtonBrowseRef.TabIndex = 9
@@ -132,7 +126,7 @@ Partial Class frmGenerateSOFA
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(32, 97)
+        Me.Label2.Location = New System.Drawing.Point(32, 119)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(76, 13)
         Me.Label2.TabIndex = 10
@@ -151,6 +145,8 @@ Partial Class frmGenerateSOFA
         'CheckBox44kHz
         '
         Me.CheckBox44kHz.AutoSize = True
+        Me.CheckBox44kHz.Checked = True
+        Me.CheckBox44kHz.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox44kHz.Location = New System.Drawing.Point(11, 23)
         Me.CheckBox44kHz.Name = "CheckBox44kHz"
         Me.CheckBox44kHz.Size = New System.Drawing.Size(72, 17)
@@ -161,6 +157,8 @@ Partial Class frmGenerateSOFA
         'CheckBox48kHz
         '
         Me.CheckBox48kHz.AutoSize = True
+        Me.CheckBox48kHz.Checked = True
+        Me.CheckBox48kHz.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBox48kHz.Location = New System.Drawing.Point(11, 46)
         Me.CheckBox48kHz.Name = "CheckBox48kHz"
         Me.CheckBox48kHz.Size = New System.Drawing.Size(72, 17)
@@ -194,12 +192,12 @@ Partial Class frmGenerateSOFA
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.CheckBoxWin)
         Me.GroupBox2.Controls.Add(Me.CheckBoxEQmp)
         Me.GroupBox2.Controls.Add(Me.CheckBoxRaw)
         Me.GroupBox2.Controls.Add(Me.CheckBoxEQ)
         Me.GroupBox2.Controls.Add(Me.CheckBoxITD)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.CheckBox3DTI)
         Me.GroupBox2.Controls.Add(Me.ButtonBrowseRef)
         Me.GroupBox2.Controls.Add(Me.TextBoxRef)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 50)
@@ -212,11 +210,13 @@ Partial Class frmGenerateSOFA
         'CheckBoxEQmp
         '
         Me.CheckBoxEQmp.AutoSize = True
-        Me.CheckBoxEQmp.Location = New System.Drawing.Point(11, 68)
+        Me.CheckBoxEQmp.Checked = True
+        Me.CheckBoxEQmp.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBoxEQmp.Location = New System.Drawing.Point(11, 90)
         Me.CheckBoxEQmp.Name = "CheckBoxEQmp"
-        Me.CheckBoxEQmp.Size = New System.Drawing.Size(349, 17)
+        Me.CheckBoxEQmp.Size = New System.Drawing.Size(366, 17)
         Me.CheckBoxEQmp.TabIndex = 11
-        Me.CheckBoxEQmp.Text = "HRTF equalised (minimum-phase) by reference measurement (SOFA)"
+        Me.CheckBoxEQmp.Text = "Windowed HRTF with free-field compensation of magnitude only (SOFA)"
         Me.CheckBoxEQmp.UseVisualStyleBackColor = True
         '
         'CheckBoxFinalCheck
@@ -230,6 +230,18 @@ Partial Class frmGenerateSOFA
         Me.CheckBoxFinalCheck.TabIndex = 17
         Me.CheckBoxFinalCheck.Text = "Run quick final check"
         Me.CheckBoxFinalCheck.UseVisualStyleBackColor = True
+        '
+        'CheckBoxWin
+        '
+        Me.CheckBoxWin.AutoSize = True
+        Me.CheckBoxWin.Checked = True
+        Me.CheckBoxWin.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.CheckBoxWin.Location = New System.Drawing.Point(11, 44)
+        Me.CheckBoxWin.Name = "CheckBoxWin"
+        Me.CheckBoxWin.Size = New System.Drawing.Size(223, 17)
+        Me.CheckBoxWin.TabIndex = 12
+        Me.CheckBoxWin.Text = "Windowed HRTF with fade in/out (SOFA)"
+        Me.CheckBoxWin.UseVisualStyleBackColor = True
         '
         'frmGenerateSOFA
         '
@@ -259,7 +271,6 @@ Partial Class frmGenerateSOFA
     Friend WithEvents CheckBoxRaw As CheckBox
     Friend WithEvents CheckBoxEQ As CheckBox
     Friend WithEvents CheckBoxITD As CheckBox
-    Friend WithEvents CheckBox3DTI As CheckBox
     Friend WithEvents TextBoxSofaname As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxRef As TextBox
@@ -273,4 +284,5 @@ Partial Class frmGenerateSOFA
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents CheckBoxEQmp As CheckBox
     Friend WithEvents CheckBoxFinalCheck As CheckBox
+    Friend WithEvents CheckBoxWin As CheckBox
 End Class
