@@ -5,7 +5,7 @@ function AA_GenerateSOFA(sofaname,workdir,settingsfile,itemlistfile,referencefil
 % from Matlab directly
 
 r = 1.5; % TODO: verify this is the correct distance from speaker driver to arc center
-gain = 0; % in dB; TODO: input this as a parameter
+gain = 20; % in dB; TODO: input this as a parameter
 
 % To save figures
 figdir = [workdir,'/plots'];
@@ -268,8 +268,12 @@ if saveITD
 
     hAlign = zeros(size(h));
     hwinAlign = zeros(size(hwin));
-    heqAlign = zeros(size(heq));
-    heqmpAlign = zeros(size(heqmp));
+    if saveEQ
+        heqAlign = zeros(size(heq));
+    end
+    if saveEQmp
+        heqmpAlign = zeros(size(heqmp));
+    end
     
     onset_samples = round(onset_seconds*fs);
     for i=1:ndirs
@@ -328,12 +332,15 @@ for i=1:numel(targetFs)
             subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
             sgtitle(sprintf('Magnitude Horizontal plane: %s Raw %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_Raw_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotHRTF(h_re,tFs)
             sgtitle(sprintf('%s_Raw_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_Raw_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotITD(h_re,pos,tFs)
             title(sprintf('%s_Raw_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_Raw_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
         end
     end
     
@@ -348,19 +355,22 @@ for i=1:numel(targetFs)
         Obj.Data.IR=shiftdim(h_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Raw_NoITD_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         % Save 3DTI
-        system( sprintf('%s -i %s/%s_Raw_NoITD_%0.2dkHz.sofa -o %s/%s_Raw_NoITD_%0.2dkHz.3dti-hrtf',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
+        system( sprintf('%s -i "%s/%s_Raw_NoITD_%0.2dkHz.sofa" -o "%s/%s_Raw_NoITD_%0.2dkHz.3dti-hrtf"',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
         if doplots
             figure('pos',[10.6000 63.4000 695.2000 284.8000])
             subplot(1,2,1), SOFAplotHRTF(newobj,'MagHorizontal', 1); xlim([0 20000]), ylim([-180 180]), title('Left')
             subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
             sgtitle(sprintf('Magnitude Horizontal plane: %s Raw No ITD %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_Raw_NoITD_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotHRTF(h_re,tFs)
             sgtitle(sprintf('%s_Raw_NoITD_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_Raw_NoITD_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotITD(h_re,pos,tFs)
             title(sprintf('%s_Raw_NoITD_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_Raw_NoITD_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
         end
     end
     
@@ -383,12 +393,15 @@ for i=1:numel(targetFs)
             subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
             sgtitle(sprintf('Magnitude Horizontal plane: %s Windowed %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_Windowed_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotHRTF(h_re,tFs)
             sgtitle(sprintf('%s_Windowed_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_Windowed_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotITD(h_re,pos,tFs)
             title(sprintf('%s_Windowed_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_Windowed_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
         end
     end
     
@@ -406,19 +419,22 @@ for i=1:numel(targetFs)
         Obj.Data.IR=shiftdim(h_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_Windowed_NoITD_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         % Save 3DTI
-        system( sprintf('%s -i %s/%s_Windowed_NoITD_%0.2dkHz.sofa -o %s/%s_Windowed_NoITD_%0.2dkHz.3dti-hrtf',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
+        system( sprintf('%s -i "%s/%s_Windowed_NoITD_%0.2dkHz.sofa" -o "%s/%s_Windowed_NoITD_%0.2dkHz.3dti-hrtf"',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
         if doplots
             figure('pos',[10.6000 63.4000 695.2000 284.8000])
             subplot(1,2,1), SOFAplotHRTF(newobj,'MagHorizontal', 1); xlim([0 20000]), ylim([-180 180]), title('Left')
             subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
             sgtitle(sprintf('Magnitude Horizontal plane: %s Windowed No ITD %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_Windowed_NoITD_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotHRTF(h_re,tFs)
             sgtitle(sprintf('%s_Windowed_NoITD_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_Windowed_NoITD_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotITD(h_re,pos,tFs)
             title(sprintf('%s_Windowed_NoITD_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_Windowed_NoITD_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
         end
     end
 
@@ -441,12 +457,15 @@ for i=1:numel(targetFs)
             subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
             sgtitle(sprintf('Magnitude Horizontal plane: %s FreeFieldComp %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_FreeFieldComp_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotHRTF(h_re,tFs)
             sgtitle(sprintf('%s_FreeFieldComp_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_FreeFieldComp_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotITD(h_re,pos,tFs)
             title(sprintf('%s_FreeFieldComp_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_FreeFieldComp_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
         end
     end
     
@@ -464,19 +483,22 @@ for i=1:numel(targetFs)
         Obj.Data.IR=shiftdim(h_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_FreeFieldComp_NoITD_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         % Save 3DTI
-        system( sprintf('%s -i %s/%s_FreeFieldComp_NoITD_%0.2dkHz.sofa -o %s/%s_FreeFieldComp_NoITD_%0.2dkHz.3dti-hrtf',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
+        system( sprintf('%s -i "%s/%s_FreeFieldComp_NoITD_%0.2dkHz.sofa" -o "%s/%s_FreeFieldComp_NoITD_%0.2dkHz.3dti-hrtf"',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
         if doplots
             figure('pos',[10.6000 63.4000 695.2000 284.8000])
             subplot(1,2,1), SOFAplotHRTF(newobj,'MagHorizontal', 1); xlim([0 20000]), ylim([-180 180]), title('Left')
             subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
             sgtitle(sprintf('Magnitude Horizontal plane: %s FreeFieldComp NoITD %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_FreeFieldComp_NoITD_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotHRTF(h_re,tFs)
             sgtitle(sprintf('%s_FreeFieldComp_NoITD_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_FreeFieldComp_NoITD_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotITD(h_re,pos,tFs)
             title(sprintf('%s_FreeFieldComp_NoITD_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_FreeFieldComp_NoITD_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
         end
     end
     
@@ -499,12 +521,15 @@ for i=1:numel(targetFs)
             subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
             sgtitle(sprintf('Magnitude Horizontal plane: %s FreeFieldCompMinPhase %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_FreeFieldCompMinPhase_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotHRTF(h_re,tFs)
             sgtitle(sprintf('%s_FreeFieldCompMinPhase_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_FreeFieldCompMinPhase_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotITD(h_re,pos,tFs)
             title(sprintf('%s_FreeFieldCompMinPhase_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_FreeFieldCompMinPhase_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
         end
     end
     
@@ -522,19 +547,22 @@ for i=1:numel(targetFs)
         Obj.Data.IR=shiftdim(h_re,1);
         newobj = AA_SOFAsaveSimpleFreeFieldHRIRImperialCollege(sprintf('%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz.sofa',tFsdir,sofaname,round(tFs/1000)),Obj,meta,stimPar);
         % Save 3DTI
-        system( sprintf('%s -i %s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz.sofa -o %s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz.3dti-hrtf',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
+        system( sprintf('%s -i "%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz.sofa" -o "%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz.3dti-hrtf"',exePath,tFsdir,sofaname,round(tFs/1000),tFsdir,sofaname,round(tFs/1000)) );
         if doplots
             figure('pos',[10.6000 63.4000 695.2000 284.8000])
             subplot(1,2,1), SOFAplotHRTF(newobj,'MagHorizontal', 1); xlim([0 20000]), ylim([-180 180]), title('Left')
             subplot(1,2,2), SOFAplotHRTF(newobj,'MagHorizontal', 2); xlim([0 20000]), ylim([-180 180]), title('Right')
             sgtitle(sprintf('Magnitude Horizontal plane: %s FreeFieldCompMinPhase NoITD %0.2dkHz',sofaname,round(tFs/1000)));
             saveas(gcf,sprintf('%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz_MagHorPlane.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotHRTF(h_re,tFs)
             sgtitle(sprintf('%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz, all %d HRIRs',sofaname,round(tFs/1000),size(h_re,2)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz_AllHRIRs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
             quickplotITD(h_re,pos,tFs)
             title(sprintf('%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz, ITDs',sofaname,round(tFs/1000)),'interpreter','none')
             saveas(gcf,sprintf('%s/%s_FreeFieldCompMinPhase_NoITD_%0.2dkHz_ITDs.png',figdir,sofaname,round(tFs/1000)))
+            close(gcf)
         end
     end
 
