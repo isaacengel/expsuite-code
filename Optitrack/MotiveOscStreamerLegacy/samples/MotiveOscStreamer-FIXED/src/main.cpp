@@ -12,12 +12,13 @@
 #include <iostream>
 #include <thread>
 #include <vector>
-#include "easylogging++.h"
+#include <iostream>
+//#include "easylogging++.h"
 #include "motive.h"
 #include "OscStreamer.h"
 using namespace std;
 
-INITIALIZE_EASYLOGGINGPP
+//INITIALIZE_EASYLOGGINGPP
 
 vector<RigidBody> rigidbodies;
 
@@ -27,7 +28,7 @@ void printRigidBodies()
 		this_thread::sleep_for(chrono::milliseconds(100));
 		for (int i = 0; i < rigidbodies.size(); i++) {
 			RigidBody &r = rigidbodies[i];
-			LOG(INFO) << "Rigid Body " << i << setprecision(4) << fixed << " x: " << r.x << ", y: " << r.y << ", z: " << r.z;
+			cout << "Rigid Body " << i << setprecision(4) << fixed << " x: " << r.x << ", y: " << r.y << ", z: " << r.z << endl;
 		}
 	}
 }
@@ -72,15 +73,15 @@ int main(int argc, char *argv[])
 	tracker->init();
 	
 	int nCameras = tracker->getNumberOfCameras();
-	LOG(INFO) << "Number of cameras: " << nCameras;
+	cout << "Number of cameras: " << nCameras << endl;
 	for (int i = 0; i < nCameras; ++i) {
-		LOG(INFO) << "Camera name (" << i << "): " << tracker->getNameOfCamera(i);
+		cout << "Camera name (" << i << "): " << tracker->getNameOfCamera(i) << endl;
 	}
 
 	int nRigidBodies = tracker->getNumberOfRigidBodies();
-	LOG(INFO) << "Number of rigid bodies: " << nRigidBodies;
+	cout << "Number of rigid bodies: " << nRigidBodies << endl;
 	for (int i = 0; i < nRigidBodies; ++i) {
-		LOG(INFO) << "Rigid body name (" << i << "): " << tracker->getNameOfRigidBody(i);
+		cout << "Rigid body name (" << i << "): " << tracker->getNameOfRigidBody(i) << endl;
 	}
 
 	OscStreamer *oscStreamer;
@@ -98,10 +99,10 @@ int main(int argc, char *argv[])
 	oscStreamer->init();
 
 	thread t1(streamRigidBodies, tracker, oscStreamer);
-	//thread t2(printRigidBodies); // COMMENTING OUT BECAUSE LOGS ARE MASSIVE
+	thread t2(printRigidBodies); // COMMENTING OUT BECAUSE LOGS ARE MASSIVE
 
 	t1.join();
-	//t2.join();
+	t2.join();
 
 	delete tracker;
 	delete oscStreamer;
