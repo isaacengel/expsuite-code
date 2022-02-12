@@ -164,7 +164,7 @@ for ch=1:2
 end
 
 if doplots
-    figure('pos',[10 60 1000 340]);
+    figure('Visible','off','pos',[10 60 1000 340]);
     for ch=1:3
         subplot(1,3,ch)
         % Prepare legend
@@ -216,7 +216,7 @@ EQ_both = autoreg_minphase(H_both,T,fs,maxAmp,frac,flims);
 eq_both = iffth(EQ_both);
 
 if doplots
-    figure('pos',[10 60 1000 340]);
+    figure('Visible','off','pos',[10 60 1000 340]);
     for ch=1:3
         subplot(1,3,ch)
         if ch<3
@@ -272,8 +272,8 @@ for i=1:numel(targetFs)
     % Save all IRs + avg (minimum phase) + EQ filter
     filename = sprintf('%s/%s_headphoneEQ_%0.2dkHz',tFsdir,sofaname,round(fs/1000));
     save(filename,'h','h_avg','h_avg_both','eq','eq_both','fs','fs_original')
-    fprintf('Saved all heapdhone IRs and filters in %s.mat...\n',filename)
+    %fprintf('Saved all heapdhone IRs and filters in %s.mat...\n',filename)
     audiowrite([filename,'.wav'],eq_both,fs,'BitsPerSample',32)
-    fprintf('Saved headphone EQ filter as %s.wav...\n',filename)
+    %fprintf('Saved headphone EQ filter as %s.wav...\n',filename)
  
 end

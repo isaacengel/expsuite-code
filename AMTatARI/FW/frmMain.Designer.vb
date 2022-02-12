@@ -134,10 +134,10 @@
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.cmdItemUndo = New System.Windows.Forms.Button()
         Me.cmdItemMoveDown = New System.Windows.Forms.Button()
@@ -297,11 +297,13 @@
         Me.mnuHelpAbout = New System.Windows.Forms.ToolStripMenuItem()
         Me.lstLog = New System.Windows.Forms.ListBox()
         Me.PanelBottom = New System.Windows.Forms.Panel()
+        Me.cmdSanityCheck = New System.Windows.Forms.Button()
         Me.cmdInitialCheck = New System.Windows.Forms.Button()
         Me.cmdShowPlots = New System.Windows.Forms.Button()
-        Me.cmdGenerateSOFA = New System.Windows.Forms.Button()
         Me.cmdInitButton = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.cmdSetTo0 = New System.Windows.Forms.Button()
+        Me.cmdTTsendTo0 = New System.Windows.Forms.Button()
         Me.labelTTaz = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.labelTTcalibrated = New System.Windows.Forms.TextBox()
@@ -323,8 +325,9 @@
         Me.Label3 = New System.Windows.Forms.Label()
         Me.labelYaw = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.cmdContinueExp = New System.Windows.Forms.Button()
         Me.lblTTShow = New System.Windows.Forms.Label()
+        Me.cmdGenerateSOFA = New System.Windows.Forms.Button()
+        Me.cmdContinueExp = New System.Windows.Forms.Button()
         Me.PanelTop = New System.Windows.Forms.Panel()
         Me.PanelGeneral = New System.Windows.Forms.Panel()
         Me.PanelItemList = New System.Windows.Forms.Panel()
@@ -334,7 +337,6 @@
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblItemList = New System.Windows.Forms.Label()
         Me.tmrTracker = New System.Windows.Forms.Timer(Me.components)
-        Me.cmdSanityCheck = New System.Windows.Forms.Button()
         Me.popupMenuStrip.SuspendLayout()
         Me.tbToolBar.SuspendLayout()
         Me.sbStatusBar.SuspendLayout()
@@ -607,10 +609,10 @@
         Me.cmbResult.BackColor = System.Drawing.SystemColors.Window
         Me.cmbResult.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmbResult.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.cmbResult.Location = New System.Drawing.Point(659, 41)
+        Me.cmbResult.Location = New System.Drawing.Point(621, 63)
         Me.cmbResult.Name = "cmbResult"
         Me.cmbResult.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbResult.Size = New System.Drawing.Size(152, 69)
+        Me.cmbResult.Size = New System.Drawing.Size(152, 95)
         Me.cmbResult.TabIndex = 55
         '
         'cmdTTShow
@@ -619,7 +621,7 @@
         Me.cmdTTShow.BackColor = System.Drawing.SystemColors.Control
         Me.cmdTTShow.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdTTShow.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdTTShow.Location = New System.Drawing.Point(44, 46)
+        Me.cmdTTShow.Location = New System.Drawing.Point(9, 44)
         Me.cmdTTShow.Name = "cmdTTShow"
         Me.cmdTTShow.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdTTShow.Size = New System.Drawing.Size(88, 21)
@@ -632,19 +634,22 @@
         Me.chkExpRun.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.chkExpRun.BackColor = System.Drawing.SystemColors.Control
         Me.chkExpRun.Cursor = System.Windows.Forms.Cursors.Default
+        Me.chkExpRun.Enabled = False
         Me.chkExpRun.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.chkExpRun.Location = New System.Drawing.Point(519, 180)
+        Me.chkExpRun.Location = New System.Drawing.Point(463, 195)
         Me.chkExpRun.Name = "chkExpRun"
         Me.chkExpRun.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.chkExpRun.Size = New System.Drawing.Size(109, 24)
         Me.chkExpRun.TabIndex = 41
         Me.chkExpRun.Text = "Run Experiment"
         Me.chkExpRun.UseVisualStyleBackColor = False
+        Me.chkExpRun.Visible = False
         '
         'cmdItemStimulateAll
         '
         Me.cmdItemStimulateAll.BackColor = System.Drawing.SystemColors.Control
         Me.cmdItemStimulateAll.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdItemStimulateAll.Enabled = False
         Me.cmdItemStimulateAll.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdItemStimulateAll.Location = New System.Drawing.Point(29, 65)
         Me.cmdItemStimulateAll.Name = "cmdItemStimulateAll"
@@ -653,6 +658,7 @@
         Me.cmdItemStimulateAll.TabIndex = 3
         Me.cmdItemStimulateAll.Text = "Stimulate All"
         Me.cmdItemStimulateAll.UseVisualStyleBackColor = False
+        Me.cmdItemStimulateAll.Visible = False
         '
         'cmdResultExecute
         '
@@ -660,7 +666,7 @@
         Me.cmdResultExecute.BackColor = System.Drawing.SystemColors.Control
         Me.cmdResultExecute.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdResultExecute.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdResultExecute.Location = New System.Drawing.Point(815, 63)
+        Me.cmdResultExecute.Location = New System.Drawing.Point(779, 97)
         Me.cmdResultExecute.Name = "cmdResultExecute"
         Me.cmdResultExecute.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdResultExecute.Size = New System.Drawing.Size(44, 27)
@@ -672,6 +678,7 @@
         '
         Me.cmdItemSortList.BackColor = System.Drawing.SystemColors.Control
         Me.cmdItemSortList.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdItemSortList.Enabled = False
         Me.cmdItemSortList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdItemSortList.Location = New System.Drawing.Point(29, 137)
         Me.cmdItemSortList.Name = "cmdItemSortList"
@@ -680,11 +687,13 @@
         Me.cmdItemSortList.TabIndex = 6
         Me.cmdItemSortList.Text = "Sort List"
         Me.cmdItemSortList.UseVisualStyleBackColor = False
+        Me.cmdItemSortList.Visible = False
         '
         'cmdItemShuffleList
         '
         Me.cmdItemShuffleList.BackColor = System.Drawing.SystemColors.Control
         Me.cmdItemShuffleList.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdItemShuffleList.Enabled = False
         Me.cmdItemShuffleList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdItemShuffleList.Location = New System.Drawing.Point(29, 113)
         Me.cmdItemShuffleList.Name = "cmdItemShuffleList"
@@ -693,11 +702,13 @@
         Me.cmdItemShuffleList.TabIndex = 5
         Me.cmdItemShuffleList.Text = "Shuffle List"
         Me.cmdItemShuffleList.UseVisualStyleBackColor = False
+        Me.cmdItemShuffleList.Visible = False
         '
         'cmdItemCreateList
         '
         Me.cmdItemCreateList.BackColor = System.Drawing.SystemColors.Control
         Me.cmdItemCreateList.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdItemCreateList.Enabled = False
         Me.cmdItemCreateList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdItemCreateList.Location = New System.Drawing.Point(29, 17)
         Me.cmdItemCreateList.Name = "cmdItemCreateList"
@@ -706,11 +717,13 @@
         Me.cmdItemCreateList.TabIndex = 1
         Me.cmdItemCreateList.Text = "Create List"
         Me.cmdItemCreateList.UseVisualStyleBackColor = False
+        Me.cmdItemCreateList.Visible = False
         '
         'cmdCreateAllStimuli
         '
         Me.cmdCreateAllStimuli.BackColor = System.Drawing.SystemColors.Control
         Me.cmdCreateAllStimuli.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdCreateAllStimuli.Enabled = False
         Me.cmdCreateAllStimuli.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdCreateAllStimuli.Location = New System.Drawing.Point(29, 41)
         Me.cmdCreateAllStimuli.Name = "cmdCreateAllStimuli"
@@ -719,11 +732,13 @@
         Me.cmdCreateAllStimuli.TabIndex = 2
         Me.cmdCreateAllStimuli.Text = "Create All Stimuli"
         Me.cmdCreateAllStimuli.UseVisualStyleBackColor = False
+        Me.cmdCreateAllStimuli.Visible = False
         '
         'cmdItemAddRepetition
         '
         Me.cmdItemAddRepetition.BackColor = System.Drawing.SystemColors.Control
         Me.cmdItemAddRepetition.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdItemAddRepetition.Enabled = False
         Me.cmdItemAddRepetition.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdItemAddRepetition.Location = New System.Drawing.Point(29, 89)
         Me.cmdItemAddRepetition.Name = "cmdItemAddRepetition"
@@ -732,6 +747,7 @@
         Me.cmdItemAddRepetition.TabIndex = 4
         Me.cmdItemAddRepetition.Text = "Add Repetition"
         Me.cmdItemAddRepetition.UseVisualStyleBackColor = False
+        Me.cmdItemAddRepetition.Visible = False
         '
         'cmdCancel
         '
@@ -741,7 +757,7 @@
         Me.cmdCancel.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdCancel.Image = CType(resources.GetObject("cmdCancel.Image"), System.Drawing.Image)
         Me.cmdCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdCancel.Location = New System.Drawing.Point(383, 125)
+        Me.cmdCancel.Location = New System.Drawing.Point(327, 140)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdCancel.Size = New System.Drawing.Size(118, 50)
@@ -754,6 +770,7 @@
         '
         Me.cmdItemLogList.BackColor = System.Drawing.SystemColors.Control
         Me.cmdItemLogList.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdItemLogList.Enabled = False
         Me.cmdItemLogList.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdItemLogList.Location = New System.Drawing.Point(29, 161)
         Me.cmdItemLogList.Name = "cmdItemLogList"
@@ -762,16 +779,18 @@
         Me.cmdItemLogList.TabIndex = 7
         Me.cmdItemLogList.Text = "Log List"
         Me.cmdItemLogList.UseVisualStyleBackColor = False
+        Me.cmdItemLogList.Visible = False
         '
         'cmdStartExp
         '
         Me.cmdStartExp.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cmdStartExp.BackColor = System.Drawing.SystemColors.Control
         Me.cmdStartExp.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdStartExp.Enabled = False
         Me.cmdStartExp.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdStartExp.Image = CType(resources.GetObject("cmdStartExp.Image"), System.Drawing.Image)
         Me.cmdStartExp.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdStartExp.Location = New System.Drawing.Point(509, 68)
+        Me.cmdStartExp.Location = New System.Drawing.Point(453, 83)
         Me.cmdStartExp.Name = "cmdStartExp"
         Me.cmdStartExp.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdStartExp.Size = New System.Drawing.Size(118, 50)
@@ -779,6 +798,7 @@
         Me.cmdStartExp.Text = "Start Experiment"
         Me.cmdStartExp.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdStartExp.UseVisualStyleBackColor = False
+        Me.cmdStartExp.Visible = False
         '
         'cmdItemSet
         '
@@ -812,28 +832,32 @@
         Me.cmdExpHide.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdExpHide.BackColor = System.Drawing.SystemColors.Control
         Me.cmdExpHide.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdExpHide.Enabled = False
         Me.cmdExpHide.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpHide.Location = New System.Drawing.Point(816, 5)
+        Me.cmdExpHide.Location = New System.Drawing.Point(795, 5)
         Me.cmdExpHide.Name = "cmdExpHide"
         Me.cmdExpHide.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdExpHide.Size = New System.Drawing.Size(42, 21)
         Me.cmdExpHide.TabIndex = 16
         Me.cmdExpHide.Text = "Hide"
         Me.cmdExpHide.UseVisualStyleBackColor = False
+        Me.cmdExpHide.Visible = False
         '
         'cmdExpShow
         '
         Me.cmdExpShow.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdExpShow.BackColor = System.Drawing.SystemColors.Control
         Me.cmdExpShow.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdExpShow.Enabled = False
         Me.cmdExpShow.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdExpShow.Location = New System.Drawing.Point(771, 5)
+        Me.cmdExpShow.Location = New System.Drawing.Point(750, 5)
         Me.cmdExpShow.Name = "cmdExpShow"
         Me.cmdExpShow.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdExpShow.Size = New System.Drawing.Size(42, 21)
         Me.cmdExpShow.TabIndex = 15
         Me.cmdExpShow.Text = "Show"
         Me.cmdExpShow.UseVisualStyleBackColor = False
+        Me.cmdExpShow.Visible = False
         '
         'cmdItemStimulateSelected
         '
@@ -843,7 +867,7 @@
         Me.cmdItemStimulateSelected.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdItemStimulateSelected.Image = CType(resources.GetObject("cmdItemStimulateSelected.Image"), System.Drawing.Image)
         Me.cmdItemStimulateSelected.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdItemStimulateSelected.Location = New System.Drawing.Point(383, 68)
+        Me.cmdItemStimulateSelected.Location = New System.Drawing.Point(327, 83)
         Me.cmdItemStimulateSelected.Name = "cmdItemStimulateSelected"
         Me.cmdItemStimulateSelected.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdItemStimulateSelected.Size = New System.Drawing.Size(118, 50)
@@ -865,13 +889,15 @@
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.BackColor = System.Drawing.SystemColors.Control
         Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Label5.Enabled = False
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label5.Location = New System.Drawing.Point(657, 9)
+        Me.Label5.Location = New System.Drawing.Point(636, 9)
         Me.Label5.Name = "Label5"
         Me.Label5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label5.Size = New System.Drawing.Size(110, 17)
         Me.Label5.TabIndex = 39
         Me.Label5.Text = "Experiment Screen:"
+        Me.Label5.Visible = False
         '
         'lblSelColumn
         '
@@ -1767,11 +1793,9 @@
         Me.PanelBottom.Controls.Add(Me.cmdSanityCheck)
         Me.PanelBottom.Controls.Add(Me.cmdInitialCheck)
         Me.PanelBottom.Controls.Add(Me.cmdShowPlots)
-        Me.PanelBottom.Controls.Add(Me.cmdGenerateSOFA)
         Me.PanelBottom.Controls.Add(Me.cmdInitButton)
         Me.PanelBottom.Controls.Add(Me.GroupBox2)
         Me.PanelBottom.Controls.Add(Me.GroupBox1)
-        Me.PanelBottom.Controls.Add(Me.cmdContinueExp)
         Me.PanelBottom.Controls.Add(Me.cmdItemCreateList)
         Me.PanelBottom.Controls.Add(Me.Label5)
         Me.PanelBottom.Controls.Add(Me.cmdItemShuffleList)
@@ -1790,56 +1814,64 @@
         Me.PanelBottom.Controls.Add(Me.chkExpRun)
         Me.PanelBottom.Controls.Add(Me.cmdCancel)
         Me.PanelBottom.Controls.Add(Me.cmdResultExecute)
+        Me.PanelBottom.Controls.Add(Me.cmdGenerateSOFA)
+        Me.PanelBottom.Controls.Add(Me.cmdContinueExp)
         Me.PanelBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelBottom.Location = New System.Drawing.Point(0, 426)
         Me.PanelBottom.Name = "PanelBottom"
         Me.PanelBottom.Size = New System.Drawing.Size(876, 237)
         Me.PanelBottom.TabIndex = 58
         '
+        'cmdSanityCheck
+        '
+        Me.cmdSanityCheck.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.cmdSanityCheck.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdSanityCheck.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdSanityCheck.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdSanityCheck.Image = Global.ExpSuite.My.Resources.Resources.tick_transparent
+        Me.cmdSanityCheck.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.cmdSanityCheck.Location = New System.Drawing.Point(454, 27)
+        Me.cmdSanityCheck.Name = "cmdSanityCheck"
+        Me.cmdSanityCheck.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdSanityCheck.Size = New System.Drawing.Size(117, 50)
+        Me.cmdSanityCheck.TabIndex = 64
+        Me.cmdSanityCheck.Text = "Run validation"
+        Me.cmdSanityCheck.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.cmdSanityCheck.UseVisualStyleBackColor = False
+        '
         'cmdInitialCheck
         '
         Me.cmdInitialCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdInitialCheck.BackColor = System.Drawing.SystemColors.Control
         Me.cmdInitialCheck.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdInitialCheck.Enabled = False
         Me.cmdInitialCheck.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdInitialCheck.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdInitialCheck.Location = New System.Drawing.Point(659, 125)
+        Me.cmdInitialCheck.Location = New System.Drawing.Point(659, 164)
         Me.cmdInitialCheck.Name = "cmdInitialCheck"
         Me.cmdInitialCheck.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdInitialCheck.Size = New System.Drawing.Size(70, 35)
         Me.cmdInitialCheck.TabIndex = 63
         Me.cmdInitialCheck.Text = "Initial check"
         Me.cmdInitialCheck.UseVisualStyleBackColor = False
+        Me.cmdInitialCheck.Visible = False
         '
         'cmdShowPlots
         '
-        Me.cmdShowPlots.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdShowPlots.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.cmdShowPlots.BackColor = System.Drawing.SystemColors.Control
         Me.cmdShowPlots.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdShowPlots.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdShowPlots.Image = Global.ExpSuite.My.Resources.Resources.plot_icon
         Me.cmdShowPlots.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdShowPlots.Location = New System.Drawing.Point(659, 162)
+        Me.cmdShowPlots.Location = New System.Drawing.Point(454, 83)
         Me.cmdShowPlots.Name = "cmdShowPlots"
         Me.cmdShowPlots.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdShowPlots.Size = New System.Drawing.Size(70, 33)
+        Me.cmdShowPlots.Size = New System.Drawing.Size(117, 50)
         Me.cmdShowPlots.TabIndex = 62
-        Me.cmdShowPlots.Text = "Show plots"
+        Me.cmdShowPlots.Text = "Plot selected HRTFs"
+        Me.cmdShowPlots.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdShowPlots.UseVisualStyleBackColor = False
-        '
-        'cmdGenerateSOFA
-        '
-        Me.cmdGenerateSOFA.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdGenerateSOFA.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdGenerateSOFA.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdGenerateSOFA.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdGenerateSOFA.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdGenerateSOFA.Location = New System.Drawing.Point(740, 161)
-        Me.cmdGenerateSOFA.Name = "cmdGenerateSOFA"
-        Me.cmdGenerateSOFA.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdGenerateSOFA.Size = New System.Drawing.Size(70, 35)
-        Me.cmdGenerateSOFA.TabIndex = 61
-        Me.cmdGenerateSOFA.Text = "Generate SOFA files"
-        Me.cmdGenerateSOFA.UseVisualStyleBackColor = False
         '
         'cmdInitButton
         '
@@ -1847,24 +1879,27 @@
         Me.cmdInitButton.BackColor = System.Drawing.SystemColors.Control
         Me.cmdInitButton.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdInitButton.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdInitButton.Image = Global.ExpSuite.My.Resources.Resources.crosshair_transparent
         Me.cmdInitButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdInitButton.Location = New System.Drawing.Point(448, 11)
+        Me.cmdInitButton.Location = New System.Drawing.Point(327, 27)
         Me.cmdInitButton.Name = "cmdInitButton"
         Me.cmdInitButton.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdInitButton.Size = New System.Drawing.Size(111, 50)
+        Me.cmdInitButton.Size = New System.Drawing.Size(118, 50)
         Me.cmdInitButton.TabIndex = 60
-        Me.cmdInitButton.Text = "Initialise tracker and turntable"
+        Me.cmdInitButton.Text = "Calibrate tracker"
+        Me.cmdInitButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdInitButton.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.GroupBox2.Controls.Add(Me.cmdSetTo0)
+        Me.GroupBox2.Controls.Add(Me.cmdTTsendTo0)
         Me.GroupBox2.Controls.Add(Me.labelTTaz)
         Me.GroupBox2.Controls.Add(Me.Label16)
         Me.GroupBox2.Controls.Add(Me.labelTTcalibrated)
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.cmdTTShow)
-        Me.GroupBox2.Location = New System.Drawing.Point(162, 128)
+        Me.GroupBox2.Location = New System.Drawing.Point(78, 128)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
@@ -1873,9 +1908,38 @@
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Turntable"
         '
+        'cmdSetTo0
+        '
+        Me.cmdSetTo0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdSetTo0.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdSetTo0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdSetTo0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdSetTo0.Location = New System.Drawing.Point(106, 44)
+        Me.cmdSetTo0.Name = "cmdSetTo0"
+        Me.cmdSetTo0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdSetTo0.Size = New System.Drawing.Size(66, 21)
+        Me.cmdSetTo0.TabIndex = 52
+        Me.cmdSetTo0.Text = "Set to 0°"
+        Me.cmdSetTo0.UseVisualStyleBackColor = False
+        '
+        'cmdTTsendTo0
+        '
+        Me.cmdTTsendTo0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdTTsendTo0.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdTTsendTo0.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdTTsendTo0.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdTTsendTo0.Location = New System.Drawing.Point(106, 18)
+        Me.cmdTTsendTo0.Name = "cmdTTsendTo0"
+        Me.cmdTTsendTo0.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdTTsendTo0.Size = New System.Drawing.Size(66, 21)
+        Me.cmdTTsendTo0.TabIndex = 51
+        Me.cmdTTsendTo0.Text = "Send to 0°"
+        Me.cmdTTsendTo0.UseVisualStyleBackColor = False
+        '
         'labelTTaz
         '
-        Me.labelTTaz.Location = New System.Drawing.Point(142, 19)
+        Me.labelTTaz.BackColor = System.Drawing.Color.Lime
+        Me.labelTTaz.Location = New System.Drawing.Point(59, 19)
         Me.labelTTaz.Margin = New System.Windows.Forms.Padding(2)
         Me.labelTTaz.Name = "labelTTaz"
         Me.labelTTaz.ReadOnly = True
@@ -1886,7 +1950,7 @@
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(94, 20)
+        Me.Label16.Location = New System.Drawing.Point(11, 20)
         Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(48, 13)
@@ -1896,29 +1960,30 @@
         '
         'labelTTcalibrated
         '
-        Me.labelTTcalibrated.BackColor = System.Drawing.Color.Red
-        Me.labelTTcalibrated.Location = New System.Drawing.Point(53, 19)
+        Me.labelTTcalibrated.BackColor = System.Drawing.Color.Lime
+        Me.labelTTcalibrated.Location = New System.Drawing.Point(55, 19)
         Me.labelTTcalibrated.Margin = New System.Windows.Forms.Padding(2)
         Me.labelTTcalibrated.Name = "labelTTcalibrated"
         Me.labelTTcalibrated.ReadOnly = True
         Me.labelTTcalibrated.Size = New System.Drawing.Size(37, 20)
         Me.labelTTcalibrated.TabIndex = 17
-        Me.labelTTcalibrated.Text = "No"
+        Me.labelTTcalibrated.Text = "Yes"
+        Me.labelTTcalibrated.Visible = False
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(2, 20)
+        Me.Label15.Location = New System.Drawing.Point(4, 20)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(53, 13)
         Me.Label15.TabIndex = 16
         Me.Label15.Text = "Initialised:"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label15.Visible = False
         '
         'GroupBox1
         '
-        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.GroupBox1.Controls.Add(Me.labelNcams)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.labelTrackingYesNo)
@@ -1935,7 +2000,7 @@
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.labelYaw)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(161, 11)
+        Me.GroupBox1.Location = New System.Drawing.Point(77, 11)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
@@ -2117,23 +2182,6 @@
         Me.Label2.Text = "Yaw (°):"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'cmdContinueExp
-        '
-        Me.cmdContinueExp.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.cmdContinueExp.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdContinueExp.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdContinueExp.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdContinueExp.Image = CType(resources.GetObject("cmdContinueExp.Image"), System.Drawing.Image)
-        Me.cmdContinueExp.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdContinueExp.Location = New System.Drawing.Point(509, 125)
-        Me.cmdContinueExp.Name = "cmdContinueExp"
-        Me.cmdContinueExp.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdContinueExp.Size = New System.Drawing.Size(118, 50)
-        Me.cmdContinueExp.TabIndex = 56
-        Me.cmdContinueExp.Text = "Continue Experiment"
-        Me.cmdContinueExp.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.cmdContinueExp.UseVisualStyleBackColor = False
-        '
         'lblTTShow
         '
         Me.lblTTShow.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -2147,6 +2195,42 @@
         Me.lblTTShow.TabIndex = 51
         Me.lblTTShow.Text = "Turntable:"
         Me.lblTTShow.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'cmdGenerateSOFA
+        '
+        Me.cmdGenerateSOFA.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.cmdGenerateSOFA.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdGenerateSOFA.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdGenerateSOFA.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdGenerateSOFA.Image = Global.ExpSuite.My.Resources.Resources.flag_transparent1
+        Me.cmdGenerateSOFA.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.cmdGenerateSOFA.Location = New System.Drawing.Point(454, 140)
+        Me.cmdGenerateSOFA.Name = "cmdGenerateSOFA"
+        Me.cmdGenerateSOFA.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdGenerateSOFA.Size = New System.Drawing.Size(117, 50)
+        Me.cmdGenerateSOFA.TabIndex = 61
+        Me.cmdGenerateSOFA.Text = "Generate SOFA files"
+        Me.cmdGenerateSOFA.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.cmdGenerateSOFA.UseVisualStyleBackColor = False
+        '
+        'cmdContinueExp
+        '
+        Me.cmdContinueExp.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.cmdContinueExp.BackColor = System.Drawing.SystemColors.Control
+        Me.cmdContinueExp.Cursor = System.Windows.Forms.Cursors.Default
+        Me.cmdContinueExp.Enabled = False
+        Me.cmdContinueExp.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmdContinueExp.Image = CType(resources.GetObject("cmdContinueExp.Image"), System.Drawing.Image)
+        Me.cmdContinueExp.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.cmdContinueExp.Location = New System.Drawing.Point(453, 140)
+        Me.cmdContinueExp.Name = "cmdContinueExp"
+        Me.cmdContinueExp.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmdContinueExp.Size = New System.Drawing.Size(118, 50)
+        Me.cmdContinueExp.TabIndex = 56
+        Me.cmdContinueExp.Text = "Continue Experiment"
+        Me.cmdContinueExp.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.cmdContinueExp.UseVisualStyleBackColor = False
+        Me.cmdContinueExp.Visible = False
         '
         'PanelTop
         '
@@ -2194,40 +2278,40 @@
         Me.dgvItemList.AllowUserToDeleteRows = False
         Me.dgvItemList.AllowUserToOrderColumns = True
         Me.dgvItemList.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightYellow
-        Me.dgvItemList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.LightYellow
+        Me.dgvItemList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvItemList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgvItemList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvItemList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.DefaultCellStyle = DataGridViewCellStyle11
         Me.dgvItemList.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvItemList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dgvItemList.Enabled = False
         Me.dgvItemList.Location = New System.Drawing.Point(0, 57)
         Me.dgvItemList.Name = "dgvItemList"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvItemList.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvItemList.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.dgvItemList.RowHeadersWidth = 30
         Me.dgvItemList.RowTemplate.DefaultCellStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgvItemList.Size = New System.Drawing.Size(815, 213)
@@ -2290,21 +2374,6 @@
         '
         Me.tmrTracker.Enabled = True
         Me.tmrTracker.Interval = 200
-        '
-        'cmdSanityCheck
-        '
-        Me.cmdSanityCheck.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdSanityCheck.BackColor = System.Drawing.SystemColors.Control
-        Me.cmdSanityCheck.Cursor = System.Windows.Forms.Cursors.Default
-        Me.cmdSanityCheck.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdSanityCheck.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.cmdSanityCheck.Location = New System.Drawing.Point(740, 125)
-        Me.cmdSanityCheck.Name = "cmdSanityCheck"
-        Me.cmdSanityCheck.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmdSanityCheck.Size = New System.Drawing.Size(70, 35)
-        Me.cmdSanityCheck.TabIndex = 64
-        Me.cmdSanityCheck.Text = "General check"
-        Me.cmdSanityCheck.UseVisualStyleBackColor = False
         '
         'frmMain
         '
@@ -2435,5 +2504,7 @@
     Public WithEvents cmdShowPlots As Button
     Public WithEvents cmdInitialCheck As Button
     Public WithEvents cmdSanityCheck As Button
+    Public WithEvents cmdSetTo0 As Button
+    Public WithEvents cmdTTsendTo0 As Button
 #End Region
 End Class

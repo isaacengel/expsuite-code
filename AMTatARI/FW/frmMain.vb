@@ -1641,6 +1641,7 @@ SubEnd:
         cmdGenerateSOFA.Enabled = Not gblnExperiment And gblnOutputStable
         cmdShowPlots.Enabled = Not gblnExperiment And gblnOutputStable
         cmdInitialCheck.Enabled = Not gblnExperiment And gblnOutputStable
+        cmdSanityCheck.Enabled = Not gblnExperiment And gblnOutputStable
 
         szX = "Start Experiment"
         If glExperimentStartItem >= 0 And glExperimentEndItem >= 0 Then
@@ -5731,10 +5732,25 @@ SubNotTracking:
 
     Private Sub cmdSanityCheck_Click(sender As Object, e As EventArgs) Handles cmdSanityCheck.Click
 
-        cmdInitialCheck.Enabled = False
+        cmdSanityCheck.Enabled = False
         Result.SanityCheck()
-        cmdInitialCheck.Enabled = True
+        cmdSanityCheck.Enabled = True
 
+    End Sub
+
+    Private Sub cmdTTsendTo0_Click(sender As Object, e As EventArgs) Handles cmdTTsendTo0.Click
+        Dim ttSpeed_tmp As Double = ttSpeed
+        ttSpeed = 4 ' temporarily increase speed for this move
+        cmdSetTo0.Enabled = False
+        cmdTTShow.Enabled = False
+        Turntable.MoveToAngle(0)
+        ttSpeed = ttSpeed_tmp
+        cmdSetTo0.Enabled = True
+        cmdTTShow.Enabled = True
+    End Sub
+
+    Private Sub cmdSetTo0_Click(sender As Object, e As EventArgs) Handles cmdSetTo0.Click
+        Turntable.SetAngle(0)
     End Sub
 
     'Private Sub dgvItemList_KeyPress(sender As Object, e As KeyPressEventArgs) Handles dgvItemList.KeyPress

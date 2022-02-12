@@ -54,5 +54,4 @@ Public Class frmGenerateSOFA
         TextBoxSofaname.Text = str(UBound(str))
     End Sub
 
-
 End Class

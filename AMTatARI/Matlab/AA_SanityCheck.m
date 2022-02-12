@@ -270,7 +270,7 @@ end
 
 % Show dialog for clipping
 if ~isempty(cliplist)
-    dlg = errordlg(['CRITICAL: The microphone clipped for HRTF measurements',sprintf(' #%d',cliplist),'. Please reduce the microphone gain and repeat all measurements.'],'Microphone clipped!');
+    dlg = errordlg(['CRITICAL: The microphone clipped for HRTF measurements',sprintf(' #%d',unique(cliplist)),'. Please reduce the microphone gain and repeat all measurements.'],'Microphone clipped!');
     uiwait(dlg)
     return
 end
@@ -325,7 +325,9 @@ if ~isempty(nrglist)
 end
 
 %% Finished dialog
-if warningCount == 0  
+if countHP == 0 && countHRTF == 0
+    dlg = warndlg('No headphone or HRTF measurements were found. Click OK to continue.','Finished sanity check');
+elseif warningCount == 0  
     dlg = helpdlg(sprintf('Finished sanity check! A total of %d headphone measurements and %d HRTF measurements were evaluated. No warnings were shown. Click OK to continue.',countHP,countHRTF),'Finished sanity check');
 else
     dlg = warndlg(sprintf('Finished sanity check! A total of %d headphone measurements and %d HRTF measurements were evaluated. %d warnings were shown. Click OK to continue.',countHP,countHRTF,warningCount),'Finished sanity check');

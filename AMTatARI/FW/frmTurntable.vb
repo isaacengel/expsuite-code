@@ -143,10 +143,10 @@ Friend Class frmTurntable
             Case 3
                 Turntable.EmergencyStop()
                 ' get rid of current angle
-                gsngTTAngle = -1
-                gblnTTInitialized = False
-                sbStatusLabel.Text = "Turntable must be initialized"
-                ShowAngle(-1)
+                ' gsngTTAngle = -1
+                ' gblnTTInitialized = False
+                ' sbStatusLabel.Text = "Turntable must be initialized"
+                ' ShowAngle(-1)
                 'MsgBox("Turntable stopped! Current azimuth is probably inaccurate. Consider recalibrating it.", MsgBoxStyle.Critical, "Stop Turntable")
         End Select
 
@@ -442,7 +442,7 @@ SkipRotation:
                     Turntable.SetAngle(sngX)
                     'gsngTTAngle = sngX
                     txtReqPos.Text = TStr(gsngTTAngle)
-                    'gblnTTInitialized = True
+                    gblnTTInitialized = True
                     sbStatusLabel.Text = "Position set to " & txtReqPos.Text & "°"
 
             End Select
@@ -637,7 +637,10 @@ SubCancel:
         gblnCancel = False
 
         If glTTMode = 3 Then
-            GoTo SubCancel
+            gsngTTAngle = 0
+            ShowAngle(0)
+            gblnTTInitialized = True
+            Return ""
         End If
 
         QueryPerformanceCounter(curTic)

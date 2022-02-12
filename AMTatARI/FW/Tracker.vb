@@ -520,7 +520,7 @@ Module Tracker
                             mtsData(0).nCameras = CInt(varArgs(12))
                             mtsData(0).visible = True
                             mtsData(0).sngX = Val(varArgs(2))
-                            mtsData(0).sngY = Val(varArgs(3))
+                            mtsData(0).sngY = -Val(varArgs(3)) ' Y axis seems to be inverted
                             mtsData(0).sngZ = Val(varArgs(4))
                             mtsData(0).sngA = -Val(varArgs(7)) ' perpendicular ground plane -> yaw=-roll
                             mtsData(0).sngE = -Val(varArgs(5)) ' perpendicular ground plane -> pitch=-yaw

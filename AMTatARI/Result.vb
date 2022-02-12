@@ -31,7 +31,7 @@ Module Result
             MsgBox("Successfully saved SOFA files!", MsgBoxStyle.Information, "Generate SOFA files")
         End If
         ' Generate HPEQ
-        szErr = STIM.Matlab("AA_GenerateHPEQ('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv'," & doPlots & "," & targetFs & ");")
+        szErr = STIM.Matlab("AA_GenerateHpEQ('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv'," & doPlots & "," & targetFs & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Generate HPEQ files")
             frmMain.SetStatus("Error(s) generating HPEQ files")
@@ -73,8 +73,8 @@ Module Result
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Showing plots")
             frmMain.SetStatus("Error(s) showing plots")
-        Else
-            MsgBox("Successfully showed plots!", MsgBoxStyle.Information, "Showing plots")
+            ' Else
+            ' MsgBox("Successfully showed plots!", MsgBoxStyle.Information, "Showing plots")
         End If
         frmMain.SetStatus("Processing time: " & DateDiff(DateInterval.Second, StartTime, System.DateTime.Now).ToString & "s")
 

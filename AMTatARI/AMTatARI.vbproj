@@ -374,6 +374,11 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ToolboxIR.vb" />
+    <None Include="Resources\plot_icon.png" />
+    <None Include="Resources\flag_transparent.png" />
+    <None Include="Resources\flag_transparent.bmp" />
+    <None Include="Resources\tick_transparent.png" />
+    <None Include="Resources\crosshair_transparent.png" />
     <EmbeddedResource Include="frmGenerateSOFA.resx">
       <DependentUpon>frmGenerateSOFA.vb</DependentUpon>
       <SubType>Designer</SubType>

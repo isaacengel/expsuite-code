@@ -544,7 +544,16 @@ Module EventsSettings
                     .dMin = 0
                     .varDefault = "10"
                 End With
-                For lX = 13 To UBound(gconstExp)
+                With gconstExp(13)
+                    .szName = "Use verbal cues when tracking is lost"
+                    .szDescription = "When tracking is lost, instructions will be given automatically, e.g. 'look up', 'move left', etc."
+                    .szUnit = "0/1"
+                    .Flags = FWintern.VariableFlags.vfNumeric Or FWintern.VariableFlags.vfInteger Or FWintern.VariableFlags.vfMin Or VariableFlags.vfMax
+                    .dMin = 0
+                    .dMax = 1
+                    .varDefault = "1"
+                End With
+                For lX = 14 To UBound(gconstExp)
                     With gconstExp(lX)
                         .szName = "not used"
                         .szDescription = ""

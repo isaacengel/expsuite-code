@@ -305,10 +305,10 @@ SubError:
 
                 End Try
                 ttMoving = False
-                gsngTTAngle = -1
-                gblnTTInitialized = False
-                frmMain.labelTTcalibrated.Text = "No"
-                frmMain.labelTTcalibrated.BackColor = Color.Red
+                ' gsngTTAngle = -1 ' COMMENTING OUT 11/02/2022
+                ' gblnTTInitialized = False ' COMMENTING OUT 11/02/2022
+                ' frmMain.labelTTcalibrated.Text = "No" ' COMMENTING OUT 11/02/2022
+                ' frmMain.labelTTcalibrated.BackColor = Color.Red ' COMMENTING OUT 11/02/2022
                 Return 0
 
         End Select
@@ -588,10 +588,10 @@ SubError:
                 If lStep = 0 Then Return "" 'no movement necessary
 
                 ' set speed
-                ' Dim ttPeriod As Double = Math.Round(400 / ttSpeed)
+                Dim actualSpeed As Double = ttSpeed * 1.0137 ' calibrating the actual required speed (from empirical measurements for 1 deg/s)
 
                 ' prepare packet for speed
-                Dim bytBuf1() As Byte = OSC.PreparePacket("/Speed", {ttSpeed}) ' {CInt(ttPeriod)})
+                Dim bytBuf1() As Byte = OSC.PreparePacket("/Speed", {actualSpeed})
 
                 ' send packet speed
                 Try
@@ -615,8 +615,10 @@ SubError:
                     Return x.ToString
                 End Try
 
-                'Dim ttSpeed As Double = 400 / (ttPeriod * 1000) ' degrees/ms, empirically calculated
-                Dim waitTime As Double = lStep / (ttSpeed * 0.9) + 0.2 ' adding some arbitrary amount of time since the turntable speed is not well calibrated atm (10 Feb 2022)
+                Dim initialWait As Double = 0.5
+                Dim finalWait As Double = 0.5
+                Dim rotationTime As Double = lStep / (ttSpeed)
+                Dim waitTime As Double = initialWait + rotationTime + finalWait
 
                 ttMoving = True
 
@@ -628,10 +630,10 @@ SubError:
                     QueryPerformanceCounter(tCurrent)
                     Dim elapsedTime As Double = (tCurrent - tStart) / gcurHPFrequency
                     If lDir = 0 Then ' clockwise
-                        gsngTTAngle = (lStart - elapsedTime * ttSpeed + 360) Mod 360
+                        gsngTTAngle = (lStart - (elapsedTime - initialWait) * ttSpeed + 360) Mod 360
                         gsngTTActualAngle = gsngTTAngle
                     Else ' anticlockwise
-                        gsngTTAngle = (lStart + elapsedTime * ttSpeed + 360) Mod 360
+                        gsngTTAngle = (lStart + (elapsedTime - initialWait) * ttSpeed + 360) Mod 360
                         gsngTTActualAngle = gsngTTAngle
                     End If
                     frmTurntable.ShowAngle((360 + gsngTTAngle) Mod 360)

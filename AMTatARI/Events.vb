@@ -62,7 +62,7 @@ Module Events
         frmMain.SetResultList("Plot Records;Impulse Response Toolbox;Post Processing Toolbox")
 
         ' define constants
-        ReDim gconstExp(12)
+        ReDim gconstExp(13) ' NOTE: gconstExp size defined here
         With gconstExp(0)
             .szName = "Tracker: In Range Period"
             .szDescription = "Sets the minimal period, in which the tracker sensor must remain in range."
@@ -522,16 +522,28 @@ SubStart:
             End If
 
             ' check if turntable is initialised (only when azimuth is numeric, i.e. not in headphone measurements)
-            If IsNumeric(szAzimuth) And Not gblnTTInitialized Then
+            'If IsNumeric(szAzimuth) And Not gblnTTInitialized Then
+            'Dim Msg, Title As Object
+            'Msg = "Turntable was not initialized. If you continue, it will be assumed that it is at 0 degrees (not recommended). Do you want to continue?"
+            'Dim Style As MsgBoxStyle = CType(vbYesNo + vbCritical + vbDefaultButton2, MsgBoxStyle)
+            'Title = "Turntable not initialized"
+            'Dim Response As MsgBoxResult = MsgBox(Msg, Style, Title)
+            'If Response = vbYes Then    ' User chose Yes.
+            '
+            ' Else    ' User chose No.
+            'eturn ""
+            'End If
+            'End If
+
+            ' check if turntable speed is > 1 (only when azimuth is numeric, i.e. not in headphone measurements)
+            If IsNumeric(szAzimuth) And ttSpeed > 1 Then
                 Dim Msg, Title As Object
-                Msg = "Turntable was not initialized. If you continue, it will be assumed that it is at 0 degrees (not recommended). Do you want to continue?"
+                Msg = "Turntable speed is faster than 1 degree per second, which will likely produce inaccuracies. Do you want to set it to 1 degree per second (recommended)?"
                 Dim Style As MsgBoxStyle = CType(vbYesNo + vbCritical + vbDefaultButton2, MsgBoxStyle)
-                Title = "Turntable not initialized"
+                Title = "Turntable speed too high"
                 Dim Response As MsgBoxResult = MsgBox(Msg, Style, Title)
                 If Response = vbYes Then    ' User chose Yes.
-
-                Else    ' User chose No.
-                    Return ""
+                    ttSpeed = 1
                 End If
             End If
 
@@ -750,6 +762,66 @@ SubStart:
                 lX = Tracker.CheckTrackedMinValue(0, gtsTrackerMin(0).lStatus)
                 lX = lX Or Tracker.CheckTrackedMaxValue(0, gtsTrackerMax(0).lStatus)
                 If (lX > 0) Then
+                    ' First, play verbal cue for the direction that is most incorrect
+                    Dim tsData As TrackerSensor
+                    szErr = Tracker.GetCurrentValues(-1, 0, tsData) ' only tested for OptiTrack
+                    If Val(gconstExp(13).varValue) = 1 And tsData.visible = True Then ' only continue if marker is visible
+                        Dim X As Double = tsData.sngX
+                        Dim Y As Double = tsData.sngY
+                        Dim Z As Double = tsData.sngZ
+                        Dim Yaw As Double = tsData.sngA - Val(szAzimuth)
+                        Dim Pitch As Double = tsData.sngE
+                        Dim Roll As Double = tsData.sngR
+                        Dim wavPath As String = "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/" ' TODO: input parameter?
+                        ' Only report one of the angles/axes, in order from most to least common
+                        If (lX And 16) > 0 Then ' Pitch
+                            If Pitch > 0 Then
+                                wavPath = wavPath & "lookDown.wav"
+                            Else
+                                wavPath = wavPath & "lookUp.wav"
+                            End If
+                        ElseIf (lX And 8) > 0 Then ' Yaw
+                            If Yaw > 0 Then
+                                wavPath = wavPath & "lookRight.wav"
+                            Else
+                                wavPath = wavPath & "lookLeft.wav"
+                            End If
+                        ElseIf (lX And 32) > 0 Then ' Roll
+                            If Roll > 0 Then
+                                wavPath = wavPath & "tiltRight.wav"
+                            Else
+                                wavPath = wavPath & "tiltLeft.wav"
+                            End If
+                        ElseIf (lX And 2) > 0 Then ' Y (todo)
+                            If Y > 0 Then
+                                wavPath = wavPath & "moveRight.wav"
+                            Else
+                                wavPath = wavPath & "moveLeft.wav"
+                            End If
+                        ElseIf (lX And 1) > 0 Then ' X (todo)
+                            If X > 0 Then
+                                wavPath = wavPath & "moveBack.wav"
+                            Else
+                                wavPath = wavPath & "moveForward.wav"
+                            End If
+                        Else ' Z (todo)
+                            If Z > 0 Then
+                                wavPath = wavPath & "moveDown.wav"
+                            Else
+                                wavPath = wavPath & "moveUp.wav"
+                            End If
+                        End If
+                        Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                        Output.Send("/DAC/SetStream/3", "set", "play0")
+                        Output.Send("/Play/SetDelay/0", 0.005)
+                        Output.Send("/DAC/SetVol/3", 80)
+                        Output.Send("/Play/StartAll/0")
+                        Sleep(1000)
+                        Output.Send("/DAC/SetVol*", 0)
+                        Output.Send("/Play/StartSynced/*", "stop")
+                        Output.Send("/Play/Stop/*")
+                    End If
+                    ' Second, play the tones
                     szErr = frmTrackerLeadInRange.ShowForm(sAmp - gfreqParL(lCh(0) - 1).sSPLOffset + 100 - 20, sFreq, Val(szAzimuth)) ' added -20 to make it quieter
                     If Len(szErr) > 0 Then GoTo SubError
                     If gblnCancel Then szErr = "Canceled by user" : GoTo SubError
@@ -761,7 +833,7 @@ SubStart:
             '' "PRE-ROTATION TRIAL 1" ' (saved a couple of seconds but did not make the cabbage fat)
             ''  PRE-ROTATION #1
             'If gblnExperiment = True AndAlso glTTMode = 1 Andalso gblnAllowPreRotation AndAlso lRow+1 < .ItemCount Then
-                                
+
             '    szAzimuth = .Item(lRow+1, "AZIMUTH") 'next azimuth
 
             '    ' rotate turntable
