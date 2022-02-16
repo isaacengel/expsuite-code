@@ -36,7 +36,7 @@ Obj = SOFAgetConventions('SimpleFreeFieldHRIR');
 % Obj.Data.IR = shiftdim(hM,1); % hM is [N M R], data.IR must be [M R N]
 Obj.Data.IR = ObjSource.Data.IR;
 Obj.Data.SamplingRate = stimPar.SamplingRate;
-Obj.Data.SamplingRate_Units='Hertz';
+Obj.Data.SamplingRate_Units='hertz';
 
 if isfield(meta,'delay') && ~isempty(meta.delay)
     Obj.Data.Delay = meta.delay;
