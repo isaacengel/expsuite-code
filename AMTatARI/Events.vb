@@ -773,18 +773,24 @@ SubStart:
                         Dim Pitch As Double = tsData.sngE
                         Dim Roll As Double = tsData.sngR
                         Dim wavPath As String = "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/" ' TODO: input parameter?
-                        ' Only report one of the angles/axes, in order from most to least common
-                        If (lX And 16) > 0 Then ' Pitch
-                            If Pitch > 0 Then
-                                wavPath = wavPath & "lookDown.wav"
+                        ' Only report one of the angles/axes, in order from least to most common
+                        If (lX And 4) > 0 Then ' Z
+                            If Z > 0 Then
+                                wavPath = wavPath & "moveDown.wav"
                             Else
-                                wavPath = wavPath & "lookUp.wav"
+                                wavPath = wavPath & "moveUp.wav"
                             End If
-                        ElseIf (lX And 8) > 0 Then ' Yaw
-                            If Yaw > 0 Then
-                                wavPath = wavPath & "lookRight.wav"
+                        ElseIf (lX And 1) > 0 Then ' X
+                            If X > 0 Then
+                                wavPath = wavPath & "moveBack.wav"
                             Else
-                                wavPath = wavPath & "lookLeft.wav"
+                                wavPath = wavPath & "moveForward.wav"
+                            End If
+                        ElseIf (lX And 2) > 0 Then ' Y
+                            If Y > 0 Then
+                                wavPath = wavPath & "moveRight.wav"
+                            Else
+                                wavPath = wavPath & "moveLeft.wav"
                             End If
                         ElseIf (lX And 32) > 0 Then ' Roll
                             If Roll > 0 Then
@@ -792,24 +798,20 @@ SubStart:
                             Else
                                 wavPath = wavPath & "tiltLeft.wav"
                             End If
-                        ElseIf (lX And 2) > 0 Then ' Y (todo)
-                            If Y > 0 Then
-                                wavPath = wavPath & "moveRight.wav"
+                        ElseIf (lX And 8) > 0 Then ' Yaw
+                            If Yaw > 0 Then
+                                wavPath = wavPath & "lookRight.wav"
                             Else
-                                wavPath = wavPath & "moveLeft.wav"
+                                wavPath = wavPath & "lookLeft.wav"
                             End If
-                        ElseIf (lX And 1) > 0 Then ' X (todo)
-                            If X > 0 Then
-                                wavPath = wavPath & "moveBack.wav"
+                        ElseIf (lX And 16) > 0 Then ' Pitch
+                            If Pitch > 0 Then
+                                wavPath = wavPath & "lookDown.wav"
                             Else
-                                wavPath = wavPath & "moveForward.wav"
+                                wavPath = wavPath & "lookUp.wav"
                             End If
-                        Else ' Z (todo)
-                            If Z > 0 Then
-                                wavPath = wavPath & "moveDown.wav"
-                            Else
-                                wavPath = wavPath & "moveUp.wav"
-                            End If
+                        Else
+                            ' we should never end up here
                         End If
                         Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
                         Output.Send("/DAC/SetStream/3", "set", "play0")
@@ -825,7 +827,16 @@ SubStart:
                     szErr = frmTrackerLeadInRange.ShowForm(sAmp - gfreqParL(lCh(0) - 1).sSPLOffset + 100 - 20, sFreq, Val(szAzimuth)) ' added -20 to make it quieter
                     If Len(szErr) > 0 Then GoTo SubError
                     If gblnCancel Then szErr = "Canceled by user" : GoTo SubError
-                    'Turntable.EmergencyStop()
+                    ' Finally, play a ''well done'' sound and repeat measurement
+                    Output.Send("/Play/OpenWAV/0", "open", "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/coin.wav", 0, 44, 1, glResolution \ 8, "l")
+                    Output.Send("/DAC/SetStream/3", "set", "play0")
+                    Output.Send("/Play/SetDelay/0", 0.005)
+                    Output.Send("/DAC/SetVol/3", 80)
+                    Output.Send("/Play/StartAll/0")
+                    Sleep(1200)
+                    Output.Send("/DAC/SetVol*", 0)
+                    Output.Send("/Play/StartSynced/*", "stop")
+                    Output.Send("/Play/Stop/*")
                     GoTo SubStart
                 End If
             End If

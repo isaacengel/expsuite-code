@@ -14,6 +14,11 @@ if ~exist('itemlistfile','var')
     itemlistfile = 'itemlist.itl.csv';
 end
 
+leftRightThresh_HP = 3; % maximum difference in energy between left and right headphone channels (dB)
+SNRthresh_HP = 60; % minimum SNR between the onset noise floor and the headphone IR peak (dB)
+SNRthresh_HRTF = 60; % minimum SNR between the onset noise floor and the HRIR peak (dB)
+nrgThresh_HRTF = 0.1; % maximum energy ratio that can be removed from the HRIR as a consequence of windowing (0-1) 
+
 %% Load settings
 gain = 20; % for HRTF plots
 hpIrLen = 2048;
@@ -120,19 +125,17 @@ for i=1:numAz_HP
     nrgR = sum(h(:,id,2).^2,1);
     dBdif = abs(10*log10(nrgL./nrgR));
     dBdif = mean(dBdif);
-    dBdifThreshold = 2; % TODO: pass as a parameter
-    if dBdif > dBdifThreshold
+    if dBdif > leftRightThresh_HP
         lrlist = [lrlist,id];
     end
 
     % Check SNR
-    SNRthresh = 60; % TODO; pass as parameter
     pad = round(0.0005 * fs); % look for the floor at 0.5ms before onset (empirically set)
     [peakL(id),onsL(id)] = max(db(abs(h(:,id,1))),[],1);
     [peakR(id),onsR(id)] = max(db(abs(h(:,id,2))),[],1);
     floorL(id) = mean(db(abs(h(1:onsL-pad,id,1))),1);
     floorR(id) = mean(db(abs(h(1:onsR-pad,id,2))),1);
-    if (peakL(id)-floorL(id)) < SNRthresh || (peakR(id)-floorR(id)) < SNRthresh
+    if (peakL(id)-floorL(id)) < SNRthresh_HP || (peakR(id)-floorR(id)) < SNRthresh_HP
         snrlist = [snrlist,id];
     end
     
@@ -157,7 +160,7 @@ end
 % Show dialog for left/right mismatch
 if ~isempty(lrlist)
     warningCount = warningCount + 1;
-    dlg = warndlg([sprintf('WARNING: left and right channels show a difference in energy greater than %0.2f dB for headphone measurements',dBdifThreshold),sprintf(' #%d',lrlist),' (see figure). Please consider checking the microphones. Click OK to close the plots and continue.'],'Left/right mismatch');
+    dlg = warndlg([sprintf('WARNING: left and right channels show a difference in energy greater than %0.2f dB for headphone measurements',leftRightThresh_HP),sprintf(' #%d',lrlist),' (see figure). Please consider checking the microphones. Click OK to close the plots and continue.'],'Left/right mismatch');
     figure('pos',[12 91 1065 420])
     subplot(1,2,1),AKp(h(:,lrlist,1),'et2d','fs',fs), title('Left'), legend(repmat("Measurement #",numel(lrlist),1)+string(lrlist).','fontsize',7)
     subplot(1,2,2),AKp(h(:,lrlist,2),'et2d','fs',fs), title('Right'), legend(repmat("Measurement #",numel(lrlist),1)+string(lrlist).','fontsize',7)
@@ -169,15 +172,15 @@ end
 % Show dialog for SNR warning
 if ~isempty(snrlist)
     warningCount = warningCount + 1;
-    dlg = warndlg([sprintf('WARNING: the SNR between the IR peak and the onset noise floor is smaller than %0.2f dB for headphone measurements',SNRthresh),sprintf(' #%d',snrlist),' (see figure). Please consider checking the microphones. Click OK to close the plots and continue.'],'Low SNR');
+    dlg = warndlg([sprintf('WARNING: the SNR between the IR peak and the onset noise floor is smaller than %0.2f dB for headphone measurements',SNRthresh_HP),sprintf(' #%d',snrlist),' (see figure). Please consider checking the microphones. Click OK to close the plots and continue.'],'Low SNR');
     figure('pos',[12 91 1065 420])
     subplot(1,2,1)
     AKp(h(1:round(0.003*fs),snrlist,1),'et2d','fs',fs), hold on
-    plot([0,3],[mean(peakL(snrlist)-SNRthresh),mean(peakL(snrlist)-SNRthresh)],'k--','LineWidth',2)
+    plot([0,3],[mean(peakL(snrlist)-SNRthresh_HP),mean(peakL(snrlist)-SNRthresh_HP)],'k--','LineWidth',2)
     title('Left'), legend([(repmat("Measurement #",numel(snrlist),1)+string(snrlist).');"Noise floor should be below this"],'location','se','fontsize',7)
     subplot(1,2,2)
     AKp(h(1:round(0.003*fs),snrlist,2),'et2d','fs',fs), hold on
-    plot([0,3],[mean(peakR(snrlist)-SNRthresh),mean(peakR(snrlist)-SNRthresh)],'k--','LineWidth',2)
+    plot([0,3],[mean(peakR(snrlist)-SNRthresh_HP),mean(peakR(snrlist)-SNRthresh_HP)],'k--','LineWidth',2)
     title('Right'), legend([(repmat("Measurement #",numel(snrlist),1)+string(snrlist).');"Noise floor should be below this"],'location','se','fontsize',7)
     sgtitle('Warning: low onset SNR in headphone IRs')
     uiwait(dlg);
@@ -242,13 +245,13 @@ for i=1:numAz_HRTF
         end
                
         % Check SNR
-        SNRthresh = 60; % TODO; pass as parameter
+        SNRthresh_HRTF = 60; % TODO; pass as parameter
         pad = round(0.0005 * fs); % look for the floor at 0.5ms before onset (empirically set)
         [peakL(countHRTF),onsL(countHRTF)] = max(db(abs(h(:,countHRTF,1))),[],1);
         [peakR(countHRTF),onsR(countHRTF)] = max(db(abs(h(:,countHRTF,2))),[],1);
         floorL(countHRTF) = mean(db(abs(h(1:onsL-pad,countHRTF,1))),1);
         floorR(countHRTF) = mean(db(abs(h(1:onsR-pad,countHRTF,2))),1);
-        if (peakL(countHRTF)-floorL(countHRTF)) < SNRthresh || (peakR(countHRTF)-floorR(countHRTF)) < SNRthresh
+        if (peakL(countHRTF)-floorL(countHRTF)) < SNRthresh_HRTF || (peakR(countHRTF)-floorR(countHRTF)) < SNRthresh_HRTF
             snrlist = [snrlist,countHRTF];
         end
             
@@ -258,8 +261,7 @@ for i=1:numAz_HRTF
         nrg = sum(abs(h(:,countHRTF,:)).^2,'all');
         nrgwin = sum(abs(hwin(:,countHRTF,:)).^2,'all');
         nrgloss = 1-nrgwin/nrg;
-        nrgThresh = 0.1; % TODO: pass as parameter
-        if nrgloss>nrgThresh
+        if nrgloss>nrgThresh_HRTF
             nrglist = [nrglist,countHRTF];
         end
             
@@ -282,15 +284,15 @@ if ~isempty(snrlist)
     ellist = pos(snrlist,2);
     len = numel(snrlist);
     strlist = repmat("[az=",len,1) + string(azlist(:)) + repmat(",el=",len,1) + string(ellist(:)) + repmat("]",len,1);
-    dlg = warndlg([sprintf('WARNING: the SNR between the IR peak and the onset noise floor is smaller than %0.2f dB for %d HRTF measurements',SNRthresh,len),' (see figure). Please consider checking microphones and measurement conditions. Click OK to close the plots and continue.'],'Low SNR');
+    dlg = warndlg([sprintf('WARNING: the SNR between the IR peak and the onset noise floor is smaller than %0.2f dB for %d HRTF measurements',SNRthresh_HRTF,len),' (see figure). Please consider checking microphones and measurement conditions. Click OK to close the plots and continue.'],'Low SNR');
     figure('pos',[12 91 1357 785])
     subplot(2,1,1)
     AKp(h(1:round(0.003*fs),snrlist,1),'et2d','fs',fs), hold on
-    plot([0,3],[mean(peakL(snrlist)-SNRthresh),mean(peakL(snrlist)-SNRthresh)],'k--','LineWidth',2)
+    plot([0,3],[mean(peakL(snrlist)-SNRthresh_HRTF),mean(peakL(snrlist)-SNRthresh_HRTF)],'k--','LineWidth',2)
     title('Left'), legend([strlist;"Noise floor should be below this"],'location','se','fontsize',7)
     subplot(2,1,2)
     AKp(h(1:round(0.003*fs),snrlist,2),'et2d','fs',fs), hold on
-    plot([0,3],[mean(peakR(snrlist)-SNRthresh),mean(peakR(snrlist)-SNRthresh)],'k--','LineWidth',2)
+    plot([0,3],[mean(peakR(snrlist)-SNRthresh_HRTF),mean(peakR(snrlist)-SNRthresh_HRTF)],'k--','LineWidth',2)
     title('Right'), legend([strlist;"Noise floor should be below this"],'location','se','fontsize',7)
     sgtitle('Warning: low onset SNR in HRIRs. The noise floor should be below the black line.')
     uiwait(dlg);
@@ -305,7 +307,7 @@ if ~isempty(nrglist)
     ellist = pos(nrglist,2);
     len = numel(nrglist);
     strlist = repmat("[az=",len,1) + string(azlist(:)) + repmat(",el=",len,1) + string(ellist(:)) + repmat("]",len,1);
-    dlg = warndlg([sprintf('WARNING: more than %0.2f%% of the HRIR energy was lost when windowing for %d HRTF measurements',nrgThresh*100,len),' (see figure). Please consider checking the microhpones, measurement conditions and latency in general. Click OK to close the plots and continue.'],'Big energy loss when windowing');
+    dlg = warndlg([sprintf('WARNING: more than %0.2f%% of the HRIR energy was lost when windowing for %d HRTF measurements',nrgThresh_HRTF*100,len),' (see figure). Please consider checking the microhpones, measurement conditions and latency in general. Click OK to close the plots and continue.'],'Big energy loss when windowing');
     figure('pos',[12 91 1357 785])
     for ch=1:2
         subplot(2,1,ch)

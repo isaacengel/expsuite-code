@@ -2643,6 +2643,19 @@ SubEnd:
         SetStatus("Stimulation finished successfully")
         frmTurntable.StartTT4ATimer() ' enable brake timer
 
+        ' Play a jingle to finish off
+        If ItemList.SelectedItemLast = ItemList.ItemCount Then
+            Output.Send("/Play/OpenWAV/0", "open", "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/levelCleared.wav", 0, 44, 1, glResolution \ 8, "l")
+            Output.Send("/DAC/SetStream/3", "set", "play0")
+            Output.Send("/Play/SetDelay/0", 0.005)
+            Output.Send("/DAC/SetVol/3", 80)
+            Output.Send("/Play/StartAll/0")
+            Sleep(5575)
+            Output.Send("/DAC/SetVol*", 0)
+            Output.Send("/Play/StartSynced/*", "stop")
+            Output.Send("/Play/Stop/*")
+        End If
+
         SetUIReady()
         Return ""
 
