@@ -124,7 +124,7 @@ pad = round(0.0005 * fs); % look for the floor at 0.5ms before onset (empiricall
 floorL = mean(db(abs(h(1:onsL-pad,:,1))),1);
 floorR = mean(db(abs(h(1:onsR-pad,:,2))),1);
 if any((peakL-floorL) < SNRthresh) || any((peakR-floorR) < SNRthresh)
-    figure('Visible','off','pos',[12 91 1065 420])
+    figure('pos',[12 91 1065 420])
     subplot(1,2,1), dummyplot = plot([nan nan],[nan nan],'k--','LineWidth',2); hold on
     AKp(h(1:round(0.003*fs),:,1),'et2d','fs',fs), hold on
     plot([0,3],[mean(peakL-SNRthresh),mean(peakL-SNRthresh)],'k--','LineWidth',2)
@@ -134,7 +134,7 @@ if any((peakL-floorL) < SNRthresh) || any((peakR-floorR) < SNRthresh)
     plot([0,3],[mean(peakR-SNRthresh),mean(peakR-SNRthresh)],'k--','LineWidth',2)
     title('Right'), legend(dummyplot,{'Noise floor should be below this'},'location','se')
     sgtitle('HRIR error: high noise before the onset!')
-    error('The noise floor before the onset is very high (see figure). Please check the microphones')
+    warning('The noise floor before the onset is very high (see figure). Please check the microphones')
 end
 
 %% Remove redundant directions
