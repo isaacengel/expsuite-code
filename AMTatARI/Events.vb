@@ -537,14 +537,20 @@ SubStart:
 
             ' check if turntable speed is > 1 (only when azimuth is numeric, i.e. not in headphone measurements)
             If IsNumeric(szAzimuth) And ttSpeed > 1 Then
-                Dim Msg, Title As Object
-                Msg = "Turntable speed is faster than 1 degree per second, which will likely produce inaccuracies. Do you want to set it to 1 degree per second (recommended)?"
-                Dim Style As MsgBoxStyle = CType(vbYesNo + vbCritical + vbDefaultButton2, MsgBoxStyle)
-                Title = "Turntable speed too high"
-                Dim Response As MsgBoxResult = MsgBox(Msg, Style, Title)
-                If Response = vbYes Then    ' User chose Yes.
-                    ttSpeed = 1
-                End If
+
+                ' NEW VERSION: JUST SET ttSpeed to 1
+                ttSpeed = 1
+
+                ' OLD VERSION BELOW, WITH THE DIALOG BOX
+                'Dim Msg, Title As Object
+                'Msg = "Turntable speed is faster than 1 degree per second, which will likely produce inaccuracies. Do you want to set it to 1 degree per second (recommended)?"
+                'Dim Style As MsgBoxStyle = CType(vbYesNo + vbCritical + vbDefaultButton2, MsgBoxStyle)
+                'Title = "Turntable speed too high"
+                'Dim Response As MsgBoxResult = MsgBox(Msg, Style, Title)
+                'If Response = vbYes Then    ' User chose Yes.
+                'ttSpeed = 1
+                'End If
+
             End If
 
             ' rotate turntable

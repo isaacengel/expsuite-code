@@ -4,6 +4,19 @@ Option Explicit On
 Public Class frmGenerateSOFA
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim sofaname As String = TextBoxSofaname.Text
+
+        ' Exit if SOFA name is empty
+        If sofaname = "" Then
+            Dim Msg, Title As Object
+            Msg = "Please input the subject ID (e.g. P0001)."
+            Dim Style As MsgBoxStyle = CType(vbOKOnly, MsgBoxStyle)
+            Title = "Subject ID not specified"
+            Dim Response As MsgBoxResult = MsgBox(Msg, Style, Title)
+            If Response = vbOK Then
+                Return
+            End If
+        End If
+
         Dim referenceFile As String = TextBoxRef.Text
         Dim doPlots As Integer = CInt(CheckBoxShowPlots.Checked)
         Dim saveRaw As Integer = CInt(CheckBoxRaw.Checked)
@@ -50,8 +63,14 @@ Public Class frmGenerateSOFA
     End Sub
 
     Private Sub WhenOpening() Handles Me.Load
-        Dim str() As String = STIM.WorkDir.Split("\"c)
-        TextBoxSofaname.Text = str(UBound(str))
+
+        ' NEW VERSION: LEAVE TEXT FIELD BLANK TO FORCE USER TO INPUT NAME
+        TextBoxSofaname.Text = ""
+
+        ' OLD VERSION BELOW. COMMENTING IT OUT
+        ' Dim str() As String = STIM.WorkDir.Split("\"c)
+        ' TextBoxSofaname.Text = str(UBound(str))
+
     End Sub
 
 End Class

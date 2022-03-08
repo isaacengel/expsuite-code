@@ -198,7 +198,7 @@ pos = [];
 for i=1:numAz_HRTF
     
     row = indAz_HRTF(i);
-    az = itemlist.Azimuth(row); % mod(360-itemlist.Azimuth(row),360); % source az = - turntable az
+    az = itemlist.Azimuth(row); % mod(360-itemlist.Azimuth(row),360);
     id = itemlist.Index(row);
     el = str2num(itemlist.Elevation{row});
     numEl = numel(el);
@@ -265,7 +265,7 @@ for i=1:numAz_HRTF
             nrglist = [nrglist,countHRTF];
         end
             
-        pos(countHRTF,:) = [az,el(j)];
+        pos(countHRTF,:) = [az,el(j),row];
     end  
      
 end
@@ -283,7 +283,7 @@ if ~isempty(snrlist)
     azlist = pos(snrlist,1);
     ellist = pos(snrlist,2);
     len = numel(snrlist);
-    strlist = repmat("Az = ",len,1) + string(azlist(:)) + repmat("°, El = ",len,1) + string(ellist(:)) + repmat("°",len,1);
+    strlist = repmat("[az=",len,1) + string(azlist(:)) + repmat(",el=",len,1) + string(ellist(:)) + repmat("]",len,1);
     dlg = warndlg([sprintf('WARNING: the SNR between the IR peak and the onset noise floor is smaller than %0.2f dB for %d HRTF measurements',SNRthresh_HRTF,len),' (see figure). Please consider checking microphones and measurement conditions. Click OK to close the plots and continue.'],'Low SNR');
     figure('pos',[12 91 1357 785])
     subplot(2,1,1)
@@ -305,8 +305,9 @@ if ~isempty(nrglist)
     ears = {'Left','Right'};
     azlist = pos(nrglist,1);
     ellist = pos(nrglist,2);
+    rowlist = pos(nrglist,3);
     len = numel(nrglist);
-    strlist = repmat("Az = ",len,1) + string(azlist(:)) + repmat("°, El = ",len,1) + string(ellist(:)) + repmat("°",len,1);
+    strlist = repmat("Ind=",len,1) + string(rowlist(:)) + repmat(",az=",len,1) + string(azlist(:)) + repmat(",el=",len,1) + string(ellist(:));
     dlg = warndlg([sprintf('WARNING: more than %0.2f%% of the HRIR energy was lost when windowing for %d HRTF measurements',nrgThresh_HRTF*100,len),' (see figure). Please consider checking the microhpones, measurement conditions and latency in general. Click OK to close the plots and continue.'],'Big energy loss when windowing');
     figure('pos',[12 91 1357 785])
     for ch=1:2
@@ -321,7 +322,7 @@ if ~isempty(nrglist)
         title(sprintf('%s',ears{ch}))
         legend([strlist;"Window"],'location','se','fontsize',7)
     end
-    sgtitle('Warning: large energy loss when windowing HRIRs. The red window should cover the first few ms of the HRIR.')
+    sgtitle('Warning: large energy loss when windowing HRIRs. The red window should cover the whole HRIR.')
     uiwait(dlg);
     close(gcf)
 end

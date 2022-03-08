@@ -133,8 +133,8 @@ if any((peakL-floorL) < SNRthresh) || any((peakR-floorR) < SNRthresh)
     AKp(h(1:round(0.003*fs),:,2),'et2d','fs',fs), hold on
     plot([0,3],[mean(peakR-SNRthresh),mean(peakR-SNRthresh)],'k--','LineWidth',2)
     title('Right'), legend(dummyplot,{'Noise floor should be below this'},'location','se')
-    sgtitle('HRIR error: high noise before the onset!')
-    warning('The noise floor before the onset is very high (see figure). Please check the microphones')
+    sgtitle('Warning: some HRIRs display a high noise floor before the onset')
+    warning('The noise floor before the onset is very high for some HRIRs (see figure). Please check the microphones')
 end
 
 %% Remove redundant directions
@@ -330,7 +330,9 @@ for i=1:numel(targetFs)
 
     tFs = targetFs(i);
     stimPar.SamplingRate = tFs;
-    delay_re = round(delay*tFs/fs);
+    if saveITD
+        delay_re = round(delay*tFs/fs);
+    end
     
     tFsdir = sprintf('%s/HRTF/%0.2dkHz',workdir,round(tFs/1000));
     if ~isfolder(tFsdir)

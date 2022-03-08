@@ -4,7 +4,15 @@
 
 %% Settings (EDIT AS NEEDED)
 
-name     = 'MyHRTF';          
+% Check if the path matches the OneDrive file structure and use the parent
+% folder name. Otherwise, default to 'MyHRTF'
+path_parts = strsplit(pwd,filesep);
+if strcmp(path_parts{end},'HRTF')
+    name = path_parts{end-1}; 
+else
+    name = 'MyHRTF'; % default name
+end
+
 doplots  = 1; % Show some plots
 saveRaw  = 1; % Save raw HRTF (50ms long, no window) in SOFA format (0,1)
 saveWin  = 1; % Save windowed HRTF (5ms long with fade in/out) in SOFA format (0,1)

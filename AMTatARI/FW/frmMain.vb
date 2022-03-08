@@ -5756,8 +5756,9 @@ SubNotTracking:
         ttSpeed = 4 ' temporarily increase speed for this move
         cmdSetTo0.Enabled = False
         cmdTTShow.Enabled = False
-        Turntable.MoveToAngle(0)
+        Turntable.MoveToAngle(359) ' overshoot one degree
         ttSpeed = ttSpeed_tmp
+        Turntable.MoveToAngle(0) ' then move back anticlockwise to reduce the play on the turntable gears
         cmdSetTo0.Enabled = True
         cmdTTShow.Enabled = True
     End Sub
