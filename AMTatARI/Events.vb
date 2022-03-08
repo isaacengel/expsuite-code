@@ -778,7 +778,7 @@ SubStart:
                         Dim Yaw As Double = tsData.sngA - Val(szAzimuth)
                         Dim Pitch As Double = tsData.sngE
                         Dim Roll As Double = tsData.sngR
-                        Dim wavPath As String = "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/" ' TODO: input parameter?
+                        Dim wavPath As String = "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/" ' TODO: input path as parameter?
                         ' Only report one of the angles/axes, in order from least to most common
                         If (lX And 4) > 0 Then ' Z
                             If Z > 0 Then
@@ -829,12 +829,26 @@ SubStart:
                         Output.Send("/Play/StartSynced/*", "stop")
                         Output.Send("/Play/Stop/*")
                     End If
-                    ' Second, play the tones
+                    ' Then, change the Min/Max range for the euler angles to 1 degree
+                    Dim tsTrackerMin_tmp As TrackerSensor = tsTrackerMin(0)
+                    Dim tsTrackerMax_tmp As TrackerSensor = tsTrackerMax(0)
+                    tsTrackerMin(0).sngA = -1 + Val(szAzimuth)
+                    tsTrackerMax(0).sngA = 1 + Val(szAzimuth)
+                    tsTrackerMin(0).sngE = -1
+                    tsTrackerMax(0).sngE = 1
+                    tsTrackerMin(0).sngR = -1
+                    tsTrackerMax(0).sngR = 1
+                    Tracker.TrackMinMaxValues(0, tsTrackerMin(0), tsTrackerMax(0))
+                    ' Next, play the tones
                     szErr = frmTrackerLeadInRange.ShowForm(sAmp - gfreqParL(lCh(0) - 1).sSPLOffset + 100 - 20, sFreq, Val(szAzimuth)) ' added -20 to make it quieter
                     If Len(szErr) > 0 Then GoTo SubError
                     If gblnCancel Then szErr = "Canceled by user" : GoTo SubError
+                    ' Then, change the Min/Max range to the original value
+                    tsTrackerMin(0) = tsTrackerMin_tmp
+                    tsTrackerMax(0) = tsTrackerMax_tmp
+                    Tracker.TrackMinMaxValues(0, tsTrackerMin(0), tsTrackerMax(0))
                     ' Finally, play a ''well done'' sound and repeat measurement
-                    Output.Send("/Play/OpenWAV/0", "open", "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/coin.wav", 0, 44, 1, glResolution \ 8, "l")
+                    Output.Send("/Play/OpenWAV/0", "open", "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/coin.wav", 0, 44, 1, glResolution \ 8, "l") ' TODO: input path as parameter?
                     Output.Send("/DAC/SetStream/3", "set", "play0")
                     Output.Send("/Play/SetDelay/0", 0.005)
                     Output.Send("/DAC/SetVol/3", 80)
