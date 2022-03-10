@@ -786,52 +786,104 @@ SubStart:
                             Else
                                 wavPath = wavPath & "moveUp.wav"
                             End If
-                        ElseIf (lX And 1) > 0 Then ' X
+                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/DAC/SetStream/3", "set", "play0")
+                            Output.Send("/Play/SetDelay/0", 0.005)
+                            Output.Send("/DAC/SetVol/3", 80)
+                            Output.Send("/Play/StartAll/0")
+                            Sleep(1000)
+                            Output.Send("/DAC/SetVol*", 0)
+                            Output.Send("/Play/StartSynced/*", "stop")
+                            Output.Send("/Play/Stop/*")
+                        End If
+                        If (lX And 1) > 0 Then ' X
                             If X > 0 Then
                                 wavPath = wavPath & "moveBack.wav"
                             Else
                                 wavPath = wavPath & "moveForward.wav"
                             End If
-                        ElseIf (lX And 2) > 0 Then ' Y
+                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/DAC/SetStream/3", "set", "play0")
+                            Output.Send("/Play/SetDelay/0", 0.005)
+                            Output.Send("/DAC/SetVol/3", 80)
+                            Output.Send("/Play/StartAll/0")
+                            Sleep(1000)
+                            Output.Send("/DAC/SetVol*", 0)
+                            Output.Send("/Play/StartSynced/*", "stop")
+                            Output.Send("/Play/Stop/*")
+                        End If
+                        If (lX And 2) > 0 Then ' Y
                             If Y > 0 Then
                                 wavPath = wavPath & "moveRight.wav"
                             Else
                                 wavPath = wavPath & "moveLeft.wav"
                             End If
-                        ElseIf (lX And 32) > 0 Then ' Roll
+                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/DAC/SetStream/3", "set", "play0")
+                            Output.Send("/Play/SetDelay/0", 0.005)
+                            Output.Send("/DAC/SetVol/3", 80)
+                            Output.Send("/Play/StartAll/0")
+                            Sleep(1000)
+                            Output.Send("/DAC/SetVol*", 0)
+                            Output.Send("/Play/StartSynced/*", "stop")
+                            Output.Send("/Play/Stop/*")
+                        End If
+                        If (lX And 32) > 0 Then ' Roll
                             If Roll > 0 Then
                                 wavPath = wavPath & "tiltRight.wav"
                             Else
                                 wavPath = wavPath & "tiltLeft.wav"
                             End If
-                        ElseIf (lX And 8) > 0 Then ' Yaw
+                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/DAC/SetStream/3", "set", "play0")
+                            Output.Send("/Play/SetDelay/0", 0.005)
+                            Output.Send("/DAC/SetVol/3", 80)
+                            Output.Send("/Play/StartAll/0")
+                            Sleep(1000)
+                            Output.Send("/DAC/SetVol*", 0)
+                            Output.Send("/Play/StartSynced/*", "stop")
+                            Output.Send("/Play/Stop/*")
+                        End If
+                        If (lX And 8) > 0 Then ' Yaw
                             If Yaw > 0 Then
                                 wavPath = wavPath & "lookRight.wav"
                             Else
                                 wavPath = wavPath & "lookLeft.wav"
                             End If
-                        ElseIf (lX And 16) > 0 Then ' Pitch
+                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/DAC/SetStream/3", "set", "play0")
+                            Output.Send("/Play/SetDelay/0", 0.005)
+                            Output.Send("/DAC/SetVol/3", 80)
+                            Output.Send("/Play/StartAll/0")
+                            Sleep(1000)
+                            Output.Send("/DAC/SetVol*", 0)
+                            Output.Send("/Play/StartSynced/*", "stop")
+                            Output.Send("/Play/Stop/*")
+                        End If
+                        If (lX And 16) > 0 Then ' Pitch
                             If Pitch > 0 Then
                                 wavPath = wavPath & "lookDown.wav"
                             Else
                                 wavPath = wavPath & "lookUp.wav"
                             End If
-                        Else
-                            ' we should never end up here
+                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/DAC/SetStream/3", "set", "play0")
+                            Output.Send("/Play/SetDelay/0", 0.005)
+                            Output.Send("/DAC/SetVol/3", 80)
+                            Output.Send("/Play/StartAll/0")
+                            Sleep(1000)
+                            Output.Send("/DAC/SetVol*", 0)
+                            Output.Send("/Play/StartSynced/*", "stop")
+                            Output.Send("/Play/Stop/*")
                         End If
-                        Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
-                        Output.Send("/DAC/SetStream/3", "set", "play0")
-                        Output.Send("/Play/SetDelay/0", 0.005)
-                        Output.Send("/DAC/SetVol/3", 80)
-                        Output.Send("/Play/StartAll/0")
-                        Sleep(1000)
-                        Output.Send("/DAC/SetVol*", 0)
-                        Output.Send("/Play/StartSynced/*", "stop")
-                        Output.Send("/Play/Stop/*")
                     End If
                     ' Then, change the Min/Max range for the euler angles to 1 degree
-                    Dim tsTrackerMin_tmp As TrackerSensor = tsTrackerMin(0)
-                    Dim tsTrackerMax_tmp As TrackerSensor = tsTrackerMax(0)
+                    Dim minA_tmp As Double = tsTrackerMin(0).sngA
+                    Dim maxA_tmp As Double = tsTrackerMax(0).sngA
+                    Dim minE_tmp As Double = tsTrackerMin(0).sngE
+                    Dim maxE_tmp As Double = tsTrackerMax(0).sngE
+                    Dim minR_tmp As Double = tsTrackerMin(0).sngR
+                    Dim maxR_tmp As Double = tsTrackerMax(0).sngR
                     tsTrackerMin(0).sngA = -1 + Val(szAzimuth)
                     tsTrackerMax(0).sngA = 1 + Val(szAzimuth)
                     tsTrackerMin(0).sngE = -1
@@ -844,8 +896,12 @@ SubStart:
                     If Len(szErr) > 0 Then GoTo SubError
                     If gblnCancel Then szErr = "Canceled by user" : GoTo SubError
                     ' Then, change the Min/Max range to the original value
-                    tsTrackerMin(0) = tsTrackerMin_tmp
-                    tsTrackerMax(0) = tsTrackerMax_tmp
+                    tsTrackerMin(0).sngA = minA_tmp
+                    tsTrackerMax(0).sngA = maxA_tmp
+                    tsTrackerMin(0).sngE = minE_tmp
+                    tsTrackerMax(0).sngE = maxE_tmp
+                    tsTrackerMin(0).sngR = minR_tmp
+                    tsTrackerMax(0).sngR = maxR_tmp
                     Tracker.TrackMinMaxValues(0, tsTrackerMin(0), tsTrackerMax(0))
                     ' Finally, play a ''well done'' sound and repeat measurement
                     Output.Send("/Play/OpenWAV/0", "open", "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/coin.wav", 0, 44, 1, glResolution \ 8, "l") ' TODO: input path as parameter?
