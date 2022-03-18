@@ -145,16 +145,16 @@ end
 
 % Show dialog for clipping
 if ~isempty(cliplist)
+    warningCount = warningCount + 1;
     dlg = errordlg(['CRITICAL: The microphone clipped for headphone measurements',sprintf(' #%d',cliplist),'. Please reduce the microphone gain and repeat all measurements.'],'Microphone clipped!');
     uiwait(dlg)
-    return
 end
 
 % Show dialog for left/right order
 if ~isempty(invertlist)
+    warningCount = warningCount + 1;
     dlg = errordlg(['CRITICAL: Left/right channels seem to be inverted for headphone measurements',sprintf(' #%d',cliplist),'. Please check microphones and headphones and repeat the measurements.'],'Left/right channels inverted!');
     uiwait(dlg)
-    return
 end
 
 % Show dialog for left/right mismatch
@@ -272,9 +272,9 @@ end
 
 % Show dialog for clipping
 if ~isempty(cliplist)
+    warningCount = warningCount + 1;
     dlg = errordlg(['CRITICAL: The microphone clipped for HRTF measurements',sprintf(' #%d',unique(cliplist)),'. Please reduce the microphone gain and repeat all measurements.'],'Microphone clipped!');
     uiwait(dlg)
-    return
 end
 
 % Show dialog for SNR warning
