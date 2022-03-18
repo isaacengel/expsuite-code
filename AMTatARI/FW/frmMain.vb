@@ -2632,6 +2632,19 @@ SubEnd:
         For lRow As Integer = 0 To Arr.Length - 1
             'ItemList.ItemIndex = lRow
             'If gStimOutput = GENMODE.genVocoder Then Output.Send("/DAC/SetVol/*", 100) -> Uncomment this section, if you want to use ElectricVocoder
+
+            ' Show dialog box to check if the user is OK with overwriting
+            If ItemList.Item(Arr(lRow), "STATUS") = "Recorded" Then
+                Dim Msg, Title As Object
+                Msg = "Item" + Str(Arr(lRow) + 1) + " has already been recorded. Overwrite?"
+                Dim Style As MsgBoxStyle = CType(vbYesNo + vbExclamation + vbDefaultButton2, MsgBoxStyle)
+                Title = "Overwrite?"
+                Dim Response As MsgBoxResult = MsgBox(Msg, Style, Title)
+                If Response = vbNo Then    ' User chose No.
+                    Continue For
+                End If
+            End If
+
             szErr = ExpSuite.Events.OnStimulateSelected(Arr(lRow), lTO, szLeft, szRight)
             gblnStimulationDone = True
             If gblnCancel = True Then SetUIReady() : Return ""
