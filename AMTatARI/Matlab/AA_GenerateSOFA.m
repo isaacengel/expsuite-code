@@ -157,6 +157,19 @@ nrgwin = sum(abs(hwin(:)).^2);
 nrgloss = 1-nrgwin/nrg;
 if nrgloss>0.02 % TODO: improve
     warning('%0.2f%% of the IR energy was lost after windowing. Maybe something went wrong. Please check plots.',nrgloss*100)
+    ears = {'Left','Right'};
+    figure('pos',[12 91 1357 785])
+    for ch=1:2
+        subplot(2,1,ch)
+        AKp(h(:,:,ch),'et2d','fs',fs), hold on 
+        % Plot window and show title
+        yyaxis('right')
+        plot([(0:irLen-1)*1000/fs],win,'r-.','LineWidth',1.5)
+        ax = gca; ax.YAxis(2).Color = 'r';
+        ylabel('Window amplitude')
+        title(sprintf('%s',ears{ch}))
+    end
+    sgtitle('Warning: large energy loss when windowing HRIRs. The red window should cover the first few ms of the HRIR.')
 end
 
 %% Equalise by reference measurement
