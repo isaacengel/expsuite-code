@@ -815,14 +815,15 @@ SubStart:
                         Dim Pitch As Double = tsData.sngE
                         Dim Roll As Double = tsData.sngR
                         Dim wavPath As String = "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/" ' TODO: input path as parameter?
+                        Dim wavFile As String
                         ' Only report one of the angles/axes, in order from least to most common
                         If (lX And 4) > 0 Then ' Z
                             If Z > 0 Then
-                                wavPath = wavPath & "moveDown.wav"
+                                wavFile = wavPath & "moveDown.wav"
                             Else
-                                wavPath = wavPath & "moveUp.wav"
+                                wavFile = wavPath & "moveUp.wav"
                             End If
-                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/Play/OpenWAV/0", "open", wavFile, 0, 44, 1, glResolution \ 8, "l")
                             Output.Send("/DAC/SetStream/3", "set", "play0")
                             Output.Send("/Play/SetDelay/0", 0.005)
                             Output.Send("/DAC/SetVol/3", 80)
@@ -834,11 +835,11 @@ SubStart:
                         End If
                         If (lX And 1) > 0 Then ' X
                             If X > 0 Then
-                                wavPath = wavPath & "moveBack.wav"
+                                wavFile = wavPath & "moveBack.wav"
                             Else
-                                wavPath = wavPath & "moveForward.wav"
+                                wavFile = wavPath & "moveForward.wav"
                             End If
-                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/Play/OpenWAV/0", "open", wavFile, 0, 44, 1, glResolution \ 8, "l")
                             Output.Send("/DAC/SetStream/3", "set", "play0")
                             Output.Send("/Play/SetDelay/0", 0.005)
                             Output.Send("/DAC/SetVol/3", 80)
@@ -850,11 +851,11 @@ SubStart:
                         End If
                         If (lX And 2) > 0 Then ' Y
                             If Y > 0 Then
-                                wavPath = wavPath & "moveRight.wav"
+                                wavFile = wavPath & "moveRight.wav"
                             Else
-                                wavPath = wavPath & "moveLeft.wav"
+                                wavFile = wavPath & "moveLeft.wav"
                             End If
-                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/Play/OpenWAV/0", "open", wavFile, 0, 44, 1, glResolution \ 8, "l")
                             Output.Send("/DAC/SetStream/3", "set", "play0")
                             Output.Send("/Play/SetDelay/0", 0.005)
                             Output.Send("/DAC/SetVol/3", 80)
@@ -866,11 +867,11 @@ SubStart:
                         End If
                         If (lX And 32) > 0 Then ' Roll
                             If Roll > 0 Then
-                                wavPath = wavPath & "tiltRight.wav"
+                                wavFile = wavPath & "tiltRight.wav"
                             Else
-                                wavPath = wavPath & "tiltLeft.wav"
+                                wavFile = wavPath & "tiltLeft.wav"
                             End If
-                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/Play/OpenWAV/0", "open", wavFile, 0, 44, 1, glResolution \ 8, "l")
                             Output.Send("/DAC/SetStream/3", "set", "play0")
                             Output.Send("/Play/SetDelay/0", 0.005)
                             Output.Send("/DAC/SetVol/3", 80)
@@ -882,11 +883,11 @@ SubStart:
                         End If
                         If (lX And 8) > 0 Then ' Yaw
                             If Yaw > 0 Then
-                                wavPath = wavPath & "lookRight.wav"
+                                wavFile = wavPath & "lookRight.wav"
                             Else
-                                wavPath = wavPath & "lookLeft.wav"
+                                wavFile = wavPath & "lookLeft.wav"
                             End If
-                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/Play/OpenWAV/0", "open", wavFile, 0, 44, 1, glResolution \ 8, "l")
                             Output.Send("/DAC/SetStream/3", "set", "play0")
                             Output.Send("/Play/SetDelay/0", 0.005)
                             Output.Send("/DAC/SetVol/3", 80)
@@ -898,11 +899,11 @@ SubStart:
                         End If
                         If (lX And 16) > 0 Then ' Pitch
                             If Pitch > 0 Then
-                                wavPath = wavPath & "lookDown.wav"
+                                wavFile = wavPath & "lookDown.wav"
                             Else
-                                wavPath = wavPath & "lookUp.wav"
+                                wavFile = wavPath & "lookUp.wav"
                             End If
-                            Output.Send("/Play/OpenWAV/0", "open", wavPath, 0, 44, 1, glResolution \ 8, "l")
+                            Output.Send("/Play/OpenWAV/0", "open", wavFile, 0, 44, 1, glResolution \ 8, "l")
                             Output.Send("/DAC/SetStream/3", "set", "play0")
                             Output.Send("/Play/SetDelay/0", 0.005)
                             Output.Send("/DAC/SetVol/3", 80)
