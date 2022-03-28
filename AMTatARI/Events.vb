@@ -765,10 +765,46 @@ SubStart:
 
             ' check tracker ranges
             If gblnTrackerUse And (glTrackerCOM > 0) And (sFreq > 0) Then
+
                 lX = Tracker.CheckTrackedMinValue(0, gtsTrackerMin(0).lStatus)
                 lX = lX Or Tracker.CheckTrackedMaxValue(0, gtsTrackerMax(0).lStatus)
+
                 If (lX > 0) Then
-                    ' First, play verbal cue for the direction that is most incorrect
+
+                    ' Tracker range was exceeded. Now, check again with a narrower range
+
+                    ' First, change the Min/Max range for the euler angles to 1 degree
+                    Dim minA_tmp As Double = tsTrackerMin(0).sngA
+                    Dim maxA_tmp As Double = tsTrackerMax(0).sngA
+                    Dim minE_tmp As Double = tsTrackerMin(0).sngE
+                    Dim maxE_tmp As Double = tsTrackerMax(0).sngE
+                    Dim minR_tmp As Double = tsTrackerMin(0).sngR
+                    Dim maxR_tmp As Double = tsTrackerMax(0).sngR
+                    tsTrackerMin(0).sngA = -1 + Val(szAzimuth)
+                    tsTrackerMax(0).sngA = 1 + Val(szAzimuth)
+                    tsTrackerMin(0).sngE = -1
+                    tsTrackerMax(0).sngE = 1
+                    tsTrackerMin(0).sngR = -1
+                    tsTrackerMax(0).sngR = 1
+                    Tracker.TrackMinMaxValues(0, tsTrackerMin(0), tsTrackerMax(0))
+
+                    ' Then, stop for some time to capture the current tracker range
+                    ' Note that I used a loop instead of Sleep to allow for tracker timer interrupts (not sure if it works that way, but it seemed safer)
+                    Dim curToc, curTic, waitTime As Long
+                    waitTime = 100 ' waiting time in ms
+                    QueryPerformanceCounter(curTic)
+                    curTic = curTic + waitTime * gcurHPFrequency \ 1000
+                    Windows.Forms.Application.DoEvents()
+                    Do
+                        Windows.Forms.Application.DoEvents()
+                        QueryPerformanceCounter(curToc)
+                    Loop Until (curToc > curTic)
+
+                    ' Get current tracker state
+                    lX = Tracker.CheckTrackedMinValue(0, gtsTrackerMin(0).lStatus)
+                    lX = lX Or Tracker.CheckTrackedMaxValue(0, gtsTrackerMax(0).lStatus)
+
+                    ' Then, play verbal cue for all incorrect dimensions
                     Dim tsData As TrackerSensor
                     szErr = Tracker.GetCurrentValues(-1, 0, tsData) ' only tested for OptiTrack
                     If Val(gconstExp(13).varValue) = 1 And tsData.visible = True Then ' only continue if marker is visible
@@ -877,24 +913,12 @@ SubStart:
                             Output.Send("/Play/Stop/*")
                         End If
                     End If
-                    ' Then, change the Min/Max range for the euler angles to 1 degree
-                    Dim minA_tmp As Double = tsTrackerMin(0).sngA
-                    Dim maxA_tmp As Double = tsTrackerMax(0).sngA
-                    Dim minE_tmp As Double = tsTrackerMin(0).sngE
-                    Dim maxE_tmp As Double = tsTrackerMax(0).sngE
-                    Dim minR_tmp As Double = tsTrackerMin(0).sngR
-                    Dim maxR_tmp As Double = tsTrackerMax(0).sngR
-                    tsTrackerMin(0).sngA = -1 + Val(szAzimuth)
-                    tsTrackerMax(0).sngA = 1 + Val(szAzimuth)
-                    tsTrackerMin(0).sngE = -1
-                    tsTrackerMax(0).sngE = 1
-                    tsTrackerMin(0).sngR = -1
-                    tsTrackerMax(0).sngR = 1
-                    Tracker.TrackMinMaxValues(0, tsTrackerMin(0), tsTrackerMax(0))
+
                     ' Next, play the tones
                     szErr = frmTrackerLeadInRange.ShowForm(sAmp - gfreqParL(lCh(0) - 1).sSPLOffset + 100 - 20, sFreq, Val(szAzimuth)) ' added -20 to make it quieter
                     If Len(szErr) > 0 Then GoTo SubError
                     If gblnCancel Then szErr = "Canceled by user" : GoTo SubError
+
                     ' Then, change the Min/Max range to the original value
                     tsTrackerMin(0).sngA = minA_tmp
                     tsTrackerMax(0).sngA = maxA_tmp
@@ -903,6 +927,7 @@ SubStart:
                     tsTrackerMin(0).sngR = minR_tmp
                     tsTrackerMax(0).sngR = maxR_tmp
                     Tracker.TrackMinMaxValues(0, tsTrackerMin(0), tsTrackerMax(0))
+
                     ' Finally, play a ''well done'' sound and repeat measurement
                     Output.Send("/Play/OpenWAV/0", "open", "C:/Users/Admin/Documents/Code/expsuite-code/AMTatARI/Resources/Application/coin.wav", 0, 44, 1, glResolution \ 8, "l") ' TODO: input path as parameter?
                     Output.Send("/DAC/SetStream/3", "set", "play0")
@@ -914,6 +939,7 @@ SubStart:
                     Output.Send("/Play/StartSynced/*", "stop")
                     Output.Send("/Play/Stop/*")
                     GoTo SubStart
+
                 End If
             End If
 
