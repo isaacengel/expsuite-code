@@ -20,6 +20,7 @@ saveEQ   = 1; % Save HRTF equalised by free field measurement in SOFA format (0,
 saveEQmp = 1; % Same as above, but use minimum-phase EQ (0,1)
 saveITD  = 1; % Save time-aligned HRTFs in SOFA and 3DTI formats (0,1)
 targetFs = [44100,48000,96000]; % Sampling frequency (Hz)
+removeRedundant = 0; % Remove redundant directions (90 deg elevation)
 
 reference_eq = '../../Reference measurements/reference_eq.mat'; % you usually don't want to change this
 
@@ -27,5 +28,5 @@ reference_eq = '../../Reference measurements/reference_eq.mat'; % you usually do
 thisdir = cd;
 amt_start();
 cd(thisdir);
-AA_GenerateSOFA(name,'.','settings.AMTatARI','itemlist.itl.csv',reference_eq,doplots,saveRaw,saveWin,saveEQ,saveEQmp,saveITD,targetFs)
+AA_GenerateSOFA(name,'.','settings.AMTatARI','itemlist.itl.csv',reference_eq,doplots,saveRaw,saveWin,saveEQ,saveEQmp,saveITD,targetFs,removeRedundant)
 AA_GenerateHpEQ(name,'.','settings.AMTatARI','itemlist.itl.csv',doplots,targetFs)

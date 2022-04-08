@@ -1,4 +1,4 @@
-function AA_GenerateSOFA(sofaname,workdir,settingsfile,itemlistfile,referencefile,doplots,saveRaw,saveWin,saveEQ,saveEQmp,saveITD,targetFs)
+function AA_GenerateSOFA(sofaname,workdir,settingsfile,itemlistfile,referencefile,doplots,saveRaw,saveWin,saveEQ,saveEQmp,saveITD,targetFs,removeRedundant)
 
 % Process recorded sweeps into SOFA files.
 % This replaces all the VisualBasic code from the IRToolbox, and can be run
@@ -141,12 +141,14 @@ end
 az = pos(:,1);
 el = pos(:,2);
 [lat,pol] = sph2hor(az,el);
-[~,ind] = unique([lat,pol],'rows');
-ind = sort(ind);
-h = h(:,ind,:);
-az = az(ind);
-el = el(ind);
-pos = pos(ind,:);
+if removeRedundant
+    [~,ind] = unique([lat,pol],'rows');
+    ind = sort(ind);
+    h = h(:,ind,:);
+    az = az(ind);
+    el = el(ind);
+    pos = pos(ind,:);
+end
 ndirs = size(h,2);
 
 %% Window HRIRs
