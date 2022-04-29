@@ -14,7 +14,7 @@ Module Result
 
     Public gIRFlags As IRFlags
 
-    Public Sub GenerateSOFA(sofaname As String, referenceFile As String, doPlots As Integer, saveRaw As Integer, saveWin As Integer, saveEQ As Integer, saveEQmp As Integer, saveITD As Integer, targetFs As String, finalCheck As Integer, itdThresh As Double, magThresh As Double, freqRange As String)
+    Public Sub GenerateSOFA(sofaname As String, referenceFile As String, doPlots As Integer, saveRaw As Integer, saveWin As Integer, saveEQ As Integer, saveEQmp As Integer, saveITD As Integer, targetFs As String, finalCheck As Integer, itdThresh As Double, magThresh As Double, freqRange As String, removeRedundant As Integer)
         If Not gblnOutputStable Then
             MsgBox("Connection to MATLAB required.", MsgBoxStyle.Critical)
             Exit Sub
@@ -23,7 +23,7 @@ Module Result
         STIM.Matlab("AA_SOFAstart;")
         STIM.Matlab("this_dir = cd; amt_start('silent'); cd(this_dir);")
         ' Generate SOFA
-        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveWin & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & targetFs & ");")
+        Dim szErr As String = STIM.Matlab("AA_GenerateSOFA('" & sofaname & "','" & STIM.WorkDir & "','settings.AMTatARI','itemlist.itl.csv','" & referenceFile & "'," & doPlots & "," & saveRaw & "," & saveWin & "," & saveEQ & "," & saveEQmp & "," & saveITD & "," & targetFs & "," & removeRedundant & ");")
         If Len(szErr) > 0 Then
             MsgBox(szErr, MsgBoxStyle.Critical, "Generate SOFA files")
             frmMain.SetStatus("Error(s) generating SOFA files")

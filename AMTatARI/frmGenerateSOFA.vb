@@ -39,7 +39,7 @@ Public Class frmGenerateSOFA
             targetFs = targetFs & "96000 "
         End If
         targetFs = targetFs & "]"
-        Result.GenerateSOFA(sofaname, referenceFile, doPlots, saveRaw, saveWin, saveEQ, saveEQmp, saveITD, targetFs, finalCheck, 0.0002, 15, "[200 1500]") ' TODO: set the last three parameters via settings
+        Result.GenerateSOFA(sofaname, referenceFile, doPlots, saveRaw, saveWin, saveEQ, saveEQmp, saveITD, targetFs, finalCheck, 0.0002, 15, "[200 1500]", 0) ' TODO: set the last few parameters via settings
         Button1.Enabled = True
         Me.Close()
     End Sub
